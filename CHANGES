@@ -1,0 +1,131 @@
+* Wed May 16 2024 Version 0.7.3
+- Added man pages for french, italian, portugues, brasilian an spanish and updated the existing man pages.
+
+* Thu May 14 2024 Version 0.7.2
+- Italian translation added (Online translator https://deepl.com used. See this more like a test whether an online translator can deliver a usefull result)
+- Credits & Copyright tab modified.
+- Made a minor change at the french translation.
+
+* Sun May 12 2024 Version 0.7.1
+- Some minor changes to the setup tab, the option tab and the scan tab. (background color - line edit)
+- Had completely forgotten the version label. In the option tab now the version of the scanner installed is displayed.
+
+* Sat May 11 2024 Verison 0.7.0
+- If the path to the database directory changes the application checks whether the virus signatures are present or not and offers to download them if missing.
+- If clamav is missing the application gives a popup message and closing the application throught the "x" in the Windowheader will close the application and not minimize to the tray icon.
+- If clamav is missing everything that has to do with scanning is deactivated within the application.
+- Made some changes to the "Credits & Copyright" tab.
+
+* Fri May 10 2024 Version 0.6.8
+- I hope - I found the memory leak that causes the application (on Ubuntu) to crash, if no clamav is installed.... A process to determin the user of the database directory could be the troublemaker.
+- Changed the Info-Tab. UALinux outlined a few thinks and I think they are right.
+- A problem that causes the direct update of the databases to loop for infinity was fixed.
+- Some default options on startup (Directory settings etc.) are added.
+- Adjusted the language settings at the first start up of the program to "english".
+- The field for the database directory in the setup tab (freshclam.conf) is now a mere indicator what path was selected in the option tab. If no pass is selected or the checkbox is deactivated, the default path (/var/lib/clamav) is used.
+
+* Thu May 09 2024 Version 0.6.7
+- Changed the routine for singel line log file values.
+
+* Wed May 08 2024 Version 0.6.6
+- Found some stray slots in the setup tab and the freshclam tab. Fixed them.
+- Made a minor ajustment in the scan tabs device list.
+- Man-Pages for ukrainia added. (Thanks to UALinux)
+- If freshclam was not installed the application crashed. Now it will display a freshclam not found informatin as a popup message and in the setup tab.
+
+* Mon May 06 2024 Version 0.6.5
+- Remodeled the Freshclam tab and the setup tab. Now the settings for freshclam are deactivated while the freshclam daemon is running.
+- Progress display fixed. Download progress for the signatures in freshclam now will be displayed.
+
+* Mon May 06 2024 Version 0.6.3
+- Encountered another problem with file permissions regarding log files in the freshclam updater module.
+
+* Sun May 05 2024 Version 0.6.2
+- On startup the path to freshclam is determined. Due to the freshclam version used the path varies from /usr/bin to /usr/local/bin
+- In the setup tab a setup for freshclam (freshclam.conf) is added.
+- Due to a misinterpretation I had added not all the necessary switches (yes/no) to the list of available parameters.
+- On startup the owner of the database is determined and will be used during the freshclam process.
+- Fixed a wrong file dialog in the Profile Wizard.
+
+* Tue Apr 30 2024 Version 0.6.0
+- A setup section was added for some basic setup's.
+- Language switching has been added to the program interface.
+- The application and its features where updated to the latest clamav version (available parameters and so on...)
+- Fixed errors in interface display
+
+* Mon Apr 01 2024 Version 0.5.5
+- French translation. With the help of a french guy I could add a french translation for the application.
+- He also pointed out that there are some problems when using Ubuntu (different pathes for usb-devices etc.)
+- This should work now for Ubuntu distros as well. If required, you can launch the clamd process als root.
+- DEB Packages are available for Ubuntu 18.04, 20.04 and 22.04 due to the help of UALinux
+
+* Wed Dec 27 2023 Version 0.5.3
+- Automatic generation of the desktop service file
+- It is no longer required to upload the destop service file for dolphin tho add the context menu entry forscanning with clamav.
+- The necessary file is generated automaticly the first time the program is invoked when no servive file is presend.
+
+* Wed Dec 27 2023 Version 0.5.2
+- Add debug option "--language"
+- To determine what language file is expected you can invoke the programm with the parameter "--language" on the console. An output is generated and display the language extention e.g. (Desktop Language Setting: pt_BR)
+
+* Fri Dec 22 2023 Version 0.5.1
+- Added a Source and RPM-Package for the OpenSuSE 15.4, 15.5
+- Language Packages for portugues (european and Brasil) are added to the application.
+
+* Thu Mar 23 2023 Version 0.5.0
+- QT5. Removed/Changed deprecated function though the compiling process should work without warnings.
+- Fixed a minor bug regarding USB-Devices.
+
+* Sun Aug 28 2022 Version 0.4.3
+- QT5.
+- I was not aware that there are still people out there who use this program. I fixed the source so it should now compile in an environment com QT5.
+- I myself use OpenSuSE 15.4 with KDE and Plasma. During the compilation process there are still some warnings but the compilation process finishes and the binary should work.
+
+* Tue Aug 25 2020 Version 0.4.2
+- Bug fix. The mainwindow doesn't fit into the screen. Fixed this issue.
+
+* Thu Dec 10 2015 Version 0.4.1
+- Spanish translation provided by Pedro Alamo <palamodz@gmail.com>. ClamAV-GUI now speaks spanish as well. Thank you Pedro.
+
+* Sun Nov 29 2015 Version 0.4.1
+- A danish translation was provided by Martin Eilsoe <martin.eilsoe@gmail.com>. Though ClamAV-GUI can 'speak' danish now :-) Thank you Martin.
+
+* Sat Sep 19 2015 Version 0.4.0
+- Handling for profiles remodeled. Profiles are now handeled through a profile manager tab. New profiles and existing profiles are created / modified through a profile wizard.
+
+* Mon Aug 17 2015 Version 0.3.3
+- Changed the startup behaviour for the initial startup. If signatures are found in the default clamav folder (/var/lib/clamav) this folder is uses as default signature folder.
+- If no virus signatures are found than the new created folder at ~/.clamav-gui/signatures is used.
+
+* Mon Aug 17 2015 Version 0.3.2
+- Icon size missmatch fixed. The dropzone was not available due to a wrong icon-size (fixed)
+
+* Mon Aug 17 2015 Version 0.3.1
+- Fixed a minor bug in the scheduler section
+
+*Sun Aug 16 2015 Version 0.3.0
+- Changes made to the freshclam "update now" behaviour. The window is now more verbose. Sometimes the update took a while and it seems the process stalled. Now the download percentage for the three files is displayed so you got a kind of progress indicator.
+- Fixed a bug in the profile handling.
+
+* Fri Aug 14 2015 Version 0.2.3
+- Changed the behaviour for changing existing profiles. A profile used by the scheduler can now be changed but still not erased. A warning is issued but can be overruled.
+
+* Wed Aug 12 2015 Version 0.2.3
+- Fixed some path issues
+
+* Tue Aug 11 2015 Version 0.2.3 - joerg.zopes@gmx.de
+- Clean up of the Makefile. No install.sh script needed - just do make; make install to install the application
+
+* Thu Aug 6 2015 Version 0.2.3 - joerg.zopes@gmx.de
+- Added some visual effects to show that the app is busy (Update, Scanner ...)
+
+* Sun Aug 2 2015 Version 0.2.1. - joerg.zopes@gmx.de
+- Added a search function for the Log-Files (search/continue/jump to infected files/jump to errors)
+- Added a Service Menu for Konqueror / Dolphin
+
+* Wed Jul 29 2015 Version 0.1.2. - joerg.zopes@gmx.de
+- fixed a bug at startup to prefent the application being startet multiple times
+- fixed some issues regarding logging of freshclam
+
+* Tue Jul 28 2015 Version 0.1.0. - joerg.zopes@gmx.de
+- initial package build
