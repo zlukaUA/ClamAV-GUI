@@ -38,20 +38,36 @@
            <property name="text">
             <string>just report</string>
            </property>
+           <property name="icon">
+            <iconset resource="../resources.qrc">
+             <normaloff>:/icons/icons/includeexclude.png</normaloff>:/icons/icons/includeexclude.png</iconset>
+           </property>
           </item>
           <item>
            <property name="text">
             <string>remove file (be careful)</string>
+           </property>
+           <property name="icon">
+            <iconset resource="../resources.qrc">
+             <normaloff>:/icons/icons/trash-can.png</normaloff>:/icons/icons/trash-can.png</iconset>
            </property>
           </item>
           <item>
            <property name="text">
             <string>move file to qurantine folder</string>
            </property>
+           <property name="icon">
+            <iconset resource="../resources.qrc">
+             <normaloff>:/icons/icons/edit-cut.png</normaloff>:/icons/icons/edit-cut.png</iconset>
+           </property>
           </item>
           <item>
            <property name="text">
             <string>copy file to quarantine folder</string>
+           </property>
+           <property name="icon">
+            <iconset resource="../resources.qrc">
+             <normaloff>:/icons/icons/edit-copy.png</normaloff>:/icons/icons/edit-copy.png</iconset>
            </property>
           </item>
          </widget>
