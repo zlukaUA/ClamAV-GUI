@@ -112,6 +112,16 @@ void optionsDialog::slot_getClamscanProcessFinished()
     updateAvailableOptionsList();
 }
 
+QString optionsDialog::getCopyDirectory()
+{
+    return ui->copyDirectoryLineEdit->text();
+}
+
+QString optionsDialog::getMoveDirectory()
+{
+    return ui->moveDirectoryLineEdit->text();
+}
+
 void optionsDialog::slot_addButtonClicked(){
 QListWidgetItem * item;
 

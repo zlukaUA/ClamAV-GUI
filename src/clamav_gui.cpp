@@ -244,11 +244,23 @@ QString option;
 QString checked;
 QString value;
 QString temp;
+QString moveDirectory = optionTab->getMoveDirectory();;
+QString copyDirectory = optionTab->getCopyDirectory();
 
     emit setScannerForm(false);
     scannerTab->setStatusBarMessage(tr("Scanning started ......."),"#ffff00");
     if (scannerTab->recursivChecked() == true){
         parameters << "-r";
+    }
+    switch (scannerTab->getVirusFoundComboBoxValue()) {
+    case 0:
+        break;
+    case 1: parameters << "--remove=yes";
+        break;
+    case 2: if (moveDirectory != "") parameters << "--move=" + moveDirectory;
+        break;
+    case 3: if (moveDirectory != "") parameters << "--copy=" + copyDirectory;
+        break;
     }
     for (int i = 0; i < selectedOptions.count(); i++){
         parameters << selectedOptions.at(i).left(selectedOptions.indexOf("|")).replace("<equal>","=");

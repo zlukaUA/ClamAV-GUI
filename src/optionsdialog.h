@@ -78,6 +78,10 @@ signals:
     void databasePathChanged(QString path);
     void updateDatabase();
 
+public:
+    QString getCopyDirectory();
+    QString getMoveDirectory();
+
 };
 
 

@@ -50,6 +50,7 @@ public:
     void setStatusMessage(QString);
     void clearLogMessage();
     void setStatusBarMessage(QString,QString bgColor="#ffffff");
+    int getVirusFoundComboBoxValue();
     ~scanTab();
 
 private:

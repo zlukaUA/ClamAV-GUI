@@ -226,6 +226,11 @@ void scanTab::setStatusBarMessage(QString message, QString bgColor){
     ui->currentFileLabel->setStyleSheet("background:"+bgColor);
 }
 
+int scanTab::getVirusFoundComboBoxValue()
+{
+    return ui->virusFoundComboBox->currentIndex();
+}
+
 void scanTab::slot_requestDropZoneVisible(){
     emit requestDropZoneVisible();
 }
