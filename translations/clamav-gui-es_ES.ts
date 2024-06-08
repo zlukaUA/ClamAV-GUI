@@ -2657,17 +2657,6 @@ hr { height: 1px; border-width: 0; }
 li.unchecked::marker { content: &quot;\2610&quot;; }
 li.checked::marker { content: &quot;\2612&quot;; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Noto Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation></translation>
-    </message>
-    <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-hr { height: 1px; border-width: 0; }
-li.unchecked::marker { content: &quot;\2610&quot;; }
-li.checked::marker { content: &quot;\2612&quot;; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Noto Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;h3 align=&quot;center&quot; style=&quot; margin-top:14px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Times New Roman&apos;; font-size:large; font-weight:700; color:#000000;&quot;&gt;GNU GENERAL PUBLIC LICENSE&lt;/span&gt;&lt;/h3&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Times New Roman&apos;; font-size:medium; color:#000000;&quot;&gt;Version 3, 29 June 2007&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Times New Roman&apos;; font-size:medium; color:#000000;&quot;&gt;Copyright © 2007 Free Software Foundation, Inc. &amp;lt;&lt;/span&gt;&lt;a href=&quot;https://fsf.org/&quot;&gt;&lt;span style=&quot; font-family:&apos;Times New Roman&apos;; font-size:medium; text-decoration: underline; text-decoration-color:#000000; color:#2980b9;&quot;&gt;https://fsf.org/&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Times New Roman&apos;; font-size:medium; color:#000000;&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/p&gt;
@@ -2811,6 +2800,101 @@ li.checked::marker { content: &quot;\2612&quot;; }
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Times New Roman&apos;; font-size:medium; color:#000000;&quot;&gt;The GNU General Public License does not permit incorporating your program into proprietary programs. If your program is a subroutine library, you may consider it more useful to permit linking proprietary applications with the library. If this is what you want to do, use the GNU Lesser General Public License instead of this License. But first, please read &amp;lt;&lt;/span&gt;&lt;a href=&quot;https://www.gnu.org/licenses/why-not-lgpl.html&quot;&gt;&lt;span style=&quot; font-family:&apos;Times New Roman&apos;; font-size:medium; text-decoration: underline; text-decoration-color:#000000; color:#2980b9;&quot;&gt;https://www.gnu.org/licenses/why-not-lgpl.html&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Times New Roman&apos;; font-size:medium; color:#000000;&quot;&gt;&amp;gt;.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation></translation>
     </message>
+    <message>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+hr { height: 1px; border-width: 0; }
+li.unchecked::marker { content: &quot;\2610&quot;; }
+li.checked::marker { content: &quot;\2612&quot;; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Noto Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:22px; color:#000080;&quot;&gt;ClamAV-GUI&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:15px; color:#000000;&quot;&gt;&lt;br /&gt;Version 0.7.5 (2015 - 2024), published unter GPL 3.0&lt;/span&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; align=&quot;center&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;
+&lt;tr&gt;
+&lt;td colspan=&quot;7&quot;&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px; font-weight:700; text-decoration: underline;&quot;&gt;Author:&lt;/span&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;&#xa0;&#xa0;Joerg Macedo da Costa Zopes &amp;lt;joerg.zopes@gmx.de&amp;gt;&lt;br /&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px; font-weight:700; text-decoration: underline;&quot;&gt;Translators&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;img src=&quot;qrc:///icons/icons/dansk.png&quot; /&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;&#xa0;Danish:&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;Martin Eilssøe &amp;lt;martin.eilsoe@gmail.com&amp;gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;img src=&quot;qrc:///icons/icons/spain.png&quot; /&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;&#xa0;Spanish:&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;Pedro Álamo &amp;lt;palamodz@gmail.com&amp;gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;img src=&quot;qrc:///icons/icons/germany.png&quot; /&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;&#xa0;German:&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;translated by the author.&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;img src=&quot;qrc:///icons/icons/france.png&quot; /&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;&#xa0;French:&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;Not be named &lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;img src=&quot;qrc:///icons/icons/germany.png&quot; /&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;&#xa0;German:&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;translated by the author.&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;img src=&quot;qrc:///icons/icons/france.png&quot; /&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;&#xa0;French:&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;Not be named &lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;img src=&quot;qrc:///icons/icons/Portugal.png&quot; /&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;&#xa0;Portuguese:&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;Translated by the author.&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;img src=&quot;qrc:///icons/icons/Brasil.png&quot; /&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;&#xa0;Brasilian:&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;Translated by the author.&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;img src=&quot;qrc:///icons/icons/GB.png&quot; /&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;&#xa0;English:&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;Translated by the author.&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;img src=&quot;qrc:///icons/icons/italy.png&quot; /&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;&#xa0;Italian:&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;translated by DeepL&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;hr /&gt;
+&lt;table border=&quot;0&quot; style=&quot; margin-top:20px; margin-bottom:0px; margin-left:20px; margin-right:0px;&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;
+&lt;tr&gt;
+&lt;td&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;img src=&quot;qrc:///icons/icons/ukraine.png&quot; /&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;A special thanks goes to UALinux &amp;lt;main@ualinux.com&amp;gt;.&lt;br /&gt;We were in close contact for more than a week and&lt;br /&gt;with their help I was able to fix some bugs&lt;br /&gt;and implement useful new features.&lt;br /&gt;&lt;br /&gt;Many thanks for that.&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation></translation>
+    </message>
 </context>
 <context>
     <name>logViewObject</name>
@@ -2934,7 +3018,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
     </message>
     <message>
         <source>-----&gt;</source>
-        <translation>-----&gt;</translation>
+        <translation type="vanished">-----&gt;</translation>
     </message>
     <message>
         <source>--bell</source>
@@ -3266,7 +3350,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
     </message>
     <message>
         <source>&lt;------</source>
-        <translation>&lt;------</translation>
+        <translation type="vanished">&lt;------</translation>
     </message>
     <message>
         <source>Show filenames inside scanned archives</source>
@@ -4065,27 +4149,27 @@ Continue from the Start of the Log?</source>
     </message>
     <message>
         <source>brazilian</source>
-        <translation>brasileño</translation>
+        <translation type="vanished">brasileño</translation>
     </message>
     <message>
         <source>danish</source>
-        <translation>danés</translation>
+        <translation type="vanished">danés</translation>
     </message>
     <message>
         <source>english</source>
-        <translation>inglés</translation>
+        <translation type="vanished">inglés</translation>
     </message>
     <message>
         <source>german</source>
-        <translation>alemán</translation>
+        <translation type="vanished">alemán</translation>
     </message>
     <message>
         <source>spanish</source>
-        <translation>español</translation>
+        <translation type="vanished">español</translation>
     </message>
     <message>
         <source>portuguese</source>
-        <translation>portugués</translation>
+        <translation type="vanished">portugués</translation>
     </message>
     <message>
         <source>FreshClam Daemon</source>
@@ -4117,7 +4201,7 @@ Continue from the Start of the Log?</source>
     </message>
     <message>
         <source>french</source>
-        <translation>francés</translation>
+        <translation type="vanished">francés</translation>
     </message>
     <message>
         <source>Execute Deaemon and manual
@@ -4311,7 +4395,7 @@ Por defecto: database.clamav.net
     </message>
     <message>
         <source>italian</source>
-        <translation>italiano</translation>
+        <translation type="vanished">italiano</translation>
     </message>
     <message>
         <source>Start daemon automatically
@@ -4324,6 +4408,114 @@ al iniciar el programa</translation>
 manual update as root</source>
         <translation>Ejecutar Daemon y
 actualización manual como root</translation>
+    </message>
+    <message>
+        <source>[da_DK] Denmark</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>[de_DE] Germany</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>[en_GB] Great Britain</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>[en_IE] Ireland</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>[en_US] United States</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>[en_AU] Australia</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>[en_NZ] New Zealand</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>[es_ES] Spain</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>[fr_FR] France</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>[it_IT] Italy</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>[pt_AO] Angola</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>[pt_BR] Brasil</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>[pt_CV] Cabo Verde</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>[pt_MZ] Mozambique</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>[pt_MO] Macau</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>[pt_PT] Portugal</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>[pt_ST] São Tomé</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>[pt_TL] Timor Leste</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Clamd &amp; Scan on Access</source>
+        <translation>Clamd &amp; Scan on Access</translation>
+    </message>
+    <message>
+        <source>clamd not running - start clamd</source>
+        <translation>clamd no se ejecuta - iniciar clamd</translation>
+    </message>
+    <message>
+        <source>Folder under monitoring</source>
+        <translation>Carpeta bajo control</translation>
+    </message>
+    <message>
+        <source>WARNING</source>
+        <translation>ADVERTENCIA</translation>
+    </message>
+    <message>
+        <source>Directory to monitor</source>
+        <translation>Directorio a supervisar</translation>
+    </message>
+    <message>
+        <source>Path already under monitoring</source>
+        <translation>Senda ya vigilada</translation>
+    </message>
+    <message>
+        <source>Remove Folder from monitoring</source>
+        <translation>Eliminar carpeta de la supervisión</translation>
+    </message>
+    <message>
+        <source>Path: </source>
+        <translation>Senda: </translation>
+    </message>
+    <message>
+        <source>Do you want to remove the folder from the monitoring list?</source>
+        <translation>¿Desea eliminar la carpeta de la lista de control?</translation>
     </message>
 </context>
 </TS>

@@ -1166,76 +1166,76 @@ li.checked::marker { content: &quot;\2612&quot;; }
         <translation>Dank &amp;&amp; Copyright</translation>
     </message>
     <message>
-        <location filename="../src/clamav_gui.cpp" line="167"/>
+        <location filename="../src/clamav_gui.cpp" line="169"/>
         <source>Show/Hide MainWindow</source>
         <translation>Hauptfenster zeigen/verstecken</translation>
     </message>
     <message>
-        <location filename="../src/clamav_gui.cpp" line="169"/>
+        <location filename="../src/clamav_gui.cpp" line="171"/>
         <source>Show/Hide DropZone</source>
         <translation>DropZone zeigen/verstecken</translation>
     </message>
     <message>
-        <location filename="../src/clamav_gui.cpp" line="171"/>
+        <location filename="../src/clamav_gui.cpp" line="173"/>
         <source>Quit</source>
         <translation>Beenden</translation>
     </message>
     <message>
-        <location filename="../src/clamav_gui.cpp" line="249"/>
+        <location filename="../src/clamav_gui.cpp" line="253"/>
         <source>Scanning started .......</source>
         <translation>Scan-Vorgang gestartet .......</translation>
     </message>
     <message>
-        <location filename="../src/clamav_gui.cpp" line="408"/>
+        <location filename="../src/clamav_gui.cpp" line="422"/>
         <source>Scan-Process aborted ......</source>
         <translation>Scan-Vorgang abgebrochen ......</translation>
     </message>
     <message>
-        <location filename="../src/clamav_gui.cpp" line="409"/>
-        <location filename="../src/clamav_gui.cpp" line="413"/>
-        <location filename="../src/clamav_gui.cpp" line="417"/>
-        <location filename="../src/clamav_gui.cpp" line="420"/>
+        <location filename="../src/clamav_gui.cpp" line="423"/>
+        <location filename="../src/clamav_gui.cpp" line="427"/>
+        <location filename="../src/clamav_gui.cpp" line="431"/>
+        <location filename="../src/clamav_gui.cpp" line="434"/>
         <source>Scan-Status</source>
         <translation>Scan-Status</translation>
     </message>
     <message>
-        <location filename="../src/clamav_gui.cpp" line="409"/>
+        <location filename="../src/clamav_gui.cpp" line="423"/>
         <source>Scan Process aborted .....</source>
         <translation>Scan-Vorgang abgebrochen ......</translation>
     </message>
     <message>
-        <location filename="../src/clamav_gui.cpp" line="412"/>
+        <location filename="../src/clamav_gui.cpp" line="426"/>
         <source>Scan-Process finished ...... no Virus found!</source>
         <translation>Scan-Vorgang abgeschlossen ..... keine Viren gefunden!</translation>
     </message>
     <message>
-        <location filename="../src/clamav_gui.cpp" line="413"/>
+        <location filename="../src/clamav_gui.cpp" line="427"/>
         <source>Scan Process finished ..... no virus found!</source>
         <translation>Scan-Vorgang abgeschlossen ..... keine Viren gefunden!</translation>
     </message>
     <message>
-        <location filename="../src/clamav_gui.cpp" line="416"/>
+        <location filename="../src/clamav_gui.cpp" line="430"/>
         <source>Scan-Process finished ...... Virus found!</source>
         <translation>Scan-Prozess beendet ...... Virus gefunden!</translation>
     </message>
     <message>
-        <location filename="../src/clamav_gui.cpp" line="417"/>
+        <location filename="../src/clamav_gui.cpp" line="431"/>
         <source>Scan Process finished ..... a virus was found!</source>
         <translation>Scan-Vorgang abgeschlosssen ..... es wurden Viren gefunden!</translation>
     </message>
     <message>
-        <location filename="../src/clamav_gui.cpp" line="419"/>
+        <location filename="../src/clamav_gui.cpp" line="433"/>
         <source>Scan-Process finished ...... an error occured!</source>
         <translation>Scan-Vorgang abgeschlossen ..... ein Fehler ist aufgetreten!</translation>
     </message>
     <message>
-        <location filename="../src/clamav_gui.cpp" line="420"/>
+        <location filename="../src/clamav_gui.cpp" line="434"/>
         <source>Scan Process finished ..... an error occurred!</source>
         <translation>Scan-Vorgang abgeschlossen ..... ein Fehler ist aufgetreten!</translation>
     </message>
     <message>
-        <location filename="../src/clamav_gui.cpp" line="433"/>
-        <location filename="../src/clamav_gui.cpp" line="434"/>
+        <location filename="../src/clamav_gui.cpp" line="447"/>
+        <location filename="../src/clamav_gui.cpp" line="448"/>
         <source>Scan-Process aborted!</source>
         <translation>Scan-Vorgang abgebrochen!</translation>
     </message>
@@ -1273,9 +1273,9 @@ li.checked::marker { content: &quot;\2612&quot;; }
     </message>
     <message>
         <location filename="../ui/freshclamsetter.ui" line="29"/>
-        <location filename="../src/freshclamsetter.cpp" line="207"/>
-        <location filename="../src/freshclamsetter.cpp" line="283"/>
-        <location filename="../src/freshclamsetter.cpp" line="501"/>
+        <location filename="../src/freshclamsetter.cpp" line="228"/>
+        <location filename="../src/freshclamsetter.cpp" line="304"/>
+        <location filename="../src/freshclamsetter.cpp" line="526"/>
         <source>Deamon not running - start deamon</source>
         <translation>Deamon läuft nicht  - Deamon starten</translation>
     </message>
@@ -1385,56 +1385,56 @@ p, li { white-space: pre-wrap; }
         <translation>Update Prozess gestartet .....</translation>
     </message>
     <message>
-        <location filename="../src/freshclamsetter.cpp" line="199"/>
-        <location filename="../src/freshclamsetter.cpp" line="277"/>
-        <location filename="../src/freshclamsetter.cpp" line="491"/>
+        <location filename="../src/freshclamsetter.cpp" line="220"/>
+        <location filename="../src/freshclamsetter.cpp" line="298"/>
+        <location filename="../src/freshclamsetter.cpp" line="516"/>
         <source>Deamon running - stop deamon</source>
         <translation>Deamon läuft - Deamon anhalten</translation>
     </message>
     <message>
-        <location filename="../src/freshclamsetter.cpp" line="265"/>
+        <location filename="../src/freshclamsetter.cpp" line="286"/>
         <source>INFO</source>
         <translation>INFO</translation>
     </message>
     <message>
-        <location filename="../src/freshclamsetter.cpp" line="265"/>
+        <location filename="../src/freshclamsetter.cpp" line="286"/>
         <source>Update-Process finished</source>
         <translation>Update-Vorgang beendet</translation>
     </message>
     <message>
-        <location filename="../src/freshclamsetter.cpp" line="268"/>
+        <location filename="../src/freshclamsetter.cpp" line="289"/>
         <source>WARNING</source>
         <translation>WARNUNG</translation>
     </message>
     <message>
-        <location filename="../src/freshclamsetter.cpp" line="268"/>
+        <location filename="../src/freshclamsetter.cpp" line="289"/>
         <source>Update-Process failed!
 Read log-messages for possible reason.</source>
         <translation>Update-Vorgang fehlgeschlagen!
 Lesen Sie die Log-Meldungen für mögliche Ursachen.</translation>
     </message>
     <message>
-        <location filename="../src/freshclamsetter.cpp" line="457"/>
+        <location filename="../src/freshclamsetter.cpp" line="482"/>
         <source>Database origin : &lt;/td&gt;&lt;td&gt;</source>
         <translation>Datenbank Herkunft : &lt;/td&gt;&lt;td&gt;</translation>
     </message>
     <message>
-        <location filename="../src/freshclamsetter.cpp" line="460"/>
+        <location filename="../src/freshclamsetter.cpp" line="485"/>
         <source>Last Update : &lt;/td&gt;&lt;td&gt;</source>
         <translation>Letztes Update : &lt;/td&gt;&lt;td&gt;</translation>
     </message>
     <message>
-        <location filename="../src/freshclamsetter.cpp" line="463"/>
+        <location filename="../src/freshclamsetter.cpp" line="488"/>
         <source>Main File : &lt;/td&gt;&lt;td&gt;</source>
         <translation>Main Datei : &lt;/td&gt;&lt;td&gt;</translation>
     </message>
     <message>
-        <location filename="../src/freshclamsetter.cpp" line="466"/>
+        <location filename="../src/freshclamsetter.cpp" line="491"/>
         <source>Daily File : &lt;/td&gt;&lt;td&gt;</source>
         <translation>Daily Datei : &lt;/td&gt;&lt;td&gt;</translation>
     </message>
     <message>
-        <location filename="../src/freshclamsetter.cpp" line="469"/>
+        <location filename="../src/freshclamsetter.cpp" line="494"/>
         <source>ByteCode File : &lt;/td&gt;&lt;td&gt;</source>
         <translation>ByteCode Datei : &lt;/td&gt;&lt;td&gt;</translation>
     </message>
@@ -1604,11 +1604,95 @@ hr { height: 1px; border-width: 0; }
 li.unchecked::marker { content: &quot;\2610&quot;; }
 li.checked::marker { content: &quot;\2612&quot;; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Noto Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+&lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:22px; color:#000080;&quot;&gt;ClamAV-GUI&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:15px; color:#000000;&quot;&gt;&lt;br /&gt;Version 0.7.5 (2015 - 2024), published unter GPL 3.0&lt;/span&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; align=&quot;center&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;
+&lt;tr&gt;
+&lt;td colspan=&quot;7&quot;&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px; font-weight:700; text-decoration: underline;&quot;&gt;Author:&lt;/span&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;&#xa0;&#xa0;Joerg Macedo da Costa Zopes &amp;lt;joerg.zopes@gmx.de&amp;gt;&lt;br /&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px; font-weight:700; text-decoration: underline;&quot;&gt;Translators&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;img src=&quot;qrc:///icons/icons/dansk.png&quot; /&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;&#xa0;Danish:&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;Martin Eilssøe &amp;lt;martin.eilsoe@gmail.com&amp;gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;img src=&quot;qrc:///icons/icons/spain.png&quot; /&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;&#xa0;Spanish:&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;Pedro Álamo &amp;lt;palamodz@gmail.com&amp;gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;img src=&quot;qrc:///icons/icons/germany.png&quot; /&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;&#xa0;German:&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;translated by the author.&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;img src=&quot;qrc:///icons/icons/france.png&quot; /&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;&#xa0;French:&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;Not be named &lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;img src=&quot;qrc:///icons/icons/germany.png&quot; /&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;&#xa0;German:&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;translated by the author.&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;img src=&quot;qrc:///icons/icons/france.png&quot; /&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;&#xa0;French:&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;Not be named &lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;img src=&quot;qrc:///icons/icons/Portugal.png&quot; /&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;&#xa0;Portuguese:&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;Translated by the author.&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;img src=&quot;qrc:///icons/icons/Brasil.png&quot; /&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;&#xa0;Brasilian:&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;Translated by the author.&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;img src=&quot;qrc:///icons/icons/GB.png&quot; /&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;&#xa0;English:&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;Translated by the author.&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;img src=&quot;qrc:///icons/icons/italy.png&quot; /&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;&#xa0;Italian:&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;translated by DeepL&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;hr /&gt;
+&lt;table border=&quot;0&quot; style=&quot; margin-top:20px; margin-bottom:0px; margin-left:20px; margin-right:0px;&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;
+&lt;tr&gt;
+&lt;td&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;img src=&quot;qrc:///icons/icons/ukraine.png&quot; /&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;A special thanks goes to UALinux &amp;lt;main@ualinux.com&amp;gt;.&lt;br /&gt;We were in close contact for more than a week and&lt;br /&gt;with their help I was able to fix some bugs&lt;br /&gt;and implement useful new features.&lt;br /&gt;&lt;br /&gt;Many thanks for that.&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/infodialog.ui" line="58"/>
+        <location filename="../ui/infodialog.ui" line="142"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -1772,7 +1856,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../ui/infodialog.ui" line="49"/>
+        <location filename="../ui/infodialog.ui" line="133"/>
         <source>License</source>
         <translation>Lizenz</translation>
     </message>
@@ -3217,60 +3301,60 @@ Public License instead of this License.  But first, please read
         <translation>Form</translation>
     </message>
     <message>
-        <location filename="../ui/optionsdialog.ui" line="585"/>
+        <location filename="../ui/optionsdialog.ui" line="611"/>
         <source>Tab 1</source>
         <translation>Tab 1</translation>
     </message>
     <message>
-        <location filename="../ui/optionsdialog.ui" line="779"/>
+        <location filename="../ui/optionsdialog.ui" line="805"/>
         <source>Copy infected files into DIRECTORY</source>
         <translation>Kopiere verseuchte Dateien nach Verzeichnis</translation>
     </message>
     <message>
-        <location filename="../ui/optionsdialog.ui" line="636"/>
-        <location filename="../ui/optionsdialog.ui" line="683"/>
-        <location filename="../ui/optionsdialog.ui" line="693"/>
-        <location filename="../ui/optionsdialog.ui" line="700"/>
-        <location filename="../ui/optionsdialog.ui" line="710"/>
-        <location filename="../ui/optionsdialog.ui" line="789"/>
+        <location filename="../ui/optionsdialog.ui" line="662"/>
+        <location filename="../ui/optionsdialog.ui" line="709"/>
+        <location filename="../ui/optionsdialog.ui" line="719"/>
+        <location filename="../ui/optionsdialog.ui" line="726"/>
+        <location filename="../ui/optionsdialog.ui" line="736"/>
+        <location filename="../ui/optionsdialog.ui" line="815"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
-        <location filename="../ui/optionsdialog.ui" line="606"/>
+        <location filename="../ui/optionsdialog.ui" line="632"/>
         <source>Move infected files into DIRECTORY</source>
         <translation>Verschiebe verseuchte Dateien nach Verzeichnis</translation>
     </message>
     <message>
-        <location filename="../ui/optionsdialog.ui" line="718"/>
         <location filename="../ui/optionsdialog.ui" line="744"/>
+        <location filename="../ui/optionsdialog.ui" line="770"/>
         <source>never</source>
         <translation>niemals</translation>
     </message>
     <message>
-        <location filename="../ui/optionsdialog.ui" line="723"/>
         <location filename="../ui/optionsdialog.ui" line="749"/>
+        <location filename="../ui/optionsdialog.ui" line="775"/>
         <source>direct</source>
         <translation>sofort</translation>
     </message>
     <message>
-        <location filename="../ui/optionsdialog.ui" line="728"/>
         <location filename="../ui/optionsdialog.ui" line="754"/>
+        <location filename="../ui/optionsdialog.ui" line="780"/>
         <source>always</source>
         <translation>immer</translation>
     </message>
     <message>
-        <location filename="../ui/optionsdialog.ui" line="816"/>
+        <location filename="../ui/optionsdialog.ui" line="842"/>
         <source>Use the antivirus database from DIR</source>
         <translation>Verwende die Antivirus Datenbank aus Ordner</translation>
     </message>
     <message>
-        <location filename="../ui/optionsdialog.ui" line="823"/>
+        <location filename="../ui/optionsdialog.ui" line="849"/>
         <source>Scan files from file</source>
         <translation>Scanne Dateien von Datei</translation>
     </message>
     <message>
-        <location filename="../ui/optionsdialog.ui" line="623"/>
+        <location filename="../ui/optionsdialog.ui" line="649"/>
         <source>Follow directory symlinks</source>
         <translation>Folge Verzeichnis-SymLinks</translation>
     </message>
@@ -3279,17 +3363,17 @@ Public License instead of this License.  But first, please read
         <translation type="vanished">Lade alle unterstützten db Dateien aus Verzeichnis</translation>
     </message>
     <message>
-        <location filename="../ui/optionsdialog.ui" line="736"/>
+        <location filename="../ui/optionsdialog.ui" line="762"/>
         <source>Save scan report to FILE</source>
         <translation>Speichere Scan-Report in Datei</translation>
     </message>
     <message>
-        <location filename="../ui/optionsdialog.ui" line="643"/>
+        <location filename="../ui/optionsdialog.ui" line="669"/>
         <source>Create temporary files in DIRECTORY</source>
         <translation>Erzeuge temporäre Dateien in Verzeichnis</translation>
     </message>
     <message>
-        <location filename="../ui/optionsdialog.ui" line="762"/>
+        <location filename="../ui/optionsdialog.ui" line="788"/>
         <source>Follow file symlinks</source>
         <translation>Folge Datei-SymLinks</translation>
     </message>
@@ -3865,19 +3949,17 @@ Public License instead of this License.  But first, please read
         <translation>Sei mitteilsam</translation>
     </message>
     <message>
-        <location filename="../ui/optionsdialog.ui" line="525"/>
         <source>&lt;------</source>
-        <translation>&lt;------</translation>
+        <translation type="vanished">&lt;------</translation>
     </message>
     <message>
-        <location filename="../ui/optionsdialog.ui" line="532"/>
+        <location filename="../ui/optionsdialog.ui" line="545"/>
         <source>Selected Options</source>
         <translation>Ausgewählte Optionen</translation>
     </message>
     <message>
-        <location filename="../ui/optionsdialog.ui" line="548"/>
         <source>-----&gt;</source>
-        <translation>-----&gt;</translation>
+        <translation type="vanished">-----&gt;</translation>
     </message>
     <message>
         <location filename="../src/optionsdialog.cpp" line="13"/>
@@ -3890,41 +3972,41 @@ Public License instead of this License.  But first, please read
         <translation>Scan-Beschränkungen</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="18"/>
+        <location filename="../src/optionsdialog.cpp" line="21"/>
         <source>Include/Exclude</source>
         <translation>Einbinden/Ausschließen</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="175"/>
-        <location filename="../src/optionsdialog.cpp" line="193"/>
-        <location filename="../src/optionsdialog.cpp" line="200"/>
-        <location filename="../src/optionsdialog.cpp" line="222"/>
+        <location filename="../src/optionsdialog.cpp" line="186"/>
+        <location filename="../src/optionsdialog.cpp" line="204"/>
+        <location filename="../src/optionsdialog.cpp" line="211"/>
+        <location filename="../src/optionsdialog.cpp" line="233"/>
         <source>Select Directory</source>
         <translation>Verzeichnis auswählen</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="183"/>
+        <location filename="../src/optionsdialog.cpp" line="194"/>
         <source>Virus definitions missing!</source>
         <translation>Virus Definitionen fehlen!</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="183"/>
+        <location filename="../src/optionsdialog.cpp" line="194"/>
         <source>No virus definitions found in the database folder. Should the virus definitions be downloaded?</source>
         <translation>Keine Virus Definitionen im Datenbank Ordner gefunden. Sollen die Virus Definitionen heruntergeladen werden?</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="208"/>
-        <location filename="../src/optionsdialog.cpp" line="215"/>
+        <location filename="../src/optionsdialog.cpp" line="219"/>
+        <location filename="../src/optionsdialog.cpp" line="226"/>
         <source>Select File</source>
         <translation>Datei auswählen</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="371"/>
+        <location filename="../src/optionsdialog.cpp" line="382"/>
         <source>Database files missing!</source>
         <translation>Datenbank Dateien fehlen!</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="371"/>
+        <location filename="../src/optionsdialog.cpp" line="382"/>
         <source>The virus definition files are missing in the database directory. Start download of the missing files?</source>
         <translation>Keine Virus Definitionen im Datenbank Ordner gefunden. Sollen die Virus Definitionen heruntergeladen werden?</translation>
     </message>
@@ -4250,23 +4332,23 @@ Vom Anfang des Log beginnen?</translation>
         <translation>Form</translation>
     </message>
     <message>
-        <location filename="../ui/scantab.ui" line="328"/>
-        <location filename="../src/scantab.cpp" line="80"/>
+        <location filename="../ui/scantab.ui" line="344"/>
+        <location filename="../src/scantab.cpp" line="79"/>
         <source>Devices</source>
         <translation>Geräte</translation>
     </message>
     <message>
-        <location filename="../ui/scantab.ui" line="248"/>
+        <location filename="../ui/scantab.ui" line="264"/>
         <source>Home</source>
         <translation>Home</translation>
     </message>
     <message>
-        <location filename="../ui/scantab.ui" line="300"/>
+        <location filename="../ui/scantab.ui" line="316"/>
         <source>Pathes</source>
         <translation>Pfade</translation>
     </message>
     <message>
-        <location filename="../ui/scantab.ui" line="271"/>
+        <location filename="../ui/scantab.ui" line="287"/>
         <source>Root</source>
         <translation>Root</translation>
     </message>
@@ -4281,47 +4363,47 @@ Vom Anfang des Log beginnen?</translation>
         <translation>nur benachrichtigen</translation>
     </message>
     <message>
-        <location filename="../ui/scantab.ui" line="44"/>
+        <location filename="../ui/scantab.ui" line="48"/>
         <source>remove file (be careful)</source>
         <translation>Datei entfernen (Vorsicht)</translation>
     </message>
     <message>
-        <location filename="../ui/scantab.ui" line="49"/>
+        <location filename="../ui/scantab.ui" line="57"/>
         <source>move file to qurantine folder</source>
         <translation>verschiebe Datei in den Quarantäne-Ordner</translation>
     </message>
     <message>
-        <location filename="../ui/scantab.ui" line="54"/>
+        <location filename="../ui/scantab.ui" line="66"/>
         <source>copy file to quarantine folder</source>
         <translation>kopiere Datei zum Quarantäne-Ordner</translation>
     </message>
     <message>
-        <location filename="../ui/scantab.ui" line="62"/>
+        <location filename="../ui/scantab.ui" line="78"/>
         <source>scan recursive</source>
         <translation>Scanne rekursiv</translation>
     </message>
     <message>
-        <location filename="../ui/scantab.ui" line="99"/>
+        <location filename="../ui/scantab.ui" line="115"/>
         <source>Status / Log-Messages</source>
         <translation>Status / Log-Meldungen</translation>
     </message>
     <message>
-        <location filename="../ui/scantab.ui" line="128"/>
+        <location filename="../ui/scantab.ui" line="144"/>
         <source>Info: </source>
         <translation>Info: </translation>
     </message>
     <message>
-        <location filename="../ui/scantab.ui" line="171"/>
+        <location filename="../ui/scantab.ui" line="187"/>
         <source>stop</source>
         <translation>stop</translation>
     </message>
     <message>
-        <location filename="../ui/scantab.ui" line="151"/>
+        <location filename="../ui/scantab.ui" line="167"/>
         <source>start</source>
         <translation>start</translation>
     </message>
     <message>
-        <location filename="../src/scantab.cpp" line="195"/>
+        <location filename="../src/scantab.cpp" line="194"/>
         <source>Scanning aborted ......</source>
         <translation>Scannen abgebrochen ......</translation>
     </message>
@@ -4737,83 +4819,188 @@ Vom Anfang des Log beginnen?</translation>
         <translation>Form</translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="212"/>
+        <location filename="../ui/setuptab.ui" line="391"/>
         <source>times per days</source>
         <translation>Mal pro Tag</translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="383"/>
+        <location filename="../ui/setuptab.ui" line="342"/>
         <source>LogRotate:</source>
-        <translation>LogRotation</translation>
+        <translation>LogRotation:</translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="171"/>
+        <location filename="../ui/setuptab.ui" line="546"/>
         <source>not found</source>
         <translation>nicht gefunden</translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="155"/>
+        <location filename="../ui/setuptab.ui" line="47"/>
         <source>Log time with each message.</source>
         <translation>Für jede Nachricht die Zeit mitloggen.</translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="158"/>
+        <location filename="../ui/setuptab.ui" line="50"/>
         <source>LogTime:</source>
         <translation>LotTime:</translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="145"/>
+        <location filename="../ui/setuptab.ui" line="57"/>
         <source>This option allows you to save the process identifier of the daemon to a file specified in the argument.</source>
         <translation>Diese Option erlaubt es ihnen die Prozess-ID des Daemon in die angegebene Datei zu speichern.</translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="148"/>
+        <location filename="../ui/setuptab.ui" line="60"/>
         <source>PID-File:</source>
-        <translation>PID-Datei</translation>
+        <translation>PID-Datei:</translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="80"/>
-        <location filename="../ui/setuptab.ui" line="329"/>
-        <location filename="../ui/setuptab.ui" line="412"/>
-        <location filename="../ui/setuptab.ui" line="572"/>
+        <location filename="../ui/setuptab.ui" line="169"/>
+        <source>[da_DK] Denmark</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui/setuptab.ui" line="178"/>
+        <source>[de_DE] Germany</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui/setuptab.ui" line="187"/>
+        <source>[en_GB] Great Britain</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui/setuptab.ui" line="196"/>
+        <source>[en_IE] Ireland</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui/setuptab.ui" line="205"/>
+        <source>[en_US] United States</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui/setuptab.ui" line="214"/>
+        <source>[en_AU] Australia</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui/setuptab.ui" line="223"/>
+        <source>[en_NZ] New Zealand</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui/setuptab.ui" line="232"/>
+        <source>[es_ES] Spain</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui/setuptab.ui" line="241"/>
+        <source>[fr_FR] France</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui/setuptab.ui" line="250"/>
+        <source>[it_IT] Italy</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui/setuptab.ui" line="259"/>
+        <source>[pt_AO] Angola</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui/setuptab.ui" line="268"/>
+        <source>[pt_BR] Brasil</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui/setuptab.ui" line="277"/>
+        <source>[pt_CV] Cabo Verde</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui/setuptab.ui" line="286"/>
+        <source>[pt_MZ] Mozambique</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui/setuptab.ui" line="295"/>
+        <source>[pt_MO] Macau</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui/setuptab.ui" line="304"/>
+        <source>[pt_PT] Portugal</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui/setuptab.ui" line="313"/>
+        <source>[pt_ST] São Tomé</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui/setuptab.ui" line="322"/>
+        <source>[pt_TL] Timor Leste</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui/setuptab.ui" line="434"/>
+        <location filename="../ui/setuptab.ui" line="453"/>
+        <location filename="../ui/setuptab.ui" line="527"/>
+        <location filename="../ui/setuptab.ui" line="621"/>
         <source>no</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="85"/>
-        <location filename="../ui/setuptab.ui" line="334"/>
-        <location filename="../ui/setuptab.ui" line="417"/>
-        <location filename="../ui/setuptab.ui" line="577"/>
+        <location filename="../ui/setuptab.ui" line="439"/>
+        <location filename="../ui/setuptab.ui" line="458"/>
+        <location filename="../ui/setuptab.ui" line="532"/>
+        <location filename="../ui/setuptab.ui" line="626"/>
         <source>yes</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="599"/>
+        <location filename="../ui/setuptab.ui" line="638"/>
         <source>LogFacility:</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="309"/>
+        <location filename="../ui/setuptab.ui" line="820"/>
+        <source>Clamd &amp; Scan on Access</source>
+        <translation>Clamd &amp; Scan bei Zugriff</translation>
+    </message>
+    <message>
+        <location filename="../ui/setuptab.ui" line="845"/>
+        <source>clamd not running - start clamd</source>
+        <translation>Clamd läuft nicht - Clamd starten</translation>
+    </message>
+    <message>
+        <location filename="../ui/setuptab.ui" line="889"/>
+        <source>Folder under monitoring</source>
+        <translation>Ordner unter Beobachtung</translation>
+    </message>
+    <message>
+        <location filename="../ui/setuptab.ui" line="491"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="588"/>
+        <location filename="../ui/setuptab.ui" line="514"/>
         <source>Freshclam Settings</source>
         <translation>Freshclam Einstellungen</translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="257"/>
+        <location filename="../ui/setuptab.ui" line="674"/>
         <source>LogSysLog:</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="559"/>
+        <location filename="../ui/setuptab.ui" line="733"/>
         <source>Update Database</source>
         <translation>Update Datenbank</translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="619"/>
+        <location filename="../ui/setuptab.ui" line="591"/>
         <source>DatabaseOwner:</source>
         <translation>DatenbankBesitzer:</translation>
     </message>
@@ -4822,106 +5009,105 @@ Vom Anfang des Log beginnen?</translation>
         <translation type="vanished">Daemon und manueller Update als root ausführen</translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="189"/>
+        <location filename="../ui/setuptab.ui" line="757"/>
         <source>All</source>
         <translation>Alle</translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="194"/>
+        <location filename="../ui/setuptab.ui" line="762"/>
         <source>main</source>
         <translation>main</translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="199"/>
+        <location filename="../ui/setuptab.ui" line="767"/>
         <source>daily</source>
         <translation>daily</translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="204"/>
+        <location filename="../ui/setuptab.ui" line="772"/>
         <source>bytecode</source>
         <translation>bytecode</translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="227"/>
+        <location filename="../ui/setuptab.ui" line="581"/>
         <source>DatabaseMirror:</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="287"/>
+        <location filename="../ui/setuptab.ui" line="608"/>
         <source>Check for Updates</source>
         <translation>Auf Updates überprüfen</translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="538"/>
         <source>italian</source>
-        <translation>italienisch</translation>
+        <translation type="vanished">italienisch</translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="616"/>
+        <location filename="../ui/setuptab.ui" line="588"/>
         <source>When started by root, drop privileges to a specified user. The user will be determined by the application and must match the owner of the database directory</source>
         <translation>Wenn als root gestartet werden die Privilegien auf den angegebenen Nutzer zurückgelegt. Der Nutzer wird durch das Programm bestimmt und muss dem Besitzer des Datenbank Ordners entsprechen</translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="661"/>
+        <location filename="../ui/setuptab.ui" line="748"/>
         <source>Start daemon automatically
 at program start</source>
         <translation>Automatischer Start des
 Daemon bei Programmstart</translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="669"/>
+        <location filename="../ui/setuptab.ui" line="740"/>
         <source>Execute Daemon and
 manual update as root</source>
         <translation>Ausführen des Daemons und
 des manuellen Updates als root</translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="606"/>
+        <location filename="../ui/setuptab.ui" line="381"/>
         <source>autodecteced location of the freshclam binary</source>
         <translation>Automatische Bestimmung des Ordners des freshclam Binaries.</translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="609"/>
+        <location filename="../ui/setuptab.ui" line="384"/>
         <source>freshclam (Info)</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="399"/>
+        <location filename="../ui/setuptab.ui" line="690"/>
         <source>DatabaseDirectory</source>
         <translation>DatenbankVerzeichnis</translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="367"/>
+        <location filename="../ui/setuptab.ui" line="651"/>
         <source>LOG_LOCAL6</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="372"/>
+        <location filename="../ui/setuptab.ui" line="656"/>
         <source>LOG_MAIL</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="442"/>
+        <location filename="../ui/setuptab.ui" line="136"/>
         <source>Language</source>
         <translation>Sprache</translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="396"/>
+        <location filename="../ui/setuptab.ui" line="687"/>
         <source>Path to a directory containing database files.</source>
         <translation>Pfad zu einem Ordner mit Datenbank Dateien.</translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="284"/>
+        <location filename="../ui/setuptab.ui" line="605"/>
         <source>Number of database checks per day.</source>
         <translation>Anzahl der Checks pro Tag der Datenbank.</translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="64"/>
+        <location filename="../ui/setuptab.ui" line="556"/>
         <source>Enable verbose logging.</source>
         <translation>Aktiviert erweitertes Logging.</translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="67"/>
+        <location filename="../ui/setuptab.ui" line="559"/>
         <source>LogVerbose</source>
         <translation>LogVerbose</translation>
     </message>
@@ -4932,26 +5118,26 @@ manual update as root</source>
 Update als root ausführen</translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="595"/>
+        <location filename="../ui/setuptab.ui" line="634"/>
         <source>Specify the type of syslog messages - please refer to &apos;man syslog&apos; for facility names.
               Default: LOG_LOCAL6</source>
         <translation>Bestimmt die Art der Syslog Mitteilungen - Die Namen der Einrichtungen finden Sie in &apos;man syslog&apos;.
               Default: LOG_LOCAL6</translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="555"/>
+        <location filename="../ui/setuptab.ui" line="729"/>
         <source>Which database to update
 Default: all</source>
         <translation>Welche Datenbank aktualisiert werden soll
 Default: alle</translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="380"/>
+        <location filename="../ui/setuptab.ui" line="339"/>
         <source>Rotate log file. Requires LogFileMaxSize option set prior to this option.</source>
         <translation>Protokolldatei rotieren. Erfordert die Einstellung der Option LogFileMaxSize vor dieser Option.</translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="219"/>
+        <location filename="../ui/setuptab.ui" line="573"/>
         <source>DatabaseMirror specifies to which mirror(s) freshclam should connect.
 You should have at least one entries: database.clamav.net. 
 Now that CloudFlare is being used as our Content Delivery Network (CDN),  this  one  domain
@@ -4966,19 +5152,16 @@ Standard: datenbank.clamav.net
 </translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="475"/>
         <source>brazilian</source>
-        <translation>brasilianisch</translation>
+        <translation type="vanished">brasilianisch</translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="484"/>
         <source>danish</source>
-        <translation>dänisch</translation>
+        <translation type="vanished">dänisch</translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="493"/>
         <source>english</source>
-        <translation>englisch</translation>
+        <translation type="vanished">englisch</translation>
     </message>
     <message>
         <source>Execute Deaemon and manual
@@ -4991,32 +5174,28 @@ als root ausführen</translation>
         <translation type="vanished">französisch</translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="502"/>
         <source>french</source>
-        <translation>französisch</translation>
+        <translation type="vanished">französisch</translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="511"/>
         <source>german</source>
-        <translation>deutsch</translation>
+        <translation type="vanished">deutsch</translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="520"/>
         <source>spanish</source>
-        <translation>spanisch</translation>
+        <translation type="vanished">spanisch</translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="529"/>
         <source>portuguese</source>
-        <translation>portugiesisch</translation>
+        <translation type="vanished">portugiesisch</translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="254"/>
+        <location filename="../ui/setuptab.ui" line="671"/>
         <source>Enable logging to Syslog. May be used in combination with UpdateLogFile.</source>
         <translation>Aktiviert die Protokollierung in Syslog. Kann in Kombination mit UpdateLogFile verwendet werden.</translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="651"/>
+        <location filename="../ui/setuptab.ui" line="719"/>
         <source>FreshClam Daemon</source>
         <translation></translation>
     </message>
@@ -5025,46 +5204,77 @@ als root ausführen</translation>
         <translation type="vanished">als root ausführen</translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="121"/>
+        <location filename="../ui/setuptab.ui" line="95"/>
         <source>Window State on Startup</source>
         <translation>Fensterstatus bei Programmstart</translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="129"/>
+        <location filename="../ui/setuptab.ui" line="103"/>
         <source>Show Window maximized</source>
         <translation>Fenster maximiert anzeigen</translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="134"/>
+        <location filename="../ui/setuptab.ui" line="108"/>
         <source>Show Tray Icon only</source>
         <translation>Nur Tray-Icon anzeigen</translation>
     </message>
     <message>
-        <location filename="../src/setuptab.cpp" line="131"/>
+        <location filename="../src/setuptab.cpp" line="342"/>
+        <location filename="../src/setuptab.cpp" line="607"/>
+        <source>WARNING</source>
+        <translation>WARNUNG</translation>
+    </message>
+    <message>
+        <location filename="../src/setuptab.cpp" line="447"/>
         <source>Warning</source>
         <translation>Warnung</translation>
     </message>
     <message>
-        <location filename="../src/setuptab.cpp" line="131"/>
+        <location filename="../src/setuptab.cpp" line="447"/>
         <source>You have to restart the application for changes to take effect!</source>
         <translation>Sie müssen die Anwendung neu starten damit die Änderungen übernommen werden!</translation>
     </message>
     <message>
-        <location filename="../src/setuptab.cpp" line="207"/>
+        <location filename="../src/setuptab.cpp" line="523"/>
         <source>Virus definitions missing!</source>
         <translation>Virus Definitionen fehlen!</translation>
     </message>
     <message>
-        <location filename="../src/setuptab.cpp" line="207"/>
+        <location filename="../src/setuptab.cpp" line="523"/>
         <source>No virus definitions found in the database folder. Should the virus definitions be downloaded?</source>
         <translation>Keine Virus Definitionen im Datenbank Ordner gefunden. Sollen die Virus Definitionen heruntergeladen werden?</translation>
+    </message>
+    <message>
+        <location filename="../src/setuptab.cpp" line="599"/>
+        <source>Directory to monitor</source>
+        <translation>Zu überwachendes Verzeichnis</translation>
+    </message>
+    <message>
+        <location filename="../src/setuptab.cpp" line="607"/>
+        <source>Path already under monitoring</source>
+        <translation>Pfad wird bereits überwacht</translation>
+    </message>
+    <message>
+        <location filename="../src/setuptab.cpp" line="616"/>
+        <source>Remove Folder from monitoring</source>
+        <translation>Ordner von der Überwachung entfernen</translation>
+    </message>
+    <message>
+        <location filename="../src/setuptab.cpp" line="616"/>
+        <source>Path: </source>
+        <translation>Pfad: </translation>
+    </message>
+    <message>
+        <location filename="../src/setuptab.cpp" line="616"/>
+        <source>Do you want to remove the folder from the monitoring list?</source>
+        <translation>Wollen Sie den Ordner aus der Überwachungsliste entfernen?</translation>
     </message>
     <message>
         <source>Select Directory</source>
         <translation type="vanished">Verzeichnis auswählen</translation>
     </message>
     <message>
-        <location filename="../src/setuptab.cpp" line="190"/>
+        <location filename="../src/setuptab.cpp" line="506"/>
         <source>Select Folder for the PID-File</source>
         <translation>Ordner für PID-Datei wählen</translation>
     </message>
