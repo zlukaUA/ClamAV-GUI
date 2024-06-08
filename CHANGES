@@ -1,7 +1,32 @@
-* Wed May 16 2024 Version 0.7.3
-- Added man pages for french, italian, portugues, brasilian an spanish and updated the existing man pages.
+* Sat Jun 08 2024 Version 0.7.9
+- Added to the setuptab support for clamd and clamonacc (Clamscan on Access)
 
-* Thu May 14 2024 Version 0.7.2
+* Wed May 29 2024 Version 0.7.8
+- Modification made on the language selection and the way the application stores the language settings.
+
+* Mon May 27 2024 Version 0.7.7
+- A scan initiated by the user through the "Start" button in the scan tab ignored the settings for "what to do if a virus was found" [just report/move to quarantine/copy to quarantine or remove]
+
+* Tue May 21 2024 Version 0.7.6
+- UALinux reported a problem with the Info Dialog. Adjusted the appearance of the Info Dialog.
+- Updated the README file provided by UALinux
+- Updated the Desktop file provided by UALinux
+- Updated the ukrainian man pages provided by UALinux
+
+* Sun May 19 2024 Version 0.7.5
+- When the application is invoked with the "--scan" option "KDE-Service-Menu" now all the parameters selected in the option tab of the application are uses instead of a simple "clamscan -r"
+
+* Thu May 16 2024 Version 0.7.4
+- Added to the setup tab a selection for starting the daemon automaticly when the application is started. The user don't has to do this manualy after e.g a reboot.
+
+* Wed May 15 2024 Version 0.7.3
+- Added man pages for french, italian, portugues, brasilian an spanish and updated the existing man pages.
+- Removed the close icon from the mainwindow upper right corner. Minimize the application will minimize to the tray icon.
+- Changed the setup tab background to a uniform gray.
+- Made changes to the main.cpp file to garantie that the application starts with english at the first start up instead of brasilian.
+- Adjusted the startup logo to the center of the screen.
+
+* Tue May 14 2024 Version 0.7.2
 - Italian translation added (Online translator https://deepl.com used. See this more like a test whether an online translator can deliver a usefull result)
 - Credits & Copyright tab modified.
 - Made a minor change at the french translation.
@@ -36,6 +61,9 @@
 * Mon May 06 2024 Version 0.6.5
 - Remodeled the Freshclam tab and the setup tab. Now the settings for freshclam are deactivated while the freshclam daemon is running.
 - Progress display fixed. Download progress for the signatures in freshclam now will be displayed.
+
+* Mon May 06 2024 Version 0.6.4
+- The user should not change settings of the freshclam section while the daemon is running. For keeping the user away from the settings the elements are disabled when the daemon is running.
 
 * Mon May 06 2024 Version 0.6.3
 - Encountered another problem with file permissions regarding log files in the freshclam updater module.
@@ -84,7 +112,7 @@
 * Tue Aug 25 2020 Version 0.4.2
 - Bug fix. The mainwindow doesn't fit into the screen. Fixed this issue.
 
-* Thu Dec 10 2015 Version 0.4.1
+* Thu Dec 10 2015 Version 0.4.1a
 - Spanish translation provided by Pedro Alamo <palamodz@gmail.com>. ClamAV-GUI now speaks spanish as well. Thank you Pedro.
 
 * Sun Nov 29 2015 Version 0.4.1
@@ -107,25 +135,25 @@
 - Changes made to the freshclam "update now" behaviour. The window is now more verbose. Sometimes the update took a while and it seems the process stalled. Now the download percentage for the three files is displayed so you got a kind of progress indicator.
 - Fixed a bug in the profile handling.
 
-* Fri Aug 14 2015 Version 0.2.3
+* Fri Aug 14 2015 Version 0.2.6
 - Changed the behaviour for changing existing profiles. A profile used by the scheduler can now be changed but still not erased. A warning is issued but can be overruled.
 
-* Wed Aug 12 2015 Version 0.2.3
+* Wed Aug 12 2015 Version 0.2.5
 - Fixed some path issues
 
-* Tue Aug 11 2015 Version 0.2.3 - joerg.zopes@gmx.de
+* Tue Aug 11 2015 Version 0.2.4
 - Clean up of the Makefile. No install.sh script needed - just do make; make install to install the application
 
-* Thu Aug 6 2015 Version 0.2.3 - joerg.zopes@gmx.de
+* Thu Aug 6 2015 Version 0.2.3
 - Added some visual effects to show that the app is busy (Update, Scanner ...)
 
-* Sun Aug 2 2015 Version 0.2.1. - joerg.zopes@gmx.de
+* Sun Aug 2 2015 Version 0.2.1
 - Added a search function for the Log-Files (search/continue/jump to infected files/jump to errors)
 - Added a Service Menu for Konqueror / Dolphin
 
-* Wed Jul 29 2015 Version 0.1.2. - joerg.zopes@gmx.de
+* Wed Jul 29 2015 Version 0.1.2
 - fixed a bug at startup to prefent the application being startet multiple times
 - fixed some issues regarding logging of freshclam
 
-* Tue Jul 28 2015 Version 0.1.0. - joerg.zopes@gmx.de
+* Tue Jul 28 2015 Version 0.1.0
 - initial package build
