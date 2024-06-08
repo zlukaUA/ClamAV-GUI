@@ -34,28 +34,7 @@ QString rc;
     if (file.exists(QDir::homePath() + "/.clamav-gui/settings.ini") == true) {
         setupFileHandler * setupFile = new setupFileHandler(QDir::homePath() + "/.clamav-gui/settings.ini");
         if (setupFile->keywordExists("Setup","language") == true) {
-            switch (setupFile->getSectionIntValue("Setup","language")) {
-            case 0  :   lang = "pt_BR";
-                break;
-            case 1  :   lang = "da_DK";
-                break;
-            case 2  :   lang = "en_GB";
-                break;
-            case 3  :   lang = "fr_FR";
-                break;
-            case 4  :   lang = "de_DE";
-                break;
-            case 5  :   lang = "es_ES";
-                break;
-            case 6  :   lang = "pt_PT";
-                break;
-            case 7  :   lang = "it_IT";
-                break;
-            case 8  :   lang = "uk_UA";
-                break;
-            default:    lang = "en_GB";
-                break;
-            }
+            lang = setupFile->getSectionValue("Setup","language").mid(1,5);
         } else {
             lang = "en_GB";
         }

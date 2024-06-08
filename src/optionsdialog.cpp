@@ -15,6 +15,9 @@ optionsDialog::optionsDialog(QWidget *parent) : QWidget(parent), ui(new Ui::opti
     ui->tabWidget->addTab(scanLimits,QIcon(":/icons/icons/scanlimits.png"),tr("Scan Limitations"));
     incExcOptTab = new includeExcludeOptions(this);
 
+    connect(incExcOptTab,SIGNAL(updateClamdConf()),this,SLOT(slot_updateClamdConf()));
+    connect(scanLimits,SIGNAL(updateClamdConf()),this,SLOT(slot_updateClamdConf()));
+
     ui->tabWidget->addTab(incExcOptTab,QIcon(":/icons/icons/includeexclude.png"),tr("Include/Exclude"));
     ui->tabWidget->setIconSize(QSize(24,24));
     ui->availableOptionsList->clear();
@@ -33,6 +36,10 @@ optionsDialog::optionsDialog(QWidget *parent) : QWidget(parent), ui(new Ui::opti
 optionsDialog::~optionsDialog()
 {
     delete ui;
+}
+
+void optionsDialog::slot_updateClamdConf() {
+    emit updateClamdConf();
 }
 
 void optionsDialog::slot_getClamscanProcessHasOutput()
@@ -129,6 +136,7 @@ QListWidgetItem * item;
         item = ui->availableOptionsList->takeItem(ui->availableOptionsList->currentRow());
         ui->selectedOptionsList->addItem(item);
         writeOptionLists();
+        emit updateClamdConf();
     }
 }
 
@@ -139,6 +147,7 @@ QListWidgetItem * item;
         item = ui->selectedOptionsList->takeItem(ui->selectedOptionsList->currentRow());
         ui->availableOptionsList->addItem(item);
         writeOptionLists();
+        emit updateClamdConf();
     }
 }
 

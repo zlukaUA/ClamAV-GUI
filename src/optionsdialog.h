@@ -73,10 +73,12 @@ private slots:
     void slot_writeOptions();
     void slot_getClamscanProcessHasOutput();
     void slot_getClamscanProcessFinished();
+    void slot_updateClamdConf();
 
 signals:
     void databasePathChanged(QString path);
     void updateDatabase();
+    void updateClamdConf();
 
 public:
     QString getCopyDirectory();

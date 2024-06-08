@@ -6,6 +6,7 @@ includeExcludeOptions::includeExcludeOptions(QWidget *parent) : QWidget(parent),
     ui->setupUi(this);
     setupFile = new setupFileHandler(QDir::homePath() + "/.clamav-gui/settings.ini");
     if (setupFile->sectionExists("REGEXP_and_IncludeExclude") == true){
+        readSettingsInProgress = true;
         readSettings();
     }
 }
@@ -20,74 +21,77 @@ QString section = "REGEXP_and_IncludeExclude";
 QString checked;
 QString keyword;
 QString value;
+    if (readSettingsInProgress == false) {
+        keyword = "DontScanFileNamesMatchingRegExp";
+        value = ui->dontScanFileNameLineEdit->text();
+        ui->dontScanFileNameCheckBox->isChecked()?checked="checked":checked="not checked";
+        setupFile->setSectionValue(section,keyword,checked + "|" + value);
 
-    keyword = "DontScanFileNamesMatchingRegExp";
-    value = ui->dontScanFileNameLineEdit->text();
-    ui->dontScanFileNameCheckBox->isChecked()?checked="checked":checked="not checked";
-    setupFile->setSectionValue(section,keyword,checked + "|" + value);
+        keyword = "DontScanDiretoriesMatchingRegExp";
+        value = ui->dontScanDirLineEdit->text();
+        ui->dontScanDirCheckBox->isChecked()?checked="checked":checked="not checked";
+        setupFile->setSectionValue(section,keyword,checked + "|" + value);
 
-    keyword = "DontScanDiretoriesMatchingRegExp";
-    value = ui->dontScanDirLineEdit->text();
-    ui->dontScanDirCheckBox->isChecked()?checked="checked":checked="not checked";
-    setupFile->setSectionValue(section,keyword,checked + "|" + value);
+        keyword = "OnlyScanFileNamesMatchingRegExp";
+        value = ui->onlyScanFileNameLineEdit->text();
+        ui->onlyScanFileNameCheckBox->isChecked()?checked="checked":checked="not checked";
+        setupFile->setSectionValue(section,keyword,checked + "|" + value);
 
-    keyword = "OnlyScanFileNamesMatchingRegExp";
-    value = ui->onlyScanFileNameLineEdit->text();
-    ui->onlyScanFileNameCheckBox->isChecked()?checked="checked":checked="not checked";
-    setupFile->setSectionValue(section,keyword,checked + "|" + value);
+        keyword = "OnlyScanDiretoriesMatchingRegExp";
+        value = ui->onlyScanDirLineEdit->text();
+        ui->onlyScanDirCheckBox->isChecked()?checked="checked":checked="not checked";
+        setupFile->setSectionValue(section,keyword,checked + "|" + value);
 
-    keyword = "OnlyScanDiretoriesMatchingRegExp";
-    value = ui->onlyScanDirLineEdit->text();
-    ui->onlyScanDirCheckBox->isChecked()?checked="checked":checked="not checked";
-    setupFile->setSectionValue(section,keyword,checked + "|" + value);
+        keyword = "EnablePUAOptions";
+        setupFile->setSectionValue(section,keyword,ui->enablePUACheckBox->isChecked());
 
-    keyword = "EnablePUAOptions";
-    setupFile->setSectionValue(section,keyword,ui->enablePUACheckBox->isChecked());
+        keyword = "LoadPUAPacked";
+        setupFile->setSectionValue(section,keyword,ui->loadPUAPackedRadioButon->isChecked());
 
-    keyword = "LoadPUAPacked";
-    setupFile->setSectionValue(section,keyword,ui->loadPUAPackedRadioButon->isChecked());
+        keyword = "LoadPUAPWTool";
+        setupFile->setSectionValue(section,keyword,ui->loadPUAPWToolRadioButton->isChecked());
 
-    keyword = "LoadPUAPWTool";
-    setupFile->setSectionValue(section,keyword,ui->loadPUAPWToolRadioButton->isChecked());
+        keyword = "LoadPUANetTool";
+        setupFile->setSectionValue(section,keyword,ui->loadPUANetToolRadioButton->isChecked());
 
-    keyword = "LoadPUANetTool";
-    setupFile->setSectionValue(section,keyword,ui->loadPUANetToolRadioButton->isChecked());
+        keyword = "LoadPUAP2P";
+        setupFile->setSectionValue(section,keyword,ui->loadPUAP2PRadioButton->isChecked());
 
-    keyword = "LoadPUAP2P";
-    setupFile->setSectionValue(section,keyword,ui->loadPUAP2PRadioButton->isChecked());
+        keyword = "LoadPUAIRC";
+        setupFile->setSectionValue(section,keyword,ui->loadPUAIRCRadioButton->isChecked());
 
-    keyword = "LoadPUAIRC";
-    setupFile->setSectionValue(section,keyword,ui->loadPUAIRCRadioButton->isChecked());
+        keyword = "LoadPUARAT";
+        setupFile->setSectionValue(section,keyword,ui->loadPUARATRadioButton->isChecked());
 
-    keyword = "LoadPUARAT";
-    setupFile->setSectionValue(section,keyword,ui->loadPUARATRadioButton->isChecked());
+        keyword = "LoadPUANetToolSpy";
+        setupFile->setSectionValue(section,keyword,ui->loadPUANetToolSpyRadioButton->isChecked());
 
-    keyword = "LoadPUANetToolSpy";
-    setupFile->setSectionValue(section,keyword,ui->loadPUANetToolSpyRadioButton->isChecked());
+        keyword = "LoadPUAServer";
+        setupFile->setSectionValue(section,keyword,ui->loadPUAServerRadioButton->isChecked());
 
-    keyword = "LoadPUAServer";
-    setupFile->setSectionValue(section,keyword,ui->loadPUAServerRadioButton->isChecked());
+        keyword = "LoadPUAScript";
+        setupFile->setSectionValue(section,keyword,ui->loadPUAScriptRadioButton->isChecked());
 
-    keyword = "LoadPUAScript";
-    setupFile->setSectionValue(section,keyword,ui->loadPUAScriptRadioButton->isChecked());
+        keyword = "LoadPUAAndr";
+        setupFile->setSectionValue(section,keyword,ui->loadPUAAndrRadioButton->isChecked());
 
-    keyword = "LoadPUAAndr";
-    setupFile->setSectionValue(section,keyword,ui->loadPUAAndrRadioButton->isChecked());
+        keyword = "LoadPUAJava";
+        setupFile->setSectionValue(section,keyword,ui->loadPUAJavaRadioButton->isChecked());
 
-    keyword = "LoadPUAJava";
-    setupFile->setSectionValue(section,keyword,ui->loadPUAJavaRadioButton->isChecked());
+        keyword = "LoadPUAOsx";
+        setupFile->setSectionValue(section,keyword,ui->loadPUAOsxRadioButton->isChecked());
 
-    keyword = "LoadPUAOsx";
-    setupFile->setSectionValue(section,keyword,ui->loadPUAOsxRadioButton->isChecked());
+        keyword = "LoadPUATool";
+        setupFile->setSectionValue(section,keyword,ui->loadPUAToolRadioButton->isChecked());
 
-    keyword = "LoadPUATool";
-    setupFile->setSectionValue(section,keyword,ui->loadPUAToolRadioButton->isChecked());
+        keyword = "LoadPUAUnix";
+        setupFile->setSectionValue(section,keyword,ui->loadPUAUnixRadioButton->isChecked());
 
-    keyword = "LoadPUAUnix";
-    setupFile->setSectionValue(section,keyword,ui->loadPUAUnixRadioButton->isChecked());
+        keyword = "LoadPUAWin";
+        setupFile->setSectionValue(section,keyword,ui->loadPUAWinRadioButton->isChecked());
 
-    keyword = "LoadPUAWin";
-    setupFile->setSectionValue(section,keyword,ui->loadPUAWinRadioButton->isChecked());
+        emit updateClamdConf();
+    }
 }
 
 void includeExcludeOptions::readSettings(){
@@ -177,6 +181,8 @@ QString value;
 
     keyword = "LoadPUAWin";
     ui->loadPUAWinRadioButton->setChecked(setupFile->getSectionBoolValue(section,keyword));
+
+    readSettingsInProgress = false;
 }
 
 void includeExcludeOptions::slot_enablePUACheckBoxClicked(){

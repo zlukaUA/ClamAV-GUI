@@ -116,6 +116,7 @@ if (tempDir.exists(QDir::homePath() + "/.local/share/kservices5/ServiceMenus/sca
     ui->tabWidget->addTab(infoTab,QIcon(":/icons/icons/information.png"),tr("Credits && Copyright"));
     ui->tabWidget->setTabShape(QTabWidget::Triangular);
     connect(freshclamTab,SIGNAL(setBallonMessage(int,QString,QString)),this,SLOT(slot_setTrayIconBalloonMessage(int,QString,QString)));
+    connect(setUpTab,SIGNAL(setBallonMessage(int,QString,QString)),this,SLOT(slot_setTrayIconBalloonMessage(int,QString,QString)));
     connect(profileManagerTab,SIGNAL(triggerProfilesChanged()),schedulerTab,SLOT(slot_updateProfiles()));
     connect(profileManagerTab,SIGNAL(triggerProfilesChanged()),logTab,SLOT(slot_profilesChanged()));
     connect(schedulerTab,SIGNAL(triggerScanJob(QString,QStringList)),this,SLOT(slot_receiveScanJob(QString,QStringList)));
@@ -138,6 +139,7 @@ if (tempDir.exists(QDir::homePath() + "/.local/share/kservices5/ServiceMenus/sca
     connect(setUpTab,SIGNAL(updateDatabase()),this,SLOT(slot_updateDatabase()));
     connect(optionTab,SIGNAL(updateDatabase()),this,SLOT(slot_updateDatabase()));
     connect(this,SIGNAL(startDatabaseUpdate()),freshclamTab,SLOT(slot_updateNowButtonClicked()));
+    connect(optionTab,SIGNAL(updateClamdConf()),setUpTab,SLOT(slot_updateClamdConf()));
 }
 clamav_gui::~clamav_gui()
 {

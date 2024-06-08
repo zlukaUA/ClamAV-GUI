@@ -40,11 +40,15 @@ private:
     Ui::includeExcludeOptions *ui;
     setupFileHandler    * setupFile;
     setupFileHandler    * profiles;
+    bool readSettingsInProgress;
     void readSettings();
 
 private slots:
     void slot_writeSettings();
     void slot_enablePUACheckBoxClicked();
+
+signals:
+    void updateClamdConf();
 };
 
 #endif // INCLUDEEXCLUDEOPTIONS_H

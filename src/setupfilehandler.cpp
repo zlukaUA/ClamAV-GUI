@@ -415,6 +415,18 @@ QString tempSection = getSection(section).trimmed();
 }
 
 /********************************************************************
+ * clearSetupFile                                                   *
+ * Parameter    : None                                              *
+ * Return Value : None                                              *
+ * Description  : Clears, removes file content                      *
+ ********************************************************************/
+void setupFileHandler::clearSetupFile()
+{
+    setupFileContent = "";
+    writeSetupFile();
+}
+
+/********************************************************************
  * getSectionNames                                                  *
  * Parameter    : None                                              *
  * Return Value : QStringList                                       *
@@ -585,7 +597,7 @@ bool setupFileHandler::singleLineExists(QString keyword){
  * Return Value :                                                   *
  * Description  : Removes the single Line Value from the file       *
  ********************************************************************/
-void setupFileHandler::removeSingleLine(QString keyword){
+void setupFileHandler::removeSingleLine(QString keyword, QString value){
     readSetupFile();
     QStringList lines = setupFileContent.split("\n");
     QString line = "";
@@ -593,7 +605,7 @@ void setupFileHandler::removeSingleLine(QString keyword){
 
     for (int x = 0; x < lines.length(); x++) {
         line = lines[x];
-        if (line.indexOf(keyword + " ") != 0) {
+        if (line.indexOf(keyword + " " + value) != 0) {
             if (newContent == "") newContent = line; else newContent = newContent + "\n" + line;
         }
     }
@@ -627,6 +639,20 @@ void setupFileHandler::setSingleLineValue(QString keyword, QString value){
     } else {
         setupFileContent = setupFileContent + keyword + " " + value;
     }
+    writeSetupFile();
+}
+
+/********************************************************************
+ * addSingleLineValue                                               *
+ * Parameter    : QString,                                          *
+ * Return Value :                                                   *
+ * Description  : set a new value for the single line value         *
+ ********************************************************************/
+void setupFileHandler::addSingleLineValue(QString keyword, QString value)
+{
+    readSetupFile();
+    setupFileContent = setupFileContent + keyword + " " + value;
+
     writeSetupFile();
 }
 

@@ -152,6 +152,8 @@ QString checked;
     value = QString::number(ui->databaseOutdatedSpinBox->value());
     ui->databaseOutdatedCheckBox->isChecked() == true?checked="checked":checked="not checked";
     setupFile->setSectionValue("ScanLimitations",keyword,checked + "|" + value);
+
+    emit updateClamdConf();
 }
 
 void scanLimitsTab::slot_getClamscanProcessHasOutput()

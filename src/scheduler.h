@@ -24,6 +24,7 @@
 #include <QButtonGroup>
 #include <QMessageBox>
 #include <QPushButton>
+#include <QFileDialog>
 #include <QDateTime>
 #include <QWidget>
 #include <QTimer>

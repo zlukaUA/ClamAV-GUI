@@ -35,6 +35,48 @@ highlighter::highlighter(QTextDocument * parent) : QSyntaxHighlighter(parent)
 
      singleLineCommentFormat.setForeground(Qt::blue);
      singleLineCommentFormat.setBackground(Qt::white);
+     rule.pattern = QRegExp("^ClamInotif:");
+     rule.format = singleLineCommentFormat;
+     highlightingRules.append(rule);
+
+     singleLineCommentFormat.setForeground(Qt::blue);
+     singleLineCommentFormat.setBackground(Qt::white);
+     rule.pattern = QRegExp(".Limits:");
+     rule.format = singleLineCommentFormat;
+     highlightingRules.append(rule);
+
+     singleLineCommentFormat.setForeground(Qt::blue);
+     singleLineCommentFormat.setBackground(Qt::white);
+     rule.pattern = QRegExp("^LOCAL:");
+     rule.format = singleLineCommentFormat;
+     highlightingRules.append(rule);
+
+     singleLineCommentFormat.setForeground(Qt::blue);
+     singleLineCommentFormat.setBackground(Qt::white);
+     rule.pattern = QRegExp(". Started at.*");
+     rule.format = singleLineCommentFormat;
+     highlightingRules.append(rule);
+
+     singleLineCommentFormat.setForeground(Qt::blue);
+     singleLineCommentFormat.setBackground(Qt::white);
+     rule.pattern = QRegExp(".disabled.");
+     rule.format = singleLineCommentFormat;
+     highlightingRules.append(rule);
+
+     singleLineCommentFormat.setForeground(Qt::green);
+     singleLineCommentFormat.setBackground(Qt::white);
+     rule.pattern = QRegExp(".enabled.");
+     rule.format = singleLineCommentFormat;
+     highlightingRules.append(rule);
+
+     singleLineCommentFormat.setForeground(Qt::green);
+     singleLineCommentFormat.setBackground(Qt::white);
+     rule.pattern = QRegExp("^Limits:");
+     rule.format = singleLineCommentFormat;
+     highlightingRules.append(rule);
+
+     singleLineCommentFormat.setForeground(Qt::blue);
+     singleLineCommentFormat.setBackground(Qt::white);
      rule.pattern = QRegExp("^/.*");
      rule.format = singleLineCommentFormat;
      highlightingRules.append(rule);

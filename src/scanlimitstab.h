@@ -49,6 +49,9 @@ private slots:
     void writeLimits();
     void slot_getClamscanProcessHasOutput();
     void slot_getClamscanProcessFinished();
+
+signals:
+    void updateClamdConf();
 };
 
 #endif // SCANLIMITSTAB_H

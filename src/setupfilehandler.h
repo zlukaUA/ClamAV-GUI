@@ -43,6 +43,7 @@ public:
     void setSectionValue(QString section, QString keyword, int tempValue, bool overwrite = true);
     void removeSection(QString section);
     void removeKeyword(QString section, QString keyword);
+    void clearSetupFile();
     QStringList getSectionNames();
     QStringList getSectionNames(QStringList excludeList);
     QStringList getSectionNames(QString excludeString);
@@ -59,7 +60,8 @@ public:
     bool freeFloaterExists(QString keyword);
     QString getSingleLineValue(QString keyword);
     void setSingleLineValue(QString keyword, QString value);
-    void removeSingleLine(QString keyword);
+    void addSingleLineValue(QString keyword, QString value);
+    void removeSingleLine(QString keyword, QString value);
     bool singleLineExists(QString keyword);
 
 private:
