@@ -3,11 +3,15 @@
 
 clamav_gui::clamav_gui(QWidget *parent) : QWidget(parent), ui(new Ui::clamav_gui)
 {
-QString path = QDir::homePath() + "/.clamav-gui/settings.ini";
-QDir tempDir;
-QStringList scanObjects;
-bool createDefaultSettings = false;
-error = false;
+    ui->setupUi(this);
+    //setWindowFlags(Qt::WindowTitleHint);
+    this->setWindowFlags(Qt::WindowTitleHint | Qt::WindowMinimizeButtonHint);
+
+    QString path = QDir::homePath() + "/.clamav-gui/settings.ini";
+    QDir tempDir;
+    QStringList scanObjects;
+    bool createDefaultSettings = false;
+    error = false;
 //*****************************************************************************
 //creating service Menu
 //*****************************************************************************
@@ -59,7 +63,7 @@ if (tempDir.exists(QDir::homePath() + "/.local/share/kservices5/ServiceMenus/sca
 
     if (createDefaultSettings == true){
         setupFile = new setupFileHandler(path);
-        if (tempDir.exists("/var/lib/clamav") == true){
+        if ((tempDir.exists("/var/lib/clamav") == true) && (destChecker.exists("/var/lib/clamav/freshclam.dat") == true)){
             setupFile->setSectionValue("Directories","LoadSupportedDBFiles","checked|/var/lib/clamav");
         } else {
             setupFile->setSectionValue("Directories","LoadSupportedDBFiles","checked|" + QDir::homePath() + "/.clamav-gui/signatures");
@@ -72,10 +76,6 @@ if (tempDir.exists(QDir::homePath() + "/.local/share/kservices5/ServiceMenus/sca
     } else {
         setupFile = new setupFileHandler(path);
     }
-
-    ui->setupUi(this);
-    //setWindowFlags(Qt::WindowTitleHint);
-    this->setWindowFlags(Qt::WindowTitleHint | Qt::WindowMinimizeButtonHint);
 
     scanProcess = new QProcess(this);
     connect(scanProcess,SIGNAL(readyReadStandardError()),this,SLOT(slot_scanProcessHasErrOutput()));
@@ -104,19 +104,21 @@ if (tempDir.exists(QDir::homePath() + "/.local/share/kservices5/ServiceMenus/sca
     ui->tabWidget->addTab(optionTab,QIcon(":/icons/icons/options.png"),tr("Options"));
     profileManagerTab = new ProfileManager(this);
     ui->tabWidget->addTab(profileManagerTab,QIcon(":/icons/icons/profilemanager.png"),tr("Profile Manager"));
-    freshclamTab = new freshclamsetter(this);
-    ui->tabWidget->addTab(freshclamTab,QIcon(":/icons/icons/freshclam.png"),tr("FreshClam"));
     schedulerTab = new scheduler(this);
     ui->tabWidget->addTab(schedulerTab,QIcon(":/icons/icons/scheduler.png"),tr("Scheduler"));
     logTab = new logViewerObject(this);
     ui->tabWidget->addTab(logTab,QIcon(":/icons/icons/includeexclude.png"),tr("Logs"));
+    freshclamTab = new freshclamsetter(this);
+    ui->tabWidget->addTab(freshclamTab,QIcon(":/icons/icons/freshclam.png"),tr("FreshClam"));
+    clamdTab = new clamdManager(this);
+    ui->tabWidget->addTab(clamdTab,QIcon(":/icons/icons/onaccess.png"),tr("Clamd"));
     setUpTab = new setupTab(this);
     ui->tabWidget->addTab(setUpTab,QIcon(":/icons/icons/setup.png"),tr("setup"));
     infoTab = new infoDialog(this);
     ui->tabWidget->addTab(infoTab,QIcon(":/icons/icons/information.png"),tr("Credits && Copyright"));
     ui->tabWidget->setTabShape(QTabWidget::Triangular);
     connect(freshclamTab,SIGNAL(setBallonMessage(int,QString,QString)),this,SLOT(slot_setTrayIconBalloonMessage(int,QString,QString)));
-    connect(setUpTab,SIGNAL(setBallonMessage(int,QString,QString)),this,SLOT(slot_setTrayIconBalloonMessage(int,QString,QString)));
+    connect(clamdTab,SIGNAL(setBallonMessage(int,QString,QString)),this,SLOT(slot_setTrayIconBalloonMessage(int,QString,QString)));
     connect(profileManagerTab,SIGNAL(triggerProfilesChanged()),schedulerTab,SLOT(slot_updateProfiles()));
     connect(profileManagerTab,SIGNAL(triggerProfilesChanged()),logTab,SLOT(slot_profilesChanged()));
     connect(schedulerTab,SIGNAL(triggerScanJob(QString,QStringList)),this,SLOT(slot_receiveScanJob(QString,QStringList)));
@@ -130,16 +132,17 @@ if (tempDir.exists(QDir::homePath() + "/.local/share/kservices5/ServiceMenus/sca
     connect(showLogoTimer,SIGNAL(timeout()),this,SLOT(slot_showLogoTimerTimeout()));
     showLogoTimer->start(250);
 
-    connect(freshclamTab,SIGNAL(setSetupFrameState(bool)),setUpTab,SLOT(slot_setFreshclamsettingsFrameState(bool)));
-    connect(optionTab,SIGNAL(databasePathChanged(QString)),setUpTab,SLOT(slot_dbPathChanged(QString)));
-    connect(setUpTab,SIGNAL(disableUpdateButtons()),freshclamTab,SLOT(slot_disableUpdateButtons()));
-    connect(setUpTab,SIGNAL(disableUpdateButtons()),scannerTab,SLOT(slot_disableScanButton()));
-    connect(setUpTab,SIGNAL(disableUpdateButtons()),schedulerTab,SLOT(slot_disableScheduler()));
-    connect(setUpTab,SIGNAL(reportError()),this,SLOT(slot_errorReporter()));
-    connect(setUpTab,SIGNAL(updateDatabase()),this,SLOT(slot_updateDatabase()));
+    connect(optionTab,SIGNAL(databasePathChanged(QString)),freshclamTab,SLOT(slot_dbPathChanged(QString)));
+    connect(freshclamTab,SIGNAL(disableUpdateButtons()),freshclamTab,SLOT(slot_disableUpdateButtons()));
+    connect(freshclamTab,SIGNAL(disableUpdateButtons()),scannerTab,SLOT(slot_disableScanButton()));
+    connect(freshclamTab,SIGNAL(disableUpdateButtons()),schedulerTab,SLOT(slot_disableScheduler()));
+    connect(freshclamTab,SIGNAL(reportError()),this,SLOT(slot_errorReporter()));
+    connect(freshclamTab,SIGNAL(updateDatabase()),this,SLOT(slot_updateDatabase()));
     connect(optionTab,SIGNAL(updateDatabase()),this,SLOT(slot_updateDatabase()));
     connect(this,SIGNAL(startDatabaseUpdate()),freshclamTab,SLOT(slot_updateNowButtonClicked()));
-    connect(optionTab,SIGNAL(updateClamdConf()),setUpTab,SLOT(slot_updateClamdConf()));
+    connect(optionTab,SIGNAL(updateClamdConf()),clamdTab,SLOT(slot_updateClamdConf()));
+    connect(clamdTab,SIGNAL(setActiveTab()),this,SLOT(slot_startclamd()));
+    ui->tabWidget->setCurrentIndex(0);
 }
 clamav_gui::~clamav_gui()
 {
@@ -206,7 +209,7 @@ void clamav_gui::slot_systemTrayIconActivated(QSystemTrayIcon::ActivationReason 
 void clamav_gui::slot_setMainWindowState(bool state){
     if (state == true){
         this->showMaximized();
-        this->activateWindow();
+//        this->activateWindow();
         setupFile->setSectionValue("Settings","ShowHideMainWindow",true);
     } else {
         if (this->isVisible() == true) this->hide();
@@ -278,11 +281,13 @@ QString copyDirectory = optionTab->getCopyDirectory();
             if (option == "LoadSupportedDBFiles") parameters << "--database=" + value;
             if (option == "ScanReportToFile") {
                 parameters << "--log=" + value;
-                QFile file(value);
-                if (file.open(QIODevice::ReadWrite|QIODevice::Append|QIODevice::Text)){
-                    QTextStream stream(&file);
-                    stream << "\n<Scanning startet> " << QDateTime::currentDateTime().toString("yyyy/M/d - hh:mm");
-                    file.close();
+                if (value != "") {
+                    QFile file(value);
+                    if (file.open(QIODevice::ReadWrite|QIODevice::Append|QIODevice::Text)){
+                        QTextStream stream(&file);
+                        stream << "\n<Scanning startet> " << QDateTime::currentDateTime().toString("yyyy/M/d - hh:mm");
+                        file.close();
+                    }
                 }
             }
             if (option == "TmpFile") parameters << "--tempdir=" + value;
@@ -491,11 +496,11 @@ void clamav_gui::slot_logoTimerTimeout(){
         if (setupFile->getSectionValue("Setup","WindowState") == "minimized") this->close();
         if (setupFile->getSectionValue("Setup","WindowState") == "maximized") {
             this->showMaximized();
-            this->activateWindow();
+//            this->activateWindow();
         }
     } else {
         this->showMaximized();
-        this->activateWindow();
+//        this->activateWindow();
     }
 
 }
@@ -521,6 +526,10 @@ void clamav_gui::slot_errorReporter()
 
 void clamav_gui::slot_updateDatabase()
 {
-    ui->tabWidget->setCurrentIndex(3);
+    ui->tabWidget->setCurrentIndex(5);
     emit startDatabaseUpdate();
+}
+
+void clamav_gui::slot_startclamd(){
+    ui->tabWidget->setCurrentIndex(6);
 }

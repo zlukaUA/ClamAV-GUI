@@ -201,7 +201,7 @@ void scanTab::slot_enableForm(bool mode){
         busyLabel = new QLabel(this);
         busyLabel->setStyleSheet("background:transparent");
         busyLabel->setGeometry((this->width() - 80) / 2,(this->height() - 80) / 2,80,80);
-        movie = new QMovie(":/icons/icons/gifs/spinning_segments.GIF");
+        movie = new QMovie(":/icons/icons/gifs/spinning_segments_large.gif");
         busyLabel->setMovie(movie);
         busyLabel->show();
         movie->start();

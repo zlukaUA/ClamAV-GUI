@@ -46,6 +46,7 @@
 #include "schedulescanobject.h"
 #include "logviewerobject.h"
 #include "profilemanager.h"
+#include "clamdmanager.h"
 
 namespace Ui {
 class clamav_gui;
@@ -79,6 +80,7 @@ private:
     optionsDialog           * optionTab;
     scanLimitsTab           * scanLimitTab;
     freshclamsetter         * freshclamTab;
+    clamdManager            * clamdTab;
     ProfileManager          * profileManagerTab;
     scheduler               * schedulerTab;
     infoDialog              * infoTab;
@@ -109,6 +111,7 @@ private slots:
     void slot_showLogoTimerTimeout();
     void slot_errorReporter();
     void slot_updateDatabase();
+    void slot_startclamd();
 
 signals:
     void showHideDropZoneTriggered();

@@ -52,6 +52,10 @@ private:
     bool                startup;
     setupFileHandler    *setupFile;
     setupFileHandler    *freshclamConf;
+    bool                 lockFreshclamConf;
+    QProcess            * getDBUserProcess;
+    QProcess            * freshclamLocationProcess;
+    QString               freshclamlocationProcessOutput;
     QProcess            *updater;
     QProcess            *startDeamonProcess;
     QProcess            *ps_process;
@@ -68,6 +72,7 @@ private:
     void setForm(bool);
     void setUpdaterInfo();
     void checkDaemonRunning();
+    void initFreshclamSettings();
 
 private slots:
     void slot_updateNowButtonClicked();
@@ -84,10 +89,23 @@ private slots:
     void slot_ps_processFinished();
     void slot_disableUpdateButtons();
     void slot_startDelayTimerExpired();
+    void slot_runasrootCheckBoxChanged();
+    void slot_writeFreshclamSettings();
+    void slot_dbPathChanged(QString dbPath);
+    void slot_getDBUserProcessFinished();
+    void slot_pidFileSelectButtonClicked();
+    void slot_freshclamLocationProcessFinished();
+    void slot_freshclamLocationProcessHasOutput();
+    void slot_setFreshclamsettingsFrameState(bool state);
+    void slot_autoStartDaemon();
+
 
 signals:
     void setBallonMessage(int, QString,QString);
-    void setSetupFrameState(bool);
+    void disableUpdateButtons();
+    void reportError();
+    void updateDatabase();
+
 };
 
 #endif // FRESHCLAMSETTER_H

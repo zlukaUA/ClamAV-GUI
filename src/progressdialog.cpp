@@ -4,7 +4,7 @@
 progressDialog::progressDialog(QWidget *parent) : QWidget(parent), ui(new Ui::progressDialog)
 {
     ui->setupUi(this);
-    movie = new QMovie(":/icons/icons/gifs/spinning_segments.GIF");
+    movie = new QMovie(":/icons/icons/gifs/spinning_segments_large.gif");
     ui->movieLabel->setMovie(movie);
     movie->start();
 }

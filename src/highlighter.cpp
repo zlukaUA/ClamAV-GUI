@@ -59,6 +59,30 @@ highlighter::highlighter(QTextDocument * parent) : QSyntaxHighlighter(parent)
 
      singleLineCommentFormat.setForeground(Qt::blue);
      singleLineCommentFormat.setBackground(Qt::white);
+     rule.pattern = QRegExp(". Stopped at.*");
+     rule.format = singleLineCommentFormat;
+     highlightingRules.append(rule);
+
+     singleLineCommentFormat.setForeground(Qt::blue);
+     singleLineCommentFormat.setBackground(Qt::white);
+     rule.pattern = QRegExp(". SelfCheck: .*");
+     rule.format = singleLineCommentFormat;
+     highlightingRules.append(rule);
+
+     singleLineCommentFormat.setForeground(Qt::blue);
+     singleLineCommentFormat.setBackground(Qt::white);
+     rule.pattern = QRegExp(".Pid file removed.");
+     rule.format = singleLineCommentFormat;
+     highlightingRules.append(rule);
+
+     singleLineCommentFormat.setForeground(Qt::blue);
+     singleLineCommentFormat.setBackground(Qt::white);
+     rule.pattern = QRegExp(".Socket file removed.");
+     rule.format = singleLineCommentFormat;
+     highlightingRules.append(rule);
+
+     singleLineCommentFormat.setForeground(Qt::blue);
+     singleLineCommentFormat.setBackground(Qt::white);
      rule.pattern = QRegExp(".disabled.");
      rule.format = singleLineCommentFormat;
      highlightingRules.append(rule);
@@ -72,6 +96,12 @@ highlighter::highlighter(QTextDocument * parent) : QSyntaxHighlighter(parent)
      singleLineCommentFormat.setForeground(Qt::green);
      singleLineCommentFormat.setBackground(Qt::white);
      rule.pattern = QRegExp("^Limits:");
+     rule.format = singleLineCommentFormat;
+     highlightingRules.append(rule);
+
+     singleLineCommentFormat.setForeground(Qt::red);
+     singleLineCommentFormat.setBackground(Qt::white);
+     rule.pattern = QRegExp("^ERROR: ClamCom:");
      rule.format = singleLineCommentFormat;
      highlightingRules.append(rule);
 
