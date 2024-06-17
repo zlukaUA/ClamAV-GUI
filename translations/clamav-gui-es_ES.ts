@@ -978,6 +978,221 @@ li.checked::marker { content: &quot;\2612&quot;; }
         <source>setup</source>
         <translation>configuración</translation>
     </message>
+    <message>
+        <source>Clamd</source>
+        <translation>Clamd</translation>
+    </message>
+</context>
+<context>
+    <name>clamdManager</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulario</translation>
+    </message>
+    <message>
+        <source>Clamd &amp;&amp; Scan on Access</source>
+        <translation>Clamd &amp;&amp; Scan on Access</translation>
+    </message>
+    <message>
+        <source>  clamd not running - start clamd</source>
+        <translation>clamd no se ejecuta - iniciar clamd</translation>
+    </message>
+    <message>
+        <source>Clamd &amp; Scan on Access</source>
+        <translation>Clamd &amp; Scan on Access</translation>
+    </message>
+    <message>
+        <source>Folder under monitoring</source>
+        <translation>Carpeta bajo control</translation>
+    </message>
+    <message>
+        <source>Clamd &amp;&amp; Scan on Access Settings</source>
+        <translation>Clamd &amp;&amp; Scan on Configuración de acceso</translation>
+    </message>
+    <message>
+        <source>Clamd &amp; Scan on Access Settings</source>
+        <translation>Clamd &amp;&amp; Scan on Configuración de acceso</translation>
+    </message>
+    <message>
+        <source>Report only</source>
+        <translation>sólo informe</translation>
+    </message>
+    <message>
+        <source>Copy to Quarantine</source>
+        <translation>copiar archivo a la carpeta de cuarentena</translation>
+    </message>
+    <message>
+        <source>Move to Quarantine</source>
+        <translation>Mover archivo a la carpeta de cuarentena</translation>
+    </message>
+    <message>
+        <source>Remove (be carefull)</source>
+        <translation>Eliminar archivo (tenga cuidado)</translation>
+    </message>
+    <message>
+        <source>Log time for each message.</source>
+        <translation>Registre la hora con cada mensaje.</translation>
+    </message>
+    <message>
+        <source>Log Times</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Max  number  of  scanning  threads to allocate to the OnAccess thread pool at startup.</source>
+        <translation>Número máximo de subprocesos de exploración que se asignarán al grupo de subprocesos de OnAccess al inicio.</translation>
+    </message>
+    <message>
+        <source>On Access max Threats</source>
+        <translation>Sobre las amenazas máximas de acceso</translation>
+    </message>
+    <message>
+        <source>How to proceed if infected files are found</source>
+        <translation>Cómo proceder si se encuentran archivos infectados</translation>
+    </message>
+    <message>
+        <source>Infected Files</source>
+        <translation>Archivos infectados</translation>
+    </message>
+    <message>
+        <source>Enables fanotify blocking when malicious files are found.</source>
+        <translation>Activa el bloqueo de fanotify cuando se encuentran archivos maliciosos.</translation>
+    </message>
+    <message>
+        <source>On Access Prevention</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Log additional information about the infected file, such as its size and hash, together with the virus name.</source>
+        <translation>Registrar información adicional sobre el archivo infectado, como su tamaño y hash, junto con el nombre del virus.</translation>
+    </message>
+    <message>
+        <source>Extended Detection Info</source>
+        <translation>Información ampliada sobre la detección</translation>
+    </message>
+    <message>
+        <source>MByte</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Number of times the OnAccess client will retry a failed scan due to connection problems (or other issues).</source>
+        <translation>Número de veces que el cliente OnAccess reintentará un escaneo fallido debido a problemas de conexión (u otros problemas).</translation>
+    </message>
+    <message>
+        <source>On Access retry Attempts</source>
+        <translation>En intentos de reintento de acceso</translation>
+    </message>
+    <message>
+        <source>When using prevention, if this option is turned on, any errors that occur during  scanning will result in the event attempt being denied. This could potentially lead to unwanted system behaviour  with  certain  configura-
+              tions, so the client defaults this to off and prefers allowing access events in case of scan or connection error.</source>
+        <translation>Cuando se utiliza la prevención, si esta opción está activada, cualquier error que se produzca durante el escaneo hará que se deniegue el intento de evento. Esto podría provocar un comportamiento no deseado del sistema con determinadas configuraciones, por lo que el cliente desactiva esta opción por defecto y prefiere permitir los eventos de acceso en caso de error de exploración o de conexión.</translation>
+    </message>
+    <message>
+        <source>On Access deny on Error</source>
+        <translation>En Acceso denegar en Error</translation>
+    </message>
+    <message>
+        <source>Maximum size of the log file.
+Value of 0 disables the limit.
+Default: 1 MByte
+</source>
+        <translation>Tamaño máximo del archivo de registro.
+El valor 0 desactiva el límite.
+Por defecto: 1 MByte</translation>
+    </message>
+    <message>
+        <source>Log-File max Size</source>
+        <translation>Tamaño máximo del archivo de registro</translation>
+    </message>
+    <message>
+        <source>On Access Extra Scanning</source>
+        <translation>Acceso Escaneado adicional</translation>
+    </message>
+    <message>
+        <source>Rotate log file. Requires LogFileMaxSize option set prior to this option.</source>
+        <translation>Rota el archivo de registro. Requiere que la opción LogFileMaxSize esté configurada antes que esta opción.</translation>
+    </message>
+    <message>
+        <source>Log Rotate</source>
+        <translation>Rotación de troncos</translation>
+    </message>
+    <message>
+        <source>Files larger than this value will not be scanned in on access.</source>
+        <translation>Los archivos mayores que este valor no se escanearán en el acceso.</translation>
+    </message>
+    <message>
+        <source>On Access max File Size</source>
+        <translation>Acceso al tamaño máximo de archivo</translation>
+    </message>
+    <message>
+        <source>Start Clamd on startup</source>
+        <translation>Iniciar Clamd al arrancar</translation>
+    </message>
+    <message>
+        <source>Clamd has to be restarted
+for changes made to take effect.</source>
+        <translation>Clamd tiene que ser reiniciado
+para que los cambios realizados surtan efecto.</translation>
+    </message>
+    <message>
+        <source>  Clamd running - Stop clamd</source>
+        <translation>  Clamd en ejecución - Detener clamd</translation>
+    </message>
+    <message>
+        <source>WARNING</source>
+        <translation>ADVERTENCIA</translation>
+    </message>
+    <message>
+        <source>  Clamd starting. Please wait!</source>
+        <translation>  Clamd comenzando. Por favor, espere.</translation>
+    </message>
+    <message>
+        <source>  Stopping Clamd. Please wait!</source>
+        <translation>  Deteniendo Clamd. Por favor, espere.</translation>
+    </message>
+    <message>
+        <source>Clamd and Clamonacc can not be launched. First you have to add at least one folder for monitoring!</source>
+        <translation>Clamd y Clamonacc no pueden ser lanzados. Primero tiene que añadir al menos una carpeta para la monitorización.</translation>
+    </message>
+    <message>
+        <source>  Clamd not running - Start Clamd</source>
+        <translation>  Clamd no se ejecuta - Iniciar Clamd</translation>
+    </message>
+    <message>
+        <source>  Clamd running - Stop Clamd</source>
+        <translation>  Clamd en funcionamiento - Detener Clamd</translation>
+    </message>
+    <message>
+        <source>Directory to monitor</source>
+        <translation>Directorio a supervisar</translation>
+    </message>
+    <message>
+        <source>Path already under monitoring</source>
+        <translation>Senda ya vigilada</translation>
+    </message>
+    <message>
+        <source>Remove Folder from monitoring</source>
+        <translation>Eliminar carpeta de la supervisión</translation>
+    </message>
+    <message>
+        <source>Path: </source>
+        <translation>Senda: </translation>
+    </message>
+    <message>
+        <source>Do you want to remove the folder from the monitoring list?</source>
+        <translation>¿Desea eliminar la carpeta de la lista de control?</translation>
+    </message>
+    <message>
+        <source>  Clamd restarting. Please wait!</source>
+        <translation>  Clamd se reinicia. Por favor, espere.</translation>
+    </message>
 </context>
 <context>
     <name>dragablePushButton</name>
@@ -994,11 +1209,11 @@ li.checked::marker { content: &quot;\2612&quot;; }
     </message>
     <message>
         <source>...</source>
-        <translation type="vanished">...</translation>
+        <translation>...</translation>
     </message>
     <message>
         <source>All</source>
-        <translation type="vanished">Todo</translation>
+        <translation>Todo</translation>
     </message>
     <message>
         <source>Form</source>
@@ -1010,15 +1225,15 @@ li.checked::marker { content: &quot;\2612&quot;; }
     </message>
     <message>
         <source>main</source>
-        <translation type="vanished">principal</translation>
+        <translation>principal</translation>
     </message>
     <message>
         <source>daily</source>
-        <translation type="vanished">diario</translation>
+        <translation>diario</translation>
     </message>
     <message>
         <source>bytecode</source>
-        <translation type="vanished">código byte</translation>
+        <translation>código byte</translation>
     </message>
     <message>
         <source>Update process startet .....</source>
@@ -1026,7 +1241,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
     </message>
     <message>
         <source>Update Database</source>
-        <translation type="vanished">Actualizar base de datos</translation>
+        <translation>Actualizar base de datos</translation>
     </message>
     <message>
         <source>Freshclam Log-Messages</source>
@@ -1148,6 +1363,180 @@ li.checked::marker { content: &quot;\2612&quot;; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Noto Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation></translation>
+    </message>
+    <message>
+        <source>Freshclam</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Freshclam Settings</source>
+        <translation>Ajustes de Freshclam</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Rotate log file. Requires LogFileMaxSize option set prior to this option.</source>
+        <translation>Rota el archivo de registro. Requiere que la opción LogFileMaxSize esté configurada antes que esta opción.</translation>
+    </message>
+    <message>
+        <source>LogRotate:</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>/tmp/freshclam.pid</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>database.clamav.net</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>When started by root, drop privileges to a specified user. The user will be determined by the application and must match the owner of the database directory</source>
+        <translation>Cuando es iniciado por root, otorga privilegios a un usuario especificado. El usuario será determinado por la aplicación y debe coincidir con el propietario del directorio de la base de datos</translation>
+    </message>
+    <message>
+        <source>DatabaseOwner:</source>
+        <translation>Propietario de la base de datos:</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>no encontrado</translation>
+    </message>
+    <message>
+        <source>Enable logging to Syslog. May be used in combination with UpdateLogFile.</source>
+        <translation>Habilita el registro en Syslog. Puede utilizarse en combinación con UpdateLogFile.</translation>
+    </message>
+    <message>
+        <source>LogSysLog:</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>DatabaseMirror specifies to which mirror(s) freshclam should connect.
+You should have at least one entries: database.clamav.net. 
+Now that CloudFlare is being used as our Content Delivery Network (CDN),  this  one  domain
+name works world-wide to direct freshclam to the closest geographic endpoint.
+Default: database.clamav.net
+</source>
+        <translation>DatabaseMirror especifica a que mirror(s) freshclam debe conectarse.
+Debería tener al menos una entrada: database.clamav.net. 
+Ahora que CloudFlare está siendo usado como nuestra Red de Entrega de Contenido (CDN), este nombre de dominio funciona en todo el mundo para dirigir freshclam al punto final geográfico más cercano.
+funciona en todo el mundo para dirigir freshclam al punto final geográfico más cercano.
+Por defecto: database.clamav.net
+</translation>
+    </message>
+    <message>
+        <source>DatabaseMirror:</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Log time with each message.</source>
+        <translation>Registre la hora con cada mensaje.</translation>
+    </message>
+    <message>
+        <source>LogTime:</source>
+        <translation>LogTime:</translation>
+    </message>
+    <message>
+        <source>autodecteced location of the freshclam binary</source>
+        <translation>ubicación autodetectada del binario freshclam</translation>
+    </message>
+    <message>
+        <source>freshclam (Info)</source>
+        <translation>freshclam (Información)</translation>
+    </message>
+    <message>
+        <source>Specify the type of syslog messages - please refer to &apos;man syslog&apos; for facility names.
+              Default: LOG_LOCAL6</source>
+        <translation>Especifica el tipo de mensajes syslog - consulte &apos;man syslog&apos; para los nombres de las instalaciones.
+              Por defecto: LOG_LOCAL6</translation>
+    </message>
+    <message>
+        <source>LogFacility:</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>LOG_LOCAL6</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>LOG_MAIL</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Enable verbose logging.</source>
+        <translation>Activar el registro detallado.</translation>
+    </message>
+    <message>
+        <source>LogVerbose</source>
+        <translation>LogVerbose</translation>
+    </message>
+    <message>
+        <source>FreshClam Daemon</source>
+        <translation>Demonio FreshClam</translation>
+    </message>
+    <message>
+        <source>This option allows you to save the process identifier of the daemon to a file specified in the argument.</source>
+        <translation>Esta opción permite guardar el identificador de proceso del demonio en un archivo especificado en el argumento.</translation>
+    </message>
+    <message>
+        <source>PID-File:</source>
+        <translation>Fichero PID:</translation>
+    </message>
+    <message>
+        <source>Path to a directory containing database files.</source>
+        <translation>Ruta a un directorio que contiene los archivos de la base de datos.</translation>
+    </message>
+    <message>
+        <source>DatabaseDirectory</source>
+        <translation>Directorio de bases de datos</translation>
+    </message>
+    <message>
+        <source>Which database to update
+Default: all</source>
+        <translation>Qué base de datos actualizar
+Por defecto: todas</translation>
+    </message>
+    <message>
+        <source>Start daemon automatically
+at program start</source>
+        <translation>Iniciar demonio automáticamente
+al iniciar el programa</translation>
+    </message>
+    <message>
+        <source>Number of database checks per day.</source>
+        <translation>Número de comprobaciones diarias de la base de datos.</translation>
+    </message>
+    <message>
+        <source>Check for Updates</source>
+        <translation>Buscar actualizaciones</translation>
+    </message>
+    <message>
+        <source>times per days</source>
+        <translation>veces por día</translation>
+    </message>
+    <message>
+        <source>Execute Daemon and
+manual update as root</source>
+        <translation>Ejecutar Daemon y
+actualización manual como root</translation>
+    </message>
+    <message>
+        <source>Select Folder for the PID-File</source>
+        <translation>Seleccione la carpeta para el archivo PID</translation>
+    </message>
+    <message>
+        <source>Virus definitions missing!</source>
+        <translation>Faltan definiciones de virus!</translation>
+    </message>
+    <message>
+        <source>No virus definitions found in the database folder. Should the virus definitions be downloaded?</source>
+        <translation>No se han encontrado definiciones de virus en la carpeta de la base de datos. ¿Deben descargarse las definiciones de virus?</translation>
     </message>
 </context>
 <context>
@@ -4172,10 +4561,6 @@ Continue from the Start of the Log?</source>
         <translation type="vanished">portugués</translation>
     </message>
     <message>
-        <source>FreshClam Daemon</source>
-        <translation></translation>
-    </message>
-    <message>
         <source>run as root</source>
         <translation type="vanished">ejecutar como root</translation>
     </message>
@@ -4211,51 +4596,31 @@ manual como root</translation>
     </message>
     <message>
         <source>times per days</source>
-        <translation>veces por día</translation>
-    </message>
-    <message>
-        <source>LogRotate:</source>
-        <translation></translation>
+        <translation type="vanished">veces por día</translation>
     </message>
     <message>
         <source>not found</source>
-        <translation>no encontrado</translation>
+        <translation type="vanished">no encontrado</translation>
     </message>
     <message>
         <source>PID-File:</source>
-        <translation>Fichero PID:</translation>
-    </message>
-    <message>
-        <source>no</source>
-        <translation></translation>
-    </message>
-    <message>
-        <source>yes</source>
-        <translation></translation>
-    </message>
-    <message>
-        <source>LogFacility:</source>
-        <translation></translation>
+        <translation type="vanished">Fichero PID:</translation>
     </message>
     <message>
         <source>...</source>
-        <translation>...</translation>
+        <translation type="vanished">...</translation>
     </message>
     <message>
         <source>Freshclam Settings</source>
-        <translation>Ajustes de Freshclam</translation>
-    </message>
-    <message>
-        <source>LogSysLog:</source>
-        <translation></translation>
+        <translation type="vanished">Ajustes de Freshclam</translation>
     </message>
     <message>
         <source>Update Database</source>
-        <translation>Actualizar base de datos</translation>
+        <translation type="vanished">Actualizar base de datos</translation>
     </message>
     <message>
         <source>DatabaseOwner:</source>
-        <translation>Propietario de la base de datos:</translation>
+        <translation type="vanished">Propietario de la base de datos:</translation>
     </message>
     <message>
         <source>Execute Deaemon and manual update as root</source>
@@ -4263,43 +4628,27 @@ manual como root</translation>
     </message>
     <message>
         <source>All</source>
-        <translation>Todo</translation>
+        <translation type="vanished">Todo</translation>
     </message>
     <message>
         <source>main</source>
-        <translation>principal</translation>
+        <translation type="vanished">principal</translation>
     </message>
     <message>
         <source>daily</source>
-        <translation>diario</translation>
+        <translation type="vanished">diario</translation>
     </message>
     <message>
         <source>bytecode</source>
-        <translation>código byte</translation>
-    </message>
-    <message>
-        <source>DatabaseMirror:</source>
-        <translation></translation>
+        <translation type="vanished">código byte</translation>
     </message>
     <message>
         <source>Check for Updates</source>
-        <translation>Buscar actualizaciones</translation>
-    </message>
-    <message>
-        <source>freshclam (Info)</source>
-        <translation></translation>
+        <translation type="vanished">Buscar actualizaciones</translation>
     </message>
     <message>
         <source>DatabaseDirectory</source>
-        <translation>Directorio de bases de datos</translation>
-    </message>
-    <message>
-        <source>LOG_LOCAL6</source>
-        <translation></translation>
-    </message>
-    <message>
-        <source>LOG_MAIL</source>
-        <translation></translation>
+        <translation type="vanished">Directorio de bases de datos</translation>
     </message>
     <message>
         <source>Select Directory</source>
@@ -4307,23 +4656,23 @@ manual como root</translation>
     </message>
     <message>
         <source>Select Folder for the PID-File</source>
-        <translation>Seleccione la carpeta para el archivo PID</translation>
+        <translation type="vanished">Seleccione la carpeta para el archivo PID</translation>
     </message>
     <message>
         <source>Path to a directory containing database files.</source>
-        <translation>Ruta a un directorio que contiene los archivos de la base de datos.</translation>
+        <translation type="vanished">Ruta a un directorio que contiene los archivos de la base de datos.</translation>
     </message>
     <message>
         <source>Number of database checks per day.</source>
-        <translation>Número de comprobaciones diarias de la base de datos.</translation>
+        <translation type="vanished">Número de comprobaciones diarias de la base de datos.</translation>
     </message>
     <message>
         <source>Enable verbose logging.</source>
-        <translation>Activar el registro detallado.</translation>
+        <translation type="vanished">Activar el registro detallado.</translation>
     </message>
     <message>
         <source>LogVerbose</source>
-        <translation>LogVerbose</translation>
+        <translation type="vanished">LogVerbose</translation>
     </message>
     <message>
         <source>Execute Deaemon and
@@ -4334,18 +4683,18 @@ manual como root</translation>
     <message>
         <source>Specify the type of syslog messages - please refer to &apos;man syslog&apos; for facility names.
               Default: LOG_LOCAL6</source>
-        <translation>Especifica el tipo de mensajes syslog - consulte &apos;man syslog&apos; para los nombres de las instalaciones.
+        <translation type="vanished">Especifica el tipo de mensajes syslog - consulte &apos;man syslog&apos; para los nombres de las instalaciones.
               Por defecto: LOG_LOCAL6</translation>
     </message>
     <message>
         <source>Which database to update
 Default: all</source>
-        <translation>Qué base de datos actualizar
+        <translation type="vanished">Qué base de datos actualizar
 Por defecto: todas</translation>
     </message>
     <message>
         <source>Rotate log file. Requires LogFileMaxSize option set prior to this option.</source>
-        <translation>Rota el archivo de registro. Requiere que la opción LogFileMaxSize esté configurada antes que esta opción.</translation>
+        <translation type="vanished">Rota el archivo de registro. Requiere que la opción LogFileMaxSize esté configurada antes que esta opción.</translation>
     </message>
     <message>
         <source>DatabaseMirror specifies to which mirror(s) freshclam should connect.
@@ -4354,7 +4703,7 @@ Now that CloudFlare is being used as our Content Delivery Network (CDN),  this  
 name works world-wide to direct freshclam to the closest geographic endpoint.
 Default: database.clamav.net
 </source>
-        <translation>DatabaseMirror especifica a que mirror(s) freshclam debe conectarse.
+        <translation type="vanished">DatabaseMirror especifica a que mirror(s) freshclam debe conectarse.
 Debería tener al menos una entrada: database.clamav.net. 
 Ahora que CloudFlare está siendo usado como nuestra Red de Entrega de Contenido (CDN), este nombre de dominio funciona en todo el mundo para dirigir freshclam al punto final geográfico más cercano.
 funciona en todo el mundo para dirigir freshclam al punto final geográfico más cercano.
@@ -4363,35 +4712,35 @@ Por defecto: database.clamav.net
     </message>
     <message>
         <source>Enable logging to Syslog. May be used in combination with UpdateLogFile.</source>
-        <translation>Habilita el registro en Syslog. Puede utilizarse en combinación con UpdateLogFile.</translation>
+        <translation type="vanished">Habilita el registro en Syslog. Puede utilizarse en combinación con UpdateLogFile.</translation>
     </message>
     <message>
         <source>Log time with each message.</source>
-        <translation>Registre la hora con cada mensaje.</translation>
+        <translation type="vanished">Registre la hora con cada mensaje.</translation>
     </message>
     <message>
         <source>LogTime:</source>
-        <translation>LogTime:</translation>
+        <translation type="vanished">LogTime:</translation>
     </message>
     <message>
         <source>This option allows you to save the process identifier of the daemon to a file specified in the argument.</source>
-        <translation>Esta opción permite guardar el identificador de proceso del demonio en un archivo especificado en el argumento.</translation>
+        <translation type="vanished">Esta opción permite guardar el identificador de proceso del demonio en un archivo especificado en el argumento.</translation>
     </message>
     <message>
         <source>autodecteced location of the freshclam binary</source>
-        <translation>ubicación autodetectada del binario freshclam</translation>
+        <translation type="vanished">ubicación autodetectada del binario freshclam</translation>
     </message>
     <message>
         <source>When started by root, drop privileges to a specified user. The user will be determined by the application and must match the owner of the database directory</source>
-        <translation>Cuando es iniciado por root, otorga privilegios a un usuario especificado. El usuario será determinado por la aplicación y debe coincidir con el propietario del directorio de la base de datos</translation>
+        <translation type="vanished">Cuando es iniciado por root, otorga privilegios a un usuario especificado. El usuario será determinado por la aplicación y debe coincidir con el propietario del directorio de la base de datos</translation>
     </message>
     <message>
         <source>Virus definitions missing!</source>
-        <translation>Faltan definiciones de virus!</translation>
+        <translation type="vanished">Faltan definiciones de virus!</translation>
     </message>
     <message>
         <source>No virus definitions found in the database folder. Should the virus definitions be downloaded?</source>
-        <translation>No se han encontrado definiciones de virus en la carpeta de la base de datos. ¿Deben descargarse las definiciones de virus?</translation>
+        <translation type="vanished">No se han encontrado definiciones de virus en la carpeta de la base de datos. ¿Deben descargarse las definiciones de virus?</translation>
     </message>
     <message>
         <source>italian</source>
@@ -4400,13 +4749,13 @@ Por defecto: database.clamav.net
     <message>
         <source>Start daemon automatically
 at program start</source>
-        <translation>Iniciar demonio automáticamente
+        <translation type="vanished">Iniciar demonio automáticamente
 al iniciar el programa</translation>
     </message>
     <message>
         <source>Execute Daemon and
 manual update as root</source>
-        <translation>Ejecutar Daemon y
+        <translation type="vanished">Ejecutar Daemon y
 actualización manual como root</translation>
     </message>
     <message>
@@ -4483,39 +4832,39 @@ actualización manual como root</translation>
     </message>
     <message>
         <source>Clamd &amp; Scan on Access</source>
-        <translation>Clamd &amp; Scan on Access</translation>
+        <translation type="vanished">Clamd &amp; Scan on Access</translation>
     </message>
     <message>
         <source>clamd not running - start clamd</source>
-        <translation>clamd no se ejecuta - iniciar clamd</translation>
+        <translation type="vanished">clamd no se ejecuta - iniciar clamd</translation>
     </message>
     <message>
         <source>Folder under monitoring</source>
-        <translation>Carpeta bajo control</translation>
+        <translation type="vanished">Carpeta bajo control</translation>
     </message>
     <message>
         <source>WARNING</source>
-        <translation>ADVERTENCIA</translation>
+        <translation type="vanished">ADVERTENCIA</translation>
     </message>
     <message>
         <source>Directory to monitor</source>
-        <translation>Directorio a supervisar</translation>
+        <translation type="vanished">Directorio a supervisar</translation>
     </message>
     <message>
         <source>Path already under monitoring</source>
-        <translation>Senda ya vigilada</translation>
+        <translation type="vanished">Senda ya vigilada</translation>
     </message>
     <message>
         <source>Remove Folder from monitoring</source>
-        <translation>Eliminar carpeta de la supervisión</translation>
+        <translation type="vanished">Eliminar carpeta de la supervisión</translation>
     </message>
     <message>
         <source>Path: </source>
-        <translation>Senda: </translation>
+        <translation type="vanished">Senda: </translation>
     </message>
     <message>
         <source>Do you want to remove the folder from the monitoring list?</source>
-        <translation>¿Desea eliminar la carpeta de la lista de control?</translation>
+        <translation type="vanished">¿Desea eliminar la carpeta de la lista de control?</translation>
     </message>
 </context>
 </TS>

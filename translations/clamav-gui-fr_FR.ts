@@ -1154,103 +1154,385 @@ p, li { white-space: pre-wrap; }
         <translation>Editeur de Profils</translation>
     </message>
     <message>
-        <location filename="../src/clamav_gui.cpp" line="108"/>
+        <location filename="../src/clamav_gui.cpp" line="112"/>
         <source>FreshClam</source>
         <translation>Mise à jour</translation>
     </message>
     <message>
-        <location filename="../src/clamav_gui.cpp" line="110"/>
+        <location filename="../src/clamav_gui.cpp" line="108"/>
         <source>Scheduler</source>
         <translation>Programmateur</translation>
     </message>
     <message>
-        <location filename="../src/clamav_gui.cpp" line="112"/>
+        <location filename="../src/clamav_gui.cpp" line="110"/>
         <source>Logs</source>
         <translation>Journaux</translation>
     </message>
     <message>
         <location filename="../src/clamav_gui.cpp" line="114"/>
+        <source>Clamd</source>
+        <translation>Clamd</translation>
+    </message>
+    <message>
+        <location filename="../src/clamav_gui.cpp" line="116"/>
         <source>setup</source>
         <translation>Configuration</translation>
     </message>
     <message>
-        <location filename="../src/clamav_gui.cpp" line="116"/>
+        <location filename="../src/clamav_gui.cpp" line="118"/>
         <source>Credits &amp;&amp; Copyright</source>
         <translation>Credits &amp;&amp; Copyright</translation>
     </message>
     <message>
-        <location filename="../src/clamav_gui.cpp" line="169"/>
+        <location filename="../src/clamav_gui.cpp" line="172"/>
         <source>Show/Hide MainWindow</source>
         <translation>Montrer/Cacher Fenêtre principal</translation>
     </message>
     <message>
-        <location filename="../src/clamav_gui.cpp" line="171"/>
+        <location filename="../src/clamav_gui.cpp" line="174"/>
         <source>Show/Hide DropZone</source>
         <translation>Montrer/Cacher DropZone</translation>
     </message>
     <message>
-        <location filename="../src/clamav_gui.cpp" line="173"/>
+        <location filename="../src/clamav_gui.cpp" line="176"/>
         <source>Quit</source>
         <translation>Quitter</translation>
     </message>
     <message>
-        <location filename="../src/clamav_gui.cpp" line="253"/>
+        <location filename="../src/clamav_gui.cpp" line="256"/>
         <source>Scanning started .......</source>
         <translation>Recherche démarré .......</translation>
     </message>
     <message>
-        <location filename="../src/clamav_gui.cpp" line="422"/>
+        <location filename="../src/clamav_gui.cpp" line="425"/>
         <source>Scan-Process aborted ......</source>
         <translation>Recherche annulé ......</translation>
     </message>
     <message>
-        <location filename="../src/clamav_gui.cpp" line="423"/>
-        <location filename="../src/clamav_gui.cpp" line="427"/>
-        <location filename="../src/clamav_gui.cpp" line="431"/>
+        <location filename="../src/clamav_gui.cpp" line="426"/>
+        <location filename="../src/clamav_gui.cpp" line="430"/>
         <location filename="../src/clamav_gui.cpp" line="434"/>
+        <location filename="../src/clamav_gui.cpp" line="437"/>
         <source>Scan-Status</source>
         <translation>Etat de la recherche</translation>
     </message>
     <message>
-        <location filename="../src/clamav_gui.cpp" line="423"/>
+        <location filename="../src/clamav_gui.cpp" line="426"/>
         <source>Scan Process aborted .....</source>
         <translation>Recherche annulé .....</translation>
     </message>
     <message>
-        <location filename="../src/clamav_gui.cpp" line="426"/>
+        <location filename="../src/clamav_gui.cpp" line="429"/>
         <source>Scan-Process finished ...... no Virus found!</source>
         <translation>Recherche terminée ...... Pas de virus trouvé!</translation>
     </message>
     <message>
-        <location filename="../src/clamav_gui.cpp" line="427"/>
+        <location filename="../src/clamav_gui.cpp" line="430"/>
         <source>Scan Process finished ..... no virus found!</source>
         <translation>Recherche terminée ..... Pas de virus trouvé!</translation>
     </message>
     <message>
-        <location filename="../src/clamav_gui.cpp" line="430"/>
+        <location filename="../src/clamav_gui.cpp" line="433"/>
         <source>Scan-Process finished ...... Virus found!</source>
         <translation>Recherche terminée ..... un virus à été trouvé!</translation>
     </message>
     <message>
-        <location filename="../src/clamav_gui.cpp" line="431"/>
+        <location filename="../src/clamav_gui.cpp" line="434"/>
         <source>Scan Process finished ..... a virus was found!</source>
         <translation>Recherche terminée ..... un virus à été trouvé!</translation>
     </message>
     <message>
-        <location filename="../src/clamav_gui.cpp" line="433"/>
+        <location filename="../src/clamav_gui.cpp" line="436"/>
         <source>Scan-Process finished ...... an error occured!</source>
         <translation>Recherche terminée ..... Erreur survenue!</translation>
     </message>
     <message>
-        <location filename="../src/clamav_gui.cpp" line="434"/>
+        <location filename="../src/clamav_gui.cpp" line="437"/>
         <source>Scan Process finished ..... an error occurred!</source>
         <translation>Recherche terminée ..... Une erreur est survenue!</translation>
     </message>
     <message>
-        <location filename="../src/clamav_gui.cpp" line="447"/>
-        <location filename="../src/clamav_gui.cpp" line="448"/>
+        <location filename="../src/clamav_gui.cpp" line="450"/>
+        <location filename="../src/clamav_gui.cpp" line="451"/>
         <source>Scan-Process aborted!</source>
         <translation>Recherche terminée!</translation>
+    </message>
+</context>
+<context>
+    <name>clamdManager</name>
+    <message>
+        <location filename="../ui/clamdmanager.ui" line="14"/>
+        <source>Form</source>
+        <translation>Form</translation>
+    </message>
+    <message>
+        <location filename="../ui/clamdmanager.ui" line="40"/>
+        <source>Clamd &amp;&amp; Scan on Access</source>
+        <translation>Clamd &amp; Scan on Access</translation>
+    </message>
+    <message>
+        <location filename="../ui/clamdmanager.ui" line="71"/>
+        <source>  clamd not running - start clamd</source>
+        <translation>  clamd ne fonctionne pas - démarrer clamd</translation>
+    </message>
+    <message>
+        <location filename="../ui/clamdmanager.ui" line="106"/>
+        <source>Clamd &amp; Scan on Access</source>
+        <translation>Clamd &amp; Scan on Access</translation>
+    </message>
+    <message>
+        <location filename="../ui/clamdmanager.ui" line="183"/>
+        <source>Folder under monitoring</source>
+        <translation>Dépliant sous surveillance</translation>
+    </message>
+    <message>
+        <location filename="../ui/clamdmanager.ui" line="250"/>
+        <source>Clamd &amp;&amp; Scan on Access Settings</source>
+        <translation>Clamd &amp;&amp; Scan sur les paramètres d&apos;accès</translation>
+    </message>
+    <message>
+        <location filename="../ui/clamdmanager.ui" line="280"/>
+        <source>Clamd &amp; Scan on Access Settings</source>
+        <translation>Clamd &amp;&amp; Scan sur les paramètres d&apos;accès</translation>
+    </message>
+    <message>
+        <location filename="../ui/clamdmanager.ui" line="290"/>
+        <source>Report only</source>
+        <translation>Juste afficher</translation>
+    </message>
+    <message>
+        <location filename="../ui/clamdmanager.ui" line="295"/>
+        <source>Copy to Quarantine</source>
+        <translation>Copier dans le dossier de quarantaine</translation>
+    </message>
+    <message>
+        <location filename="../ui/clamdmanager.ui" line="300"/>
+        <source>Move to Quarantine</source>
+        <translation>Déplacer dans le dossier de quarantaine</translation>
+    </message>
+    <message>
+        <location filename="../ui/clamdmanager.ui" line="305"/>
+        <source>Remove (be carefull)</source>
+        <translation>Supprimer fichier (Prudence)</translation>
+    </message>
+    <message>
+        <location filename="../ui/clamdmanager.ui" line="313"/>
+        <source>Log time for each message.</source>
+        <translation>Enregistrez la durée de chaque message.</translation>
+    </message>
+    <message>
+        <location filename="../ui/clamdmanager.ui" line="316"/>
+        <source>Log Times</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui/clamdmanager.ui" line="337"/>
+        <location filename="../ui/clamdmanager.ui" line="394"/>
+        <location filename="../ui/clamdmanager.ui" line="425"/>
+        <location filename="../ui/clamdmanager.ui" line="460"/>
+        <location filename="../ui/clamdmanager.ui" line="518"/>
+        <location filename="../ui/clamdmanager.ui" line="555"/>
+        <source>yes</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui/clamdmanager.ui" line="342"/>
+        <location filename="../ui/clamdmanager.ui" line="399"/>
+        <location filename="../ui/clamdmanager.ui" line="430"/>
+        <location filename="../ui/clamdmanager.ui" line="465"/>
+        <location filename="../ui/clamdmanager.ui" line="523"/>
+        <location filename="../ui/clamdmanager.ui" line="560"/>
+        <source>no</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui/clamdmanager.ui" line="350"/>
+        <source>Max  number  of  scanning  threads to allocate to the OnAccess thread pool at startup.</source>
+        <translation>Nombre maximal de threads d&apos;analyse à allouer au pool de threads OnAccess au démarrage.</translation>
+    </message>
+    <message>
+        <location filename="../ui/clamdmanager.ui" line="353"/>
+        <source>On Access max Threats</source>
+        <translation>Menaces liées à l&apos;accès maximal</translation>
+    </message>
+    <message>
+        <location filename="../ui/clamdmanager.ui" line="373"/>
+        <source>How to proceed if infected files are found</source>
+        <translation>Comment procéder si des fichiers infectés sont trouvés</translation>
+    </message>
+    <message>
+        <location filename="../ui/clamdmanager.ui" line="376"/>
+        <source>Infected Files</source>
+        <translation>Fichiers infectés</translation>
+    </message>
+    <message>
+        <location filename="../ui/clamdmanager.ui" line="383"/>
+        <source>Enables fanotify blocking when malicious files are found.</source>
+        <translation>Active le blocage de fanotify lorsque des fichiers malveillants sont trouvés.</translation>
+    </message>
+    <message>
+        <location filename="../ui/clamdmanager.ui" line="386"/>
+        <source>On Access Prevention</source>
+        <translation>Sur la prévention de l&apos;accès</translation>
+    </message>
+    <message>
+        <location filename="../ui/clamdmanager.ui" line="407"/>
+        <source>Log additional information about the infected file, such as its size and hash, together with the virus name.</source>
+        <translation>Enregistrer des informations supplémentaires sur le fichier infecté, telles que sa taille et son hachage, ainsi que le nom du virus.</translation>
+    </message>
+    <message>
+        <location filename="../ui/clamdmanager.ui" line="410"/>
+        <source>Extended Detection Info</source>
+        <translation>Informations étendues sur la détection</translation>
+    </message>
+    <message>
+        <location filename="../ui/clamdmanager.ui" line="417"/>
+        <location filename="../ui/clamdmanager.ui" line="493"/>
+        <source>MByte</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui/clamdmanager.ui" line="438"/>
+        <source>Number of times the OnAccess client will retry a failed scan due to connection problems (or other issues).</source>
+        <translation>Nombre de fois où le client OnAccess tentera à nouveau une analyse qui a échoué en raison de problèmes de connexion (ou d&apos;autres problèmes).</translation>
+    </message>
+    <message>
+        <location filename="../ui/clamdmanager.ui" line="441"/>
+        <source>On Access retry Attempts</source>
+        <translation>Sur les tentatives de réessai d&apos;accès</translation>
+    </message>
+    <message>
+        <location filename="../ui/clamdmanager.ui" line="448"/>
+        <source>When using prevention, if this option is turned on, any errors that occur during  scanning will result in the event attempt being denied. This could potentially lead to unwanted system behaviour  with  certain  configura-
+              tions, so the client defaults this to off and prefers allowing access events in case of scan or connection error.</source>
+        <translation>Lors de l&apos;utilisation de la prévention, si cette option est activée, toute erreur survenant au cours de l&apos;analyse entraînera le refus de la tentative d&apos;événement. Cela pourrait entraîner un comportement indésirable du système dans certaines configurations. C&apos;est pourquoi le client désactive cette option par défaut et préfère autoriser les événements d&apos;accès en cas d&apos;erreur d&apos;analyse ou de connexion.</translation>
+    </message>
+    <message>
+        <location filename="../ui/clamdmanager.ui" line="452"/>
+        <source>On Access deny on Error</source>
+        <translation>En cas de refus d&apos;accès en cas d&apos;erreur</translation>
+    </message>
+    <message>
+        <location filename="../ui/clamdmanager.ui" line="473"/>
+        <source>Maximum size of the log file.
+Value of 0 disables the limit.
+Default: 1 MByte
+</source>
+        <translation>Taille maximale du fichier journal.
+La valeur 0 désactive la limite.
+Valeur par défaut : 1 Mo</translation>
+    </message>
+    <message>
+        <location filename="../ui/clamdmanager.ui" line="479"/>
+        <source>Log-File max Size</source>
+        <translation>Taille maximale du fichier journal</translation>
+    </message>
+    <message>
+        <location filename="../ui/clamdmanager.ui" line="486"/>
+        <source>On Access Extra Scanning</source>
+        <translation>Accès à la numérisation supplémentaire</translation>
+    </message>
+    <message>
+        <location filename="../ui/clamdmanager.ui" line="507"/>
+        <source>Rotate log file. Requires LogFileMaxSize option set prior to this option.</source>
+        <translation>Rotation du fichier journal. L&apos;option LogFileMaxSize doit être définie avant cette option.</translation>
+    </message>
+    <message>
+        <location filename="../ui/clamdmanager.ui" line="510"/>
+        <source>Log Rotate</source>
+        <translation>Rotation du journal</translation>
+    </message>
+    <message>
+        <location filename="../ui/clamdmanager.ui" line="544"/>
+        <source>Files larger than this value will not be scanned in on access.</source>
+        <translation>Les fichiers dont la taille est supérieure à cette valeur ne seront pas numérisés lors de l&apos;accès.</translation>
+    </message>
+    <message>
+        <location filename="../ui/clamdmanager.ui" line="547"/>
+        <source>On Access max File Size</source>
+        <translation>En cours d&apos;accès Taille maximale du fichier</translation>
+    </message>
+    <message>
+        <location filename="../ui/clamdmanager.ui" line="568"/>
+        <source>Start Clamd on startup</source>
+        <translation>Démarrer Clamd au démarrage</translation>
+    </message>
+    <message>
+        <location filename="../ui/clamdmanager.ui" line="599"/>
+        <source>Clamd has to be restarted
+for changes made to take effect.</source>
+        <translation>Clamd doit être redémarré
+pour que les modifications apportées prennent effet.</translation>
+    </message>
+    <message>
+        <location filename="../src/clamdmanager.cpp" line="49"/>
+        <source>  Clamd running - Stop clamd</source>
+        <translation>  Clamd en cours d&apos;exécution - Arrêter clamd</translation>
+    </message>
+    <message>
+        <location filename="../src/clamdmanager.cpp" line="289"/>
+        <location filename="../src/clamdmanager.cpp" line="351"/>
+        <location filename="../src/clamdmanager.cpp" line="481"/>
+        <source>WARNING</source>
+        <translation>ATTENTION</translation>
+    </message>
+    <message>
+        <location filename="../src/clamdmanager.cpp" line="321"/>
+        <source>  Clamd starting. Please wait!</source>
+        <translation>  Démarrage de Clamd. Veuillez patienter !</translation>
+    </message>
+    <message>
+        <location filename="../src/clamdmanager.cpp" line="337"/>
+        <source>  Stopping Clamd. Please wait!</source>
+        <translation>  Arrêt de Clamd. Veuillez patienter !</translation>
+    </message>
+    <message>
+        <location filename="../src/clamdmanager.cpp" line="351"/>
+        <source>Clamd and Clamonacc can not be launched. First you have to add at least one folder for monitoring!</source>
+        <translation>Clamd et Clamonacc ne peuvent pas être lancés. Vous devez d&apos;abord ajouter au moins un dossier à surveiller !</translation>
+    </message>
+    <message>
+        <location filename="../src/clamdmanager.cpp" line="363"/>
+        <location filename="../src/clamdmanager.cpp" line="390"/>
+        <location filename="../src/clamdmanager.cpp" line="430"/>
+        <source>  Clamd not running - Start Clamd</source>
+        <translation>  Clamd ne fonctionne pas - Démarrer Clamd</translation>
+    </message>
+    <message>
+        <location filename="../src/clamdmanager.cpp" line="368"/>
+        <location filename="../src/clamdmanager.cpp" line="395"/>
+        <source>  Clamd running - Stop Clamd</source>
+        <translation>  Clamd en cours d&apos;exécution - Arrêter Clamd</translation>
+    </message>
+    <message>
+        <location filename="../src/clamdmanager.cpp" line="473"/>
+        <source>Directory to monitor</source>
+        <translation>Répertoire à surveiller</translation>
+    </message>
+    <message>
+        <location filename="../src/clamdmanager.cpp" line="481"/>
+        <source>Path already under monitoring</source>
+        <translation>Chemin déjà sous surveillance</translation>
+    </message>
+    <message>
+        <location filename="../src/clamdmanager.cpp" line="490"/>
+        <source>Remove Folder from monitoring</source>
+        <translation>Supprimer le dossier de la surveillance</translation>
+    </message>
+    <message>
+        <location filename="../src/clamdmanager.cpp" line="490"/>
+        <source>Path: </source>
+        <translation>Trajectoire : </translation>
+    </message>
+    <message>
+        <location filename="../src/clamdmanager.cpp" line="490"/>
+        <source>Do you want to remove the folder from the monitoring list?</source>
+        <translation>Voulez-vous supprimer le dossier de la liste de surveillance ?</translation>
+    </message>
+    <message>
+        <location filename="../src/clamdmanager.cpp" line="522"/>
+        <source>  Clamd restarting. Please wait!</source>
+        <translation>  Clamd redémarre. Veuillez patienter !</translation>
     </message>
 </context>
 <context>
@@ -1285,16 +1567,16 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">par jours</translation>
     </message>
     <message>
-        <location filename="../ui/freshclamsetter.ui" line="29"/>
-        <location filename="../src/freshclamsetter.cpp" line="228"/>
-        <location filename="../src/freshclamsetter.cpp" line="304"/>
-        <location filename="../src/freshclamsetter.cpp" line="526"/>
+        <location filename="../ui/freshclamsetter.ui" line="114"/>
+        <location filename="../src/freshclamsetter.cpp" line="230"/>
+        <location filename="../src/freshclamsetter.cpp" line="306"/>
+        <location filename="../src/freshclamsetter.cpp" line="528"/>
         <source>Deamon not running - start deamon</source>
         <translation>Service non demarré - demarrez le</translation>
     </message>
     <message>
-        <location filename="../ui/freshclamsetter.ui" line="42"/>
-        <location filename="../ui/freshclamsetter.ui" line="81"/>
+        <location filename="../ui/freshclamsetter.ui" line="127"/>
+        <location filename="../ui/freshclamsetter.ui" line="166"/>
         <source>Ctrl+S, Ctrl+W</source>
         <translation>Ctrl+S, Ctrl+W</translation>
     </message>
@@ -1311,13 +1593,13 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Exécuter en tant que super-utilisateur</translation>
     </message>
     <message>
-        <location filename="../ui/freshclamsetter.ui" line="52"/>
+        <location filename="../ui/freshclamsetter.ui" line="137"/>
         <source>Deamon Log-Messages</source>
         <translation>Journaliser les messages du services</translation>
     </message>
     <message>
-        <location filename="../ui/freshclamsetter.ui" line="68"/>
-        <location filename="../ui/freshclamsetter.ui" line="138"/>
+        <location filename="../ui/freshclamsetter.ui" line="81"/>
+        <location filename="../ui/freshclamsetter.ui" line="153"/>
         <source>Clear Log</source>
         <translation>Vider Journal</translation>
     </message>
@@ -1326,50 +1608,61 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Configuration des journaux</translation>
     </message>
     <message>
+        <location filename="../ui/freshclamsetter.ui" line="599"/>
         <source>All</source>
-        <translation type="vanished">Tout</translation>
+        <translation>Tout</translation>
     </message>
     <message>
+        <location filename="../ui/freshclamsetter.ui" line="604"/>
         <source>main</source>
-        <translation type="vanished">Principal</translation>
+        <translation>Principal</translation>
     </message>
     <message>
+        <location filename="../ui/freshclamsetter.ui" line="609"/>
         <source>daily</source>
-        <translation type="vanished">Journalier</translation>
+        <translation>Journalier</translation>
     </message>
     <message>
+        <location filename="../ui/freshclamsetter.ui" line="614"/>
         <source>bytecode</source>
-        <translation type="vanished">bytecode</translation>
+        <translation>bytecode</translation>
     </message>
     <message>
+        <location filename="../ui/freshclamsetter.ui" line="428"/>
         <source>...</source>
-        <translation type="vanished">...</translation>
+        <translation>...</translation>
     </message>
     <message>
         <source>Database Directory</source>
         <translation type="vanished">Dossier des Bases de signatures</translation>
     </message>
     <message>
+        <location filename="../ui/freshclamsetter.ui" line="591"/>
         <source>Update Database</source>
-        <translation type="vanished">Mise à jour des bases de signatures</translation>
+        <translation>Mise à jour des bases de signatures</translation>
     </message>
     <message>
-        <location filename="../ui/freshclamsetter.ui" line="102"/>
+        <location filename="../ui/freshclamsetter.ui" line="45"/>
         <source>Update now!</source>
         <translation>Mettre a jour maintenant!</translation>
     </message>
     <message>
-        <location filename="../ui/freshclamsetter.ui" line="122"/>
+        <location filename="../ui/freshclamsetter.ui" line="28"/>
+        <source>Freshclam</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui/freshclamsetter.ui" line="65"/>
         <source>Freshclam Log-Messages</source>
         <translation>Journaux des mises à jours</translation>
     </message>
     <message>
-        <location filename="../ui/freshclamsetter.ui" line="169"/>
+        <location filename="../ui/freshclamsetter.ui" line="187"/>
         <source>Update Info</source>
         <translation>Informations de mise à jour</translation>
     </message>
     <message>
-        <location filename="../ui/freshclamsetter.ui" line="184"/>
+        <location filename="../ui/freshclamsetter.ui" line="202"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -1379,6 +1672,206 @@ li.checked::marker { content: &quot;\2612&quot;; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Noto Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui/freshclamsetter.ui" line="224"/>
+        <location filename="../ui/freshclamsetter.ui" line="451"/>
+        <source>Freshclam Settings</source>
+        <translation>Paramètres de la pêche à la palourde</translation>
+    </message>
+    <message>
+        <location filename="../ui/freshclamsetter.ui" line="265"/>
+        <location filename="../ui/freshclamsetter.ui" line="389"/>
+        <location filename="../ui/freshclamsetter.ui" line="464"/>
+        <location filename="../ui/freshclamsetter.ui" line="494"/>
+        <source>yes</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui/freshclamsetter.ui" line="270"/>
+        <location filename="../ui/freshclamsetter.ui" line="394"/>
+        <location filename="../ui/freshclamsetter.ui" line="459"/>
+        <location filename="../ui/freshclamsetter.ui" line="499"/>
+        <source>no</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui/freshclamsetter.ui" line="278"/>
+        <source>Rotate log file. Requires LogFileMaxSize option set prior to this option.</source>
+        <translation>Rotation du fichier journal. L&apos;option LogFileMaxSize doit être définie avant cette option.</translation>
+    </message>
+    <message>
+        <location filename="../ui/freshclamsetter.ui" line="281"/>
+        <source>LogRotate:</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui/freshclamsetter.ui" line="300"/>
+        <source>/tmp/freshclam.pid</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui/freshclamsetter.ui" line="310"/>
+        <source>database.clamav.net</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui/freshclamsetter.ui" line="317"/>
+        <source>When started by root, drop privileges to a specified user. The user will be determined by the application and must match the owner of the database directory</source>
+        <translation>Lorsqu&apos;il est lancé par root, il supprime les privilèges d&apos;un utilisateur spécifié. L&apos;utilisateur est déterminé par l&apos;application et doit correspondre au propriétaire du répertoire de la base de données</translation>
+    </message>
+    <message>
+        <location filename="../ui/freshclamsetter.ui" line="320"/>
+        <source>DatabaseOwner:</source>
+        <translation>Propriétaire de la base de données:</translation>
+    </message>
+    <message>
+        <location filename="../ui/freshclamsetter.ui" line="333"/>
+        <source>not found</source>
+        <translation>non trouvé</translation>
+    </message>
+    <message>
+        <location filename="../ui/freshclamsetter.ui" line="343"/>
+        <source>Enable logging to Syslog. May be used in combination with UpdateLogFile.</source>
+        <translation>Active la journalisation vers Syslog. Peut être utilisé en combinaison avec UpdateLogFile.</translation>
+    </message>
+    <message>
+        <location filename="../ui/freshclamsetter.ui" line="346"/>
+        <source>LogSysLog:</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui/freshclamsetter.ui" line="353"/>
+        <source>DatabaseMirror specifies to which mirror(s) freshclam should connect.
+You should have at least one entries: database.clamav.net. 
+Now that CloudFlare is being used as our Content Delivery Network (CDN),  this  one  domain
+name works world-wide to direct freshclam to the closest geographic endpoint.
+Default: database.clamav.net
+</source>
+        <translation>DatabaseMirror spécifie à quel(s) miroir(s) freshclam doit se connecter.
+Vous devez avoir au moins une entrée : database.clamav.net. 
+Maintenant que CloudFlare est utilisé comme notre réseau de diffusion de contenu (CDN), ce nom de domaine unique fonctionne dans le monde entier pour diriger freshclam vers le point de terminaison géographique le plus proche.
+fonctionne dans le monde entier pour diriger freshclam vers le point de terminaison géographique le plus proche.
+Par défaut : database.clamav.net
+</translation>
+    </message>
+    <message>
+        <location filename="../ui/freshclamsetter.ui" line="361"/>
+        <source>DatabaseMirror:</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui/freshclamsetter.ui" line="368"/>
+        <source>Log time with each message.</source>
+        <translation>Enregistrez la durée de chaque message.</translation>
+    </message>
+    <message>
+        <location filename="../ui/freshclamsetter.ui" line="371"/>
+        <source>LogTime:</source>
+        <translation>LogTime:</translation>
+    </message>
+    <message>
+        <location filename="../ui/freshclamsetter.ui" line="378"/>
+        <source>autodecteced location of the freshclam binary</source>
+        <translation>Emplacement autodéclaré du binaire freshclam</translation>
+    </message>
+    <message>
+        <location filename="../ui/freshclamsetter.ui" line="381"/>
+        <source>freshclam (Info)</source>
+        <translation>fraisclam (Info)</translation>
+    </message>
+    <message>
+        <location filename="../ui/freshclamsetter.ui" line="402"/>
+        <source>Specify the type of syslog messages - please refer to &apos;man syslog&apos; for facility names.
+              Default: LOG_LOCAL6</source>
+        <translation>Spécifie le type de messages syslog - veuillez vous référer à &apos;man syslog&apos; pour les noms de facilités.
+              Valeur par défaut : LOG_LOCAL6</translation>
+    </message>
+    <message>
+        <location filename="../ui/freshclamsetter.ui" line="406"/>
+        <source>LogFacility:</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui/freshclamsetter.ui" line="473"/>
+        <source>LOG_LOCAL6</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui/freshclamsetter.ui" line="478"/>
+        <source>LOG_MAIL</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui/freshclamsetter.ui" line="507"/>
+        <source>Enable verbose logging.</source>
+        <translation>Activer la journalisation verbeuse.</translation>
+    </message>
+    <message>
+        <location filename="../ui/freshclamsetter.ui" line="510"/>
+        <source>LogVerbose</source>
+        <translation>LogVerbose</translation>
+    </message>
+    <message>
+        <location filename="../ui/freshclamsetter.ui" line="529"/>
+        <source>FreshClam Daemon</source>
+        <translation>Daemon FreshClam</translation>
+    </message>
+    <message>
+        <location filename="../ui/freshclamsetter.ui" line="539"/>
+        <source>This option allows you to save the process identifier of the daemon to a file specified in the argument.</source>
+        <translation>Cette option permet d&apos;enregistrer l&apos;identifiant du processus du démon dans un fichier spécifié dans l&apos;argument.</translation>
+    </message>
+    <message>
+        <location filename="../ui/freshclamsetter.ui" line="542"/>
+        <source>PID-File:</source>
+        <translation>Fichier PID :</translation>
+    </message>
+    <message>
+        <location filename="../ui/freshclamsetter.ui" line="555"/>
+        <source>Path to a directory containing database files.</source>
+        <translation>Chemin d&apos;accès au répertoire contenant les fichiers de la base de données.</translation>
+    </message>
+    <message>
+        <location filename="../ui/freshclamsetter.ui" line="558"/>
+        <source>DatabaseDirectory</source>
+        <translation>Dossier des Bases de signatures</translation>
+    </message>
+    <message>
+        <location filename="../ui/freshclamsetter.ui" line="587"/>
+        <source>Which database to update
+Default: all</source>
+        <translation>Quelle base de données mettre à jour
+Par défaut : toutes</translation>
+    </message>
+    <message>
+        <location filename="../ui/freshclamsetter.ui" line="622"/>
+        <source>Start daemon automatically
+at program start</source>
+        <translation>Démarrage automatique du démon
+au démarrage du programme</translation>
+    </message>
+    <message>
+        <location filename="../ui/freshclamsetter.ui" line="637"/>
+        <source>Number of database checks per day.</source>
+        <translation>Nombre de vérifications de la base de données par jour.</translation>
+    </message>
+    <message>
+        <location filename="../ui/freshclamsetter.ui" line="640"/>
+        <source>Check for Updates</source>
+        <translation>Chercher des mises à jour</translation>
+    </message>
+    <message>
+        <location filename="../ui/freshclamsetter.ui" line="657"/>
+        <source>times per days</source>
+        <translation>par jours</translation>
+    </message>
+    <message>
+        <location filename="../ui/freshclamsetter.ui" line="664"/>
+        <source>Execute Daemon and
+manual update as root</source>
+        <translation>Exécuter le Daemon et la
+mise à jour manuelle en tant que root</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -1393,63 +1886,78 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/freshclamsetter.cpp" line="85"/>
+        <location filename="../src/freshclamsetter.cpp" line="87"/>
         <source>Update process startet .....</source>
         <translation>Recherche de mise a jour démarrée .....</translation>
     </message>
     <message>
-        <location filename="../src/freshclamsetter.cpp" line="220"/>
-        <location filename="../src/freshclamsetter.cpp" line="298"/>
-        <location filename="../src/freshclamsetter.cpp" line="516"/>
+        <location filename="../src/freshclamsetter.cpp" line="222"/>
+        <location filename="../src/freshclamsetter.cpp" line="300"/>
+        <location filename="../src/freshclamsetter.cpp" line="518"/>
         <source>Deamon running - stop deamon</source>
         <translation>Service démarré - Arrêt du service</translation>
     </message>
     <message>
-        <location filename="../src/freshclamsetter.cpp" line="286"/>
+        <location filename="../src/freshclamsetter.cpp" line="288"/>
         <source>INFO</source>
         <translation>INFO</translation>
     </message>
     <message>
-        <location filename="../src/freshclamsetter.cpp" line="286"/>
+        <location filename="../src/freshclamsetter.cpp" line="288"/>
         <source>Update-Process finished</source>
         <translation>Recherche de mises à jour terminée</translation>
     </message>
     <message>
-        <location filename="../src/freshclamsetter.cpp" line="289"/>
+        <location filename="../src/freshclamsetter.cpp" line="291"/>
         <source>WARNING</source>
         <translation>ATTENTION</translation>
     </message>
     <message>
-        <location filename="../src/freshclamsetter.cpp" line="289"/>
+        <location filename="../src/freshclamsetter.cpp" line="291"/>
         <source>Update-Process failed!
 Read log-messages for possible reason.</source>
         <translation>Echec de mise a jour!
 Visitez les journaux pour en trouver la raison.</translation>
     </message>
     <message>
-        <location filename="../src/freshclamsetter.cpp" line="482"/>
+        <location filename="../src/freshclamsetter.cpp" line="484"/>
         <source>Database origin : &lt;/td&gt;&lt;td&gt;</source>
         <translation>Source de la base de donnée : &lt;/td&gt;&lt;td&gt;</translation>
     </message>
     <message>
-        <location filename="../src/freshclamsetter.cpp" line="485"/>
+        <location filename="../src/freshclamsetter.cpp" line="487"/>
         <source>Last Update : &lt;/td&gt;&lt;td&gt;</source>
         <translation>Dernière mise a jour : &lt;/td&gt;&lt;td&gt;</translation>
     </message>
     <message>
-        <location filename="../src/freshclamsetter.cpp" line="488"/>
+        <location filename="../src/freshclamsetter.cpp" line="490"/>
         <source>Main File : &lt;/td&gt;&lt;td&gt;</source>
         <translation>Fichier Principal : &lt;/td&gt;&lt;td&gt;</translation>
     </message>
     <message>
-        <location filename="../src/freshclamsetter.cpp" line="491"/>
+        <location filename="../src/freshclamsetter.cpp" line="493"/>
         <source>Daily File : &lt;/td&gt;&lt;td&gt;</source>
         <translation>Fichier quotidien : &lt;/td&gt;&lt;td&gt;</translation>
     </message>
     <message>
-        <location filename="../src/freshclamsetter.cpp" line="494"/>
+        <location filename="../src/freshclamsetter.cpp" line="496"/>
         <source>ByteCode File : &lt;/td&gt;&lt;td&gt;</source>
         <translation>Fichier ByteCode : &lt;/td&gt;&lt;td&gt;</translation>
+    </message>
+    <message>
+        <location filename="../src/freshclamsetter.cpp" line="679"/>
+        <source>Select Folder for the PID-File</source>
+        <translation>Sélection du dossier pour le fichier PID</translation>
+    </message>
+    <message>
+        <location filename="../src/freshclamsetter.cpp" line="696"/>
+        <source>Virus definitions missing!</source>
+        <translation>Définitions de virus manquantes !</translation>
+    </message>
+    <message>
+        <location filename="../src/freshclamsetter.cpp" line="696"/>
+        <source>No virus definitions found in the database folder. Should the virus definitions be downloaded?</source>
+        <translation>Aucune définition de virus n&apos;a été trouvée dans le dossier de la base de données. Les définitions de virus doivent-elles être téléchargées ?</translation>
     </message>
 </context>
 <context>
@@ -4835,297 +5343,211 @@ Continuer à partir depuis le debut du journal?</translation>
         <translation>Form</translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="391"/>
         <source>times per days</source>
-        <translation>par jours</translation>
+        <translation type="vanished">par jours</translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="342"/>
-        <source>LogRotate:</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../ui/setuptab.ui" line="546"/>
         <source>not found</source>
-        <translation>non trouvé</translation>
+        <translation type="vanished">non trouvé</translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="47"/>
         <source>Log time with each message.</source>
-        <translation>Enregistrez la durée de chaque message.</translation>
+        <translation type="vanished">Enregistrez la durée de chaque message.</translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="50"/>
         <source>LogTime:</source>
-        <translation>LogTime:</translation>
+        <translation type="vanished">LogTime:</translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="57"/>
         <source>This option allows you to save the process identifier of the daemon to a file specified in the argument.</source>
-        <translation>Cette option permet d&apos;enregistrer l&apos;identifiant du processus du démon dans un fichier spécifié dans l&apos;argument.</translation>
+        <translation type="vanished">Cette option permet d&apos;enregistrer l&apos;identifiant du processus du démon dans un fichier spécifié dans l&apos;argument.</translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="60"/>
-        <source>PID-File:</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../ui/setuptab.ui" line="169"/>
+        <location filename="../ui/setuptab.ui" line="149"/>
         <source>[da_DK] Denmark</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="178"/>
+        <location filename="../ui/setuptab.ui" line="158"/>
         <source>[de_DE] Germany</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="187"/>
+        <location filename="../ui/setuptab.ui" line="167"/>
         <source>[en_GB] Great Britain</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="196"/>
+        <location filename="../ui/setuptab.ui" line="176"/>
         <source>[en_IE] Ireland</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="205"/>
+        <location filename="../ui/setuptab.ui" line="185"/>
         <source>[en_US] United States</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="214"/>
+        <location filename="../ui/setuptab.ui" line="194"/>
         <source>[en_AU] Australia</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="223"/>
+        <location filename="../ui/setuptab.ui" line="203"/>
         <source>[en_NZ] New Zealand</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="232"/>
+        <location filename="../ui/setuptab.ui" line="212"/>
         <source>[es_ES] Spain</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="241"/>
+        <location filename="../ui/setuptab.ui" line="221"/>
         <source>[fr_FR] France</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="250"/>
+        <location filename="../ui/setuptab.ui" line="230"/>
         <source>[it_IT] Italy</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="259"/>
+        <location filename="../ui/setuptab.ui" line="239"/>
         <source>[pt_AO] Angola</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="268"/>
+        <location filename="../ui/setuptab.ui" line="248"/>
         <source>[pt_BR] Brasil</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="277"/>
+        <location filename="../ui/setuptab.ui" line="257"/>
         <source>[pt_CV] Cabo Verde</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="286"/>
+        <location filename="../ui/setuptab.ui" line="266"/>
         <source>[pt_MZ] Mozambique</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="295"/>
+        <location filename="../ui/setuptab.ui" line="275"/>
         <source>[pt_MO] Macau</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="304"/>
+        <location filename="../ui/setuptab.ui" line="284"/>
         <source>[pt_PT] Portugal</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="313"/>
+        <location filename="../ui/setuptab.ui" line="293"/>
         <source>[pt_ST] São Tomé</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="322"/>
+        <location filename="../ui/setuptab.ui" line="302"/>
         <source>[pt_TL] Timor Leste</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="434"/>
-        <location filename="../ui/setuptab.ui" line="453"/>
-        <location filename="../ui/setuptab.ui" line="527"/>
-        <location filename="../ui/setuptab.ui" line="621"/>
-        <source>no</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../ui/setuptab.ui" line="439"/>
-        <location filename="../ui/setuptab.ui" line="458"/>
-        <location filename="../ui/setuptab.ui" line="532"/>
-        <location filename="../ui/setuptab.ui" line="626"/>
-        <source>yes</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../ui/setuptab.ui" line="638"/>
-        <source>LogFacility:</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../ui/setuptab.ui" line="820"/>
         <source>Clamd &amp; Scan on Access</source>
-        <translation>Clamd &amp; Scan on Access</translation>
+        <translation type="vanished">Clamd &amp; Scan on Access</translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="845"/>
         <source>clamd not running - start clamd</source>
-        <translation>clamd ne fonctionne pas - démarrer clamd</translation>
+        <translation type="vanished">clamd ne fonctionne pas - démarrer clamd</translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="889"/>
         <source>Folder under monitoring</source>
-        <translation>Dépliant sous surveillance</translation>
+        <translation type="vanished">Dépliant sous surveillance</translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="491"/>
         <source>...</source>
-        <translation>...</translation>
+        <translation type="vanished">...</translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="514"/>
-        <source>Freshclam Settings</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../ui/setuptab.ui" line="674"/>
-        <source>LogSysLog:</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../ui/setuptab.ui" line="733"/>
         <source>Update Database</source>
-        <translation>Mise à jour des bases de signatures</translation>
+        <translation type="vanished">Mise à jour des bases de signatures</translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="591"/>
         <source>DatabaseOwner:</source>
-        <translation>Propriétaire de la base de données:</translation>
+        <translation type="vanished">Propriétaire de la base de données:</translation>
     </message>
     <message>
         <source>Execute Deaemon and manual update as root</source>
         <translation type="vanished">Exécutez Deaemon et la mise à jour manuelle en tant que root</translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="757"/>
         <source>All</source>
-        <translation>Tout</translation>
+        <translation type="vanished">Tout</translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="762"/>
         <source>main</source>
-        <translation>Principal</translation>
+        <translation type="vanished">Principal</translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="767"/>
         <source>daily</source>
-        <translation>Journalier</translation>
+        <translation type="vanished">Journalier</translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="772"/>
         <source>bytecode</source>
-        <translation>bytecode</translation>
+        <translation type="vanished">bytecode</translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="581"/>
-        <source>DatabaseMirror:</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../ui/setuptab.ui" line="608"/>
         <source>Check for Updates</source>
-        <translation>Chercher des mises à jour</translation>
+        <translation type="vanished">Chercher des mises à jour</translation>
     </message>
     <message>
         <source>italian</source>
         <translation type="vanished">italien</translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="588"/>
         <source>When started by root, drop privileges to a specified user. The user will be determined by the application and must match the owner of the database directory</source>
-        <translation>Lorsqu&apos;il est lancé par root, il supprime les privilèges d&apos;un utilisateur spécifié. L&apos;utilisateur est déterminé par l&apos;application et doit correspondre au propriétaire du répertoire de la base de données</translation>
+        <translation type="vanished">Lorsqu&apos;il est lancé par root, il supprime les privilèges d&apos;un utilisateur spécifié. L&apos;utilisateur est déterminé par l&apos;application et doit correspondre au propriétaire du répertoire de la base de données</translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="748"/>
         <source>Start daemon automatically
 at program start</source>
-        <translation>Démarrage automatique du démon
+        <translation type="vanished">Démarrage automatique du démon
 au démarrage du programme</translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="740"/>
         <source>Execute Daemon and
 manual update as root</source>
-        <translation>Exécuter le Daemon et la
+        <translation type="vanished">Exécuter le Daemon et la
 mise à jour manuelle en tant que root</translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="381"/>
         <source>autodecteced location of the freshclam binary</source>
-        <translation>Emplacement autodéclaré du binaire freshclam</translation>
+        <translation type="vanished">Emplacement autodéclaré du binaire freshclam</translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="384"/>
-        <source>freshclam (Info)</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../ui/setuptab.ui" line="690"/>
         <source>DatabaseDirectory</source>
-        <translation>Dossier des Bases de signatures</translation>
+        <translation type="vanished">Dossier des Bases de signatures</translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="651"/>
-        <source>LOG_LOCAL6</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../ui/setuptab.ui" line="656"/>
-        <source>LOG_MAIL</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../ui/setuptab.ui" line="136"/>
+        <location filename="../ui/setuptab.ui" line="116"/>
         <source>Language</source>
         <translation>langue</translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="687"/>
         <source>Path to a directory containing database files.</source>
-        <translation>Chemin d&apos;accès au répertoire contenant les fichiers de la base de données.</translation>
+        <translation type="vanished">Chemin d&apos;accès au répertoire contenant les fichiers de la base de données.</translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="605"/>
         <source>Number of database checks per day.</source>
-        <translation>Nombre de vérifications de la base de données par jour.</translation>
+        <translation type="vanished">Nombre de vérifications de la base de données par jour.</translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="556"/>
         <source>Enable verbose logging.</source>
-        <translation>Activer la journalisation verbeuse.</translation>
+        <translation type="vanished">Activer la journalisation verbeuse.</translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="559"/>
         <source>LogVerbose</source>
-        <translation>LogVerbose</translation>
+        <translation type="vanished">LogVerbose</translation>
     </message>
     <message>
         <source>Execute Deaemon and
@@ -5134,33 +5556,29 @@ manual update as root</source>
 à jour manuelle en tant que root</translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="634"/>
         <source>Specify the type of syslog messages - please refer to &apos;man syslog&apos; for facility names.
               Default: LOG_LOCAL6</source>
-        <translation>Spécifie le type de messages syslog - veuillez vous référer à &apos;man syslog&apos; pour les noms de facilités.
+        <translation type="vanished">Spécifie le type de messages syslog - veuillez vous référer à &apos;man syslog&apos; pour les noms de facilités.
               Valeur par défaut : LOG_LOCAL6</translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="729"/>
         <source>Which database to update
 Default: all</source>
-        <translation>Quelle base de données mettre à jour
+        <translation type="vanished">Quelle base de données mettre à jour
 Par défaut : toutes</translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="339"/>
         <source>Rotate log file. Requires LogFileMaxSize option set prior to this option.</source>
-        <translation>Rotation du fichier journal. L&apos;option LogFileMaxSize doit être définie avant cette option.</translation>
+        <translation type="vanished">Rotation du fichier journal. L&apos;option LogFileMaxSize doit être définie avant cette option.</translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="573"/>
         <source>DatabaseMirror specifies to which mirror(s) freshclam should connect.
 You should have at least one entries: database.clamav.net. 
 Now that CloudFlare is being used as our Content Delivery Network (CDN),  this  one  domain
 name works world-wide to direct freshclam to the closest geographic endpoint.
 Default: database.clamav.net
 </source>
-        <translation>DatabaseMirror spécifie à quel(s) miroir(s) freshclam doit se connecter.
+        <translation type="vanished">DatabaseMirror spécifie à quel(s) miroir(s) freshclam doit se connecter.
 Vous devez avoir au moins une entrée : database.clamav.net. 
 Maintenant que CloudFlare est utilisé comme notre réseau de diffusion de contenu (CDN), ce nom de domaine unique fonctionne dans le monde entier pour diriger freshclam vers le point de terminaison géographique le plus proche.
 fonctionne dans le monde entier pour diriger freshclam vers le point de terminaison géographique le plus proche.
@@ -5206,93 +5624,77 @@ en tant que root</translation>
         <translation type="vanished">portugais</translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="671"/>
         <source>Enable logging to Syslog. May be used in combination with UpdateLogFile.</source>
-        <translation>Active la journalisation vers Syslog. Peut être utilisé en combinaison avec UpdateLogFile.</translation>
-    </message>
-    <message>
-        <location filename="../ui/setuptab.ui" line="719"/>
-        <source>FreshClam Daemon</source>
-        <translation></translation>
+        <translation type="vanished">Active la journalisation vers Syslog. Peut être utilisé en combinaison avec UpdateLogFile.</translation>
     </message>
     <message>
         <source>run as root</source>
         <translation type="vanished">Exécuter en tant que super-utilisateur</translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="95"/>
+        <location filename="../ui/setuptab.ui" line="75"/>
         <source>Window State on Startup</source>
         <translation>État de la fenêtre au démarrage</translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="103"/>
+        <location filename="../ui/setuptab.ui" line="83"/>
         <source>Show Window maximized</source>
         <translation>Afficher la fenêtre maximisée</translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="108"/>
+        <location filename="../ui/setuptab.ui" line="88"/>
         <source>Show Tray Icon only</source>
         <translation>Afficher uniquement l&apos;icône de la barre d&apos;état système</translation>
     </message>
     <message>
-        <location filename="../src/setuptab.cpp" line="342"/>
-        <location filename="../src/setuptab.cpp" line="607"/>
         <source>WARNING</source>
-        <translation>ATTENTION</translation>
+        <translation type="vanished">ATTENTION</translation>
     </message>
     <message>
-        <location filename="../src/setuptab.cpp" line="447"/>
+        <location filename="../src/setuptab.cpp" line="41"/>
         <source>Warning</source>
         <translation>Attention</translation>
     </message>
     <message>
-        <location filename="../src/setuptab.cpp" line="447"/>
+        <location filename="../src/setuptab.cpp" line="41"/>
         <source>You have to restart the application for changes to take effect!</source>
         <translation>Vous devez redémarrer l&apos;application pour que les modifications soient prises en compte !</translation>
     </message>
     <message>
-        <location filename="../src/setuptab.cpp" line="523"/>
         <source>Virus definitions missing!</source>
-        <translation>Définitions de virus manquantes !</translation>
+        <translation type="vanished">Définitions de virus manquantes !</translation>
     </message>
     <message>
-        <location filename="../src/setuptab.cpp" line="523"/>
         <source>No virus definitions found in the database folder. Should the virus definitions be downloaded?</source>
-        <translation>Aucune définition de virus n&apos;a été trouvée dans le dossier de la base de données. Les définitions de virus doivent-elles être téléchargées ?</translation>
+        <translation type="vanished">Aucune définition de virus n&apos;a été trouvée dans le dossier de la base de données. Les définitions de virus doivent-elles être téléchargées ?</translation>
     </message>
     <message>
-        <location filename="../src/setuptab.cpp" line="599"/>
         <source>Directory to monitor</source>
-        <translation>Répertoire à surveiller</translation>
+        <translation type="vanished">Répertoire à surveiller</translation>
     </message>
     <message>
-        <location filename="../src/setuptab.cpp" line="607"/>
         <source>Path already under monitoring</source>
-        <translation>Chemin déjà sous surveillance</translation>
+        <translation type="vanished">Chemin déjà sous surveillance</translation>
     </message>
     <message>
-        <location filename="../src/setuptab.cpp" line="616"/>
         <source>Remove Folder from monitoring</source>
-        <translation>Supprimer le dossier de la surveillance</translation>
+        <translation type="vanished">Supprimer le dossier de la surveillance</translation>
     </message>
     <message>
-        <location filename="../src/setuptab.cpp" line="616"/>
         <source>Path: </source>
-        <translation>Trajectoire : </translation>
+        <translation type="vanished">Trajectoire : </translation>
     </message>
     <message>
-        <location filename="../src/setuptab.cpp" line="616"/>
         <source>Do you want to remove the folder from the monitoring list?</source>
-        <translation>Voulez-vous supprimer le dossier de la liste de surveillance ?</translation>
+        <translation type="vanished">Voulez-vous supprimer le dossier de la liste de surveillance ?</translation>
     </message>
     <message>
         <source>Select Directory</source>
         <translation type="vanished">Selection du dossier</translation>
     </message>
     <message>
-        <location filename="../src/setuptab.cpp" line="506"/>
         <source>Select Folder for the PID-File</source>
-        <translation>Sélection du dossier pour le fichier PID</translation>
+        <translation type="vanished">Sélection du dossier pour le fichier PID</translation>
     </message>
 </context>
 </TS>
