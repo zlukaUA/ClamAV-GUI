@@ -11,6 +11,7 @@ QDir tempDir;
     updateLogHighLighter = new highlighter(ui->logPlainText->document());
     freshclamLogHighLighter = new highlighter(ui->deamonLogText->document());
     setupFile = new setupFileHandler(QDir::homePath() + "/.clamav-gui/settings.ini");
+    sudoGUI = setupFile->getSectionValue("Settings","SudoGUI");
     freshclamConf = new setupFileHandler(QDir::homePath() + "/.clamav-gui/freshclam.conf");
     updater = new QProcess(this);
     connect(updater,SIGNAL(readyReadStandardError()),this,SLOT(slot_updaterHasOutput()));
@@ -90,21 +91,23 @@ QStringList parameters;
         QStringList databaseToUpdate;
         databaseToUpdate << "all" << "main" << "daily" << "bytecode";
         QString whatDB = "";
-        QString para = "echo \"### ###  ### ##   ### ###   ## ##   ###  ##   ## ##   ####       ##     ##   ##\n";
-        para = para +  " ##  ##   ##  ##   ##  ##  ##   ##   ##  ##  ##   ##   ##         ##     ## ##\n";
-        para = para +  " ##       ##  ##   ##      ####      ##  ##  ##        ##       ## ##   # ### #\n";
-        para = para +  " ## ##    ## ##    ## ##    #####    ## ###  ##        ##       ##  ##  ## # ##\n";
-        para = para +  " ##       ## ##    ##          ###   ##  ##  ##        ##       ## ###  ##   ##\n";
-        para = para +  " ##       ##  ##   ##  ##  ##   ##   ##  ##  ##   ##   ##  ##   ##  ##  ##   ##\n";
-        para = para +  "####     #### ##  ### ###   ## ##   ###  ##   ## ##   ### ###  ###  ##  ##   ##\n\";";
+        QString para;
         if (setupFile->getSectionIntValue("FreshClam","DataBaseToUpdate") > 0) whatDB = " --update-db=" + databaseToUpdate[setupFile->getSectionIntValue("FreshClam","DataBaseToUpdate")];
         if ((setupFile->getSectionValue("Directories","LoadSupportedDBFiles") != "") && (setupFile->getSectionValue("Directories","LoadSupportedDBFiles").indexOf("not checked") == -1)){
-            para = para + "echo \"******************************************\nStarting freshclam as root\nPlease enter root password\n******************************************\n\"; /usr/bin/sudo " + setupFile->getSectionValue("FreshclamSettings","FreshclamLocation") + " --datadir=" + setupFile->getSectionValue("Directories","LoadSupportedDBFiles").mid(setupFile->getSectionValue("Directories","LoadSupportedDBFiles").indexOf("|")+1) + " 2>&1 > " + QDir::homePath() + "/.clamav-gui/update.log" + " --config-file=" + QDir::homePath() + "/.clamav-gui/freshclam.conf" + whatDB;
+            para = setupFile->getSectionValue("FreshclamSettings","FreshclamLocation") + " --datadir=" + setupFile->getSectionValue("Directories","LoadSupportedDBFiles").mid(setupFile->getSectionValue("Directories","LoadSupportedDBFiles").indexOf("|")+1) + " 2>&1 > " + QDir::homePath() + "/.clamav-gui/update.log" + " --config-file=" + QDir::homePath() + "/.clamav-gui/freshclam.conf" + whatDB;
         } else {
-            para = para + "echo \"******************************************\nStarting freshclam as root\nPlease enter root password\n******************************************\n\"; /usr/bin/sudo " + setupFile->getSectionValue("FreshclamSettings","FreshclamLocation") + " 2>&1 > " + QDir::homePath() + "/.clamav-gui/update.log" + " --config-file=" + QDir::homePath() + "/.clamav-gui/freshclam.conf" + whatDB;
+            para = setupFile->getSectionValue("FreshclamSettings","FreshclamLocation") + " 2>&1 > " + QDir::homePath() + "/.clamav-gui/update.log" + " --config-file=" + QDir::homePath() + "/.clamav-gui/freshclam.conf" + whatDB;
         }
-        parameters << "-e" << para;
-        updater->start("xterm",parameters);
+        QFile startfreshclamFile(QDir::homePath() + "/.clamav-gui/startfreshclam.sh");
+        startfreshclamFile.remove();
+        if (startfreshclamFile.open(QIODevice::Text|QIODevice::ReadWrite)){
+            QTextStream stream(&startfreshclamFile);
+            stream << "#!/bin/bash\n" << para;
+            startfreshclamFile.close();
+            startfreshclamFile.setPermissions(QFileDevice::ReadOwner|QFileDevice::WriteOwner|QFileDevice::ExeOwner|QFileDevice::ReadGroup|QFileDevice::WriteGroup|QFileDevice::ExeGroup);
+        }
+        parameters << QDir::homePath() + "/.clamav-gui/startfreshclam.sh";
+        updater->start(sudoGUI,parameters);
     } else {
         QStringList databaseToUpdate;
         databaseToUpdate << "all" << "main" << "daily" << "bytecode";
@@ -133,16 +136,17 @@ QStringList parameters;
         logFileWatcher->addPath(logFile);
         if (setupFile->getSectionBoolValue("FreshClam","runasroot") == true){
             if (startup == false) {
-                QString para = "echo \"### ###  ### ##   ### ###   ## ##   ###  ##   ## ##   ####       ##     ##   ##\n";
-                para = para +  " ##  ##   ##  ##   ##  ##  ##   ##   ##  ##  ##   ##   ##         ##     ## ##\n";
-                para = para +  " ##       ##  ##   ##      ####      ##  ##  ##        ##       ## ##   # ### #\n";
-                para = para +  " ## ##    ## ##    ## ##    #####    ## ###  ##        ##       ##  ##  ## # ##\n";
-                para = para +  " ##       ## ##    ##          ###   ##  ##  ##        ##       ## ###  ##   ##\n";
-                para = para +  " ##       ##  ##   ##  ##  ##   ##   ##  ##  ##   ##   ##  ##   ##  ##  ##   ##\n";
-                para = para +  "####     #### ##  ### ###   ## ##   ###  ##   ## ##   ### ###  ###  ##  ##   ##\n\";";
-                para = para + "echo \"******************************************\nStarting freshclam daemon as root\nPlease enter root password\n******************************************\n\"; /usr/bin/sudo " + setupFile->getSectionValue("FreshclamSettings","FreshclamLocation") + " -d -l " + logFile + " --config-file=" + QDir::homePath() + "/.clamav-gui/freshclam.conf";
-                parameters << "-e" << para;
-                startDeamonProcess->start("xterm",parameters);
+                QString para = setupFile->getSectionValue("FreshclamSettings","FreshclamLocation") + " -d -l " + logFile + " --config-file=" + QDir::homePath() + "/.clamav-gui/freshclam.conf";
+                QFile startfreshclamFile(QDir::homePath() + "/.clamav-gui/startfreshclam.sh");
+                startfreshclamFile.remove();
+                if (startfreshclamFile.open(QIODevice::Text|QIODevice::ReadWrite)){
+                    QTextStream stream(&startfreshclamFile);
+                    stream << "#!/bin/bash\n" << para;
+                    startfreshclamFile.close();
+                    startfreshclamFile.setPermissions(QFileDevice::ReadOwner|QFileDevice::WriteOwner|QFileDevice::ExeOwner|QFileDevice::ReadGroup|QFileDevice::WriteGroup|QFileDevice::ExeGroup);
+                }
+                parameters << QDir::homePath() + "/.clamav-gui/startfreshclam.sh";
+                startDeamonProcess->start(sudoGUI,parameters);
             } else {
                 startDelayTimer->start(5000);
             }
@@ -161,17 +165,17 @@ QStringList parameters;
             pidString = stream.readLine();
         }
         if (setupFile->getSectionBoolValue("FreshClam","runasroot") == true) {
-          parameters << "-e";
-          QString para = "echo \"### ###  ### ##   ### ###   ## ##   ###  ##   ## ##   ####       ##     ##   ##\n";
-          para = para +  " ##  ##   ##  ##   ##  ##  ##   ##   ##  ##  ##   ##   ##         ##     ## ##\n";
-          para = para +  " ##       ##  ##   ##      ####      ##  ##  ##        ##       ## ##   # ### #\n";
-          para = para +  " ## ##    ## ##    ## ##    #####    ## ###  ##        ##       ##  ##  ## # ##\n";
-          para = para +  " ##       ## ##    ##          ###   ##  ##  ##        ##       ## ###  ##   ##\n";
-          para = para +  " ##       ##  ##   ##  ##  ##   ##   ##  ##  ##   ##   ##  ##   ##  ##  ##   ##\n";
-          para = para +  "####     #### ##  ### ###   ## ##   ###  ##   ## ##   ### ###  ###  ##  ##   ##\n\";";
-          para = para + "echo \"******************************************\nTerminating freshclam running as root\nPlease enter root password\n******************************************\n\"; /usr/bin/sudo kill -sigterm " + pidString + " && /usr/bin/sudo rm " + pidFile;
-          parameters << para;
-          QProcess::execute("xterm",parameters);
+          QString para = "/bin/kill -sigterm " + pidString + " && rm " + pidFile;
+          QFile stopfreshclamFile(QDir::homePath() + "/.clamav-gui/stopfreshclam.sh");
+          stopfreshclamFile.remove();
+          if (stopfreshclamFile.open(QIODevice::Text|QIODevice::ReadWrite)){
+              QTextStream stream(&stopfreshclamFile);
+              stream << "#!/bin/bash\n" << para;
+              stopfreshclamFile.close();
+              stopfreshclamFile.setPermissions(QFileDevice::ReadOwner|QFileDevice::WriteOwner|QFileDevice::ExeOwner|QFileDevice::ReadGroup|QFileDevice::WriteGroup|QFileDevice::ExeGroup);
+          }
+          parameters << QDir::homePath() + "/.clamav-gui/stopfreshclam.sh";
+          QProcess::execute(sudoGUI,parameters);
           checkDaemonRunning();
         } else {
           parameters << "-sigterm" << pidString;
@@ -270,10 +274,18 @@ void freshclamsetter::slot_disableUpdateButtons()
 void freshclamsetter::slot_startDelayTimerExpired()
 {
 QStringList parameters;
+    QString para = setupFile->getSectionValue("FreshclamSettings","FreshclamLocation") + " -d -l " + logFile + " --config-file=" + QDir::homePath() + "/.clamav-gui/freshclam.conf";
+    QFile startfreshclamFile(QDir::homePath() + "/.clamav-gui/startfreshclam.sh");
+    startfreshclamFile.remove();
+    if (startfreshclamFile.open(QIODevice::Text|QIODevice::ReadWrite)){
+        QTextStream stream(&startfreshclamFile);
+        stream << "#!/bin/bash\n" << para;
+        startfreshclamFile.close();
+        startfreshclamFile.setPermissions(QFileDevice::ReadOwner|QFileDevice::WriteOwner|QFileDevice::ExeOwner|QFileDevice::ReadGroup|QFileDevice::WriteGroup|QFileDevice::ExeGroup);
+    }
+    parameters << QDir::homePath() + "/.clamav-gui/startfreshclam.sh";
 
-    QString para = "echo \"******************************************\nStarting freshclam daemon as root\nPlease enter root password\n******************************************\n\"; /usr/bin/sudo " + setupFile->getSectionValue("FreshclamSettings","FreshclamLocation") + " -d -l " + logFile + " --config-file=" + QDir::homePath() + "/.clamav-gui/freshclam.conf";
-    parameters << "-e" << para;
-    startDeamonProcess->start("xterm",parameters);
+    startDeamonProcess->start(sudoGUI,parameters);
 }
 
 

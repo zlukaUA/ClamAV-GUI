@@ -62,6 +62,7 @@ private:
     QString              pidFile;
     QString              logFile;
     QString              ps_processOutput;
+    QString              sudoGUI;
     QTimer              *startDelayTimer;
     progressDialog      *busyLabel;
     QFileSystemWatcher  *pidFileWatcher;

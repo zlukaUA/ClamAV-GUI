@@ -33,6 +33,7 @@ public:
     QString               clamonaccLocation; // clamd
     QString               clamonaccPid; // clamd
     QString               lastFound; // clamd
+    QString               sudoGUI;
     highlighter         * logHighlighter; // clamd
     QFileSystemWatcher  * clamdLogWatcher; // clamd
     QFileSystemWatcher  * clamdPidWatcher; // clamd

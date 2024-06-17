@@ -72,6 +72,8 @@ private:
     QAction                 * actionShowHideMainWindow;
     setupFileHandler        * setupFile;
     QProcess                * scanProcess;
+    QProcess                * sudoGUIProcess;
+    QString                   guisudoapp;
     scanTab                 * scannerTab;
     setupTab                * setUpTab;
     QTimer                  * mainWindowTimer;
@@ -112,6 +114,7 @@ private slots:
     void slot_errorReporter();
     void slot_updateDatabase();
     void slot_startclamd();
+    void slot_sudoGUIProcessFinished();
 
 signals:
     void showHideDropZoneTriggered();

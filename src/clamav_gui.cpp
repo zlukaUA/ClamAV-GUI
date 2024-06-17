@@ -12,6 +12,7 @@ clamav_gui::clamav_gui(QWidget *parent) : QWidget(parent), ui(new Ui::clamav_gui
     QStringList scanObjects;
     bool createDefaultSettings = false;
     error = false;
+    guisudoapp = "pkexec";
 //*****************************************************************************
 //creating service Menu
 //*****************************************************************************
@@ -143,6 +144,12 @@ if (tempDir.exists(QDir::homePath() + "/.local/share/kservices5/ServiceMenus/sca
     connect(optionTab,SIGNAL(updateClamdConf()),clamdTab,SLOT(slot_updateClamdConf()));
     connect(clamdTab,SIGNAL(setActiveTab()),this,SLOT(slot_startclamd()));
     ui->tabWidget->setCurrentIndex(0);
+
+    sudoGUIProcess = new QProcess(this);
+    connect(sudoGUIProcess,SIGNAL(finished(int)),this,SLOT(slot_sudoGUIProcessFinished()));
+    QStringList parameters;
+    parameters << "pkexec";
+    sudoGUIProcess->start("whereis",parameters);
 }
 clamav_gui::~clamav_gui()
 {
@@ -532,4 +539,34 @@ void clamav_gui::slot_updateDatabase()
 
 void clamav_gui::slot_startclamd(){
     ui->tabWidget->setCurrentIndex(6);
+}
+
+void clamav_gui::slot_sudoGUIProcessFinished()
+{
+    QStringList parameters;
+
+    QString sudoGUIOutput = sudoGUIProcess->readAll();
+    if (guisudoapp == "pkexec") {
+        if (sudoGUIOutput != "pkexec:\n") {
+            QStringList values = sudoGUIOutput.split(" ");
+            if (values.size() > 1) {
+                if (values.length() > 0) setupFile->setSectionValue("Settings","SudoGUI",values[1]);
+            } else {
+                guisudoapp = "kdesu";
+                parameters << "kdesu";
+                sudoGUIProcess->start("whereis",parameters);
+            }
+        }
+    }
+
+    if (guisudoapp == "kdesudo") {
+        if (sudoGUIOutput != "kdesudo:\n") {
+            QStringList values = sudoGUIOutput.split(" ");
+            if (values.size() > 1) {
+                if (values.length() > 0) setupFile->setSectionValue("Settings","SudoGUI",values[1]);
+            } else {
+                QMessageBox::warning(this,tr("WARNING"),tr("Neither \"pkexec\" nor \"kdesu\" is installed. Please install at least one of this to apps!"));
+            }
+        }
+    }
 }

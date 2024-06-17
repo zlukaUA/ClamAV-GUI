@@ -361,6 +361,7 @@ QFile file(setupFileName);
 void setupFileHandler::writeSetupFile(){
 QFile file(setupFileName);
 
+    file.remove();
     if (file.open(QIODevice::WriteOnly|QIODevice::Text)){
         QTextStream stream(&file);
         if (setupFileContent.indexOf("\n\n") != -1) setupFileContent.replace("\n\n\n","\n\n");

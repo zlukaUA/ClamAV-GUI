@@ -17,6 +17,7 @@ clamdManager::~clamdManager()
 
 void clamdManager::initClamdSettings() {
     setupFile = new setupFileHandler(QDir::homePath() + "/.clamav-gui/settings.ini");
+    sudoGUI = setupFile->getSectionValue("Settings","SudoGUI");
     clamdConf = new setupFileHandler(QDir::homePath() + "/.clamav-gui/clamd.conf");
     QStringList parameters;
     QStringList monitorings = setupFile->getKeywords("Clamonacc");
@@ -299,7 +300,6 @@ void clamdManager::slot_clamdStartStopButtonClicked()
     QStringList monitorings = setupFile->getKeywords("Clamonacc");
     if (monitorings.length() > 0) {
         QStringList parameters;
-        QString para;
         QFile pidFile("/tmp/clamd.pid");
         QString clamonaccOptions;
         int value = setupFile->getSectionIntValue("OnAccess","InfectedFiles");
@@ -319,34 +319,36 @@ void clamdManager::slot_clamdStartStopButtonClicked()
             logFile.close();
             ui->clamdLogPlainTextEdit->clear();
             ui->startStopClamdPushButton->setText(tr("  Clamd starting. Please wait!"));
-            para = " echo \"   ####   ####       ##     ##   ##  #####\n";
-            para +=        "  ##  ##   ##       ####    ### ###   ## ##\n";
-            para +=        " ##        ##      ##  ##   #######   ##  ##\n";
-            para +=        " ##        ##      ##  ##   #######   ##  ##\n";
-            para +=        " ##        ##   #  ######   ## # ##   ##  ##\n";
-            para +=        "  ##  ##   ##  ##  ##  ##   ##   ##   ## ##\n";
-            para +=        "   ####   #######  ##  ##   ##   ##  #####\n\";";
-            para += "echo \"******************************************\nStarting clamd as root\nPlease enter root password\n******************************************\n\"; /usr/bin/sudo " + clamdLocation + " -c " + QDir::homePath() + "/.clamav-gui/clamd.conf && sudo " + clamonaccLocation + " -c " + QDir::homePath() + "/.clamav-gui/clamd.conf -l " + QDir::homePath() + "/.clamav-gui/clamd.log" + clamonaccOptions;
-            parameters << "-e" << para;
-            startClamdProcess->start("xterm",parameters);
+            QFile startclamdFile(QDir::homePath() + "/.clamav-gui/startclamd.sh");
+            startclamdFile.remove();
+            if (startclamdFile.open(QIODevice::Text|QIODevice::ReadWrite)){
+                QTextStream stream(&startclamdFile);
+                stream << "#!/bin/bash\n" << clamdLocation + " -c " + QDir::homePath() + "/.clamav-gui/clamd.conf && " + clamonaccLocation + " -c " + QDir::homePath() + "/.clamav-gui/clamd.conf -l " + QDir::homePath() + "/.clamav-gui/clamd.log" + clamonaccOptions;
+                startclamdFile.close();
+                startclamdFile.setPermissions(QFileDevice::ReadOwner|QFileDevice::WriteOwner|QFileDevice::ExeOwner|QFileDevice::ReadGroup|QFileDevice::WriteGroup|QFileDevice::ExeGroup);
+            }
+            parameters << QDir::homePath() + "/.clamav-gui/startclamd.sh";
+            startClamdProcess->start(sudoGUI,parameters);
         } else {
             pidFile.open(QIODevice::ReadOnly);
             QTextStream stream(&pidFile);
             QString pid = stream.readLine();
             pidFile.close();
             ui->startStopClamdPushButton->setText(tr("  Stopping Clamd. Please wait!"));
-            para = " echo \"   ####   ####       ##     ##   ##  #####\n";
-            para +=        "  ##  ##   ##       ####    ### ###   ## ##\n";
-            para +=        " ##        ##      ##  ##   #######   ##  ##\n";
-            para +=        " ##        ##      ##  ##   #######   ##  ##\n";
-            para +=        " ##        ##   #  ######   ## # ##   ##  ##\n";
-            para +=        "  ##  ##   ##  ##  ##  ##   ##   ##   ## ##\n";
-            para +=        "   ####   #######  ##  ##   ##   ##  #####\n\";";
-            para += "echo \"******************************************\nStopping clamd as root\nPlease enter root password\n******************************************\n\"; /usr/bin/sudo kill -sigterm " + pid + " && /usr/bin/sudo kill -9 " + clamonaccPid;
-            parameters << "-e" << para;
-            killProcess->start("xterm",parameters);
+            QFile stopclamdFile(QDir::homePath() + "/.clamav-gui/stopclamd.sh");
+            stopclamdFile.remove();
+            if (stopclamdFile.open(QIODevice::Text|QIODevice::ReadWrite)){
+                QTextStream stream(&stopclamdFile);
+                stream << "#!/bin/bash\n/bin/kill -sigterm " + pid + " && kill -9 " + clamonaccPid;
+                stopclamdFile.close();
+                stopclamdFile.setPermissions(QFileDevice::ReadOwner|QFileDevice::WriteOwner|QFileDevice::ExeOwner|QFileDevice::ReadGroup|QFileDevice::WriteGroup|QFileDevice::ExeGroup);
+            }
+            parameters << QDir::homePath() + "/.clamav-gui/stopclamd.sh";
+            killProcess->start(sudoGUI,parameters);
         }
         ui->startStopClamdPushButton->setEnabled(false);
+        ui->monitoringAddButton->setEnabled(false);
+        ui->monitoringDelButton->setEnabled(false);
     } else {
         QMessageBox::warning(this,tr("WARNING"),tr("Clamd and Clamonacc can not be launched. First you have to add at least one folder for monitoring!"));
     }
@@ -375,6 +377,8 @@ void clamdManager::slot_startClamdProcessFinished() {
     }
     clamdRestartInProgress = false;
     ui->startStopClamdPushButton->setEnabled(true);
+    ui->monitoringAddButton->setEnabled(true);
+    ui->monitoringDelButton->setEnabled(true);
     ui->restartClamdPushButton->setVisible(false);
 }
 
@@ -396,6 +400,8 @@ void clamdManager::slot_killClamdProcessFinished()
         ui->startStopClamdPushButton->setIcon(QIcon(":/icons/icons/stopclamd.png"));
     }
     ui->startStopClamdPushButton->setEnabled(true);
+    ui->monitoringAddButton->setEnabled(true);
+    ui->monitoringDelButton->setEnabled(true);
 }
 
 void clamdManager::slot_findclamonaccProcessFinished()
@@ -430,6 +436,8 @@ void clamdManager::slot_pidWatcherTriggered()
         ui->startStopClamdPushButton->setText(tr("  Clamd not running - Start Clamd"));
         ui->startStopClamdPushButton->setIcon(QIcon(":/icons/icons/startclamd.png"));
         ui->startStopClamdPushButton->setEnabled(true);
+        ui->monitoringAddButton->setEnabled(true);
+        ui->monitoringDelButton->setEnabled(true);
     }
 }
 
@@ -439,6 +447,8 @@ void clamdManager::slot_clamdLocationProcessFinished()
     QString output = clamdLocationProcess->readAll();
     if (output == searchstring + "\n") {
         ui->startStopClamdPushButton->setEnabled(false);
+        ui->monitoringAddButton->setEnabled(false);
+        ui->monitoringDelButton->setEnabled(false);
     } else {
         int start = output.indexOf(" ") + 1;
         int end = output.indexOf(" ",start) - start;
@@ -452,6 +462,8 @@ void clamdManager::slot_clamonaccLocationProcessFinished()
     QString output = clamonaccLocationProcess->readAll();
     if (output == searchstring + "\n") {
         ui->startStopClamdPushButton->setEnabled(false);
+        ui->monitoringAddButton->setEnabled(false);
+        ui->monitoringDelButton->setEnabled(false);
     } else {
         int start = output.indexOf(" ") + 1;
         int end = output.indexOf(" ",start) - start;
@@ -519,20 +531,15 @@ void clamdManager::slot_restartClamdButtonClicked()
 
     clamdRestartInProgress = true;
     ui->startStopClamdPushButton->setEnabled(false);
+    ui->monitoringAddButton->setEnabled(false);
+    ui->monitoringDelButton->setEnabled(false);
     ui->startStopClamdPushButton->setText(tr("  Clamd restarting. Please wait!"));
     ui->clamdIconLabel_2->setMovie(new QMovie(":/icons/icons/gifs/spinning_segments_small.gif"));
     ui->clamdIconLabel_2->movie()->start();
     QStringList parameters;
-    QString command= " echo \"   ####   ####       ##     ##   ##  #####\n";
-    command +=               "  ##  ##   ##       ####    ### ###   ## ##\n";
-    command +=               " ##        ##      ##  ##   #######   ##  ##\n";
-    command +=               " ##        ##      ##  ##   #######   ##  ##\n";
-    command +=               " ##        ##   #  ######   ## # ##   ##  ##\n";
-    command +=               "  ##  ##   ##  ##  ##  ##   ##   ##   ## ##\n";
-    command +=               "   ####   #######  ##  ##   ##   ##  #####\n\";";    command += "echo \"******************************************\nReStarting clamd and clamonacc as root\nPlease enter root password\n******************************************\n\";";
-    command += "sudo kill -sigterm " + pid + " && sudo kill -9 " + clamonaccPid + " && sleep 20 && /usr/bin/sudo " + clamdLocation + " -c " + QDir::homePath() + "/.clamav-gui/clamd.conf && sudo " + clamonaccLocation + " -c " + QDir::homePath() + "/.clamav-gui/clamd.conf -l " + QDir::homePath() + "/.clamav-gui/clamd.log" + clamonaccOptions;
-    parameters << "-e" << command;
-    startClamdProcess->start("xterm",parameters);
+    QString command = "kill -sigterm " + pid + " && kill -9 " + clamonaccPid + " && sleep 20 && " + clamdLocation + " -c " + QDir::homePath() + "/.clamav-gui/clamd.conf && " + clamonaccLocation + " -c " + QDir::homePath() + "/.clamav-gui/clamd.conf -l " + QDir::homePath() + "/.clamav-gui/clamd.log" + clamonaccOptions;
+    parameters << command;
+    startClamdProcess->start(sudoGUI,parameters);
 }
 
 void clamdManager::slot_clamdSettingsChanged()
@@ -568,17 +575,17 @@ void clamdManager::slot_clamdSettingsChanged()
 void clamdManager::restartClamonacc()
 {
     QStringList parameters;
-    QString command = "echo \"## ##   ####       ##     ##   ##   ## ##   ###  ##    ##      ## ##    ## ##   ";
-    command +=        "##   ##   ##         ##     ## ##   ##   ##    ## ##     ##    ##   ##  ##   ## ";
-    command +=        "##        ##       ## ##   # ### #  ##   ##   # ## #   ## ##   ##       ##      ";
-    command +=        "##        ##       ##  ##  ## # ##  ##   ##   ## ##    ##  ##  ##       ##      ";
-    command +=        "##        ##       ## ###  ##   ##  ##   ##   ##  ##   ## ###  ##       ##      ";
-    command +=        "##   ##   ##  ##   ##  ##  ##   ##  ##   ##   ##  ##   ##  ##  ##   ##  ##   ## ";
-    command +=        "## ##   ### ###  ###  ##  ##   ##   ## ##   ###  ##  ###  ##   ## ##    ## ##   \";";
-    command += "echo \"******************************************\nRestarting clamonacc as root\nPlease enter root password\n******************************************\n\";";
-    command += "sudo kill -9 " + clamonaccPid + " && sudo " + clamonaccLocation + " -c " + QDir::homePath() + "/.clamav-gui/clamd.conf -l " + QDir::homePath() + "/.clamav-gui/clamd.log";
-    parameters << "-e" << command;
-    restartClamonaccProcess->start("xterm",parameters);
+
+    QFile restartclamdFile(QDir::homePath() + "/.clamav-gui/restartclamd.sh");
+    restartclamdFile.remove();
+    if (restartclamdFile.open(QIODevice::Text|QIODevice::ReadWrite)){
+        QTextStream stream(&restartclamdFile);
+        stream << "#!/bin/bash\n/bin/kill -9 " + clamonaccPid + " && " + clamonaccLocation + " -c " + QDir::homePath() + "/.clamav-gui/clamd.conf -l " + QDir::homePath() + "/.clamav-gui/clamd.log";
+        restartclamdFile.close();
+        restartclamdFile.setPermissions(QFileDevice::ReadOwner|QFileDevice::WriteOwner|QFileDevice::ExeOwner|QFileDevice::ReadGroup|QFileDevice::WriteGroup|QFileDevice::ExeGroup);
+    }
+    parameters << QDir::homePath() + "/.clamav-gui/restartclamd.sh";
+    startClamdProcess->start(sudoGUI,parameters);
 }
 
 bool clamdManager::checkClamdRunning()
