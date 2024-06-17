@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1043</width>
-    <height>616</height>
+    <width>852</width>
+    <height>589</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -28,7 +28,7 @@
      <property name="frameShadow">
       <enum>QFrame::Raised</enum>
      </property>
-     <layout class="QGridLayout" name="gridLayout_5">
+     <layout class="QGridLayout" name="gridLayout">
       <item row="0" column="0">
        <widget class="QFrame" name="freshclamSettingsFrame">
         <property name="styleSheet">
@@ -40,28 +40,8 @@
         <property name="frameShadow">
          <enum>QFrame::Raised</enum>
         </property>
-        <layout class="QGridLayout" name="gridLayout">
-         <item row="8" column="0">
-          <widget class="QLabel" name="logTimeLabel">
-           <property name="toolTip">
-            <string>Log time with each message.</string>
-           </property>
-           <property name="text">
-            <string>LogTime:</string>
-           </property>
-          </widget>
-         </item>
-         <item row="2" column="0">
-          <widget class="QLabel" name="pidFileLabel">
-           <property name="toolTip">
-            <string>This option allows you to save the process identifier of the daemon to a file specified in the argument.</string>
-           </property>
-           <property name="text">
-            <string>PID-File:</string>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="6" rowspan="3" colspan="3">
+        <layout class="QGridLayout" name="gridLayout_14">
+         <item row="0" column="0">
           <widget class="QFrame" name="windowstateFrame">
            <property name="styleSheet">
             <string notr="true">background-color:#c0c0c0;</string>
@@ -113,7 +93,7 @@
            </layout>
           </widget>
          </item>
-         <item row="3" column="6" rowspan="4" colspan="3">
+         <item row="0" column="1">
           <widget class="QFrame" name="languageFrame">
            <property name="styleSheet">
             <string notr="true">background-color:#c0c0c0</string>
@@ -333,569 +313,23 @@
            </layout>
           </widget>
          </item>
-         <item row="7" column="0">
-          <widget class="QLabel" name="logRotateLabel">
-           <property name="toolTip">
-            <string>Rotate log file. Requires LogFileMaxSize option set prior to this option.</string>
-           </property>
-           <property name="text">
-            <string>LogRotate:</string>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="0">
-          <widget class="QLabel" name="freshclamLogoIconLabel">
-           <property name="styleSheet">
-            <string notr="true">margin-right:10px;</string>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-           <property name="pixmap">
-            <pixmap resource="../resources.qrc">:/icons/icons/options.png</pixmap>
-           </property>
-          </widget>
-         </item>
-         <item row="2" column="2" colspan="2">
-          <widget class="QLabel" name="pidFilePathLabel">
-           <property name="minimumSize">
-            <size>
-             <width>170</width>
-             <height>0</height>
-            </size>
-           </property>
-           <property name="styleSheet">
-            <string notr="true"/>
-           </property>
-           <property name="frameShape">
-            <enum>QFrame::Panel</enum>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="0">
-          <widget class="QLabel" name="freshclamLocationLabel">
-           <property name="toolTip">
-            <string>autodecteced location of the freshclam binary</string>
-           </property>
-           <property name="text">
-            <string>freshclam (Info)</string>
-           </property>
-          </widget>
-         </item>
-         <item row="15" column="3" colspan="2">
-          <widget class="QLabel" name="checkPerDayLabel2">
-           <property name="text">
-            <string>times per days</string>
-           </property>
-          </widget>
-         </item>
-         <item row="4" column="2" colspan="2">
-          <widget class="QLineEdit" name="databaseMirrorLineEdit">
-           <property name="styleSheet">
-            <string notr="true"/>
-           </property>
-          </widget>
-         </item>
-         <item row="11" column="0" rowspan="2">
-          <widget class="QLabel" name="freshclamImageLabel">
-           <property name="styleSheet">
-            <string notr="true"/>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-           <property name="pixmap">
-            <pixmap resource="../resources.qrc">:/icons/icons/freshclam.png</pixmap>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="5" rowspan="10">
-          <widget class="Line" name="line_2">
-           <property name="styleSheet">
-            <string notr="true"/>
-           </property>
-           <property name="orientation">
-            <enum>Qt::Vertical</enum>
-           </property>
-          </widget>
-         </item>
-         <item row="8" column="2">
-          <widget class="QComboBox" name="logTimeComboBox">
-           <item>
-            <property name="text">
-             <string/>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>no</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>yes</string>
-            </property>
-           </item>
-          </widget>
-         </item>
-         <item row="5" column="2">
-          <widget class="QComboBox" name="logSysLogComboBox">
-           <item>
-            <property name="text">
-             <string/>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>no</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>yes</string>
-            </property>
-           </item>
-          </widget>
-         </item>
-         <item row="15" column="2">
-          <widget class="QSpinBox" name="checkPerDaySpinBox">
-           <property name="minimum">
-            <number>1</number>
-           </property>
-           <property name="maximum">
-            <number>96</number>
-           </property>
-          </widget>
-         </item>
-         <item row="2" column="4">
-          <widget class="QPushButton" name="pidFileSelectPushButton">
-           <property name="minimumSize">
-            <size>
-             <width>50</width>
-             <height>0</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>50</width>
-             <height>16777215</height>
-            </size>
-           </property>
-           <property name="styleSheet">
-            <string notr="true"/>
-           </property>
-           <property name="text">
-            <string>...</string>
-           </property>
-          </widget>
-         </item>
-         <item row="13" column="2" colspan="7">
-          <widget class="QLabel" name="databaseDirectoryPathLabel">
-           <property name="styleSheet">
-            <string notr="true"/>
-           </property>
-           <property name="frameShape">
-            <enum>QFrame::Panel</enum>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="1" colspan="3">
-          <widget class="QLabel" name="freshclamLogoTextLabel">
-           <property name="styleSheet">
-            <string notr="true">font-size:16px;font-weight:bold</string>
-           </property>
-           <property name="text">
-            <string>Freshclam Settings</string>
-           </property>
-          </widget>
-         </item>
-         <item row="9" column="2">
-          <widget class="QComboBox" name="logVerboseComboBox">
-           <item>
-            <property name="text">
-             <string/>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>no</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>yes</string>
-            </property>
-           </item>
-          </widget>
-         </item>
-         <item row="1" column="2" colspan="2">
-          <widget class="QLineEdit" name="freshclamLocationLineEdit">
-           <property name="enabled">
-            <bool>true</bool>
-           </property>
-           <property name="styleSheet">
-            <string notr="true"/>
-           </property>
-           <property name="text">
-            <string>not found</string>
-           </property>
-           <property name="readOnly">
-            <bool>false</bool>
-           </property>
-          </widget>
-         </item>
-         <item row="9" column="0">
-          <widget class="QLabel" name="logVerboseLabel">
-           <property name="toolTip">
-            <string>Enable verbose logging.</string>
-           </property>
-           <property name="text">
-            <string>LogVerbose</string>
-           </property>
-          </widget>
-         </item>
-         <item row="14" column="8">
-          <widget class="QCheckBox" name="autoStartDaemonCheckBox">
-           <property name="text">
-            <string/>
-           </property>
-          </widget>
-         </item>
-         <item row="4" column="0">
-          <widget class="QLabel" name="databaseMirrorLabel">
-           <property name="toolTip">
-            <string>DatabaseMirror specifies to which mirror(s) freshclam should connect.
-You should have at least one entries: database.clamav.net. 
-Now that CloudFlare is being used as our Content Delivery Network (CDN),  this  one  domain
-name works world-wide to direct freshclam to the closest geographic endpoint.
-Default: database.clamav.net
-</string>
-           </property>
-           <property name="text">
-            <string>DatabaseMirror:</string>
-           </property>
-          </widget>
-         </item>
-         <item row="3" column="0">
-          <widget class="QLabel" name="databaseOwnerLabel">
-           <property name="toolTip">
-            <string>When started by root, drop privileges to a specified user. The user will be determined by the application and must match the owner of the database directory</string>
-           </property>
-           <property name="text">
-            <string>DatabaseOwner:</string>
-           </property>
-          </widget>
-         </item>
-         <item row="10" column="0" colspan="9">
-          <widget class="Line" name="line">
-           <property name="orientation">
-            <enum>Qt::Horizontal</enum>
-           </property>
-          </widget>
-         </item>
-         <item row="15" column="0">
-          <widget class="QLabel" name="checkPerDayLabel1">
-           <property name="toolTip">
-            <string>Number of database checks per day.</string>
-           </property>
-           <property name="text">
-            <string>Check for Updates</string>
-           </property>
-          </widget>
-         </item>
-         <item row="7" column="2">
-          <widget class="QComboBox" name="logRotateComboBox">
-           <item>
-            <property name="text">
-             <string/>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>no</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>yes</string>
-            </property>
-           </item>
-          </widget>
-         </item>
-         <item row="6" column="0">
-          <widget class="QLabel" name="logFacilityLabel">
-           <property name="toolTip">
-            <string>Specify the type of syslog messages - please refer to 'man syslog' for facility names.
-              Default: LOG_LOCAL6</string>
-           </property>
-           <property name="text">
-            <string>LogFacility:</string>
-           </property>
-          </widget>
-         </item>
-         <item row="6" column="2" colspan="2">
-          <widget class="QComboBox" name="logFacilityComboBox">
-           <item>
-            <property name="text">
-             <string/>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>LOG_LOCAL6</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>LOG_MAIL</string>
-            </property>
-           </item>
-          </widget>
-         </item>
-         <item row="3" column="2" colspan="2">
-          <widget class="QLineEdit" name="databaseOwnerLineEdit">
-           <property name="styleSheet">
-            <string notr="true"/>
-           </property>
-          </widget>
-         </item>
-         <item row="5" column="0">
-          <widget class="QLabel" name="logSysLogLabel">
-           <property name="toolTip">
-            <string>Enable logging to Syslog. May be used in combination with UpdateLogFile.</string>
-           </property>
-           <property name="text">
-            <string>LogSysLog:</string>
-           </property>
-          </widget>
-         </item>
-         <item row="13" column="0">
-          <widget class="QLabel" name="databaseDirectoryLabel">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="toolTip">
-            <string>Path to a directory containing database files.</string>
-           </property>
-           <property name="text">
-            <string>DatabaseDirectory</string>
-           </property>
-          </widget>
-         </item>
-         <item row="15" column="8">
-          <widget class="QCheckBox" name="runasrootCheckBox">
-           <property name="styleSheet">
-            <string notr="true">margin-top:10px;</string>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-          </widget>
-         </item>
-         <item row="11" column="2" rowspan="2" colspan="3">
-          <widget class="QLabel" name="freshclamLabel">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="layoutDirection">
-            <enum>Qt::LeftToRight</enum>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">font-size:16px;font-weight:bold</string>
-           </property>
-           <property name="text">
-            <string>FreshClam Daemon</string>
-           </property>
-           <property name="textFormat">
-            <enum>Qt::RichText</enum>
-           </property>
-          </widget>
-         </item>
-         <item row="14" column="0">
-          <widget class="QLabel" name="databaseTypeLabel">
-           <property name="toolTip">
-            <string>Which database to update
-Default: all</string>
-           </property>
-           <property name="text">
-            <string>Update Database</string>
-           </property>
-          </widget>
-         </item>
-         <item row="15" column="5" colspan="3">
-          <widget class="QLabel" name="runasrootLabel">
-           <property name="text">
-            <string>Execute Daemon and
-manual update as root</string>
-           </property>
-          </widget>
-         </item>
-         <item row="14" column="5" colspan="3">
-          <widget class="QLabel" name="autoStartDaemonLabel">
-           <property name="text">
-            <string>Start daemon automatically
-at program start</string>
-           </property>
-          </widget>
-         </item>
-         <item row="14" column="2">
-          <widget class="QComboBox" name="databaseTypeComboBox">
-           <item>
-            <property name="text">
-             <string>All</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>main</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>daily</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>bytecode</string>
-            </property>
-           </item>
-          </widget>
-         </item>
         </layout>
        </widget>
       </item>
-      <item row="2" column="0">
-       <spacer name="verticalSpacer_2">
+      <item row="0" column="1">
+       <spacer name="horizontalSpacer">
         <property name="orientation">
-         <enum>Qt::Vertical</enum>
+         <enum>Qt::Horizontal</enum>
         </property>
         <property name="sizeHint" stdset="0">
          <size>
-          <width>20</width>
-          <height>282</height>
+          <width>538</width>
+          <height>20</height>
          </size>
         </property>
        </spacer>
       </item>
-      <item row="0" column="1">
-       <widget class="QFrame" name="clamdFrame">
-        <property name="frameShape">
-         <enum>QFrame::StyledPanel</enum>
-        </property>
-        <property name="frameShadow">
-         <enum>QFrame::Raised</enum>
-        </property>
-        <layout class="QGridLayout" name="gridLayout_7">
-         <item row="0" column="0" colspan="2">
-          <layout class="QHBoxLayout" name="horizontalLayout">
-           <item>
-            <widget class="QLabel" name="clamdIconLabel">
-             <property name="text">
-              <string/>
-             </property>
-             <property name="pixmap">
-              <pixmap resource="../resources.qrc">:/icons/icons/onaccess.png</pixmap>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QLabel" name="clamdLabel">
-             <property name="styleSheet">
-              <string notr="true">margin-left:10px;font-size:16px;font-weight:bold;</string>
-             </property>
-             <property name="text">
-              <string>Clamd &amp; Scan on Access</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <spacer name="horizontalSpacer_2">
-             <property name="orientation">
-              <enum>Qt::Horizontal</enum>
-             </property>
-             <property name="sizeHint" stdset="0">
-              <size>
-               <width>40</width>
-               <height>20</height>
-              </size>
-             </property>
-            </spacer>
-           </item>
-          </layout>
-         </item>
-         <item row="1" column="0" colspan="2">
-          <widget class="QPushButton" name="startStopClamdPushButton">
-           <property name="styleSheet">
-            <string notr="true">background-color:red;color:yellow</string>
-           </property>
-           <property name="text">
-            <string>clamd not running - start clamd</string>
-           </property>
-          </widget>
-         </item>
-         <item row="2" column="0" colspan="2">
-          <widget class="QPlainTextEdit" name="clamdLogPlainTextEdit">
-           <property name="styleSheet">
-            <string notr="true">background-color:white;</string>
-           </property>
-           <property name="readOnly">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-         <item row="3" column="0" colspan="2">
-          <layout class="QGridLayout" name="gridLayout_6">
-           <item row="0" column="4">
-            <widget class="QPushButton" name="monitoringDelButton">
-             <property name="text">
-              <string/>
-             </property>
-             <property name="icon">
-              <iconset resource="../resources.qrc">
-               <normaloff>:/icons/icons/trash-can.png</normaloff>:/icons/icons/trash-can.png</iconset>
-             </property>
-            </widget>
-           </item>
-           <item row="0" column="3">
-            <widget class="QPushButton" name="monitoringAddButton">
-             <property name="text">
-              <string/>
-             </property>
-             <property name="icon">
-              <iconset resource="../resources.qrc">
-               <normaloff>:/icons/icons/add.png</normaloff>:/icons/icons/add.png</iconset>
-             </property>
-            </widget>
-           </item>
-           <item row="1" column="1" colspan="4">
-            <widget class="QComboBox" name="monitoringComboBox"/>
-           </item>
-           <item row="0" column="1" colspan="2">
-            <widget class="QLabel" name="monitoringLabel">
-             <property name="text">
-              <string>Folder under monitoring</string>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </item>
-        </layout>
-       </widget>
-      </item>
-      <item row="3" column="0">
+      <item row="1" column="0">
        <spacer name="verticalSpacer">
         <property name="orientation">
          <enum>Qt::Vertical</enum>
@@ -903,7 +337,7 @@ at program start</string>
         <property name="sizeHint" stdset="0">
          <size>
           <width>20</width>
-          <height>64</height>
+          <height>330</height>
          </size>
         </property>
        </spacer>
@@ -919,33 +353,17 @@ at program start</string>
  <connections>
   <connection>
    <sender>languageSelectComboBox</sender>
-   <signal>currentIndexChanged(int)</signal>
+   <signal>activated(int)</signal>
    <receiver>setupTab</receiver>
    <slot>slot_selectedLanguageChanged()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>631</x>
-     <y>237</y>
+     <x>173</x>
+     <y>200</y>
     </hint>
     <hint type="destinationlabel">
-     <x>0</x>
-     <y>136</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>runasrootCheckBox</sender>
-   <signal>clicked()</signal>
-   <receiver>setupTab</receiver>
-   <slot>slot_runasrootCheckBoxChanged()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>642</x>
-     <y>493</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>0</x>
-     <y>170</y>
+     <x>5</x>
+     <y>192</y>
     </hint>
    </hints>
   </connection>
@@ -956,266 +374,18 @@ at program start</string>
    <slot>slot_basicSettingsChanged()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>632</x>
-     <y>114</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>721</x>
-     <y>74</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>logSysLogComboBox</sender>
-   <signal>activated(int)</signal>
-   <receiver>setupTab</receiver>
-   <slot>slot_writeFreshclamSettings()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>239</x>
-     <y>220</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>3</x>
-     <y>216</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>logFacilityComboBox</sender>
-   <signal>activated(int)</signal>
-   <receiver>setupTab</receiver>
-   <slot>slot_writeFreshclamSettings()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>292</x>
-     <y>242</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>2</x>
-     <y>262</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>logRotateComboBox</sender>
-   <signal>activated(int)</signal>
-   <receiver>setupTab</receiver>
-   <slot>slot_writeFreshclamSettings()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>239</x>
-     <y>284</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>0</x>
-     <y>305</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>databaseOwnerLineEdit</sender>
-   <signal>textEdited(QString)</signal>
-   <receiver>setupTab</receiver>
-   <slot>slot_writeFreshclamSettings()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>317</x>
-     <y>146</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>0</x>
-     <y>365</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>databaseMirrorLineEdit</sender>
-   <signal>textEdited(QString)</signal>
-   <receiver>setupTab</receiver>
-   <slot>slot_writeFreshclamSettings()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>317</x>
-     <y>178</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>0</x>
-     <y>414</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>pidFileSelectPushButton</sender>
-   <signal>clicked()</signal>
-   <receiver>setupTab</receiver>
-   <slot>slot_pidFileSelectButtonClicked()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>380</x>
-     <y>124</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>0</x>
-     <y>453</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>databaseTypeComboBox</sender>
-   <signal>activated(int)</signal>
-   <receiver>setupTab</receiver>
-   <slot>slot_writeFreshclamSettings()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>239</x>
-     <y>452</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>418</x>
-     <y>383</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>checkPerDaySpinBox</sender>
-   <signal>valueChanged(int)</signal>
-   <receiver>setupTab</receiver>
-   <slot>slot_writeFreshclamSettings()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>239</x>
-     <y>494</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>431</x>
-     <y>419</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>logTimeComboBox</sender>
-   <signal>activated(int)</signal>
-   <receiver>setupTab</receiver>
-   <slot>slot_writeFreshclamSettings()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>239</x>
-     <y>316</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>2</x>
-     <y>526</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>logVerboseComboBox</sender>
-   <signal>activated(int)</signal>
-   <receiver>setupTab</receiver>
-   <slot>slot_writeFreshclamSettings()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>239</x>
-     <y>348</y>
+     <x>98</x>
+     <y>76</y>
     </hint>
     <hint type="destinationlabel">
      <x>1</x>
-     <y>558</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>freshclamLocationLineEdit</sender>
-   <signal>textEdited(QString)</signal>
-   <receiver>setupTab</receiver>
-   <slot>slot_writeFreshclamSettings()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>237</x>
      <y>72</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>-3</x>
-     <y>604</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>autoStartDaemonCheckBox</sender>
-   <signal>clicked()</signal>
-   <receiver>setupTab</receiver>
-   <slot>slot_autoStartDaemon()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>642</x>
-     <y>446</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>7</x>
-     <y>625</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>startStopClamdPushButton</sender>
-   <signal>clicked()</signal>
-   <receiver>setupTab</receiver>
-   <slot>slot_clamdStartStopButtonClicked()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>980</x>
-     <y>108</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>1022</x>
-     <y>107</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>monitoringDelButton</sender>
-   <signal>clicked()</signal>
-   <receiver>setupTab</receiver>
-   <slot>slot_monitoringDelButtonClicked()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>999</x>
-     <y>457</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>1039</x>
-     <y>476</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>monitoringAddButton</sender>
-   <signal>clicked()</signal>
-   <receiver>setupTab</receiver>
-   <slot>slot_monitoringAddButtonClicked()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>907</x>
-     <y>452</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>1037</x>
-     <y>440</y>
     </hint>
    </hints>
   </connection>
  </connections>
  <slots>
   <slot>slot_selectedLanguageChanged()</slot>
-  <slot>slot_runasrootCheckBoxChanged()</slot>
   <slot>slot_basicSettingsChanged()</slot>
-  <slot>slot_writeFreshclamSettings()</slot>
-  <slot>slot_databaseDirectorySelectButtonClicked()</slot>
-  <slot>slot_pidFileSelectButtonClicked()</slot>
-  <slot>slot_autoStartDaemon()</slot>
-  <slot>slot_clamdStartStopButtonClicked()</slot>
-  <slot>slot_monitoringAddButtonClicked()</slot>
-  <slot>slot_monitoringDelButtonClicked()</slot>
  </slots>
 </ui>
