@@ -982,6 +982,14 @@ li.checked::marker { content: &quot;\2612&quot;; }
         <source>Clamd</source>
         <translation>Clamd</translation>
     </message>
+    <message>
+        <source>WARNING</source>
+        <translation>ADVERTENCIA</translation>
+    </message>
+    <message>
+        <source>Neither &quot;pkexec&quot; nor &quot;kdesu&quot; is installed. Please install at least one of this to apps!</source>
+        <translation>Ni &quot;pkexec&quot; ni &quot;kdesu&quot; están instalados. Por favor, instale al menos una de estas aplicaciones.</translation>
+    </message>
 </context>
 <context>
     <name>clamdManager</name>
