@@ -61,7 +61,6 @@ private:
     QProcess            *ps_process;
     QString              pidFile;
     QString              logFile;
-    QString              ps_processOutput;
     QString              sudoGUI;
     QTimer              *startDelayTimer;
     progressDialog      *busyLabel;
@@ -86,8 +85,7 @@ private slots:
     void slot_clearDeamonLogButtonClicked();
     void slot_updaterHasOutput();
     void slot_startDeamonProcessFinished(int rc);
-    void slot_ps_processHasOutput();
-    void slot_ps_processFinished();
+    void slot_ps_processFinished(int rc);
     void slot_disableUpdateButtons();
     void slot_startDelayTimerExpired();
     void slot_runasrootCheckBoxChanged();
@@ -99,7 +97,9 @@ private slots:
     void slot_freshclamLocationProcessHasOutput();
     void slot_setFreshclamsettingsFrameState(bool state);
     void slot_autoStartDaemon();
-
+    void slot_onUpdateExecuteButtonClicked();
+    void slot_onErrorExecuteButtonClicked();
+    void slot_onOutdatedExecuteButtonClicked();
 
 signals:
     void setBallonMessage(int, QString,QString);

@@ -23,6 +23,7 @@
 #define SETUPFILEHANDLER_H
 
 #include <QMessageBox>
+#include <QFileDevice>
 #include <QTextStream>
 #include <QStringList>
 #include <QString>

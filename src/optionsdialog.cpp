@@ -111,9 +111,13 @@ void optionsDialog::slot_getClamscanProcessFinished()
     QStringList parameters = value.split("\n");
 
     for (int x = 0; x < parameters.length(); x++) {
-        QListWidgetItem * item = new QListWidgetItem(parameters[x]);
-        item->setToolTip(comments[x]);
-        ui->availableOptionsList->addItem(item);
+        QString tempItem = parameters[x];
+        tempItem = tempItem.replace("=","<equal>");
+        if (setupFile->keywordExists("SelectedOptions",tempItem) == false) {
+            QListWidgetItem * item = new QListWidgetItem(parameters[x]);
+            item->setToolTip(comments[x]);
+            ui->availableOptionsList->addItem(item);
+        }
     }
 
     updateAvailableOptionsList();
@@ -131,12 +135,39 @@ QString optionsDialog::getMoveDirectory()
 
 void optionsDialog::slot_addButtonClicked(){
 QListWidgetItem * item;
+bool error = false;
 
     if (ui->availableOptionsList->currentItem() != 0) {
         item = ui->availableOptionsList->takeItem(ui->availableOptionsList->currentRow());
-        ui->selectedOptionsList->addItem(item);
-        writeOptionLists();
-        emit updateClamdConf();
+        QString itemText = item->text();
+        if (itemText.indexOf("=") != -1) {
+            if (itemText.indexOf("=yes") != -1) {
+                itemText = itemText.replace("=yes","=no");
+                itemText = itemText.replace("=","<equal>");
+                if (setupFile->keywordExists("SelectedOptions",itemText) == true) {
+                    itemText = itemText.replace("<equal>","=");
+                    itemText = itemText.replace("=no","=yes");
+                    error = true;
+                    ui->availableOptionsList->addItem(item);
+                }
+            } else {
+                itemText = itemText.replace("=no","=yes");
+                itemText = itemText.replace("=","<equal>");
+                if (setupFile->keywordExists("SelectedOptions",itemText) == true) {
+                    itemText = itemText.replace("<equal>","=");
+                    itemText = itemText.replace("=yes","=no");
+                    error = true;
+                    ui->availableOptionsList->addItem(item);
+                }
+            }
+        }
+        if (error == false) {
+            item->setHidden(false);
+            ui->selectedOptionsList->addItem(item);
+            writeOptionLists();
+            setBackgroundColorOptionsList();
+            emit updateClamdConf();
+        }
     }
 }
 
@@ -147,6 +178,7 @@ QListWidgetItem * item;
         item = ui->selectedOptionsList->takeItem(ui->selectedOptionsList->currentRow());
         ui->availableOptionsList->addItem(item);
         writeOptionLists();
+        setBackgroundColorOptionsList();
         emit updateClamdConf();
     }
 }
@@ -163,10 +195,13 @@ QListWidgetItem * item;
     for (int i = 0; i < availableOptions.count(); i++){
         optionText = availableOptions.at(i);
         tooltipText = setupFile->getSectionValue("AvailableOptions",optionText);
-        optionText = optionText.replace("<equal>","=");
-        item = new QListWidgetItem(optionText);
-        item->setToolTip(tr(tooltipText.toLatin1().data()));
-        ui->availableOptionsList->addItem(item);
+        // Only add the available Option if it is not listed in the selected option list.
+        if (selectedOptions.indexOf(optionText) == -1) {
+            optionText = optionText.replace("<equal>","=");
+            item = new QListWidgetItem(optionText);
+            item->setToolTip(tr(tooltipText.toLatin1().data()));
+            ui->availableOptionsList->addItem(item);
+        }
     }
 
     ui->selectedOptionsList->clear();
@@ -273,6 +308,33 @@ void optionsDialog::updateAvailableOptionsList(){
         optionString = optionString.replace("=","<equal>");
         tooltipString = item->toolTip();
         setupFile->setSectionValue("AvailableOptions",optionString,tooltipString);
+    }
+
+    setBackgroundColorOptionsList();
+}
+
+void optionsDialog::setBackgroundColorOptionsList() {
+    QListWidgetItem * item;
+    QString itemText;
+
+    for (int x = 0; x < ui->availableOptionsList->count(); x++) {
+        item = ui->availableOptionsList->item(x);
+        item->setHidden(false);
+        itemText = item->text();
+        if (itemText.indexOf("=yes") != -1) {
+            itemText = itemText.replace("=yes","=no");
+            itemText = itemText.replace("=","<equal>");
+            if (setupFile->keywordExists("SelectedOptions",itemText) == true) {
+                item->setHidden(true);
+            }
+        }
+        if (itemText.indexOf("=no") != -1) {
+            itemText = itemText.replace("=no","=yes");
+            itemText = itemText.replace("=","<equal>");
+            if (setupFile->keywordExists("SelectedOptions",itemText) == true) {
+                item->setHidden(true);
+            }
+        }
     }
 }
 

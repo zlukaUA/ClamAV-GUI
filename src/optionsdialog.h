@@ -57,6 +57,7 @@ private:
     void writeOptionLists();
     void updateAvailableOptionsList();
     void updateDirectories();
+    void setBackgroundColorOptionsList();
 
 private slots:
     void slot_addButtonClicked();

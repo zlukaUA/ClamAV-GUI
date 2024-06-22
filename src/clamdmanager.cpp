@@ -7,6 +7,10 @@ clamdManager::clamdManager(QWidget *parent)
 {
     ui->setupUi(this);
     startup = true;
+    clamdStartupCounter = 0;
+    startDelayTimer = new QTimer(this);
+    startDelayTimer->setSingleShot(true);
+    connect(startDelayTimer,SIGNAL(timeout()),this,SLOT(slot_startDelayTimerExpired()));
     initClamdSettings();
 }
 
@@ -34,13 +38,14 @@ void clamdManager::initClamdSettings() {
     connect(clamonaccLocationProcess,SIGNAL(finished(int)),this,SLOT(slot_clamonaccLocationProcessFinished()));
 
     startClamdProcess = new QProcess(this);
-    connect(startClamdProcess,SIGNAL(finished(int)),this,SLOT(slot_startClamdProcessFinished()));
+    connect(startClamdProcess,SIGNAL(finished(int,QProcess::ExitStatus)),this,SLOT(slot_startClamdProcessFinished(int,QProcess::ExitStatus)));
+    connect(startClamdProcess,SIGNAL(finished(int,int)),this,SLOT(slot_startClamdProcessFinished(int,int)));
 
     killProcess = new QProcess(this);
     connect(killProcess,SIGNAL(finished(int)),this,SLOT(slot_killClamdProcessFinished()));
 
     findclamonaccProcess = new QProcess(this);
-    connect(findclamonaccProcess,SIGNAL(finished(int)),this,SLOT(slot_findclamonaccProcessFinished()));
+    connect(findclamonaccProcess,SIGNAL(finished(int)),this,SLOT(slot_findclamonaccProcessFinished(int)));
 
     restartClamonaccProcess = new QProcess(this);
     connect(restartClamonaccProcess,SIGNAL(finished(int)),this,SLOT(slot_restartClamonaccProcessFinished()));
@@ -350,11 +355,13 @@ void clamdManager::slot_clamdStartStopButtonClicked()
         ui->monitoringAddButton->setEnabled(false);
         ui->monitoringDelButton->setEnabled(false);
     } else {
+        clamdStartupCounter = 0;
         QMessageBox::warning(this,tr("WARNING"),tr("Clamd and Clamonacc can not be launched. First you have to add at least one folder for monitoring!"));
     }
 }
 
-void clamdManager::slot_startClamdProcessFinished() {
+void clamdManager::slot_startClamdProcessFinished(int exitCode, QProcess::ExitStatus exitStatus) {
+    if ((exitCode != 0) || (exitStatus == QProcess::CrashExit))clamdStartupCounter = 0;
     ui->clamdIconLabel->clear();
     ui->clamdIconLabel->setPixmap(QPixmap(":/icons/icons/onaccess.png"));
     ui->clamdIconLabel_2->clear();;
@@ -364,7 +371,12 @@ void clamdManager::slot_startClamdProcessFinished() {
         ui->startStopClamdPushButton->setStyleSheet("background-color:red;color:yellow");
         ui->startStopClamdPushButton->setText(tr("  Clamd not running - Start Clamd"));
         ui->startStopClamdPushButton->setIcon(QIcon(":/icons/icons/startclamd.png"));
+        if (clamdStartupCounter > 0) {
+            clamdStartupCounter--;
+            startDelayTimer->start(2500);
+        }
     } else {
+        clamdStartupCounter = 0;
         clamdPidWatcher->addPath("/tmp/clamd.pid");
         ui->startStopClamdPushButton->setStyleSheet("background-color:green;color:yellow");
         ui->startStopClamdPushButton->setText(tr("  Clamd running - Stop Clamd"));
@@ -372,8 +384,8 @@ void clamdManager::slot_startClamdProcessFinished() {
         clamdLogWatcher->addPath(QDir::homePath() + "/.clamav-gui/clamd.log");
         slot_logFileContentChanged();
         QStringList parameters;
-        parameters << "ax";
-        findclamonaccProcess->start("ps",parameters);
+        parameters << "-s" << "clamonacc";
+        findclamonaccProcess->start("pidof",parameters);
     }
     clamdRestartInProgress = false;
     ui->startStopClamdPushButton->setEnabled(true);
@@ -404,26 +416,22 @@ void clamdManager::slot_killClamdProcessFinished()
     ui->monitoringDelButton->setEnabled(true);
 }
 
-void clamdManager::slot_findclamonaccProcessFinished()
+void clamdManager::slot_findclamonaccProcessFinished(int rc)
 {
-    QString output = findclamonaccProcess->readAll();
-    int start;
-    int stop;
-    start = output.indexOf(clamonaccLocation + " -c");
-    if (start != -1) {
-        start = output.lastIndexOf("\n",start);
-        start++;
-        while (output.mid(start,1) == " ") start++;
-        stop = output.indexOf(" ",start);
-        clamonaccPid = output.mid(start,stop-start);
-    }
-    if ((startup == true) && (setupFile->keywordExists("Clamd","StartClamdOnStartup") == true)) {
+    if (rc == 0) clamonaccPid = findclamonaccProcess->readAllStandardOutput();
+
+    if ((startup == true) && (setupFile->keywordExists("Clamd","StartClamdOnStartup") == true) && (setupFile->getSectionBoolValue("Clamd","StartClamdOnStartup") == true)) {
         ui->startClamdOnStartupCheckBox->setChecked(setupFile->getSectionBoolValue("Clamd","StartClamdOnStartup"));
-        if (checkClamdRunning() == false) {
-            emit setActiveTab();
-            slot_clamdStartStopButtonClicked();
-        }
+        startDelayTimer->start(2500);
         startup = false;
+    }
+}
+
+void clamdManager::slot_startDelayTimerExpired() {
+    if (checkClamdRunning() == false) {
+        emit setActiveTab();
+        clamdStartupCounter = 5;
+        slot_clamdStartStopButtonClicked();
     }
 }
 
@@ -470,8 +478,8 @@ void clamdManager::slot_clamonaccLocationProcessFinished()
         clamonaccLocation = output.mid(start,end);
 
         QStringList parameters;
-        parameters << "ax";
-        findclamonaccProcess->start("ps",parameters);
+        parameters << "-s" << "clamonacc";
+        findclamonaccProcess->start("pidof",parameters);
     }
 }
 
@@ -511,8 +519,8 @@ void clamdManager::slot_monitoringDelButtonClicked()
 void clamdManager::slot_restartClamonaccProcessFinished()
 {
     QStringList parameters;
-    parameters << "ax";
-    findclamonaccProcess->start("ps",parameters);
+    parameters << "-s" << "clamonacc";
+    findclamonaccProcess->start("pidof",parameters);
 }
 
 void clamdManager::slot_restartClamdButtonClicked()
@@ -591,17 +599,12 @@ void clamdManager::restartClamonacc()
 bool clamdManager::checkClamdRunning()
 {
     bool rc = false;
+    QProcess checkPIDProcess;
+    QStringList parameters;
 
-    QFile clamdPidFile("/tmp/clamd.pid");
-    if (clamdPidFile.exists() == true) {
-        if (clamdPidFile.open(QIODevice::ReadOnly) == true){
-            QTextStream stream(&clamdPidFile);
-            QString pid = stream.readLine();
-            clamdPidFile.close();
-            QDir processDir("/proc/" + pid);
-            rc = processDir.exists();
-        }
-    }
+    parameters << "clamd";
+    int pid = checkPIDProcess.execute("pidof",parameters);
+    if (pid == 0) rc = true;
 
     return rc;
 }

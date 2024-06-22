@@ -361,6 +361,8 @@ QFile file(setupFileName);
 void setupFileHandler::writeSetupFile(){
 QFile file(setupFileName);
 
+    QFileDevice::Permissions p = file.permissions();
+
     file.remove();
     if (file.open(QIODevice::WriteOnly|QIODevice::Text)){
         QTextStream stream(&file);
@@ -370,6 +372,7 @@ QFile file(setupFileName);
         do {
         } while (!file.flush());
         file.close();
+        file.setPermissions(p);
     }
 }
 

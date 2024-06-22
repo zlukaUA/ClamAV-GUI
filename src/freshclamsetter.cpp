@@ -12,6 +12,8 @@ QDir tempDir;
     freshclamLogHighLighter = new highlighter(ui->deamonLogText->document());
     setupFile = new setupFileHandler(QDir::homePath() + "/.clamav-gui/settings.ini");
     sudoGUI = setupFile->getSectionValue("Settings","SudoGUI");
+    QFile freshclamConfFile(QDir::homePath() + "/.clamav-gui/freshclam.conf");
+    freshclamConfFile.setPermissions(QFileDevice::ReadOwner|QFileDevice::WriteOwner);
     freshclamConf = new setupFileHandler(QDir::homePath() + "/.clamav-gui/freshclam.conf");
     updater = new QProcess(this);
     connect(updater,SIGNAL(readyReadStandardError()),this,SLOT(slot_updaterHasOutput()));
@@ -31,8 +33,7 @@ QDir tempDir;
     connect(updateLogFileWatcher,SIGNAL(fileChanged(QString)),this,SLOT(slot_updateFileWatcherTriggered()));
 
     ps_process = new QProcess;
-    connect(ps_process,SIGNAL(finished(int)),this,SLOT(slot_ps_processFinished()));
-    connect(ps_process,SIGNAL(readyReadStandardOutput()),this,SLOT(slot_ps_processHasOutput()));
+    connect(ps_process,SIGNAL(finished(int)),this,SLOT(slot_ps_processFinished(int)));
     connect(ps_process,SIGNAL(readyReadStandardError()),this,SLOT(slot_ps_processHasOutput()));
 
     startDelayTimer = new QTimer(this);
@@ -183,48 +184,26 @@ QStringList parameters;
           checkDaemonRunning();
         }
     }
-
 }
 
 void freshclamsetter::checkDaemonRunning(){
     QStringList ps_parameters;
-    ps_parameters << "ax";
-    ps_process->start("ps",ps_parameters);
+    ps_parameters << "-s" << "freshclam";
+    ps_process->start("pidof",ps_parameters);
 }
 
-void freshclamsetter::slot_ps_processFinished()
+void freshclamsetter::slot_ps_processFinished(int rc)
 {
     QFile tempFile;
-    ps_processOutput = ps_processOutput + ps_process->readAllStandardOutput();
-    ps_processOutput = ps_processOutput + ps_process->readAllStandardError();
-    QStringList processes = ps_processOutput.split("\n");
-    QString freshclamProcess;
 
-
-    for (int x = 0; x < processes.size(); x++) {
-        if ((processes[x].indexOf(setupFile->getSectionValue("FreshclamSettings","FreshclamLocation")) != -1) || (processes[x].indexOf(" freshclam ") != -1)) freshclamProcess = processes[x];
-    }
-
-    QStringList values;
-    QString part;
-
-    for (int x = 1; x < freshclamProcess.length(); x++) {
-        if ((freshclamProcess.mid(x,1) != " ") && (freshclamProcess.mid(x,1) != "\t")) {
-          part = part + freshclamProcess.mid(x,1);
-        } else {
-          if (part.length() > 0) values.append(part);
-          part = "";
-        }
-    }
-    if (part.length() > 0) values.append(part);
-
-    if (freshclamProcess != "") {
+    if (rc == 0) {
         pidFile = freshclamConf->getSingleLineValue("PidFile");
         logFile = QDir::homePath() + "/.clamav-gui/freshclam.log";
     } else {
         pidFile = "";
         logFile = "";
     }
+
     if ((pidFile != "") && (tempFile.exists(pidFile) == true)){
         ui->startStopDeamonButton->setText(tr("Deamon running - stop deamon"));
         ui->startStopDeamonButton->setStyleSheet("background:green");
@@ -287,14 +266,6 @@ QStringList parameters;
 
     startDeamonProcess->start(sudoGUI,parameters);
 }
-
-
-void freshclamsetter::slot_ps_processHasOutput()
-{
-    ps_processOutput = ps_processOutput + ps_process->readAllStandardOutput();
-    ps_processOutput = ps_processOutput + ps_process->readAllStandardError();
-}
-
 
 void freshclamsetter::slot_updaterFinished(int rc){
     delete busyLabel;
@@ -571,8 +542,8 @@ void freshclamsetter::initFreshclamSettings() {
     freshclamLocationProcess = new QProcess(this);
     connect(freshclamLocationProcess,SIGNAL(finished(int)),this,SLOT(slot_freshclamLocationProcessFinished()));
     connect(freshclamLocationProcess,SIGNAL(readyRead()),this,SLOT(slot_freshclamLocationProcessHasOutput()));
-
     freshclamConf = new setupFileHandler(QDir::homePath() + "/.clamav-gui/freshclam.conf");
+
     if (freshclamConf->singleLineExists("DatabaseDirectory") == true) {
         ui->databaseDirectoryPathLabel->setText(freshclamConf->getSingleLineValue("DatabaseDirectory"));
     } else {
@@ -628,12 +599,21 @@ void freshclamsetter::initFreshclamSettings() {
     ui->freshclamLocationLineEdit->setText(setupFile->getSectionValue("FreshclamSettings","FreshclamLocation"));
     ui->databaseTypeComboBox->setCurrentIndex(setupFile->getSectionIntValue("FreshClam","DataBaseToUpdate"));
 
+    if (freshclamConf->singleLineExists("HTTPProxyServer") == true) ui->httpProxyServerLineEdit->setText(freshclamConf->getSingleLineValue("HTTPProxyServer"));
+    if (freshclamConf->singleLineExists("HTTPProxyPort") == true) ui->httpProxyPortLineEdit->setText(freshclamConf->getSingleLineValue("HTTPProxyPort"));
+    if (freshclamConf->singleLineExists("HTTPProxyUsername") == true) ui->httpProxyUsernameLineEdit->setText(freshclamConf->getSingleLineValue("HTTPProxyUsername"));
+    if (freshclamConf->singleLineExists("HTTPProxyPassword") == true) ui->httpProxyPasswordLineEdit->setText(freshclamConf->getSingleLineValue("HTTPProxyPassword"));
+    if (freshclamConf->singleLineExists("OnUpdateExecute") == true) ui->onUpdateExecuteLineEdit->setText(freshclamConf->getSingleLineValue("OnUpdateExecute"));
+    if (freshclamConf->singleLineExists("OnErrorExecute") == true) ui->onErrorExecuteLineEdit->setText(freshclamConf->getSingleLineValue("OnErrorExecute"));
+    if (freshclamConf->singleLineExists("OnOutdatedExecute") == true) ui->onOutdatedExecuteLineEdit->setText(freshclamConf->getSingleLineValue("OnOutdatedExecute"));
+
     parameters << "-ld" << ui->databaseDirectoryPathLabel->text();
     QDir dbDir;
+
     if (dbDir.exists(ui->databaseDirectoryPathLabel->text()) == true) {
         getDBUserProcess->start("ls",parameters);
     } else {
-        freshclamConf->setSingleLineValue("DatabaseOwner","clamav");
+        QMessageBox::information(this,"DEBUG","WAIT #2");
     }
 
     lockFreshclamConf = false;
@@ -660,6 +640,34 @@ void freshclamsetter::slot_writeFreshclamSettings()
         freshclamConf->setSingleLineValue("DatabaseMirror",ui->databaseMirrorLineEdit->text());
         freshclamConf->setSingleLineValue("LogTime",ui->logTimeComboBox->currentText());
         freshclamConf->setSingleLineValue("LogVerbose",ui->logVerboseComboBox->currentText());
+        if (ui->onErrorExecuteLineEdit->text() != "") freshclamConf->setSingleLineValue("OnErrorExecute",ui->onErrorExecuteLineEdit->text()); else {
+            freshclamConf->setSingleLineValue("OnErrorExecute","obsolete");
+            freshclamConf->removeSingleLine("OnErrorExecute","obsolete");
+        }
+        if (ui->onUpdateExecuteLineEdit->text() != "") freshclamConf->setSingleLineValue("OnUpdateExecute",ui->onUpdateExecuteLineEdit->text()); else {
+            freshclamConf->setSingleLineValue("OnUpdateExecute","obsolete");
+            freshclamConf->removeSingleLine("OnUpdateExecute","obsolete");
+        }
+        if (ui->onOutdatedExecuteLineEdit->text() != "") freshclamConf->setSingleLineValue("OnOutdatedExecute",ui->onOutdatedExecuteLineEdit->text()); else {
+            freshclamConf->setSingleLineValue("OnOutdatedExecute","obsolete");
+            freshclamConf->removeSingleLine("OnOutdatedExecute","obsolete");
+        }
+        if (ui->httpProxyServerLineEdit->text() != "") freshclamConf->setSingleLineValue("HTTPProxyServer",ui->httpProxyServerLineEdit->text()); else {
+            freshclamConf->setSingleLineValue("HTTPProxyServer","obsolete");
+            freshclamConf->removeSingleLine("HTTPProxyServer","obsolete");
+        }
+        if (ui->httpProxyPortLineEdit->text() != "") freshclamConf->setSingleLineValue("HTTPProxyPort",ui->httpProxyPortLineEdit->text()); else {
+            freshclamConf->setSingleLineValue("HTTPProxyPort","obsolete");
+            freshclamConf->removeSingleLine("HTTPProxyPort","obsolete");
+        }
+        if (ui->httpProxyUsernameLineEdit->text() != "") freshclamConf->setSingleLineValue("HTTPProxyUsername",ui->httpProxyUsernameLineEdit->text()); else {
+            freshclamConf->setSingleLineValue("HTTPProxyUsername","obsolete");
+            freshclamConf->removeSingleLine("HTTPProxyUsername","obsolete");
+        }
+        if (ui->httpProxyPasswordLineEdit->text() != "") freshclamConf->setSingleLineValue("HTTPProxyPassword",ui->httpProxyPasswordLineEdit->text()); else {
+            freshclamConf->setSingleLineValue("HTTPProxyPassword","obsolete");
+            freshclamConf->removeSingleLine("HTTPProxyPassword","obsolete");
+        }
         setupFile->setSectionValue("FreshClam","UpdatesPerDay",ui->checkPerDaySpinBox->value());
         setupFile->setSectionValue("FreshClam","DataBaseToUpdate",ui->databaseTypeComboBox->currentIndex());
     }
@@ -748,9 +756,40 @@ void freshclamsetter::slot_setFreshclamsettingsFrameState(bool state)
     ui->checkPerDaySpinBox->setEnabled(state);
     ui->runasrootCheckBox->setEnabled(state);
     ui->autoStartDaemonCheckBox->setEnabled(state);
+    ui->httpProxyServerLineEdit->setEnabled(state);
+    ui->httpProxyPortLineEdit->setEnabled(state);
+    ui->httpProxyUsernameLineEdit->setEnabled(state);
+    ui->httpProxyPasswordLineEdit->setEnabled(state);
+    ui->onUpdateExecuteLineEdit->setEnabled(state);
+    ui->onUpdateExecutePushButton->setEnabled(state);
+    ui->onErrorExecuteLineEdit->setEnabled(state);
+    ui->onErrorExecutePushButton->setEnabled(state);
+    ui->onOutdatedExecuteLineEdit->setEnabled(state);
+    ui->onOutdatedExecutePushButton->setEnabled(state);
 }
 
 void freshclamsetter::slot_autoStartDaemon()
 {
     setupFile->setSectionValue("Freshclam","StartDaemon",ui->autoStartDaemonCheckBox->isChecked());
+}
+
+void freshclamsetter::slot_onUpdateExecuteButtonClicked()
+{
+    QString rc = QFileDialog::getOpenFileName(this,tr("On Update Execute"),tr("Select a programm that will be executed when the database is updated."));
+    if (rc != "") ui->onUpdateExecuteLineEdit->setText(rc);
+    slot_writeFreshclamSettings();
+}
+
+void freshclamsetter::slot_onErrorExecuteButtonClicked()
+{
+    QString rc = QFileDialog::getOpenFileName(this,tr("On Error Execute"),tr("Select a programm that will be executed when an error occured."));
+    if (rc != "") ui->onErrorExecuteLineEdit->setText(rc);
+    slot_writeFreshclamSettings();
+}
+
+void freshclamsetter::slot_onOutdatedExecuteButtonClicked()
+{
+    QString rc = QFileDialog::getOpenFileName(this,tr("On Outdated Execute"),tr("Select a programm that will be executed when the database is outdated."));
+    if (rc != "") ui->onOutdatedExecuteLineEdit->setText(rc);
+    slot_writeFreshclamSettings();
 }

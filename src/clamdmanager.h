@@ -3,8 +3,9 @@
 
 #include <QFileSystemWatcher>
 #include <QFileDialog>
-#include <QWidget>
 #include <QProcess>
+#include <QWidget>
+#include <QTimer>
 #include <QMovie>
 #include "setupfilehandler.h"
 #include "highlighter.h"
@@ -34,11 +35,13 @@ public:
     QString               clamonaccPid; // clamd
     QString               lastFound; // clamd
     QString               sudoGUI;
+    QTimer              * startDelayTimer;
     highlighter         * logHighlighter; // clamd
     QFileSystemWatcher  * clamdLogWatcher; // clamd
     QFileSystemWatcher  * clamdPidWatcher; // clamd
     bool                  clamdRestartInProgress; // clamd
     bool                  startup;
+    int                   clamdStartupCounter;
     void initClamdSettings(); // clamd
     void restartClamonacc(); // clamd
     bool checkClamdRunning(); // clamd
@@ -48,9 +51,9 @@ private slots:
     void slot_logFileContentChanged();
     void slot_clamdStartStopButtonClicked();
     void slot_pidWatcherTriggered();
-    void slot_startClamdProcessFinished();
+    void slot_startClamdProcessFinished(int exitCode,QProcess::ExitStatus exitStatus);
     void slot_killClamdProcessFinished();
-    void slot_findclamonaccProcessFinished();
+    void slot_findclamonaccProcessFinished(int rc);
     void slot_monitoringAddButtonClicked();
     void slot_monitoringDelButtonClicked();
     void slot_restartClamonaccProcessFinished();
@@ -59,6 +62,7 @@ private slots:
     void slot_clamdLocationProcessFinished();
     void slot_clamonaccLocationProcessFinished();
     void slot_startClamdOnStartupCheckBoxClicked();
+    void slot_startDelayTimerExpired();
 
 
 signals:
