@@ -1546,6 +1546,58 @@ actualización manual como root</translation>
         <source>No virus definitions found in the database folder. Should the virus definitions be downloaded?</source>
         <translation>No se han encontrado definiciones de virus en la carpeta de la base de datos. ¿Deben descargarse las definiciones de virus?</translation>
     </message>
+    <message>
+        <source>HTTPProxyServer</source>
+        <translation>HTTPProxyServer</translation>
+    </message>
+    <message>
+        <source>HTTPProxy Port</source>
+        <translation>HTTPProxy Port</translation>
+    </message>
+    <message>
+        <source>HTTPProxyUsername</source>
+        <translation>HTTPProxyUsername</translation>
+    </message>
+    <message>
+        <source>HTTPProxyPassword</source>
+        <translation>HTTPProxyPassword</translation>
+    </message>
+    <message>
+        <source>OnUpdateExecute</source>
+        <translation>OnUpdateExecute</translation>
+    </message>
+    <message>
+        <source>OnErrorExecute</source>
+        <translation>OnErrorExecute</translation>
+    </message>
+    <message>
+        <source>OnOutdatedExecute</source>
+        <translation>OnOutdatedExecute</translation>
+    </message>
+    <message>
+        <source>On Update Execute</source>
+        <translation>Al actualizar Ejecutar</translation>
+    </message>
+    <message>
+        <source>Select a programm that will be executed when the database is updated.</source>
+        <translation>Seleccione un programa que se ejecutará cuando se actualice la base de datos.</translation>
+    </message>
+    <message>
+        <source>On Error Execute</source>
+        <translation>En caso de error Ejecutar</translation>
+    </message>
+    <message>
+        <source>Select a programm that will be executed when an error occured.</source>
+        <translation>Seleccione un programa que se ejecutará cuando se produzca un error.</translation>
+    </message>
+    <message>
+        <source>On Outdated Execute</source>
+        <translation>En ejecución obsoleta</translation>
+    </message>
+    <message>
+        <source>Select a programm that will be executed when the database is outdated.</source>
+        <translation>Seleccione un programa que se ejecutará cuando la base de datos esté obsoleta.</translation>
+    </message>
 </context>
 <context>
     <name>includeExcludeOptions</name>
@@ -3924,6 +3976,30 @@ li.checked::marker { content: &quot;\2612&quot;; }
     <message>
         <source>The virus definition files are missing in the database directory. Start download of the missing files?</source>
         <translation>No se han encontrado definiciones de virus en la carpeta de la base de datos. ¿Deben descargarse las definiciones de virus?</translation>
+    </message>
+    <message>
+        <source>- or double click the option in the &quot;Selected Options&quot; list</source>
+        <translation>- o haga doble clic en la opción de la lista &quot;Opciones seleccionadas&quot;.</translation>
+    </message>
+    <message>
+        <source>- or double click the option in the &quot;Available Options&quot; list</source>
+        <translation>- o haga doble clic en la opción de la lista &quot;Opciones disponibles&quot;.</translation>
+    </message>
+    <message>
+        <source>ERROR</source>
+        <translation>ERROR</translation>
+    </message>
+    <message>
+        <source>&lt;font style=&apos;font-weight:bold;color:red&apos;&gt;Option:&lt;/font&gt; &lt;b&gt;</source>
+        <translation>&lt;font style=&apos;font-weight:bold;color:red&apos;&gt;Option:&lt;/font&gt; &lt;b&gt;</translation>
+    </message>
+    <message>
+        <source>Option already selected with &lt;b&gt;&quot;no&quot;&lt;/b&gt; value.&lt;br&gt;Selecting both options at the same time makes no sense!</source>
+        <translation>Opción ya seleccionada con valor &lt;b&gt;&quot;no&quot;&lt;/b&gt;.&lt;br&gt;¡Seleccionar ambas opciones a la vez no tiene sentido!</translation>
+    </message>
+    <message>
+        <source>Option already selected with &lt;b&gt;&quot;yes&quot;&lt;/b&gt; value.&lt;br&gt;Selecting both options at the same time makes no sense!</source>
+        <translation>Opción ya seleccionada con valor &lt;b&gt;&quot;yes&quot;&lt;/b&gt;.&lt;br&gt;¡Seleccionar ambas opciones a la vez no tiene sentido!</translation>
     </message>
 </context>
 <context>
