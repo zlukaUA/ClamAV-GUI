@@ -235,7 +235,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
          <property name="frameShadow">
           <enum>QFrame::Raised</enum>
          </property>
-         <layout class="QGridLayout" name="gridLayout_11">
+         <layout class="QGridLayout" name="gridLayout_12">
           <item row="0" column="0">
            <widget class="QFrame" name="frame_3">
             <property name="frameShape">
@@ -244,50 +244,41 @@ li.checked::marker { content: &quot;\2612&quot;; }
             <property name="frameShadow">
              <enum>QFrame::Raised</enum>
             </property>
-            <layout class="QGridLayout" name="gridLayout_12">
-             <item row="10" column="0" colspan="4">
-              <widget class="Line" name="line">
-               <property name="orientation">
-                <enum>Qt::Horizontal</enum>
-               </property>
-              </widget>
-             </item>
-             <item row="4" column="0">
-              <widget class="QLabel" name="databaseMirrorLabel">
-               <property name="toolTip">
-                <string>DatabaseMirror specifies to which mirror(s) freshclam should connect.
-You should have at least one entries: database.clamav.net. 
-Now that CloudFlare is being used as our Content Delivery Network (CDN),  this  one  domain
-name works world-wide to direct freshclam to the closest geographic endpoint.
-Default: database.clamav.net
-</string>
+            <layout class="QGridLayout" name="gridLayout_11">
+             <item row="0" column="0">
+              <widget class="QLabel" name="freshclamLogoIconLabel">
+               <property name="styleSheet">
+                <string notr="true">margin-right:10px;</string>
                </property>
                <property name="text">
-                <string>DatabaseMirror:</string>
+                <string/>
+               </property>
+               <property name="pixmap">
+                <pixmap resource="../resources.qrc">:/icons/icons/options.png</pixmap>
                </property>
               </widget>
              </item>
-             <item row="2" column="0">
-              <widget class="QLabel" name="pidFileLabel">
-               <property name="toolTip">
-                <string>This option allows you to save the process identifier of the daemon to a file specified in the argument.</string>
+             <item row="0" column="1">
+              <widget class="QLabel" name="freshclamLogoTextLabel">
+               <property name="styleSheet">
+                <string notr="true">font-size:16px;font-weight:bold</string>
                </property>
                <property name="text">
-                <string>PID-File:</string>
+                <string>Freshclam Settings</string>
                </property>
               </widget>
              </item>
-             <item row="9" column="0">
-              <widget class="QLabel" name="logVerboseLabel">
+             <item row="1" column="0">
+              <widget class="QLabel" name="freshclamLocationLabel">
                <property name="toolTip">
-                <string>Enable verbose logging.</string>
+                <string>autodecteced location of the freshclam binary</string>
                </property>
                <property name="text">
-                <string>LogVerbose</string>
+                <string>freshclam (Info)</string>
                </property>
               </widget>
              </item>
-             <item row="1" column="2">
+             <item row="1" column="1">
               <widget class="QLineEdit" name="freshclamLocationLineEdit">
                <property name="enabled">
                 <bool>true</bool>
@@ -303,7 +294,204 @@ Default: database.clamav.net
                </property>
               </widget>
              </item>
-             <item row="6" column="2">
+             <item row="1" column="3" rowspan="10">
+              <widget class="Line" name="line_2">
+               <property name="styleSheet">
+                <string notr="true"/>
+               </property>
+               <property name="orientation">
+                <enum>Qt::Vertical</enum>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="4" colspan="3">
+              <widget class="QLabel" name="httpProxyServerLabel">
+               <property name="styleSheet">
+                <string notr="true">margin-left:5px;</string>
+               </property>
+               <property name="text">
+                <string>HTTPProxyServer</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="7">
+              <widget class="QLineEdit" name="httpProxyServerLineEdit">
+               <property name="minimumSize">
+                <size>
+                 <width>150</width>
+                 <height>0</height>
+                </size>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="0">
+              <widget class="QLabel" name="pidFileLabel">
+               <property name="toolTip">
+                <string>This option allows you to save the process identifier of the daemon to a file specified in the argument.</string>
+               </property>
+               <property name="text">
+                <string>PID-File:</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="1">
+              <widget class="QLabel" name="pidFilePathLabel">
+               <property name="minimumSize">
+                <size>
+                 <width>170</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true"/>
+               </property>
+               <property name="frameShape">
+                <enum>QFrame::Panel</enum>
+               </property>
+               <property name="text">
+                <string>/tmp/freshclam.pid</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="2">
+              <widget class="QPushButton" name="pidFileSelectPushButton">
+               <property name="minimumSize">
+                <size>
+                 <width>50</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>50</width>
+                 <height>16777215</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true"/>
+               </property>
+               <property name="text">
+                <string>...</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="7">
+              <widget class="QLineEdit" name="httpProxyPortLineEdit"/>
+             </item>
+             <item row="3" column="0" rowspan="2">
+              <widget class="QLabel" name="databaseOwnerLabel">
+               <property name="toolTip">
+                <string>When started by root, drop privileges to a specified user. The user will be determined by the application and must match the owner of the database directory</string>
+               </property>
+               <property name="text">
+                <string>DatabaseOwner:</string>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="1" rowspan="2">
+              <widget class="QLineEdit" name="databaseOwnerLineEdit">
+               <property name="styleSheet">
+                <string notr="true"/>
+               </property>
+              </widget>
+             </item>
+             <item row="4" column="7">
+              <widget class="QLineEdit" name="httpProxyUsernameLineEdit">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item row="5" column="0">
+              <widget class="QLabel" name="databaseMirrorLabel">
+               <property name="toolTip">
+                <string>DatabaseMirror specifies to which mirror(s) freshclam should connect.
+You should have at least one entries: database.clamav.net. 
+Now that CloudFlare is being used as our Content Delivery Network (CDN),  this  one  domain
+name works world-wide to direct freshclam to the closest geographic endpoint.
+Default: database.clamav.net
+</string>
+               </property>
+               <property name="text">
+                <string>DatabaseMirror:</string>
+               </property>
+              </widget>
+             </item>
+             <item row="5" column="1">
+              <widget class="QLineEdit" name="databaseMirrorLineEdit">
+               <property name="styleSheet">
+                <string notr="true"/>
+               </property>
+               <property name="text">
+                <string>database.clamav.net</string>
+               </property>
+              </widget>
+             </item>
+             <item row="5" column="7">
+              <widget class="QLineEdit" name="httpProxyPasswordLineEdit">
+               <property name="echoMode">
+                <enum>QLineEdit::Password</enum>
+               </property>
+              </widget>
+             </item>
+             <item row="6" column="0">
+              <widget class="QLabel" name="logSysLogLabel">
+               <property name="toolTip">
+                <string>Enable logging to Syslog. May be used in combination with UpdateLogFile.</string>
+               </property>
+               <property name="text">
+                <string>LogSysLog:</string>
+               </property>
+              </widget>
+             </item>
+             <item row="6" column="1">
+              <widget class="QComboBox" name="logSysLogComboBox">
+               <item>
+                <property name="text">
+                 <string>no</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>yes</string>
+                </property>
+               </item>
+              </widget>
+             </item>
+             <item row="6" column="7">
+              <widget class="QLineEdit" name="onUpdateExecuteLineEdit"/>
+             </item>
+             <item row="6" column="8">
+              <widget class="QPushButton" name="onUpdateExecutePushButton">
+               <property name="minimumSize">
+                <size>
+                 <width>50</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>50</width>
+                 <height>16777215</height>
+                </size>
+               </property>
+               <property name="text">
+                <string>...</string>
+               </property>
+              </widget>
+             </item>
+             <item row="7" column="0">
+              <widget class="QLabel" name="logFacilityLabel">
+               <property name="toolTip">
+                <string>Specify the type of syslog messages - please refer to 'man syslog' for facility names.
+              Default: LOG_LOCAL6</string>
+               </property>
+               <property name="text">
+                <string>LogFacility:</string>
+               </property>
+              </widget>
+             </item>
+             <item row="7" column="1">
               <widget class="QComboBox" name="logFacilityComboBox">
                <item>
                 <property name="text">
@@ -317,31 +505,40 @@ Default: database.clamav.net
                </item>
               </widget>
              </item>
-             <item row="3" column="0">
-              <widget class="QLabel" name="databaseOwnerLabel">
+             <item row="7" column="7">
+              <widget class="QLineEdit" name="onErrorExecuteLineEdit"/>
+             </item>
+             <item row="7" column="8">
+              <widget class="QPushButton" name="onErrorExecutePushButton">
+               <property name="minimumSize">
+                <size>
+                 <width>50</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>50</width>
+                 <height>16777215</height>
+                </size>
+               </property>
+               <property name="text">
+                <string>...</string>
+               </property>
+              </widget>
+             </item>
+             <item row="8" column="0">
+              <widget class="QLabel" name="logRotateLabel">
                <property name="toolTip">
-                <string>When started by root, drop privileges to a specified user. The user will be determined by the application and must match the owner of the database directory</string>
+                <string>Rotate log file. Requires LogFileMaxSize option set prior to this option.</string>
                </property>
                <property name="text">
-                <string>DatabaseOwner:</string>
+                <string>LogRotate:</string>
                </property>
               </widget>
              </item>
-             <item row="11" column="0">
-              <widget class="QLabel" name="freshclamImageLabel">
-               <property name="styleSheet">
-                <string notr="true"/>
-               </property>
-               <property name="text">
-                <string/>
-               </property>
-               <property name="pixmap">
-                <pixmap resource="../resources.qrc">:/icons/icons/freshclam.png</pixmap>
-               </property>
-              </widget>
-             </item>
-             <item row="9" column="2">
-              <widget class="QComboBox" name="logVerboseComboBox">
+             <item row="8" column="1">
+              <widget class="QComboBox" name="logRotateComboBox">
                <item>
                 <property name="text">
                  <string>yes</string>
@@ -354,47 +551,39 @@ Default: database.clamav.net
                </item>
               </widget>
              </item>
-             <item row="12" column="2">
-              <widget class="QLabel" name="databaseDirectoryPathLabel">
-               <property name="styleSheet">
-                <string notr="true"/>
+             <item row="8" column="7">
+              <widget class="QLineEdit" name="onOutdatedExecuteLineEdit"/>
+             </item>
+             <item row="8" column="8">
+              <widget class="QPushButton" name="onOutdatedExecutePushButton">
+               <property name="minimumSize">
+                <size>
+                 <width>50</width>
+                 <height>0</height>
+                </size>
                </property>
-               <property name="frameShape">
-                <enum>QFrame::Panel</enum>
+               <property name="maximumSize">
+                <size>
+                 <width>50</width>
+                 <height>16777215</height>
+                </size>
                </property>
                <property name="text">
-                <string/>
+                <string>...</string>
                </property>
               </widget>
              </item>
-             <item row="0" column="2">
-              <widget class="QLabel" name="freshclamLogoTextLabel">
-               <property name="styleSheet">
-                <string notr="true">font-size:16px;font-weight:bold</string>
+             <item row="9" column="0">
+              <widget class="QLabel" name="logTimeLabel">
+               <property name="toolTip">
+                <string>Log time with each message.</string>
                </property>
                <property name="text">
-                <string>Freshclam Settings</string>
+                <string>LogTime:</string>
                </property>
               </widget>
              </item>
-             <item row="3" column="2">
-              <widget class="QLineEdit" name="databaseOwnerLineEdit">
-               <property name="styleSheet">
-                <string notr="true"/>
-               </property>
-              </widget>
-             </item>
-             <item row="4" column="2">
-              <widget class="QLineEdit" name="databaseMirrorLineEdit">
-               <property name="styleSheet">
-                <string notr="true"/>
-               </property>
-               <property name="text">
-                <string>database.clamav.net</string>
-               </property>
-              </widget>
-             </item>
-             <item row="8" column="2">
+             <item row="9" column="1">
               <widget class="QComboBox" name="logTimeComboBox">
                <item>
                 <property name="text">
@@ -408,20 +597,73 @@ Default: database.clamav.net
                </item>
               </widget>
              </item>
-             <item row="0" column="0">
-              <widget class="QLabel" name="freshclamLogoIconLabel">
+             <item row="10" column="0">
+              <widget class="QLabel" name="logVerboseLabel">
+               <property name="toolTip">
+                <string>Enable verbose logging.</string>
+               </property>
+               <property name="text">
+                <string>LogVerbose</string>
+               </property>
+              </widget>
+             </item>
+             <item row="10" column="1">
+              <widget class="QComboBox" name="logVerboseComboBox">
+               <item>
+                <property name="text">
+                 <string>yes</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>no</string>
+                </property>
+               </item>
+              </widget>
+             </item>
+             <item row="11" column="0" colspan="8">
+              <widget class="Line" name="line">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+              </widget>
+             </item>
+             <item row="12" column="0">
+              <widget class="QLabel" name="freshclamImageLabel">
                <property name="styleSheet">
-                <string notr="true">margin-right:10px;</string>
+                <string notr="true"/>
                </property>
                <property name="text">
                 <string/>
                </property>
                <property name="pixmap">
-                <pixmap resource="../resources.qrc">:/icons/icons/options.png</pixmap>
+                <pixmap resource="../resources.qrc">:/icons/icons/freshclam.png</pixmap>
                </property>
               </widget>
              </item>
-             <item row="12" column="0" colspan="2">
+             <item row="12" column="1">
+              <widget class="QLabel" name="freshclamLabel">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="layoutDirection">
+                <enum>Qt::LeftToRight</enum>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">font-size:16px;font-weight:bold</string>
+               </property>
+               <property name="text">
+                <string>FreshClam Daemon</string>
+               </property>
+               <property name="textFormat">
+                <enum>Qt::RichText</enum>
+               </property>
+              </widget>
+             </item>
+             <item row="13" column="0">
               <widget class="QLabel" name="databaseDirectoryLabel">
                <property name="sizePolicy">
                 <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
@@ -437,41 +679,20 @@ Default: database.clamav.net
                </property>
               </widget>
              </item>
-             <item row="5" column="0">
-              <widget class="QLabel" name="logSysLogLabel">
-               <property name="toolTip">
-                <string>Enable logging to Syslog. May be used in combination with UpdateLogFile.</string>
+             <item row="13" column="1">
+              <widget class="QLabel" name="databaseDirectoryPathLabel">
+               <property name="styleSheet">
+                <string notr="true"/>
+               </property>
+               <property name="frameShape">
+                <enum>QFrame::Panel</enum>
                </property>
                <property name="text">
-                <string>LogSysLog:</string>
+                <string/>
                </property>
               </widget>
              </item>
-             <item row="7" column="2">
-              <widget class="QComboBox" name="logRotateComboBox">
-               <item>
-                <property name="text">
-                 <string>yes</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>no</string>
-                </property>
-               </item>
-              </widget>
-             </item>
-             <item row="7" column="0">
-              <widget class="QLabel" name="logRotateLabel">
-               <property name="toolTip">
-                <string>Rotate log file. Requires LogFileMaxSize option set prior to this option.</string>
-               </property>
-               <property name="text">
-                <string>LogRotate:</string>
-               </property>
-              </widget>
-             </item>
-             <item row="13" column="0" colspan="4">
+             <item row="14" column="0" colspan="7">
               <layout class="QGridLayout" name="gridLayout_10">
                <item row="0" column="0">
                 <widget class="QLabel" name="databaseTypeLabel">
@@ -570,111 +791,63 @@ manual update as root</string>
                </item>
               </layout>
              </item>
-             <item row="11" column="2">
-              <widget class="QLabel" name="freshclamLabel">
-               <property name="sizePolicy">
-                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                 <horstretch>0</horstretch>
-                 <verstretch>0</verstretch>
-                </sizepolicy>
-               </property>
-               <property name="layoutDirection">
-                <enum>Qt::LeftToRight</enum>
-               </property>
+             <item row="2" column="4" colspan="3">
+              <widget class="QLabel" name="httpProxyPortLabel">
                <property name="styleSheet">
-                <string notr="true">font-size:16px;font-weight:bold</string>
+                <string notr="true">margin-left:5px;</string>
                </property>
                <property name="text">
-                <string>FreshClam Daemon</string>
-               </property>
-               <property name="textFormat">
-                <enum>Qt::RichText</enum>
+                <string>HTTPProxy Port</string>
                </property>
               </widget>
              </item>
-             <item row="2" column="2">
-              <widget class="QLabel" name="pidFilePathLabel">
-               <property name="minimumSize">
-                <size>
-                 <width>170</width>
-                 <height>0</height>
-                </size>
-               </property>
+             <item row="4" column="4" colspan="3">
+              <widget class="QLabel" name="httpProxyUsernameLabel">
                <property name="styleSheet">
-                <string notr="true"/>
-               </property>
-               <property name="frameShape">
-                <enum>QFrame::Panel</enum>
+                <string notr="true">margin-left:5px;</string>
                </property>
                <property name="text">
-                <string>/tmp/freshclam.pid</string>
+                <string>HTTPProxyUsername</string>
                </property>
               </widget>
              </item>
-             <item row="8" column="0">
-              <widget class="QLabel" name="logTimeLabel">
-               <property name="toolTip">
-                <string>Log time with each message.</string>
-               </property>
-               <property name="text">
-                <string>LogTime:</string>
-               </property>
-              </widget>
-             </item>
-             <item row="5" column="2">
-              <widget class="QComboBox" name="logSysLogComboBox">
-               <item>
-                <property name="text">
-                 <string>no</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>yes</string>
-                </property>
-               </item>
-              </widget>
-             </item>
-             <item row="2" column="3">
-              <widget class="QPushButton" name="pidFileSelectPushButton">
-               <property name="minimumSize">
-                <size>
-                 <width>50</width>
-                 <height>0</height>
-                </size>
-               </property>
-               <property name="maximumSize">
-                <size>
-                 <width>50</width>
-                 <height>16777215</height>
-                </size>
-               </property>
+             <item row="5" column="4" colspan="3">
+              <widget class="QLabel" name="httpProxyPasswordLabel">
                <property name="styleSheet">
-                <string notr="true"/>
+                <string notr="true">margin-left:5px;</string>
                </property>
                <property name="text">
-                <string>...</string>
+                <string>HTTPProxyPassword</string>
                </property>
               </widget>
              </item>
-             <item row="6" column="0">
-              <widget class="QLabel" name="logFacilityLabel">
-               <property name="toolTip">
-                <string>Specify the type of syslog messages - please refer to 'man syslog' for facility names.
-              Default: LOG_LOCAL6</string>
+             <item row="6" column="4" colspan="3">
+              <widget class="QLabel" name="onUpdateExecuteLabel">
+               <property name="styleSheet">
+                <string notr="true">margin-left:5px;</string>
                </property>
                <property name="text">
-                <string>LogFacility:</string>
+                <string>OnUpdateExecute</string>
                </property>
               </widget>
              </item>
-             <item row="1" column="0">
-              <widget class="QLabel" name="freshclamLocationLabel">
-               <property name="toolTip">
-                <string>autodecteced location of the freshclam binary</string>
+             <item row="7" column="4" colspan="3">
+              <widget class="QLabel" name="onErrorExecuteLabel">
+               <property name="styleSheet">
+                <string notr="true">margin-left:5px;</string>
                </property>
                <property name="text">
-                <string>freshclam (Info)</string>
+                <string>OnErrorExecute</string>
+               </property>
+              </widget>
+             </item>
+             <item row="8" column="4" colspan="3">
+              <widget class="QLabel" name="onOutdatedExecuteLabel">
+               <property name="styleSheet">
+                <string notr="true">margin-left:5px;</string>
+               </property>
+               <property name="text">
+                <string>OnOutdatedExecute</string>
                </property>
               </widget>
              </item>
@@ -743,8 +916,8 @@ manual update as root</string>
    <slot>slot_startStopDeamonButtonClicked()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>163</x>
-     <y>77</y>
+     <x>936</x>
+     <y>89</y>
     </hint>
     <hint type="destinationlabel">
      <x>4</x>
@@ -759,8 +932,8 @@ manual update as root</string>
    <slot>slot_clearLogButtonClicked()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>119</x>
-     <y>77</y>
+     <x>143</x>
+     <y>461</y>
     </hint>
     <hint type="destinationlabel">
      <x>6</x>
@@ -775,8 +948,8 @@ manual update as root</string>
    <slot>slot_clearDeamonLogButtonClicked()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>163</x>
-     <y>77</y>
+     <x>611</x>
+     <y>461</y>
     </hint>
     <hint type="destinationlabel">
      <x>676</x>
@@ -791,8 +964,8 @@ manual update as root</string>
    <slot>slot_autoStartDaemon()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>532</x>
-     <y>479</y>
+     <x>564</x>
+     <y>492</y>
     </hint>
     <hint type="destinationlabel">
      <x>962</x>
@@ -807,8 +980,8 @@ manual update as root</string>
    <slot>slot_runasrootCheckBoxChanged()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>527</x>
-     <y>532</y>
+     <x>564</x>
+     <y>539</y>
     </hint>
     <hint type="destinationlabel">
      <x>965</x>
@@ -967,12 +1140,172 @@ manual update as root</string>
    <slot>slot_pidFileSelectButtonClicked()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>508</x>
-     <y>156</y>
+     <x>385</x>
+     <y>163</y>
     </hint>
     <hint type="destinationlabel">
      <x>5</x>
      <y>138</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>httpProxyServerLineEdit</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>freshclamsetter</receiver>
+   <slot>slot_writeFreshclamSettings()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>670</x>
+     <y>120</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>963</x>
+     <y>129</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>httpProxyUsernameLineEdit</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>freshclamsetter</receiver>
+   <slot>slot_writeFreshclamSettings()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>660</x>
+     <y>183</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>966</x>
+     <y>200</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>httpProxyPasswordLineEdit</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>freshclamsetter</receiver>
+   <slot>slot_writeFreshclamSettings()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>654</x>
+     <y>218</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>965</x>
+     <y>242</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>onUpdateExecuteLineEdit</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>freshclamsetter</receiver>
+   <slot>slot_writeFreshclamSettings()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>608</x>
+     <y>245</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>964</x>
+     <y>276</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>onErrorExecuteLineEdit</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>freshclamsetter</receiver>
+   <slot>slot_writeFreshclamSettings()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>582</x>
+     <y>277</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>966</x>
+     <y>318</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>onOutdatedExecuteLineEdit</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>freshclamsetter</receiver>
+   <slot>slot_writeFreshclamSettings()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>721</x>
+     <y>329</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>962</x>
+     <y>356</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>onUpdateExecutePushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>freshclamsetter</receiver>
+   <slot>slot_onUpdateExecuteButtonClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>743</x>
+     <y>249</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>964</x>
+     <y>392</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>onErrorExecutePushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>freshclamsetter</receiver>
+   <slot>slot_onErrorExecuteButtonClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>777</x>
+     <y>297</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>964</x>
+     <y>429</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>onOutdatedExecutePushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>freshclamsetter</receiver>
+   <slot>slot_onOutdatedExecuteButtonClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>731</x>
+     <y>311</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>965</x>
+     <y>94</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>httpProxyPortLineEdit</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>freshclamsetter</receiver>
+   <slot>slot_writeFreshclamSettings()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>705</x>
+     <y>145</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>965</x>
+     <y>173</y>
     </hint>
    </hints>
   </connection>
@@ -986,5 +1319,8 @@ manual update as root</string>
   <slot>slot_pidFileSelectButtonClicked()</slot>
   <slot>slot_writeFreshclamSettings()</slot>
   <slot>slot_autoStartDaemon()</slot>
+  <slot>slot_onUpdateExecuteButtonClicked()</slot>
+  <slot>slot_onErrorExecuteButtonClicked()</slot>
+  <slot>slot_onOutdatedExecuteButtonClicked()</slot>
  </slots>
 </ui>

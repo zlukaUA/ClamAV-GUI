@@ -521,6 +521,9 @@
       </item>
       <item row="3" column="1" colspan="2">
        <widget class="QPushButton" name="removeButton">
+        <property name="toolTip">
+         <string>- or double click the option in the &quot;Selected Options&quot; list</string>
+        </property>
         <property name="styleSheet">
          <string notr="true">font-size:22px;font-weight:bold;</string>
         </property>
@@ -557,6 +560,9 @@
       </item>
       <item row="2" column="1" colspan="2">
        <widget class="QPushButton" name="addButton">
+        <property name="toolTip">
+         <string>- or double click the option in the &quot;Available Options&quot; list</string>
+        </property>
         <property name="styleSheet">
          <string notr="true">font-size:22px;font-weight:bold;</string>
         </property>
