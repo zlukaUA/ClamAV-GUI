@@ -1,3 +1,33 @@
+* Sat Jun 22 2024 Version 0.8.7
+- Modified the Options Tab. Options that exists with a "yes" and a "no" value when selected the corresponding option in the available options list is hidden and can therefor not be selected
+- Thought, this behaviour is better than throwing an error message that the selection makes no sense.
+
+* Thu Jun 20 2024 Version 0.8.6
+- Due to an error it was possible to select the same option twice and when a option exist with a "yes" and a "no" value both could be selected what makes no sense. Fixed this issues.
+- Added settings for HTTP Proxy connection (Server, Port, Username and Password)
+- Added settings for execution of a program in case of an Update running, an Error occured or the database is outdated.
+
+* Tue Jun 18 2024 Version 0.8.5
+- The status (up or down) of the clamd process could be wrong. Fixed this issue.
+- Fixed the icon size of the spinning wheel of the clamd tab.
+
+* Mon Jun 17 2024 Version 0.8.4
+- Processes that required to be started with root privileges where launcht via "xterm". Now they will be launched with "pkexec" or "kdesu". Xterm is no longer needed.
+
+* Sat Jun 15 2024 Version 0.8.3
+- Fixed a "File not open" error message at the first startup of the application.
+- Fixed an error of "misinterpretation" of the clamd.conf settings.
+
+* Thu Jun 13 2024 Version 0.8.2
+- Updating of the translation files
+- Some changes made to the layout of the Clamd-Tab
+
+* Tue Jun 11 2024 Version 0.8.1
+- Grouping of Freshclam Daemon / Freshclam Setting in one tab and Clamd / Clamd Settings in another tab.
+
+* Mon Jun 10 2024 Version 0.8.0
+- Added a section for adjusting the clamd/clamonacc settings in the clamd.conf file.
+
 * Sat Jun 08 2024 Version 0.7.9
 - Added to the setuptab support for clamd and clamonacc (Clamscan on Access)
 
