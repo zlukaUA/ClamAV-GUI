@@ -7,6 +7,7 @@ clamdManager::clamdManager(QWidget *parent)
 {
     ui->setupUi(this);
     startup = true;
+    waitForFreshclam = true;
     clamdStartupCounter = 0;
     startDelayTimer = new QTimer(this);
     startDelayTimer->setSingleShot(true);
@@ -372,7 +373,7 @@ void clamdManager::slot_startClamdProcessFinished(int exitCode, QProcess::ExitSt
         ui->startStopClamdPushButton->setText(tr("  Clamd not running - Start Clamd"));
         ui->startStopClamdPushButton->setIcon(QIcon(":/icons/icons/startclamd.png"));
         if (clamdStartupCounter > 0) {
-            clamdStartupCounter--;
+            if (waitForFreshclam == false) clamdStartupCounter--;
             startDelayTimer->start(2500);
         }
     } else {
@@ -420,18 +421,27 @@ void clamdManager::slot_findclamonaccProcessFinished(int rc)
 {
     if (rc == 0) clamonaccPid = findclamonaccProcess->readAllStandardOutput();
 
-    if ((startup == true) && (setupFile->keywordExists("Clamd","StartClamdOnStartup") == true) && (setupFile->getSectionBoolValue("Clamd","StartClamdOnStartup") == true)) {
+    if ((setupFile->keywordExists("Clamd","StartClamdOnStartup") == true) && (setupFile->getSectionBoolValue("Clamd","StartClamdOnStartup") == true)) {
         ui->startClamdOnStartupCheckBox->setChecked(setupFile->getSectionBoolValue("Clamd","StartClamdOnStartup"));
-        startDelayTimer->start(2500);
-        startup = false;
     }
 }
 
 void clamdManager::slot_startDelayTimerExpired() {
     if (checkClamdRunning() == false) {
         emit setActiveTab();
-        clamdStartupCounter = 5;
         slot_clamdStartStopButtonClicked();
+    }
+}
+
+void clamdManager::slot_waitForFreshclamStarted()
+{
+    waitForFreshclam = false;
+
+    if ((startup == true) && (setupFile->keywordExists("Clamd","StartClamdOnStartup") == true) && (setupFile->getSectionBoolValue("Clamd","StartClamdOnStartup") == true)) {
+        ui->startClamdOnStartupCheckBox->setChecked(setupFile->getSectionBoolValue("Clamd","StartClamdOnStartup"));
+        clamdStartupCounter = 5;
+        if (startup == true) startDelayTimer->start(2500);
+        startup = false;
     }
 }
 

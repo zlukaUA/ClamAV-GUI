@@ -21,7 +21,7 @@ QDir tempDir;
     connect(updater,SIGNAL(finished(int)),this,SLOT(slot_updaterFinished(int)));
 
     startDeamonProcess = new QProcess(this);
-    connect(startDeamonProcess,SIGNAL(finished(int)),this, SLOT(slot_startDeamonProcessFinished(int)));
+    connect(startDeamonProcess,SIGNAL(finished(int,QProcess::ExitStatus)),this, SLOT(slot_startDeamonProcessFinished(int,QProcess::ExitStatus)));
 
     pidFileWatcher = new QFileSystemWatcher(this);
     connect(pidFileWatcher,SIGNAL(fileChanged(QString)),this,SLOT(slot_fileSystemWatcherTriggered()));
@@ -36,6 +36,7 @@ QDir tempDir;
     connect(ps_process,SIGNAL(finished(int)),this,SLOT(slot_ps_processFinished(int)));
     connect(ps_process,SIGNAL(readyReadStandardError()),this,SLOT(slot_ps_processHasOutput()));
 
+    freshclamStartupCounter = 5;
     startDelayTimer = new QTimer(this);
     startDelayTimer->setSingleShot(true);
     connect(startDelayTimer,SIGNAL(timeout()),this,SLOT(slot_startDelayTimerExpired()));
@@ -149,7 +150,7 @@ QStringList parameters;
                 parameters << QDir::homePath() + "/.clamav-gui/startfreshclam.sh";
                 startDeamonProcess->start(sudoGUI,parameters);
             } else {
-                startDelayTimer->start(5000);
+                startDelayTimer->start(2500);
             }
         } else {
             parameters << "-d";
@@ -205,6 +206,8 @@ void freshclamsetter::slot_ps_processFinished(int rc)
     }
 
     if ((pidFile != "") && (tempFile.exists(pidFile) == true)){
+        freshclamStartupCounter = 0;
+        emit freshclamStarted();
         ui->startStopDeamonButton->setText(tr("Deamon running - stop deamon"));
         ui->startStopDeamonButton->setStyleSheet("background:green");
         ui->startStopDeamonButton->setIcon(QIcon(":/icons/icons/Clam.png"));
@@ -219,7 +222,10 @@ void freshclamsetter::slot_ps_processFinished(int rc)
         setupFile->setSectionValue("Freshclam","Started",false);
         slot_setFreshclamsettingsFrameState(true);
         if ((startup == true) && (setupFile->getSectionBoolValue("Freshclam","StartDaemon") == true)) {
-            slot_startStopDeamonButtonClicked();
+            freshclamStartupCounter--;
+            if (freshclamStartupCounter > 0) startDelayTimer->start(2500);
+        } else {
+            if (startup == true) emit freshclamStarted();
         }
     }
 
@@ -253,18 +259,23 @@ void freshclamsetter::slot_disableUpdateButtons()
 void freshclamsetter::slot_startDelayTimerExpired()
 {
 QStringList parameters;
-    QString para = setupFile->getSectionValue("FreshclamSettings","FreshclamLocation") + " -d -l " + logFile + " --config-file=" + QDir::homePath() + "/.clamav-gui/freshclam.conf";
-    QFile startfreshclamFile(QDir::homePath() + "/.clamav-gui/startfreshclam.sh");
-    startfreshclamFile.remove();
-    if (startfreshclamFile.open(QIODevice::Text|QIODevice::ReadWrite)){
-        QTextStream stream(&startfreshclamFile);
-        stream << "#!/bin/bash\n" << para;
-        startfreshclamFile.close();
-        startfreshclamFile.setPermissions(QFileDevice::ReadOwner|QFileDevice::WriteOwner|QFileDevice::ExeOwner|QFileDevice::ReadGroup|QFileDevice::WriteGroup|QFileDevice::ExeGroup);
-    }
-    parameters << QDir::homePath() + "/.clamav-gui/startfreshclam.sh";
+    if (setupFile->getSectionBoolValue("FreshClam","runasroot") == true) {
+        QString para = setupFile->getSectionValue("FreshclamSettings","FreshclamLocation") + " -d -l " + logFile + " --config-file=" + QDir::homePath() + "/.clamav-gui/freshclam.conf";
+        QFile startfreshclamFile(QDir::homePath() + "/.clamav-gui/startfreshclam.sh");
+        startfreshclamFile.remove();
+        if (startfreshclamFile.open(QIODevice::Text|QIODevice::ReadWrite)){
+            QTextStream stream(&startfreshclamFile);
+            stream << "#!/bin/bash\n" << para;
+            startfreshclamFile.close();
+            startfreshclamFile.setPermissions(QFileDevice::ReadOwner|QFileDevice::WriteOwner|QFileDevice::ExeOwner|QFileDevice::ReadGroup|QFileDevice::WriteGroup|QFileDevice::ExeGroup);
+        }
+        parameters << QDir::homePath() + "/.clamav-gui/startfreshclam.sh";
 
-    startDeamonProcess->start(sudoGUI,parameters);
+        startDeamonProcess->start(sudoGUI,parameters);
+    } else {
+        startup = false;
+        emit freshclamStarted();
+    }
 }
 
 void freshclamsetter::slot_updaterFinished(int rc){
@@ -502,9 +513,10 @@ void freshclamsetter::slot_updaterHasOutput(){
     oldLine = line;
 }
 
-void freshclamsetter::slot_startDeamonProcessFinished(int rc)
+void freshclamsetter::slot_startDeamonProcessFinished(int exitCode,QProcess::ExitStatus exitStatus)
 {
-    if (rc == 0){
+    if ((exitCode != 0) || (exitStatus == QProcess::CrashExit))freshclamStartupCounter = 0;
+    if (exitCode == 0){
         ui->startStopDeamonButton->setText(tr("Deamon running - stop deamon"));
         ui->startStopDeamonButton->setStyleSheet("background:green");
         ui->startStopDeamonButton->setIcon(QIcon(":/icons/icons/Clam.png"));

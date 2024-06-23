@@ -5,7 +5,7 @@ clamav_gui::clamav_gui(QWidget *parent) : QWidget(parent), ui(new Ui::clamav_gui
 {
     ui->setupUi(this);
     //setWindowFlags(Qt::WindowTitleHint);
-    this->setWindowFlags(Qt::WindowTitleHint | Qt::WindowMinimizeButtonHint);
+    this->setWindowFlags(Qt::WindowTitleHint | Qt::WindowMinimizeButtonHint | Qt::WindowMaximizeButtonHint);
 
     QString path = QDir::homePath() + "/.clamav-gui/settings.ini";
     QDir tempDir;
@@ -143,6 +143,7 @@ if (tempDir.exists(QDir::homePath() + "/.local/share/kservices5/ServiceMenus/sca
     connect(this,SIGNAL(startDatabaseUpdate()),freshclamTab,SLOT(slot_updateNowButtonClicked()));
     connect(optionTab,SIGNAL(updateClamdConf()),clamdTab,SLOT(slot_updateClamdConf()));
     connect(clamdTab,SIGNAL(setActiveTab()),this,SLOT(slot_startclamd()));
+    connect(freshclamTab,SIGNAL(freshclamStarted()),clamdTab,SLOT(slot_waitForFreshclamStarted()));
     ui->tabWidget->setCurrentIndex(0);
 
     sudoGUIProcess = new QProcess(this);
@@ -194,7 +195,7 @@ void clamav_gui::createTrayIcon(){
 }
 
 void clamav_gui::slot_actionShowHideMainWindowTriggered(){
-    if (setupFile->getSectionBoolValue("Settings","ShowHideMainWindow") == true){
+    if (setupFile->getSectionBoolValue("Settings","ShowHideMainWindow") == true) {
         slot_setMainWindowState(false);
         setupFile->setSectionValue("Settings","ShowHideMainWindow",false);
     } else {
@@ -216,7 +217,6 @@ void clamav_gui::slot_systemTrayIconActivated(QSystemTrayIcon::ActivationReason 
 void clamav_gui::slot_setMainWindowState(bool state){
     if (state == true){
         this->showMaximized();
-//        this->activateWindow();
         setupFile->setSectionValue("Settings","ShowHideMainWindow",true);
     } else {
         if (this->isVisible() == true) this->hide();
@@ -503,11 +503,9 @@ void clamav_gui::slot_logoTimerTimeout(){
         if (setupFile->getSectionValue("Setup","WindowState") == "minimized") this->close();
         if (setupFile->getSectionValue("Setup","WindowState") == "maximized") {
             this->showMaximized();
-//            this->activateWindow();
         }
     } else {
         this->showMaximized();
-//        this->activateWindow();
     }
 
 }

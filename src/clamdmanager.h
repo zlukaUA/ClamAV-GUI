@@ -41,6 +41,7 @@ public:
     QFileSystemWatcher  * clamdPidWatcher; // clamd
     bool                  clamdRestartInProgress; // clamd
     bool                  startup;
+    bool                  waitForFreshclam;
     int                   clamdStartupCounter;
     void initClamdSettings(); // clamd
     void restartClamonacc(); // clamd
@@ -63,6 +64,7 @@ private slots:
     void slot_clamonaccLocationProcessFinished();
     void slot_startClamdOnStartupCheckBoxClicked();
     void slot_startDelayTimerExpired();
+    void slot_waitForFreshclamStarted();
 
 
 signals:

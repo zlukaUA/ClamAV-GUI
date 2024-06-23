@@ -69,6 +69,7 @@ private:
     QFileSystemWatcher  *updateLogFileWatcher;
     highlighter         *updateLogHighLighter;
     highlighter         *freshclamLogHighLighter;
+    int                 freshclamStartupCounter;
     void setForm(bool);
     void setUpdaterInfo();
     void checkDaemonRunning();
@@ -84,7 +85,7 @@ private slots:
     void slot_clearLogButtonClicked();
     void slot_clearDeamonLogButtonClicked();
     void slot_updaterHasOutput();
-    void slot_startDeamonProcessFinished(int rc);
+    void slot_startDeamonProcessFinished(int exitCode,QProcess::ExitStatus exitStatus);
     void slot_ps_processFinished(int rc);
     void slot_disableUpdateButtons();
     void slot_startDelayTimerExpired();
@@ -106,6 +107,7 @@ signals:
     void disableUpdateButtons();
     void reportError();
     void updateDatabase();
+    void freshclamStarted();
 
 };
 
