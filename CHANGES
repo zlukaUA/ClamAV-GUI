@@ -1,3 +1,6 @@
+* Sun Jun 23 2024 Version 0.8.8
+- Fixed a problem with autostart of freshclam and clamd at startup.
+
 * Sat Jun 22 2024 Version 0.8.7
 - Modified the Options Tab. Options that exists with a "yes" and a "no" value when selected the corresponding option in the available options list is hidden and can therefor not be selected
 - Thought, this behaviour is better than throwing an error message that the selection makes no sense.
