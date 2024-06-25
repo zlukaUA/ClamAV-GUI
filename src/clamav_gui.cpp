@@ -220,6 +220,7 @@ void clamav_gui::slot_systemTrayIconActivated(QSystemTrayIcon::ActivationReason 
 void clamav_gui::slot_setMainWindowState(bool state){
     if (state == true){
         this->showMaximized();
+        this->activateWindow();
         setupFile->setSectionValue("Settings","ShowHideMainWindow",true);
     } else {
         if (this->isVisible() == true) this->hide();
