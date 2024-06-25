@@ -3987,19 +3987,19 @@ li.checked::marker { content: &quot;\2612&quot;; }
     </message>
     <message>
         <source>ERROR</source>
-        <translation>ERROR</translation>
+        <translation type="vanished">ERROR</translation>
     </message>
     <message>
         <source>&lt;font style=&apos;font-weight:bold;color:red&apos;&gt;Option:&lt;/font&gt; &lt;b&gt;</source>
-        <translation>&lt;font style=&apos;font-weight:bold;color:red&apos;&gt;Option:&lt;/font&gt; &lt;b&gt;</translation>
+        <translation type="vanished">&lt;font style=&apos;font-weight:bold;color:red&apos;&gt;Option:&lt;/font&gt; &lt;b&gt;</translation>
     </message>
     <message>
         <source>Option already selected with &lt;b&gt;&quot;no&quot;&lt;/b&gt; value.&lt;br&gt;Selecting both options at the same time makes no sense!</source>
-        <translation>Opción ya seleccionada con valor &lt;b&gt;&quot;no&quot;&lt;/b&gt;.&lt;br&gt;¡Seleccionar ambas opciones a la vez no tiene sentido!</translation>
+        <translation type="vanished">Opción ya seleccionada con valor &lt;b&gt;&quot;no&quot;&lt;/b&gt;.&lt;br&gt;¡Seleccionar ambas opciones a la vez no tiene sentido!</translation>
     </message>
     <message>
         <source>Option already selected with &lt;b&gt;&quot;yes&quot;&lt;/b&gt; value.&lt;br&gt;Selecting both options at the same time makes no sense!</source>
-        <translation>Opción ya seleccionada con valor &lt;b&gt;&quot;yes&quot;&lt;/b&gt;.&lt;br&gt;¡Seleccionar ambas opciones a la vez no tiene sentido!</translation>
+        <translation type="vanished">Opción ya seleccionada con valor &lt;b&gt;&quot;yes&quot;&lt;/b&gt;.&lt;br&gt;¡Seleccionar ambas opciones a la vez no tiene sentido!</translation>
     </message>
 </context>
 <context>
@@ -4944,11 +4944,55 @@ actualización manual como root</translation>
     </message>
     <message>
         <source>Path: </source>
-        <translation type="vanished">Senda: </translation>
+        <translation>Senda: </translation>
     </message>
     <message>
         <source>Do you want to remove the folder from the monitoring list?</source>
         <translation type="vanished">¿Desea eliminar la carpeta de la lista de control?</translation>
+    </message>
+    <message>
+        <source>PID: </source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>n/a</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Clamd</source>
+        <translation>Clamd</translation>
+    </message>
+    <message>
+        <source>Status: </source>
+        <translation>Estado: </translation>
+    </message>
+    <message>
+        <source>Freshclam</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Clamonacc</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>Base de datos</translation>
+    </message>
+    <message>
+        <source>Bytecode File: </source>
+        <translation>Archivo Bytecode: </translation>
+    </message>
+    <message>
+        <source>Daily File: </source>
+        <translation>Archivo Daily: </translation>
+    </message>
+    <message>
+        <source>Main File: </source>
+        <translation>Archivo Main: </translation>
+    </message>
+    <message>
+        <source>Last updated: </source>
+        <translation>Última actualización: </translation>
     </message>
 </context>
 </TS>
