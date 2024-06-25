@@ -80,6 +80,7 @@ signals:
     void databasePathChanged(QString path);
     void updateDatabase();
     void updateClamdConf();
+    void systemStatusChanged();
 
 public:
     QString getCopyDirectory();

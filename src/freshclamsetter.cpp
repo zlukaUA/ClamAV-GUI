@@ -214,12 +214,22 @@ void freshclamsetter::slot_ps_processFinished(int rc)
         setupFile->setSectionValue("Freshclam","Started",true);
         pidFileWatcher->addPath(pidFile);
         slot_setFreshclamsettingsFrameState(false);
+        QFile tempFile(pidFile);
+        QString pidString;
+        if (tempFile.exists() == true) {
+            tempFile.open(QIODevice::ReadOnly);
+            QTextStream stream(&tempFile);
+            pidString = stream.readLine();
+        }
+        setupFile->setSectionValue("Freshclam","Pid",pidString);
+        emit systemStatusChanged();
     } else {
         pidFile = "";
         ui->startStopDeamonButton->setText(tr("Deamon not running - start deamon"));
         ui->startStopDeamonButton->setStyleSheet("background:red");
         ui->startStopDeamonButton->setIcon(QIcon(":/icons/icons/Clam.png"));
         setupFile->setSectionValue("Freshclam","Started",false);
+        setupFile->setSectionValue("Freshclam","Pid","n/a");
         slot_setFreshclamsettingsFrameState(true);
         if ((startup == true) && (setupFile->getSectionBoolValue("Freshclam","StartDaemon") == true)) {
             freshclamStartupCounter--;
@@ -273,6 +283,10 @@ QStringList parameters;
 
         startDeamonProcess->start(sudoGUI,parameters);
     } else {
+        parameters << "-d";
+        parameters << "-l" << logFile;
+        parameters << "--config-file" << QDir::homePath() + "/.clamav-gui/freshclam.conf";
+        startDeamonProcess->start(setupFile->getSectionValue("FreshclamSettings","FreshclamLocation"),parameters);
         startup = false;
         emit freshclamStarted();
     }
@@ -304,6 +318,8 @@ QDir tempDir;
         ui->startStopDeamonButton->setStyleSheet("background:red");
         ui->startStopDeamonButton->setIcon(QIcon(":/icons/icons/freshclam.png"));
         //if (setupFile->getSectionBoolValue("Freshclam","Started") == true) slot_startStopDeamonButtonClicked();
+        setupFile->setSectionValue("Freshclam","Pid","n/a");
+        emit systemStatusChanged();
     }
 }
 
@@ -330,7 +346,6 @@ int pos;
         content = stream.readAll();
         file.close();
     }
-
     pos = content.lastIndexOf("ClamAV update process started at");
     if (pos != -1){
         value = content.mid(pos + 33,content.indexOf("\n",pos + 33) - (pos + 33));
@@ -392,6 +407,7 @@ int pos;
     }
 
     setUpdaterInfo();
+    emit systemStatusChanged();
 
     ui->deamonLogText->clear();
     QStringList lines = content.split("\n");
@@ -414,37 +430,39 @@ int pos;
       file.close();
     }
 
-    pos = content.indexOf("ClamAV update process started at");
+    pos = content.lastIndexOf("ClamAV update process started at");
     if (pos != -1){
         value = content.mid(pos + 33,content.indexOf("\n",pos + 33) - (pos + 33));
         setupFile->setSectionValue("Updater","LastUpdate",value);
     }
-    pos = content.indexOf("main.cvd updated");
+    pos = content.lastIndexOf("main.cvd updated");
     if (pos != -1){
         value = content.mid(pos + 17,content.indexOf("\n",pos + 17) - (pos + 17));
         value.replace("(","");
         value.replace(")","");
         setupFile->setSectionValue("Updater","MainVersion",value);
     }
-    pos = content.indexOf("daily.cvd updated");
+    pos = content.lastIndexOf("daily.cvd updated");
     if (pos != -1){
         value = content.mid(pos + 18,content.indexOf("\n",pos + 18) - (pos + 18));
         value.replace("(","");
         value.replace(")","");
         setupFile->setSectionValue("Updater","DailyVersion",value);
     }
-    pos = content.indexOf("bytecode.cvd updated");
+    pos = content.lastIndexOf("bytecode.cvd updated");
     if (pos != -1){
         value = content.mid(pos + 21,content.indexOf("\n",pos + 21) - (pos + 21));
         value.replace("(","");
         value.replace(")","");
         setupFile->setSectionValue("Updater","BytecodeVersion",value);
     }
-    pos = content.indexOf("Database updated");
+    pos = content.lastIndexOf("Database updated");
     if (pos != -1){
         value = content.mid(pos,content.indexOf("\n",pos) - (pos));
         setupFile->setSectionValue("Updater","DatabaseFrom",value);
     }
+
+    emit systemStatusChanged();
 
     ui->logPlainText->setPlainText("");
     QStringList lines = content.split("\n");
@@ -530,6 +548,8 @@ void freshclamsetter::slot_startDeamonProcessFinished(int exitCode,QProcess::Exi
         ui->startStopDeamonButton->setText(tr("Deamon not running - start deamon"));
         ui->startStopDeamonButton->setStyleSheet("background:red");
         ui->startStopDeamonButton->setIcon(QIcon(":/icons/icons/Clam.png"));
+        setupFile->setSectionValue("Freshclam","Pid","n/a");
+        emit systemStatusChanged();
     }
 }
 
@@ -624,8 +644,6 @@ void freshclamsetter::initFreshclamSettings() {
 
     if (dbDir.exists(ui->databaseDirectoryPathLabel->text()) == true) {
         getDBUserProcess->start("ls",parameters);
-    } else {
-        QMessageBox::information(this,"DEBUG","WAIT #2");
     }
 
     lockFreshclamConf = false;
@@ -730,12 +748,14 @@ void freshclamsetter::slot_freshclamLocationProcessFinished()
         if (values.size() > 1) {
             if (values.length() > 0) setupFile->setSectionValue("FreshclamSettings","FreshclamLocation",values[1]); else setupFile->setSectionValue("FreshclamSettings","FreshclamLocation","not found");
             ui->freshclamLocationLineEdit->setText(values[1]);
+            emit systemStatusChanged();
             QFile file(ui->databaseDirectoryPathLabel->text() + "/freshclam.dat");
             if (file.exists() == false) {
                 if (QMessageBox::warning(this,tr("Virus definitions missing!"),ui->databaseDirectoryPathLabel->text() + "\n" + tr("No virus definitions found in the database folder. Should the virus definitions be downloaded?"),QMessageBox::Yes,QMessageBox::No) == QMessageBox::Yes) {
                     emit updateDatabase();
                 }
             }
+            //if (setupFile->getSectionBoolValue("Freshclam","Started") == true) slot_startStopDeamonButtonClicked();
         }
     } else {
         setupFile->setSectionValue("FreshclamSettings","FreshclamLocation","not found");
@@ -743,6 +763,7 @@ void freshclamsetter::slot_freshclamLocationProcessFinished()
         QMessageBox::warning(this,"WARNING","Freshclam is missing. Please install!",QMessageBox::Ok);
         setForm(false);        //emit disableUpdateButtons();
         emit reportError();
+        emit systemStatusChanged();
     }
 }
 

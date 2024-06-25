@@ -222,6 +222,7 @@ QString rc;
     if (rc != "") {
         ui->loadVirusDatabaseLineEdit->setText(rc);
         writeDirectories();
+        emit systemStatusChanged();
         if (ui->loadVirusDatabaseCheckBox->isChecked() == true) {
             emit databasePathChanged(rc);
             QFile file(rc + "/freshclam.dat");

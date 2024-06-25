@@ -108,6 +108,7 @@ signals:
     void reportError();
     void updateDatabase();
     void freshclamStarted();
+    void systemStatusChanged();
 
 };
 

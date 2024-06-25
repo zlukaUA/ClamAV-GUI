@@ -70,6 +70,7 @@ private slots:
 signals:
     void setBallonMessage(int, QString,QString); // clamd
     void setActiveTab();
+    void systemStatusChanged();
 
 private:
     Ui::clamdManager *ui;

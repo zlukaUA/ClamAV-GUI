@@ -40,7 +40,7 @@ void clamdManager::initClamdSettings() {
 
     startClamdProcess = new QProcess(this);
     connect(startClamdProcess,SIGNAL(finished(int,QProcess::ExitStatus)),this,SLOT(slot_startClamdProcessFinished(int,QProcess::ExitStatus)));
-    connect(startClamdProcess,SIGNAL(finished(int,int)),this,SLOT(slot_startClamdProcessFinished(int,int)));
+//    connect(startClamdProcess,SIGNAL(finished(int,int)),this,SLOT(slot_startClamdProcessFinished(int,int)));
 
     killProcess = new QProcess(this);
     connect(killProcess,SIGNAL(finished(int)),this,SLOT(slot_killClamdProcessFinished()));
@@ -372,6 +372,9 @@ void clamdManager::slot_startClamdProcessFinished(int exitCode, QProcess::ExitSt
         ui->startStopClamdPushButton->setStyleSheet("background-color:red;color:yellow");
         ui->startStopClamdPushButton->setText(tr("  Clamd not running - Start Clamd"));
         ui->startStopClamdPushButton->setIcon(QIcon(":/icons/icons/startclamd.png"));
+        setupFile->setSectionValue("Clamd","ClamdPid","n/a");
+        setupFile->setSectionValue("Clamd","ClamonaccPid","n/a");
+        emit systemStatusChanged();
         if (clamdStartupCounter > 0) {
             if (waitForFreshclam == false) clamdStartupCounter--;
             startDelayTimer->start(2500);
@@ -379,6 +382,14 @@ void clamdManager::slot_startClamdProcessFinished(int exitCode, QProcess::ExitSt
     } else {
         clamdStartupCounter = 0;
         clamdPidWatcher->addPath("/tmp/clamd.pid");
+        QFile pidFile("/tmp/clamd.pid");
+        pidFile.open(QIODevice::ReadOnly);
+        QTextStream stream(&pidFile);
+        QString pid = stream.readLine();
+        pid = pid.replace("\n","");
+        setupFile->setSectionValue("Clamd","ClamdPid",pid);
+        pidFile.close();
+        emit systemStatusChanged();
         ui->startStopClamdPushButton->setStyleSheet("background-color:green;color:yellow");
         ui->startStopClamdPushButton->setText(tr("  Clamd running - Stop Clamd"));
         ui->startStopClamdPushButton->setIcon(QIcon(":/icons/icons/stopclamd.png"));
@@ -406,6 +417,9 @@ void clamdManager::slot_killClamdProcessFinished()
         ui->startStopClamdPushButton->setStyleSheet("background-color:red;color:yellow");
         ui->startStopClamdPushButton->setText(tr("  Clamd not running - Start Clamd"));
         ui->startStopClamdPushButton->setIcon(QIcon(":/icons/icons/startclamd.png"));
+        setupFile->setSectionValue("Clamd","ClamdPid","n/a");
+        setupFile->setSectionValue("Clamd","ClamonaccPid","n/a");
+        emit systemStatusChanged();
     } else {
         clamdPidWatcher->addPath("/tmp/clamd.pid");
         ui->startStopClamdPushButton->setStyleSheet("background-color:green;color:yellow");
@@ -419,7 +433,15 @@ void clamdManager::slot_killClamdProcessFinished()
 
 void clamdManager::slot_findclamonaccProcessFinished(int rc)
 {
-    if (rc == 0) clamonaccPid = findclamonaccProcess->readAllStandardOutput();
+    if (rc == 0) {
+        clamonaccPid = findclamonaccProcess->readAllStandardOutput();
+        clamonaccPid = clamonaccPid.replace("\n","");
+        setupFile->setSectionValue("Clamd","ClamonaccPid",clamonaccPid);
+        emit systemStatusChanged();
+    } else {
+        setupFile->setSectionValue("Clamd","ClamonaccPid","n/a");
+        emit systemStatusChanged();
+    }
 
     if ((setupFile->keywordExists("Clamd","StartClamdOnStartup") == true) && (setupFile->getSectionBoolValue("Clamd","StartClamdOnStartup") == true)) {
         ui->startClamdOnStartupCheckBox->setChecked(setupFile->getSectionBoolValue("Clamd","StartClamdOnStartup"));
@@ -456,6 +478,9 @@ void clamdManager::slot_pidWatcherTriggered()
         ui->startStopClamdPushButton->setEnabled(true);
         ui->monitoringAddButton->setEnabled(true);
         ui->monitoringDelButton->setEnabled(true);
+        setupFile->setSectionValue("Clamd","ClamdPid","n/a");
+        setupFile->setSectionValue("Clamd","ClamonaccPid","n/a");
+        emit systemStatusChanged();
     }
 }
 
@@ -467,10 +492,14 @@ void clamdManager::slot_clamdLocationProcessFinished()
         ui->startStopClamdPushButton->setEnabled(false);
         ui->monitoringAddButton->setEnabled(false);
         ui->monitoringDelButton->setEnabled(false);
+        setupFile->setSectionValue("Clamd","ClamdLocation","n/a");
+        emit systemStatusChanged();
     } else {
         int start = output.indexOf(" ") + 1;
         int end = output.indexOf(" ",start) - start;
         clamdLocation = output.mid(start,end);
+        setupFile->setSectionValue("Clamd","ClamdLocation",clamdLocation);
+        emit systemStatusChanged();
     }
 }
 
@@ -482,10 +511,14 @@ void clamdManager::slot_clamonaccLocationProcessFinished()
         ui->startStopClamdPushButton->setEnabled(false);
         ui->monitoringAddButton->setEnabled(false);
         ui->monitoringDelButton->setEnabled(false);
+        setupFile->setSectionValue("Clamd","ClamonaccLocation","n/a");
+        emit systemStatusChanged();
     } else {
         int start = output.indexOf(" ") + 1;
         int end = output.indexOf(" ",start) - start;
         clamonaccLocation = output.mid(start,end);
+        setupFile->setSectionValue("Clamd","ClamonaccLocation",clamonaccLocation);
+        emit systemStatusChanged();
 
         QStringList parameters;
         parameters << "-s" << "clamonacc";
@@ -540,6 +573,7 @@ void clamdManager::slot_restartClamdButtonClicked()
     QTextStream stream(&pidFile);
     QString pid = stream.readLine();
     pidFile.close();
+    setupFile->setSectionValue("Clamd","ClamdPid",pid);
 
     QString clamonaccOptions;
     int value = setupFile->getSectionIntValue("OnAccess","InfectedFiles");
@@ -614,7 +648,22 @@ bool clamdManager::checkClamdRunning()
 
     parameters << "clamd";
     int pid = checkPIDProcess.execute("pidof",parameters);
-    if (pid == 0) rc = true;
+    if (pid == 0) {
+        rc = true;
+        QFile pidFile("/tmp/clamd.pid");
+        pidFile.open(QIODevice::ReadOnly);
+        QTextStream stream(&pidFile);
+        QString pidString = stream.readLine();
+        pidString = pidString.replace("\n","");
+        setupFile->setSectionValue("Clamd","ClamdPid",pidString);
+        pidFile.close();
+        emit systemStatusChanged();
+    } else {
+        setupFile->setSectionValue("Clamd","ClamdPid","n/a");
+        emit systemStatusChanged();
+    }
+
+
 
     return rc;
 }

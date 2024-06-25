@@ -30,6 +30,7 @@ private:
 private slots:
     void slot_selectedLanguageChanged();
     void slot_basicSettingsChanged();
+    void slot_updateSystemInfo();
 };
 
 #endif // SETUPTAB_H

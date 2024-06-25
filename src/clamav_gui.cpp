@@ -144,6 +144,9 @@ if (tempDir.exists(QDir::homePath() + "/.local/share/kservices5/ServiceMenus/sca
     connect(optionTab,SIGNAL(updateClamdConf()),clamdTab,SLOT(slot_updateClamdConf()));
     connect(clamdTab,SIGNAL(setActiveTab()),this,SLOT(slot_startclamd()));
     connect(freshclamTab,SIGNAL(freshclamStarted()),clamdTab,SLOT(slot_waitForFreshclamStarted()));
+    connect(freshclamTab,SIGNAL(systemStatusChanged()),setUpTab,SLOT(slot_updateSystemInfo()));
+    connect(clamdTab,SIGNAL(systemStatusChanged()),setUpTab,SLOT(slot_updateSystemInfo()));
+    connect(optionTab,SIGNAL(systemStatusChanged()),setUpTab,SLOT(slot_updateSystemInfo()));
     ui->tabWidget->setCurrentIndex(0);
 
     sudoGUIProcess = new QProcess(this);
