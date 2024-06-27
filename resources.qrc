@@ -24,9 +24,6 @@
         <file>icons/clear_all.png</file>
         <file>icons/editclear.png</file>
         <file>icons/startlogo.png</file>
-        <file>icons/gifs/intersection_22.GIF</file>
-        <file>icons/gifs/spinning.gif</file>
-        <file>icons/gifs/spinning_segments.GIF</file>
         <file>extra/icon32/clamav-gui.png</file>
         <file>icons/add_profile.png</file>
         <file>icons/delete_profile.png</file>
@@ -50,8 +47,30 @@
         <file>icons/ukraine.png</file>
         <file>icons/GB.png</file>
         <file>icons/italy.png</file>
+        <file>icons/add_option.png</file>
+        <file>icons/remove_option.png</file>
+        <file>icons/edit-copy.png</file>
+        <file>icons/edit-cut.png</file>
+        <file>icons/angola.png</file>
+        <file>icons/australia.png</file>
+        <file>icons/caboverde.png</file>
+        <file>icons/ireland.png</file>
+        <file>icons/macau.png</file>
+        <file>icons/mozambique.png</file>
+        <file>icons/newzealand.png</file>
+        <file>icons/saotome.png</file>
+        <file>icons/timorleste.png</file>
+        <file>icons/us.png</file>
+        <file>icons/onaccess.png</file>
+        <file>icons/add.png</file>
+        <file>icons/restart.png</file>
+        <file>icons/gifs/spinning_segments_large.gif</file>
+        <file>icons/gifs/spinning_segments_small.gif</file>
+        <file>icons/startclamd.png</file>
+        <file>icons/stopclamd.png</file>
+        <file>icons/crosshair.png</file>
+        <file>icons/systemstatus.png</file>
+        <file>icons/gifs/activity.gif</file>
     </qresource>
-    <qresource prefix="/">
-        <file>icons/dansk.png</file>
-    </qresource>
+    <qresource prefix="/"/>
 </RCC>
