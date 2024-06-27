@@ -624,14 +624,14 @@ for changes made to take effect.</string>
               <widget class="QLabel" name="clamdIconLabel_2">
                <property name="minimumSize">
                 <size>
-                 <width>36</width>
-                 <height>36</height>
+                 <width>48</width>
+                 <height>48</height>
                 </size>
                </property>
                <property name="maximumSize">
                 <size>
-                 <width>36</width>
-                 <height>36</height>
+                 <width>48</width>
+                 <height>48</height>
                 </size>
                </property>
                <property name="text">
@@ -639,6 +639,9 @@ for changes made to take effect.</string>
                </property>
                <property name="pixmap">
                 <pixmap resource="../resources.qrc">:/icons/icons/options.png</pixmap>
+               </property>
+               <property name="scaledContents">
+                <bool>true</bool>
                </property>
               </widget>
              </item>
@@ -896,8 +899,8 @@ for changes made to take effect.</string>
    <slot>slot_clamdStartStopButtonClicked()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>796</x>
-     <y>122</y>
+     <x>808</x>
+     <y>174</y>
     </hint>
     <hint type="destinationlabel">
      <x>847</x>
@@ -912,8 +915,8 @@ for changes made to take effect.</string>
    <slot>slot_monitoringDelButtonClicked()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>733</x>
-     <y>477</y>
+     <x>793</x>
+     <y>501</y>
     </hint>
     <hint type="destinationlabel">
      <x>847</x>
@@ -928,8 +931,8 @@ for changes made to take effect.</string>
    <slot>slot_monitoringAddButtonClicked()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>581</x>
-     <y>480</y>
+     <x>737</x>
+     <y>501</y>
     </hint>
     <hint type="destinationlabel">
      <x>850</x>
