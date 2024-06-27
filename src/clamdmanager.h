@@ -19,7 +19,7 @@ class clamdManager : public QWidget
     Q_OBJECT
 
 public:
-    explicit clamdManager(QWidget *parent = nullptr);
+    explicit clamdManager(QWidget *parent = 0);
     ~clamdManager();
     setupFileHandler    * setupFile; // clamd && freshclam
     setupFileHandler    * clamdConf; // clamd
@@ -36,6 +36,7 @@ public:
     QString               lastFound; // clamd
     QString               sudoGUI;
     QTimer              * startDelayTimer;
+    QTimer              * processWatcher;
     highlighter         * logHighlighter; // clamd
     QFileSystemWatcher  * clamdLogWatcher; // clamd
     QFileSystemWatcher  * clamdPidWatcher; // clamd
@@ -65,7 +66,7 @@ private slots:
     void slot_startClamdOnStartupCheckBoxClicked();
     void slot_startDelayTimerExpired();
     void slot_waitForFreshclamStarted();
-
+    void slot_processWatcherExpired();
 
 signals:
     void setBallonMessage(int, QString,QString); // clamd

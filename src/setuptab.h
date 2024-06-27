@@ -4,6 +4,7 @@
 #include <QFileSystemWatcher>
 #include <QFileDialog>
 #include <QProcess>
+#include <QPixmap>
 #include <QWidget>
 #include <QMovie>
 #include <QDir>
@@ -19,7 +20,7 @@ class setupTab : public QWidget
     Q_OBJECT
 
 public:
-    explicit setupTab(QWidget *parent = nullptr);
+    explicit setupTab(QWidget *parent = 0);
     ~setupTab();
 
 private:
@@ -31,6 +32,12 @@ private slots:
     void slot_selectedLanguageChanged();
     void slot_basicSettingsChanged();
     void slot_updateSystemInfo();
+    void slot_clamdButtonClicked();
+    void slot_clamonaccButtonClicked();
+    void slot_freshclamButtonClicked();
+
+signals:
+    void switchActiveTab(int);
 };
 
 #endif // SETUPTAB_H

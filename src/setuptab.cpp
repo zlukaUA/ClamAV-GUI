@@ -51,33 +51,55 @@ void setupTab::slot_updateSystemInfo()
     if (setupFile->keywordExists("Clamd","ClamonaccPid") == true) {
         ui->clamonaccPID->setText(setupFile->getSectionValue("Clamd","ClamonaccPid"));
         if (setupFile->getSectionValue("Clamd","ClamonaccPid") == "n/a") {
-            ui->clamonaccStatus->setText("Clamonacc is down");
+            ui->clamonaccActivityLabel->setPixmap(QPixmap(":/icons/icons/gifs/activity.gif"));
+            ui->clamonaccStatus->setText("is down");
             ui->clamonaccStatus->setStyleSheet("background-color:red;color:white");
         } else {
-            ui->clamonaccStatus->setText("Clamonacc is up");
+            ui->clamonaccActivityLabel->setMovie(new QMovie(":/icons/icons/gifs/activity.gif"));
+            ui->clamonaccActivityLabel->movie()->start();
+            ui->clamonaccStatus->setText("running");
             ui->clamonaccStatus->setStyleSheet("background-color:green;color:yellow");
         }
     }
     if (setupFile->keywordExists("Clamd","ClamdPid") == true) {
         ui->clamdPID->setText(setupFile->getSectionValue("Clamd","ClamdPid"));
         if (setupFile->getSectionValue("Clamd","ClamdPid") == "n/a") {
-            ui->clamdStatus->setText("Clamd is down");
+            ui->clamdActivityLabel->setPixmap(QPixmap(":/icons/icons/gifs/activity.gif"));
+            ui->clamdStatus->setText("is down");
             ui->clamdStatus->setStyleSheet("background-color:red;color:white");
         } else {
-            ui->clamdStatus->setText("Clamd is up");
+            ui->clamdActivityLabel->setMovie(new QMovie(":/icons/icons/gifs/activity.gif"));
+            ui->clamdActivityLabel->movie()->start();
+            ui->clamdStatus->setText("running");
             ui->clamdStatus->setStyleSheet("background-color:green;color:yellow");
         }
     }
     if (setupFile->keywordExists("Freshclam","Pid") == true) {
         ui->freshclamPID->setText(setupFile->getSectionValue("Freshclam","Pid"));
         if (setupFile->getSectionValue("Freshclam","Pid") == "n/a") {
-            ui->freshclamStatus->setText("Freshclam is down");
+            ui->freshclamActivityLabel->setPixmap(QPixmap(":/icons/icons/gifs/activity.gif"));
+            ui->freshclamStatus->setText("is down");
             ui->freshclamStatus->setStyleSheet("background-color:red;color:white");
         } else {
-            ui->freshclamStatus->setText("Freshclam is up");
+            ui->freshclamActivityLabel->setMovie(new QMovie(":/icons/icons/gifs/activity.gif"));
+            ui->freshclamActivityLabel->movie()->start();
+            ui->freshclamStatus->setText("running");
             ui->freshclamStatus->setStyleSheet("background-color:green;color:yellow");
         }
     }
+}
+
+void setupTab::slot_clamdButtonClicked()
+{
+    emit switchActiveTab(6);
+}
+
+void setupTab::slot_freshclamButtonClicked() {
+    emit switchActiveTab(5);
+}
+
+void setupTab::slot_clamonaccButtonClicked() {
+    emit switchActiveTab(6);
 }
 
 void setupTab::slot_selectedLanguageChanged()

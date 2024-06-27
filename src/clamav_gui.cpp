@@ -147,6 +147,7 @@ if (tempDir.exists(QDir::homePath() + "/.local/share/kservices5/ServiceMenus/sca
     connect(freshclamTab,SIGNAL(systemStatusChanged()),setUpTab,SLOT(slot_updateSystemInfo()));
     connect(clamdTab,SIGNAL(systemStatusChanged()),setUpTab,SLOT(slot_updateSystemInfo()));
     connect(optionTab,SIGNAL(systemStatusChanged()),setUpTab,SLOT(slot_updateSystemInfo()));
+    connect(setUpTab,SIGNAL(switchActiveTab(int)),this,SLOT(slot_switchActiveTab(int)));
     ui->tabWidget->setCurrentIndex(0);
 
     sudoGUIProcess = new QProcess(this);
@@ -571,4 +572,9 @@ void clamav_gui::slot_sudoGUIProcessFinished()
             }
         }
     }
+}
+
+void clamav_gui::slot_switchActiveTab(int index)
+{
+    ui->tabWidget->setCurrentIndex(index);
 }

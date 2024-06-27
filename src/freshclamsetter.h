@@ -63,6 +63,7 @@ private:
     QString              logFile;
     QString              sudoGUI;
     QTimer              *startDelayTimer;
+    QTimer              *processWatcher;
     progressDialog      *busyLabel;
     QFileSystemWatcher  *pidFileWatcher;
     QFileSystemWatcher  *logFileWatcher;
@@ -101,6 +102,7 @@ private slots:
     void slot_onUpdateExecuteButtonClicked();
     void slot_onErrorExecuteButtonClicked();
     void slot_onOutdatedExecuteButtonClicked();
+    void slot_processWatcherExpired();
 
 signals:
     void setBallonMessage(int, QString,QString);

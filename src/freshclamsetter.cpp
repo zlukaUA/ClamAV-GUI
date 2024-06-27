@@ -70,6 +70,11 @@ QDir tempDir;
             fileFreshclamLog.setPermissions(QFileDevice::ReadOwner|QFileDevice::WriteOwner|QFileDevice::ReadUser|QFileDevice::WriteUser|QFileDevice::ReadGroup|QFileDevice::WriteGroup|QFileDevice::ReadOther|QFileDevice::WriteOther);
         }
     }
+
+    processWatcher = new QTimer(this);
+    connect(processWatcher,SIGNAL(timeout()),this,SLOT(slot_processWatcherExpired()));
+    processWatcher->start(5000);
+
     checkDaemonRunning();
     initFreshclamSettings();
     setUpdaterInfo();
@@ -825,4 +830,18 @@ void freshclamsetter::slot_onOutdatedExecuteButtonClicked()
     QString rc = QFileDialog::getOpenFileName(this,tr("On Outdated Execute"),tr("Select a programm that will be executed when the database is outdated."));
     if (rc != "") ui->onOutdatedExecuteLineEdit->setText(rc);
     slot_writeFreshclamSettings();
+}
+
+void freshclamsetter::slot_processWatcherExpired()
+{
+    QString freshclamPid = setupFile->getSectionValue("Freshclam","Pid");
+
+    QDir checkDir;
+    if ( freshclamPid != "n/a") {
+        if (checkDir.exists("/proc/" + freshclamPid) == false) {
+            setupFile->setSectionValue("Freshclam","Pid","n/a");
+            emit systemStatusChanged();
+            checkDaemonRunning();
+        }
+    }
 }

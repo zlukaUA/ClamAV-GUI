@@ -115,6 +115,7 @@ private slots:
     void slot_updateDatabase();
     void slot_startclamd();
     void slot_sudoGUIProcessFinished();
+    void slot_switchActiveTab(int index);
 
 signals:
     void showHideDropZoneTriggered();

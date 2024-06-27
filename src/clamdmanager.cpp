@@ -1,9 +1,7 @@
 #include "clamdmanager.h"
 #include "ui_clamdmanager.h"
 
-clamdManager::clamdManager(QWidget *parent)
-    : QWidget(parent)
-    , ui(new Ui::clamdManager)
+clamdManager::clamdManager(QWidget *parent) : QWidget(parent), ui(new Ui::clamdManager)
 {
     ui->setupUi(this);
     startup = true;
@@ -12,6 +10,11 @@ clamdManager::clamdManager(QWidget *parent)
     startDelayTimer = new QTimer(this);
     startDelayTimer->setSingleShot(true);
     connect(startDelayTimer,SIGNAL(timeout()),this,SLOT(slot_startDelayTimerExpired()));
+
+    processWatcher = new QTimer(this);
+    connect(processWatcher,SIGNAL(timeout()),this,SLOT(slot_processWatcherExpired()));
+    processWatcher->start(30000);
+
     initClamdSettings();
 }
 
@@ -467,6 +470,30 @@ void clamdManager::slot_waitForFreshclamStarted()
     }
 }
 
+
+void clamdManager::slot_processWatcherExpired()
+{
+    QString clamdPid = setupFile->getSectionValue("Clamd","ClamdPid");
+    QString clamonaccPid = setupFile->getSectionValue("Clamd","ClamonaccPid");
+
+    QDir checkDir;
+    if ( clamdPid != "n/a") {
+        if (checkDir.exists("/proc/" + clamdPid) == false) {
+            setupFile->setSectionValue("Clamd","ClamdPid","n/a");
+            emit systemStatusChanged();
+            slot_killClamdProcessFinished();
+        }
+    }
+
+    if ( clamonaccPid != "n/a") {
+        if (checkDir.exists("/proc/" + clamonaccPid) == false) {
+            setupFile->setSectionValue("Clamd","ClamonaccPid","n/a");
+            emit systemStatusChanged();
+        }
+    }
+}
+
+
 void clamdManager::slot_pidWatcherTriggered()
 {
     QFile pidFile("/tmp/clamd.pid");
@@ -589,9 +616,20 @@ void clamdManager::slot_restartClamdButtonClicked()
     ui->clamdIconLabel_2->setMovie(new QMovie(":/icons/icons/gifs/spinning_segments_small.gif"));
     ui->clamdIconLabel_2->movie()->start();
     QStringList parameters;
-    QString command = "kill -sigterm " + pid + " && kill -9 " + clamonaccPid + " && sleep 20 && " + clamdLocation + " -c " + QDir::homePath() + "/.clamav-gui/clamd.conf && " + clamonaccLocation + " -c " + QDir::homePath() + "/.clamav-gui/clamd.conf -l " + QDir::homePath() + "/.clamav-gui/clamd.log" + clamonaccOptions;
-    parameters << command;
+
+    QFile startclamdFile(QDir::homePath() + "/.clamav-gui/startclamd.sh");
+    startclamdFile.remove();
+    if (startclamdFile.open(QIODevice::Text|QIODevice::ReadWrite)){
+        QTextStream stream(&startclamdFile);
+        stream << "#!/bin/bash\n" << "kill -sigterm " + pid + " && kill -9 " + clamonaccPid + " && sleep 20 && " + clamdLocation + " -c " + QDir::homePath() + "/.clamav-gui/clamd.conf && " + clamonaccLocation + " -c " + QDir::homePath() + "/.clamav-gui/clamd.conf -l " + QDir::homePath() + "/.clamav-gui/clamd.log" + clamonaccOptions;
+        startclamdFile.close();
+        startclamdFile.setPermissions(QFileDevice::ReadOwner|QFileDevice::WriteOwner|QFileDevice::ExeOwner|QFileDevice::ReadGroup|QFileDevice::WriteGroup|QFileDevice::ExeGroup);
+    }
+    parameters << QDir::homePath() + "/.clamav-gui/startclamd.sh";
     startClamdProcess->start(sudoGUI,parameters);
+    setupFile->setSectionValue("Clamd","ClamdPid","n/a");
+    setupFile->setSectionValue("Clamd","ClamonaccPid","n/a");
+    emit systemStatusChanged();
 }
 
 void clamdManager::slot_clamdSettingsChanged()
@@ -662,8 +700,6 @@ bool clamdManager::checkClamdRunning()
         setupFile->setSectionValue("Clamd","ClamdPid","n/a");
         emit systemStatusChanged();
     }
-
-
 
     return rc;
 }
