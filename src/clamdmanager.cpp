@@ -43,7 +43,6 @@ void clamdManager::initClamdSettings() {
 
     startClamdProcess = new QProcess(this);
     connect(startClamdProcess,SIGNAL(finished(int,QProcess::ExitStatus)),this,SLOT(slot_startClamdProcessFinished(int,QProcess::ExitStatus)));
-//    connect(startClamdProcess,SIGNAL(finished(int,int)),this,SLOT(slot_startClamdProcessFinished(int,int)));
 
     killProcess = new QProcess(this);
     connect(killProcess,SIGNAL(finished(int)),this,SLOT(slot_killClamdProcessFinished()));
@@ -317,26 +316,30 @@ void clamdManager::slot_clamdStartStopButtonClicked()
         if (value == 3) clamonaccOptions = " --remove=";
 
         if (checkClamdRunning() == false) {
+            slot_updateClamdConf();
             ui->clamdIconLabel->setMovie(new QMovie(":/icons/icons/gifs/spinning_segments_small.gif"));
             ui->clamdIconLabel->movie()->start();
             clamdLogWatcher->removePath(QDir::homePath() + "/.clamav-gui/clamd.log");
             QFile logFile(QDir::homePath() + "/.clamav-gui/clamd.log");
-            logFile.remove();
+            if (logFile.exists() == true) logFile.remove();
             logFile.open(QIODevice::ReadWrite);
             QTextStream stream(&logFile);
             stream << "";
             logFile.close();
+            clamdLogWatcher->addPath(QDir::homePath() + "/.clamav-gui/clamd.log");
             ui->clamdLogPlainTextEdit->clear();
             ui->startStopClamdPushButton->setText(tr("  Clamd starting. Please wait!"));
             QFile startclamdFile(QDir::homePath() + "/.clamav-gui/startclamd.sh");
-            startclamdFile.remove();
+            if (startclamdFile.exists() == true) startclamdFile.remove();
             if (startclamdFile.open(QIODevice::Text|QIODevice::ReadWrite)){
+                QString logFile = clamdConf->getSingleLineValue("LogFile");
                 QTextStream stream(&startclamdFile);
-                stream << "#!/bin/bash\n" << clamdLocation + " -c " + QDir::homePath() + "/.clamav-gui/clamd.conf && " + clamonaccLocation + " -c " + QDir::homePath() + "/.clamav-gui/clamd.conf -l " + QDir::homePath() + "/.clamav-gui/clamd.log" + clamonaccOptions;
+                stream << "#!/bin/bash\n" << clamdLocation + " 2>" + logFile + " -c " + QDir::homePath() + "/.clamav-gui/clamd.conf && " + clamonaccLocation + " -c " + QDir::homePath() + "/.clamav-gui/clamd.conf -l " + QDir::homePath() + "/.clamav-gui/clamd.log" + clamonaccOptions;
                 startclamdFile.close();
                 startclamdFile.setPermissions(QFileDevice::ReadOwner|QFileDevice::WriteOwner|QFileDevice::ExeOwner|QFileDevice::ReadGroup|QFileDevice::WriteGroup|QFileDevice::ExeGroup);
             }
             parameters << QDir::homePath() + "/.clamav-gui/startclamd.sh";
+            if (sudoGUI == "") sudoGUI = setupFile->getSectionValue("Settings","SudoGUI");
             startClamdProcess->start(sudoGUI,parameters);
         } else {
             pidFile.open(QIODevice::ReadOnly);
@@ -345,7 +348,7 @@ void clamdManager::slot_clamdStartStopButtonClicked()
             pidFile.close();
             ui->startStopClamdPushButton->setText(tr("  Stopping Clamd. Please wait!"));
             QFile stopclamdFile(QDir::homePath() + "/.clamav-gui/stopclamd.sh");
-            stopclamdFile.remove();
+            if (stopclamdFile.exists() == true) stopclamdFile.remove();
             if (stopclamdFile.open(QIODevice::Text|QIODevice::ReadWrite)){
                 QTextStream stream(&stopclamdFile);
                 stream << "#!/bin/bash\n/bin/kill -sigterm " + pid + " && kill -9 " + clamonaccPid;
@@ -353,6 +356,7 @@ void clamdManager::slot_clamdStartStopButtonClicked()
                 stopclamdFile.setPermissions(QFileDevice::ReadOwner|QFileDevice::WriteOwner|QFileDevice::ExeOwner|QFileDevice::ReadGroup|QFileDevice::WriteGroup|QFileDevice::ExeGroup);
             }
             parameters << QDir::homePath() + "/.clamav-gui/stopclamd.sh";
+            if (sudoGUI == "") sudoGUI = setupFile->getSectionValue("Settings","SudoGUI");
             killProcess->start(sudoGUI,parameters);
         }
         ui->startStopClamdPushButton->setEnabled(false);
@@ -396,7 +400,6 @@ void clamdManager::slot_startClamdProcessFinished(int exitCode, QProcess::ExitSt
         ui->startStopClamdPushButton->setStyleSheet("background-color:green;color:yellow");
         ui->startStopClamdPushButton->setText(tr("  Clamd running - Stop Clamd"));
         ui->startStopClamdPushButton->setIcon(QIcon(":/icons/icons/stopclamd.png"));
-        clamdLogWatcher->addPath(QDir::homePath() + "/.clamav-gui/clamd.log");
         slot_logFileContentChanged();
         QStringList parameters;
         parameters << "-s" << "clamonacc";
@@ -626,6 +629,7 @@ void clamdManager::slot_restartClamdButtonClicked()
         startclamdFile.setPermissions(QFileDevice::ReadOwner|QFileDevice::WriteOwner|QFileDevice::ExeOwner|QFileDevice::ReadGroup|QFileDevice::WriteGroup|QFileDevice::ExeGroup);
     }
     parameters << QDir::homePath() + "/.clamav-gui/startclamd.sh";
+    if (sudoGUI == "") sudoGUI = setupFile->getSectionValue("Settings","SudoGUI");
     startClamdProcess->start(sudoGUI,parameters);
     setupFile->setSectionValue("Clamd","ClamdPid","n/a");
     setupFile->setSectionValue("Clamd","ClamonaccPid","n/a");
@@ -675,6 +679,7 @@ void clamdManager::restartClamonacc()
         restartclamdFile.setPermissions(QFileDevice::ReadOwner|QFileDevice::WriteOwner|QFileDevice::ExeOwner|QFileDevice::ReadGroup|QFileDevice::WriteGroup|QFileDevice::ExeGroup);
     }
     parameters << QDir::homePath() + "/.clamav-gui/restartclamd.sh";
+    if (sudoGUI == "") sudoGUI = setupFile->getSectionValue("Settings","SudoGUI");
     startClamdProcess->start(sudoGUI,parameters);
 }
 

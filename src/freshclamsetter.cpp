@@ -114,6 +114,7 @@ QStringList parameters;
             startfreshclamFile.setPermissions(QFileDevice::ReadOwner|QFileDevice::WriteOwner|QFileDevice::ExeOwner|QFileDevice::ReadGroup|QFileDevice::WriteGroup|QFileDevice::ExeGroup);
         }
         parameters << QDir::homePath() + "/.clamav-gui/startfreshclam.sh";
+        if (sudoGUI == "") sudoGUI = setupFile->getSectionValue("Settings","SudoGUI");
         updater->start(sudoGUI,parameters);
     } else {
         QStringList databaseToUpdate;
@@ -153,6 +154,7 @@ QStringList parameters;
                     startfreshclamFile.setPermissions(QFileDevice::ReadOwner|QFileDevice::WriteOwner|QFileDevice::ExeOwner|QFileDevice::ReadGroup|QFileDevice::WriteGroup|QFileDevice::ExeGroup);
                 }
                 parameters << QDir::homePath() + "/.clamav-gui/startfreshclam.sh";
+                if (sudoGUI == "") sudoGUI = setupFile->getSectionValue("Settings","SudoGUI");
                 startDeamonProcess->start(sudoGUI,parameters);
             } else {
                 startDelayTimer->start(2500);
@@ -182,6 +184,7 @@ QStringList parameters;
               stopfreshclamFile.setPermissions(QFileDevice::ReadOwner|QFileDevice::WriteOwner|QFileDevice::ExeOwner|QFileDevice::ReadGroup|QFileDevice::WriteGroup|QFileDevice::ExeGroup);
           }
           parameters << QDir::homePath() + "/.clamav-gui/stopfreshclam.sh";
+          if (sudoGUI == "") sudoGUI = setupFile->getSectionValue("Settings","SudoGUI");
           QProcess::execute(sudoGUI,parameters);
           checkDaemonRunning();
         } else {
@@ -285,7 +288,7 @@ QStringList parameters;
             startfreshclamFile.setPermissions(QFileDevice::ReadOwner|QFileDevice::WriteOwner|QFileDevice::ExeOwner|QFileDevice::ReadGroup|QFileDevice::WriteGroup|QFileDevice::ExeGroup);
         }
         parameters << QDir::homePath() + "/.clamav-gui/startfreshclam.sh";
-
+        if (sudoGUI == "") sudoGUI = setupFile->getSectionValue("Settings","SudoGUI");
         startDeamonProcess->start(sudoGUI,parameters);
     } else {
         parameters << "-d";
