@@ -73,6 +73,9 @@
                    <height>16777215</height>
                   </size>
                  </property>
+                 <property name="styleSheet">
+                  <string notr="true">padding:3px;</string>
+                 </property>
                  <property name="frameShape">
                   <enum>QFrame::Panel</enum>
                  </property>
@@ -159,6 +162,9 @@
                    <height>16777215</height>
                   </size>
                  </property>
+                 <property name="styleSheet">
+                  <string notr="true">padding:3px;</string>
+                 </property>
                  <property name="frameShape">
                   <enum>QFrame::Panel</enum>
                  </property>
@@ -239,6 +245,9 @@
                    <width>16777215</width>
                    <height>16777215</height>
                   </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">padding:3px;</string>
                  </property>
                  <property name="frameShape">
                   <enum>QFrame::Panel</enum>
@@ -357,6 +366,9 @@
                    <verstretch>0</verstretch>
                   </sizepolicy>
                  </property>
+                 <property name="styleSheet">
+                  <string notr="true">padding:3px;</string>
+                 </property>
                  <property name="frameShape">
                   <enum>QFrame::Panel</enum>
                  </property>
@@ -375,6 +387,9 @@
                    <horstretch>0</horstretch>
                    <verstretch>0</verstretch>
                   </sizepolicy>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">padding:3px;</string>
                  </property>
                  <property name="frameShape">
                   <enum>QFrame::Panel</enum>
@@ -450,6 +465,9 @@
                    <horstretch>0</horstretch>
                    <verstretch>0</verstretch>
                   </sizepolicy>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">padding:3px;</string>
                  </property>
                  <property name="frameShape">
                   <enum>QFrame::Panel</enum>
@@ -535,6 +553,9 @@
                    <verstretch>0</verstretch>
                   </sizepolicy>
                  </property>
+                 <property name="styleSheet">
+                  <string notr="true">padding:3px;</string>
+                 </property>
                  <property name="frameShape">
                   <enum>QFrame::Panel</enum>
                  </property>
@@ -553,6 +574,9 @@
                    <horstretch>0</horstretch>
                    <verstretch>0</verstretch>
                   </sizepolicy>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">padding:3px;</string>
                  </property>
                  <property name="frameShape">
                   <enum>QFrame::Panel</enum>
@@ -649,6 +673,9 @@
                    <verstretch>0</verstretch>
                   </sizepolicy>
                  </property>
+                 <property name="styleSheet">
+                  <string notr="true">padding:3px;</string>
+                 </property>
                  <property name="frameShape">
                   <enum>QFrame::Panel</enum>
                  </property>
@@ -723,6 +750,9 @@
                    <width>16777215</width>
                    <height>16777215</height>
                   </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">padding:3px;</string>
                  </property>
                  <property name="frameShape">
                   <enum>QFrame::Panel</enum>
@@ -838,6 +868,9 @@
                    <height>16777215</height>
                   </size>
                  </property>
+                 <property name="styleSheet">
+                  <string notr="true">padding:3px;</string>
+                 </property>
                  <property name="frameShape">
                   <enum>QFrame::Panel</enum>
                  </property>
@@ -863,6 +896,9 @@
                    <height>16777215</height>
                   </size>
                  </property>
+                 <property name="styleSheet">
+                  <string notr="true">padding:3px;</string>
+                 </property>
                  <property name="frameShape">
                   <enum>QFrame::Panel</enum>
                  </property>
@@ -887,6 +923,9 @@
                    <width>16777215</width>
                    <height>16777215</height>
                   </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">padding:3px;</string>
                  </property>
                  <property name="frameShape">
                   <enum>QFrame::Panel</enum>
@@ -999,6 +1038,9 @@
                    <width>16777215</width>
                    <height>16777215</height>
                   </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">padding:3px;</string>
                  </property>
                  <property name="frameShape">
                   <enum>QFrame::Panel</enum>

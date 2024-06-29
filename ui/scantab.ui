@@ -310,7 +310,7 @@
                    </size>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">background:#c0c0c0;padding:2px;</string>
+                   <string notr="true">background:#c0c0c0;padding:4px;border-radius:5px;</string>
                   </property>
                   <property name="text">
                    <string>Pathes</string>
@@ -338,7 +338,7 @@
                    </size>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">background:#c0c0c0;padding:2px;</string>
+                   <string notr="true">background:#c0c0c0;padding:4px;border-radius:5px;</string>
                   </property>
                   <property name="text">
                    <string>Devices</string>

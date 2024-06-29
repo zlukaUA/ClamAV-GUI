@@ -77,7 +77,7 @@
    <item row="1" column="0" colspan="7">
     <widget class="QStackedWidget" name="stackedWidget">
      <property name="currentIndex">
-      <number>4</number>
+      <number>6</number>
      </property>
      <widget class="QWidget" name="wizardPage_1">
       <layout class="QGridLayout" name="gridLayout_2">
@@ -316,7 +316,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
                    </size>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">background:#c0c0c0;padding:2px;</string>
+                   <string notr="true">background:#c0c0c0;padding:2px;border-radius:3px;</string>
                   </property>
                   <property name="text">
                    <string>Pathes</string>
@@ -2552,14 +2552,14 @@ li.checked::marker { content: &quot;\2612&quot;; }
   <slot>slot_createButtonClicked()</slot>
  </slots>
  <buttongroups>
-  <buttongroup name="buttonGroup_5"/>
-  <buttongroup name="buttonGroup_8"/>
-  <buttongroup name="buttonGroup_4"/>
-  <buttongroup name="buttonGroup_7"/>
-  <buttongroup name="buttonGroup_6"/>
-  <buttongroup name="buttonGroup_9"/>
-  <buttongroup name="buttonGroup_3"/>
   <buttongroup name="buttonGroup"/>
   <buttongroup name="buttonGroup_2"/>
+  <buttongroup name="buttonGroup_7"/>
+  <buttongroup name="buttonGroup_4"/>
+  <buttongroup name="buttonGroup_8"/>
+  <buttongroup name="buttonGroup_9"/>
+  <buttongroup name="buttonGroup_5"/>
+  <buttongroup name="buttonGroup_6"/>
+  <buttongroup name="buttonGroup_3"/>
  </buttongroups>
 </ui>

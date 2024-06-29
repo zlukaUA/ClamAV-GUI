@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>701</width>
-    <height>351</height>
+    <height>352</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -54,6 +54,12 @@
      <layout class="QGridLayout" name="gridLayout_4">
       <item row="0" column="1">
        <widget class="QLabel" name="filenameTextLabel">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
         <property name="frameShape">
          <enum>QFrame::NoFrame</enum>
         </property>
@@ -67,14 +73,20 @@
       </item>
       <item row="0" column="0">
        <widget class="QLabel" name="filenameLabel">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
         <property name="maximumSize">
          <size>
-          <width>100</width>
+          <width>16777215</width>
           <height>16777215</height>
          </size>
         </property>
         <property name="styleSheet">
-         <string notr="true">background:#c0c0c0</string>
+         <string notr="true">background:#c0c0c0;padding:3px;border-radius:3px;</string>
         </property>
         <property name="text">
          <string>Log-File:</string>
@@ -159,6 +171,12 @@
      <layout class="QGridLayout" name="gridLayout">
       <item row="0" column="0">
        <widget class="QLabel" name="targetsLabel">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
         <property name="maximumSize">
          <size>
           <width>100</width>
@@ -166,7 +184,7 @@
          </size>
         </property>
         <property name="styleSheet">
-         <string notr="true">background:#c0c0c0</string>
+         <string notr="true">background:#c0c0c0;padding:5px;border-radius:5px;</string>
         </property>
         <property name="text">
          <string>Targets:</string>
@@ -189,13 +207,19 @@
           <rect>
            <x>0</x>
            <y>0</y>
-           <width>608</width>
-           <height>68</height>
+           <width>591</width>
+           <height>66</height>
           </rect>
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_2">
           <item>
            <widget class="QLabel" name="targetsListLabel">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
             <property name="frameShape">
              <enum>QFrame::NoFrame</enum>
             </property>
@@ -270,6 +294,12 @@
       </item>
       <item row="0" column="0">
        <widget class="QLabel" name="optionsLabel">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
         <property name="maximumSize">
          <size>
           <width>100</width>
@@ -277,7 +307,7 @@
          </size>
         </property>
         <property name="styleSheet">
-         <string notr="true">background:#c0c0c0</string>
+         <string notr="true">background:#c0c0c0;padding:5px;border-radius:5px;</string>
         </property>
         <property name="text">
          <string>Options:</string>
@@ -300,13 +330,19 @@
           <rect>
            <x>0</x>
            <y>0</y>
-           <width>300</width>
-           <height>68</height>
+           <width>291</width>
+           <height>66</height>
           </rect>
          </property>
          <layout class="QVBoxLayout" name="verticalLayout">
           <item>
            <widget class="QLabel" name="optionsListLabel">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
             <property name="frameShape">
              <enum>QFrame::NoFrame</enum>
             </property>
@@ -368,7 +404,14 @@
        </widget>
       </item>
       <item>
-       <widget class="QComboBox" name="profileComboBox"/>
+       <widget class="QComboBox" name="profileComboBox">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+       </widget>
       </item>
       <item>
        <spacer name="horizontalSpacer">
