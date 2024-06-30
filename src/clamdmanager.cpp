@@ -220,10 +220,10 @@ void clamdManager::slot_updateClamdConf()
     if (helperHandler->keywordExists("SelectedOptions","--scan-mail<equal>no") == true) clamdConf->setSingleLineValue("ScanMail", "no");
     if (helperHandler->keywordExists("SelectedOptions","--scan-ole2<equal>yes") == true) clamdConf->setSingleLineValue("ScanOLE2", "yes");
     if (helperHandler->keywordExists("SelectedOptions","--scan-ole2<equal>no") == true) clamdConf->setSingleLineValue("ScanOLE2", "no");
-    if (helperHandler->keywordExists("SelectedOptions","--scan-pdf<equal>yes") == true) clamdConf->setSingleLineValue("--scan-ole2<equal>no", "yes");
-    if (helperHandler->keywordExists("SelectedOptions","--scan-pdf<equal>no") == true) clamdConf->setSingleLineValue("--scan-ole2<equal>no", "no");
-    if (helperHandler->keywordExists("SelectedOptions","--scan-pe<equal>yes") == true) clamdConf->setSingleLineValue("--scan-pdf<equal>no", "yes");
-    if (helperHandler->keywordExists("SelectedOptions","--scan-pe<equal>no") == true) clamdConf->setSingleLineValue("--scan-pdf<equal>no", "no");
+    if (helperHandler->keywordExists("SelectedOptions","--scan-pdf<equal>yes") == true) clamdConf->setSingleLineValue("--scan-ole2", "yes");
+    if (helperHandler->keywordExists("SelectedOptions","--scan-pdf<equal>no") == true) clamdConf->setSingleLineValue("--scan-ole2", "no");
+    if (helperHandler->keywordExists("SelectedOptions","--scan-pe<equal>yes") == true) clamdConf->setSingleLineValue("--scan-pdf", "yes");
+    if (helperHandler->keywordExists("SelectedOptions","--scan-pe<equal>no") == true) clamdConf->setSingleLineValue("--scan-pdf", "no");
     if (helperHandler->keywordExists("SelectedOptions","--scan-swf<equal>yes") == true) clamdConf->setSingleLineValue("ScanSWF", "yes");
     if (helperHandler->keywordExists("SelectedOptions","--scan-swf<equal>no") == true) clamdConf->setSingleLineValue("ScanSWF", "no");
     if (helperHandler->keywordExists("SelectedOptions","--scan-xmldocs<equal>yes") == true) clamdConf->setSingleLineValue("ScanXMLDOCS", "yes");
