@@ -90,12 +90,10 @@ TRANSLATIONS += translations/clamav-gui-de_DE.ts \
     translations/clamav-gui-es_ES.ts \
     translations/clamav-gui-fr_FR.ts \
     translations/clamav-gui-pt_PT.ts \
-    translations/clamav-gui-pt_BR.ts \
     translations/clamav-gui-it_IT.ts \
     translations/clamav-gui-uk_UA.ts
 
 INSTALLS += target \
-    appicon \
     clamdicon \
     freshclamicon \
     onaccessicon \
@@ -113,7 +111,6 @@ INSTALLS += target \
     manpages_en \
     manpages_dk \
     manpages_uk \
-    manpages_br \
     manpages_es \
     manpages_fr \
     manpages_it \
@@ -122,9 +119,6 @@ INSTALLS += target \
 
 target.path = /$(DESTDIR)/usr/bin
 target.files = clamav-gui
-
-appicon.path = /$(DESTDIR)/usr/share/clamav-gui
-appicon.files = extra/icon32/clamav-gui.png
 
 clamdicon.path = /$(DESTDIR)/usr/share/icons/hicolor/32x32/apps
 clamdicon.files = icons/crosshair.png
@@ -148,7 +142,7 @@ icon48.path = /$(DESTDIR)/usr/share/icons/hicolor/48x48/apps
 icon48.files = extra/icon48/clamav-gui.png
 
 icon64.path = /$(DESTDIR)/usr/share/icons/hicolor/64x64/apps
-icon64.files = extra/icon48/clamav-gui.png
+icon64.files = extra/icon64/clamav-gui.png
 
 icon128.path = /$(DESTDIR)/usr/share/icons/hicolor/128x128/apps
 icon128.files = extra/icon128/clamav-gui.png
@@ -163,7 +157,7 @@ servicemenufile.path = /$(DESTDIR)/usr/share/kservices5/ServiceMenus
 servicemenufile.files = extra/ClamAV-GUI-ServiceMenu.desktop
 
 translation.path = /$(DESTDIR)/usr/share/clamav-gui
-translation.files = translations/clamav-gui-de_DE.qm translations/clamav-gui-en_GB.qm translations/clamav-gui-da_DK.qm translations/clamav-gui-es_ES.qm translations/clamav-gui-fr_FR.qm translations/clamav-gui-pt_PT.qm translations/clamav-gui-pt_BR.qm translations/clamav-gui-it_IT.qm translations/clamav-gui-uk_UA.qm
+translation.files = translations/clamav-gui-de_DE.qm translations/clamav-gui-en_GB.qm translations/clamav-gui-da_DK.qm translations/clamav-gui-es_ES.qm translations/clamav-gui-fr_FR.qm translations/clamav-gui-pt_PT.qm translations/clamav-gui-it_IT.qm translations/clamav-gui-uk_UA.qm
 
 manpages_de.path = /$(DESTDIR)/usr/share/man/de/man1
 manpages_de.files = man/de/clamav-gui.1.gz
@@ -171,14 +165,11 @@ manpages_de.files = man/de/clamav-gui.1.gz
 manpages_en.path = /$(DESTDIR)/usr/share/man/en/man1
 manpages_en.files = man/en/clamav-gui.1.gz
 
-manpages_dk.path = /$(DESTDIR)/usr/share/man/dk/man1
-manpages_dk.files = man/dk/clamav-gui.1.gz
+manpages_dk.path = /$(DESTDIR)/usr/share/man/da_DK/man1
+manpages_dk.files = man/da_DK/clamav-gui.1.gz
 
 manpages_uk.path = /$(DESTDIR)/usr/share/man/uk/man1
 manpages_uk.files = man/uk/clamav-gui.1.gz
-
-manpages_br.path = /$(DESTDIR)/usr/share/man/br/man1
-manpages_br.files = man/br/clamav-gui.1.gz
 
 manpages_es.path = /$(DESTDIR)/usr/share/man/es/man1
 manpages_es.files = man/es/clamav-gui.1.gz
@@ -194,10 +185,5 @@ manpages_pt.files = man/pt/clamav-gui.1.gz
 
 documents.path = /$(DESTDIR)/usr/share/doc/ClamAV-GUI
 documents.files = README CHANGES
-
-DISTFILES += \
-    icons/clamd.png
-
-
 
 

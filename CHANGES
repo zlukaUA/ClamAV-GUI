@@ -1,3 +1,9 @@
+* Sun Jun 30 2024 Version 0.9.2
+- The Profile-Wizard had the same behaviour like the option tab. Selection of an keyword with a yes and a no value where possible at the same time - what makes no sense.
+- This is fixed and the Wizard now works the same was like the options tab.
+- Several options for the clamd.conf file had the wrong format. Fixed and tested it.
+- The icon with the wrong size for 64x64 was installed.
+
 * Fri Jun 28 2024 Version 0.9.1
 - At the very first startup of the application clamd and freshclam - when called as root - don't start. Due to a timing problem the application didn't know
 - what helper application to use to start clamd and/or freshclam as root. Fixed it.
