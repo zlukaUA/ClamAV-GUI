@@ -988,7 +988,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
     </message>
     <message>
         <source>Neither &quot;pkexec&quot; nor &quot;kdesu&quot; is installed. Please install at least one of this to apps!</source>
-        <translation>Ni &quot;pkexec&quot; ni &quot;kdesu&quot; están instalados. Por favor, instale al menos una de estas aplicaciones.</translation>
+        <translation>Ni &quot;pkexec&quot; ni &quot;kdesu&quot; están instalados. Por favor, instale al menos una de estas aplicaciones!</translation>
     </message>
 </context>
 <context>
@@ -1113,7 +1113,8 @@ Default: 1 MByte
 </source>
         <translation>Tamaño máximo del archivo de registro.
 El valor 0 desactiva el límite.
-Por defecto: 1 MByte</translation>
+Por defecto: 1 MByte
+</translation>
     </message>
     <message>
         <source>Log-File max Size</source>
@@ -3979,11 +3980,11 @@ li.checked::marker { content: &quot;\2612&quot;; }
     </message>
     <message>
         <source>- or double click the option in the &quot;Selected Options&quot; list</source>
-        <translation>- o haga doble clic en la opción de la lista &quot;Opciones seleccionadas&quot;.</translation>
+        <translation>- o haga doble clic en la opción de la lista &quot;Opciones seleccionadas&quot;</translation>
     </message>
     <message>
         <source>- or double click the option in the &quot;Available Options&quot; list</source>
-        <translation>- o haga doble clic en la opción de la lista &quot;Opciones disponibles&quot;.</translation>
+        <translation>- o haga doble clic en la opción de la lista &quot;Opciones disponibles&quot;</translation>
     </message>
     <message>
         <source>ERROR</source>
@@ -4960,19 +4961,11 @@ actualización manual como root</translation>
     </message>
     <message>
         <source>Clamd</source>
-        <translation>Clamd</translation>
+        <translation type="vanished">Clamd</translation>
     </message>
     <message>
         <source>Status: </source>
         <translation>Estado: </translation>
-    </message>
-    <message>
-        <source>Freshclam</source>
-        <translation></translation>
-    </message>
-    <message>
-        <source>Clamonacc</source>
-        <translation></translation>
     </message>
     <message>
         <source>Database</source>
@@ -4993,6 +4986,22 @@ actualización manual como root</translation>
     <message>
         <source>Last updated: </source>
         <translation>Última actualización: </translation>
+    </message>
+    <message>
+        <source>  Clamonacc</source>
+        <translation>  Clamonacc</translation>
+    </message>
+    <message>
+        <source>  Freshclam</source>
+        <translation>  Freshclam</translation>
+    </message>
+    <message>
+        <source>  Clamd</source>
+        <translation>  Clamd</translation>
+    </message>
+    <message>
+        <source>ClamAV System Status</source>
+        <translation>ClamAV System Status</translation>
     </message>
 </context>
 </TS>
