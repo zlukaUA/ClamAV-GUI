@@ -120,15 +120,6 @@ INSTALLS += target \
 target.path = /$(DESTDIR)/usr/bin
 target.files = clamav-gui
 
-clamdicon.path = /$(DESTDIR)/usr/share/icons/hicolor/32x32/apps
-clamdicon.files = icons/crosshair.png
-
-freshclamicon.path = /$(DESTDIR)/usr/share/icons/hicolor/32x32/apps
-freshclamicon.files = icons/freshclam.png
-
-onaccessicon.path = /$(DESTDIR)/usr/share/icons/hicolor/32x32/apps
-onaccessicon.files = icons/onaccess.png
-
 icon16.path = /$(DESTDIR)/usr/share/icons/hicolor/16x16/apps
 icon16.files = extra/icon16/clamav-gui.png
 
