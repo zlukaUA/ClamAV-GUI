@@ -29,253 +29,25 @@ highlighter::highlighter(QTextDocument * parent) : QSyntaxHighlighter(parent)
 
      singleLineCommentFormat.setForeground(Qt::blue);
      singleLineCommentFormat.setBackground(Qt::white);
-     rule.pattern = QRegExp("^Downloading.*");
-     rule.format = singleLineCommentFormat;
-     highlightingRules.append(rule);
-
-     singleLineCommentFormat.setForeground(Qt::blue);
-     singleLineCommentFormat.setBackground(Qt::white);
-     rule.pattern = QRegExp("^ClamInotif:");
-     rule.format = singleLineCommentFormat;
-     highlightingRules.append(rule);
-
-     singleLineCommentFormat.setForeground(Qt::blue);
-     singleLineCommentFormat.setBackground(Qt::white);
-     rule.pattern = QRegExp(".Limits:");
-     rule.format = singleLineCommentFormat;
-     highlightingRules.append(rule);
-
-     singleLineCommentFormat.setForeground(Qt::blue);
-     singleLineCommentFormat.setBackground(Qt::white);
-     rule.pattern = QRegExp("^LOCAL:");
-     rule.format = singleLineCommentFormat;
-     highlightingRules.append(rule);
-
-     singleLineCommentFormat.setForeground(Qt::blue);
-     singleLineCommentFormat.setBackground(Qt::white);
-     rule.pattern = QRegExp(". Started at.*");
-     rule.format = singleLineCommentFormat;
-     highlightingRules.append(rule);
-
-     singleLineCommentFormat.setForeground(Qt::blue);
-     singleLineCommentFormat.setBackground(Qt::white);
-     rule.pattern = QRegExp(". Stopped at.*");
-     rule.format = singleLineCommentFormat;
-     highlightingRules.append(rule);
-
-     singleLineCommentFormat.setForeground(Qt::blue);
-     singleLineCommentFormat.setBackground(Qt::white);
-     rule.pattern = QRegExp(". SelfCheck: .*");
-     rule.format = singleLineCommentFormat;
-     highlightingRules.append(rule);
-
-     singleLineCommentFormat.setForeground(Qt::blue);
-     singleLineCommentFormat.setBackground(Qt::white);
-     rule.pattern = QRegExp(".Pid file removed.");
-     rule.format = singleLineCommentFormat;
-     highlightingRules.append(rule);
-
-     singleLineCommentFormat.setForeground(Qt::blue);
-     singleLineCommentFormat.setBackground(Qt::white);
-     rule.pattern = QRegExp(".Socket file removed.");
-     rule.format = singleLineCommentFormat;
-     highlightingRules.append(rule);
-
-     singleLineCommentFormat.setForeground(Qt::blue);
-     singleLineCommentFormat.setBackground(Qt::white);
-     rule.pattern = QRegExp(".disabled.");
-     rule.format = singleLineCommentFormat;
-     highlightingRules.append(rule);
-
-     singleLineCommentFormat.setForeground(Qt::green);
-     singleLineCommentFormat.setBackground(Qt::white);
-     rule.pattern = QRegExp(".enabled.");
-     rule.format = singleLineCommentFormat;
-     highlightingRules.append(rule);
-
-     singleLineCommentFormat.setForeground(Qt::green);
-     singleLineCommentFormat.setBackground(Qt::white);
-     rule.pattern = QRegExp("^Limits:");
-     rule.format = singleLineCommentFormat;
-     highlightingRules.append(rule);
-
-     singleLineCommentFormat.setForeground(Qt::red);
-     singleLineCommentFormat.setBackground(Qt::white);
-     rule.pattern = QRegExp("^ERROR: ClamCom:");
-     rule.format = singleLineCommentFormat;
-     highlightingRules.append(rule);
-
-     singleLineCommentFormat.setForeground(Qt::blue);
-     singleLineCommentFormat.setBackground(Qt::white);
-     rule.pattern = QRegExp("^/.*");
-     rule.format = singleLineCommentFormat;
-     highlightingRules.append(rule);
-
-     singleLineCommentFormat.setForeground(Qt::red);
-     singleLineCommentFormat.setBackground(Qt::white);
-     rule.pattern = QRegExp(".Empty file");
-     rule.format = singleLineCommentFormat;
-     highlightingRules.append(rule);
-
-     singleLineCommentFormat.setForeground(Qt::red);
-     singleLineCommentFormat.setBackground(Qt::white);
-     rule.pattern = QRegExp("^WARN.*");
-     rule.format = singleLineCommentFormat;
-     highlightingRules.append(rule);
-
-     singleLineCommentFormat.setForeground(Qt::red);
-     singleLineCommentFormat.setBackground(Qt::white);
-     rule.pattern = QRegExp(".FOUND *");
-     rule.format = singleLineCommentFormat;
-     highlightingRules.append(rule);
-
-     singleLineCommentFormat.setForeground(Qt::red);
-     singleLineCommentFormat.setBackground(Qt::white);
-     rule.pattern = QRegExp(".ERROR:.*");
-     rule.format = singleLineCommentFormat;
-     highlightingRules.append(rule);
-
-     singleLineCommentFormat.setForeground(Qt::red);
-     singleLineCommentFormat.setBackground(Qt::white);
-     rule.pattern = QRegExp(".WARNING:.*");
-     rule.format = singleLineCommentFormat;
-     highlightingRules.append(rule);
-
-     singleLineCommentFormat.setForeground(Qt::red);
-     singleLineCommentFormat.setBackground(Qt::white);
-     rule.pattern = QRegExp("^Can't connect to port.*");
+     rule.pattern = QRegExp("^Downloading.*|^ClamInotif:|.-> .*|^/.*|^Database updated.*|^ClamAV update process started.*|^Known viruses:.*|^Engine version:.*|^Data scanned:.*|^Data read:.*|^Time:.*|^Start Date:.*|^End Date:.*");
      rule.format = singleLineCommentFormat;
      highlightingRules.append(rule);
 
      singleLineCommentFormat.setForeground(Qt::darkGreen);
      singleLineCommentFormat.setBackground(Qt::white);
-     rule.pattern = QRegExp("^daily.cvd.*");
+     rule.pattern = QRegExp("LOCAL:|OLE2:|Phishing|Heuristic|Structured|Local:|Limits:|.enabled|.disabled|.watching .*|^daily.cvd.*|^daily.cld.*|^bytecode.cvd.*|^main.cvd.*|^freshclam deamon.*|. OK|^Scanned directories:.*|^Scanned files:.*|^Infected files: 0");
      rule.format = singleLineCommentFormat;
      highlightingRules.append(rule);
 
-     singleLineCommentFormat.setForeground(Qt::darkGreen);
+     singleLineCommentFormat.setForeground(Qt::darkYellow);
      singleLineCommentFormat.setBackground(Qt::white);
-     rule.pattern = QRegExp("^daily.cld.*");
-     rule.format = singleLineCommentFormat;
-     highlightingRules.append(rule);
-
-     singleLineCommentFormat.setForeground(Qt::blue);
-     singleLineCommentFormat.setBackground(Qt::white);
-     rule.pattern = QRegExp("^Database updated.*");
-     rule.format = singleLineCommentFormat;
-     highlightingRules.append(rule);
-
-     singleLineCommentFormat.setForeground(Qt::darkGreen);
-     singleLineCommentFormat.setBackground(Qt::white);
-     rule.pattern = QRegExp("^bytecode.cvd.*");
-     rule.format = singleLineCommentFormat;
-     highlightingRules.append(rule);
-
-     singleLineCommentFormat.setForeground(Qt::darkGreen);
-     singleLineCommentFormat.setBackground(Qt::white);
-     rule.pattern = QRegExp("^main.cvd.*");
-     rule.format = singleLineCommentFormat;
-     highlightingRules.append(rule);
-
-     singleLineCommentFormat.setForeground(Qt::blue);
-     singleLineCommentFormat.setBackground(Qt::white);
-     rule.pattern = QRegExp("^ClamAV update process started.*");
-     rule.format = singleLineCommentFormat;
-     highlightingRules.append(rule);
-
-     singleLineCommentFormat.setForeground(Qt::darkGreen);
-     singleLineCommentFormat.setBackground(Qt::white);
-     rule.pattern = QRegExp("^freshclam deamon.*");
-     rule.format = singleLineCommentFormat;
-     highlightingRules.append(rule);
-
-     singleLineCommentFormat.setForeground(Qt::darkGreen);
-     singleLineCommentFormat.setBackground(Qt::white);
-     rule.pattern = QRegExp(". OK");
-     rule.format = singleLineCommentFormat;
-     highlightingRules.append(rule);
-
-    singleLineCommentFormat.setForeground(Qt::red);
-     singleLineCommentFormat.setBackground(Qt::white);
-     rule.pattern = QRegExp("^---.*");
+     rule.pattern = QRegExp(".Pid file removed.|. Started at.*|. Stopped at.*|.Socket file removed.");
      rule.format = singleLineCommentFormat;
      highlightingRules.append(rule);
 
      singleLineCommentFormat.setForeground(Qt::red);
      singleLineCommentFormat.setBackground(Qt::white);
-     rule.pattern = QRegExp(".Access denied");
-     rule.format = singleLineCommentFormat;
-     highlightingRules.append(rule);
-
-     singleLineCommentFormat.setForeground(Qt::blue);
-     singleLineCommentFormat.setBackground(Qt::white);
-     rule.pattern = QRegExp("^Known viruses:.*");
-     rule.format = singleLineCommentFormat;
-     highlightingRules.append(rule);
-     
-     singleLineCommentFormat.setForeground(Qt::blue);
-     singleLineCommentFormat.setBackground(Qt::white);
-     rule.pattern = QRegExp("^Engine version:.*");
-     rule.format = singleLineCommentFormat;
-     highlightingRules.append(rule);
-
-     singleLineCommentFormat.setForeground(Qt::darkGreen);
-     singleLineCommentFormat.setBackground(Qt::white);
-     rule.pattern = QRegExp("^Scanned directories:.*");
-     rule.format = singleLineCommentFormat;
-     highlightingRules.append(rule);
-
-     singleLineCommentFormat.setForeground(Qt::darkGreen);
-     singleLineCommentFormat.setBackground(Qt::white);
-     rule.pattern = QRegExp("^Scanned files:.*");
-     rule.format = singleLineCommentFormat;
-     highlightingRules.append(rule);
-
-     singleLineCommentFormat.setForeground(Qt::red);
-     singleLineCommentFormat.setBackground(Qt::white);
-     rule.pattern = QRegExp("^Infected files:.*");
-     rule.format = singleLineCommentFormat;
-     highlightingRules.append(rule);
-
-     singleLineCommentFormat.setForeground(Qt::darkGreen);
-     singleLineCommentFormat.setBackground(Qt::white);
-     rule.pattern = QRegExp("^Infected files: 0");
-     rule.format = singleLineCommentFormat;
-     highlightingRules.append(rule);
-
-     singleLineCommentFormat.setForeground(Qt::red);
-     singleLineCommentFormat.setBackground(Qt::white);
-     rule.pattern = QRegExp("^Total errors:.*");
-     rule.format = singleLineCommentFormat;
-     highlightingRules.append(rule);
-
-     singleLineCommentFormat.setForeground(Qt::blue);
-     singleLineCommentFormat.setBackground(Qt::white);
-     rule.pattern = QRegExp("^Data scanned:.*");
-     rule.format = singleLineCommentFormat;
-     highlightingRules.append(rule);
-
-     singleLineCommentFormat.setForeground(Qt::blue);
-     singleLineCommentFormat.setBackground(Qt::white);
-     rule.pattern = QRegExp("^Data read:.*");
-     rule.format = singleLineCommentFormat;
-     highlightingRules.append(rule);
-
-     singleLineCommentFormat.setForeground(Qt::blue);
-     singleLineCommentFormat.setBackground(Qt::white);
-     rule.pattern = QRegExp("^Time:.*");
-     rule.format = singleLineCommentFormat;
-     highlightingRules.append(rule);
-
-     singleLineCommentFormat.setForeground(Qt::blue);
-     singleLineCommentFormat.setBackground(Qt::white);
-     rule.pattern = QRegExp("^Start Date:.*");
-     rule.format = singleLineCommentFormat;
-     highlightingRules.append(rule);
-
-     singleLineCommentFormat.setForeground(Qt::blue);
-     singleLineCommentFormat.setBackground(Qt::white);
-     rule.pattern = QRegExp("^End Date:.*");
+     rule.pattern = QRegExp("^ERROR: ClamCom:|.Empty file|^WARN.*|.FOUND *|.ERROR:.*|.WARNING:.*|^Can't connect to port.*|^---.*|.Access denied|^Infected files:.*|^Total errors:.*");
      rule.format = singleLineCommentFormat;
      highlightingRules.append(rule);
 
