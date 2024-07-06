@@ -190,11 +190,11 @@ void clamdManager::slot_updateClamdConf()
     if (helperHandler->keywordExists("SelectedOptions","--bytecode-unsigned<equal>no") == true) clamdConf->setSingleLineValue("BytecodeUnsigned", "no");
     if (helperHandler->keywordExists("SelectedOptions","--cross-fs<equal>yes") == true) clamdConf->setSingleLineValue("CrossFilesystems", "yes");
     if (helperHandler->keywordExists("SelectedOptions","--cross-fs<equal>no") == true) clamdConf->setSingleLineValue("CrossFilesystems", "no");
-    if (helperHandler->keywordExists("SelectedOptions","--debug") == true) clamdConf->setSingleLineValue("DEBUG", "yes");
+    if (helperHandler->keywordExists("SelectedOptions","--debug") == true) clamdConf->setSingleLineValue("Debug", "yes");
     if (helperHandler->keywordExists("SelectedOptions","--detect-pua<equal>yes") == true) clamdConf->setSingleLineValue("DetectPUA","yes");
     if (helperHandler->keywordExists("SelectedOptions","--detect-pua<equal>no") == true) clamdConf->setSingleLineValue("DetectPUA", "no");
-    if (helperHandler->keywordExists("SelectedOptions","--detect-structured<equal>yes") == true) clamdConf->setSingleLineValue("StructuredDataProtection", "yes");
-    if (helperHandler->keywordExists("SelectedOptions","--detect-structured<equal>no") == true) clamdConf->setSingleLineValue("StructuredDataProtection", "no");
+    if (helperHandler->keywordExists("SelectedOptions","--detect-structured<equal>yes") == true) clamdConf->setSingleLineValue("StructuredDataDetection", "yes");
+    if (helperHandler->keywordExists("SelectedOptions","--detect-structured<equal>no") == true) clamdConf->setSingleLineValue("StructuredDataDetection", "no");
     if (helperHandler->keywordExists("SelectedOptions","--heuristic-alerts<equal>yes") == true) clamdConf->setSingleLineValue("HeuristicAlerts", "yes");
     if (helperHandler->keywordExists("SelectedOptions","--heuristic-alerts<equal>no") == true) clamdConf->setSingleLineValue("HeuristicAlerts", "no");
     if (helperHandler->keywordExists("SelectedOptions","--heuristic-scan-precedence<equal>yes") == true) clamdConf->setSingleLineValue("HeuristicScanPrecedence", "yes");
@@ -220,10 +220,8 @@ void clamdManager::slot_updateClamdConf()
     if (helperHandler->keywordExists("SelectedOptions","--scan-mail<equal>no") == true) clamdConf->setSingleLineValue("ScanMail", "no");
     if (helperHandler->keywordExists("SelectedOptions","--scan-ole2<equal>yes") == true) clamdConf->setSingleLineValue("ScanOLE2", "yes");
     if (helperHandler->keywordExists("SelectedOptions","--scan-ole2<equal>no") == true) clamdConf->setSingleLineValue("ScanOLE2", "no");
-    if (helperHandler->keywordExists("SelectedOptions","--scan-pdf<equal>yes") == true) clamdConf->setSingleLineValue("--scan-ole2", "yes");
-    if (helperHandler->keywordExists("SelectedOptions","--scan-pdf<equal>no") == true) clamdConf->setSingleLineValue("--scan-ole2", "no");
-    if (helperHandler->keywordExists("SelectedOptions","--scan-pe<equal>yes") == true) clamdConf->setSingleLineValue("--scan-pdf", "yes");
-    if (helperHandler->keywordExists("SelectedOptions","--scan-pe<equal>no") == true) clamdConf->setSingleLineValue("--scan-pdf", "no");
+    if (helperHandler->keywordExists("SelectedOptions","--scan-pe<equal>yes") == true) clamdConf->setSingleLineValue("ScanPDF", "yes");
+    if (helperHandler->keywordExists("SelectedOptions","--scan-pe<equal>no") == true) clamdConf->setSingleLineValue("ScanPDF", "no");
     if (helperHandler->keywordExists("SelectedOptions","--scan-swf<equal>yes") == true) clamdConf->setSingleLineValue("ScanSWF", "yes");
     if (helperHandler->keywordExists("SelectedOptions","--scan-swf<equal>no") == true) clamdConf->setSingleLineValue("ScanSWF", "no");
     if (helperHandler->keywordExists("SelectedOptions","--scan-xmldocs<equal>yes") == true) clamdConf->setSingleLineValue("ScanXMLDOCS", "yes");
@@ -266,11 +264,11 @@ void clamdManager::slot_updateClamdConf()
     if (helperHandler->getSectionValue("ScanLimitations","Max recursion calls to the PCRE match function").indexOf("checked|") == 0) clamdConf->addSingleLineValue("PCRERecMatchLimit",helperHandler->getSectionValue("ScanLimitations","Max recursion calls to the PCRE match function").mid(8));
     if (helperHandler->getSectionValue("ScanLimitations","Max PCRE file size").indexOf("checked|") == 0) clamdConf->addSingleLineValue("PCREMaxFileSize",helperHandler->getSectionValue("ScanLimitations","Max PCRE file size").mid(8));
     if (helperHandler->getSectionValue("ScanLimitations","Structured CC Count").indexOf("checked|") == 0) clamdConf->addSingleLineValue("StructuredMinCreditCardCount",helperHandler->getSectionValue("ScanLimitations","Structured CC Count").mid(8));
-    if (helperHandler->getSectionValue("ScanLimitations","Structured CC Mode").indexOf("checked|") == 0) clamdConf->addSingleLineValue("StructuredCCOnly","yes");
+    if ((helperHandler->getSectionValue("ScanLimitations","Structured CC Mode").indexOf("checked|") == 0) && (helperHandler->getSectionValue("ScanLimitations","Structured CC Mode").right(1) == "1")) clamdConf->addSingleLineValue("StructuredCCOnly","yes");
     if (helperHandler->getSectionValue("ScanLimitations","Structured SSN Count").indexOf("checked|") == 0) clamdConf->addSingleLineValue("StructuredMinSSNCount",helperHandler->getSectionValue("ScanLimitations","Structured SSN Count").mid(8));
-    if (helperHandler->getSectionValue("ScanLimitations","Structured SSN Format").indexOf("checked|") == 0) clamdConf->addSingleLineValue("StructuredSSNFormatNormal","yes");
-    if (helperHandler->getSectionValue("ScanLimitations","Structured SSN Format").indexOf("checked|") == 0) clamdConf->addSingleLineValue("StructuredSSNFormatStripped","yes");
-    if (helperHandler->getSectionValue("ScanLimitations","Structured SSN Format").indexOf("checked|") == 0) {
+    if ((helperHandler->getSectionValue("ScanLimitations","Structured SSN Format").indexOf("checked|") == 0) && (helperHandler->getSectionValue("ScanLimitations","Structured SSN Format").right(1) == "0")) clamdConf->addSingleLineValue("StructuredSSNFormatNormal","yes");
+    if ((helperHandler->getSectionValue("ScanLimitations","Structured SSN Format").indexOf("checked|") == 0) && (helperHandler->getSectionValue("ScanLimitations","Structured SSN Format").right(1) == "1")) clamdConf->addSingleLineValue("StructuredSSNFormatStripped","yes");
+    if ((helperHandler->getSectionValue("ScanLimitations","Structured SSN Format").indexOf("checked|") == 0) && (helperHandler->getSectionValue("ScanLimitations","Structured SSN Format").right(1) == "2")) {
         clamdConf->addSingleLineValue("StructuredSSNFormatNormal","yes");
         clamdConf->addSingleLineValue("StructuredSSNFormatStripped","yes");
     }
@@ -341,7 +339,11 @@ void clamdManager::slot_clamdStartStopButtonClicked()
             parameters << QDir::homePath() + "/.clamav-gui/startclamd.sh";
             if (sudoGUI == "") sudoGUI = setupFile->getSectionValue("Settings","SudoGUI");
             startClamdProcess->start(sudoGUI,parameters);
+            setupFile->setSectionValue("Clamd","Status","starting up ...");
+            emit systemStatusChanged();
         } else {
+            setupFile->setSectionValue("Clamd","Status","shutting down ...");
+            emit systemStatusChanged();
             pidFile.open(QIODevice::ReadOnly);
             QTextStream stream(&pidFile);
             QString pid = stream.readLine();
@@ -381,6 +383,7 @@ void clamdManager::slot_startClamdProcessFinished(int exitCode, QProcess::ExitSt
         ui->startStopClamdPushButton->setIcon(QIcon(":/icons/icons/startclamd.png"));
         setupFile->setSectionValue("Clamd","ClamdPid","n/a");
         setupFile->setSectionValue("Clamd","ClamonaccPid","n/a");
+        setupFile->setSectionValue("Clamd","Status","not running");
         emit systemStatusChanged();
         if (clamdStartupCounter > 0) {
             if (waitForFreshclam == false) clamdStartupCounter--;
@@ -395,6 +398,7 @@ void clamdManager::slot_startClamdProcessFinished(int exitCode, QProcess::ExitSt
         QString pid = stream.readLine();
         pid = pid.replace("\n","");
         setupFile->setSectionValue("Clamd","ClamdPid",pid);
+        setupFile->setSectionValue("Clamd","Status","is running");
         pidFile.close();
         emit systemStatusChanged();
         ui->startStopClamdPushButton->setStyleSheet("background-color:green;color:yellow");
@@ -425,6 +429,7 @@ void clamdManager::slot_killClamdProcessFinished()
         ui->startStopClamdPushButton->setIcon(QIcon(":/icons/icons/startclamd.png"));
         setupFile->setSectionValue("Clamd","ClamdPid","n/a");
         setupFile->setSectionValue("Clamd","ClamonaccPid","n/a");
+        setupFile->setSectionValue("Clamd","Status","shut down");
         emit systemStatusChanged();
     } else {
         clamdPidWatcher->addPath("/tmp/clamd.pid");
@@ -510,6 +515,7 @@ void clamdManager::slot_pidWatcherTriggered()
         ui->monitoringDelButton->setEnabled(true);
         setupFile->setSectionValue("Clamd","ClamdPid","n/a");
         setupFile->setSectionValue("Clamd","ClamonaccPid","n/a");
+        setupFile->setSectionValue("Clamd","Status","not running");
         emit systemStatusChanged();
     }
 }
@@ -631,6 +637,7 @@ void clamdManager::slot_restartClamdButtonClicked()
     parameters << QDir::homePath() + "/.clamav-gui/startclamd.sh";
     if (sudoGUI == "") sudoGUI = setupFile->getSectionValue("Settings","SudoGUI");
     startClamdProcess->start(sudoGUI,parameters);
+    setupFile->setSectionValue("Clamd","Status","starting up ...");
     setupFile->setSectionValue("Clamd","ClamdPid","n/a");
     setupFile->setSectionValue("Clamd","ClamonaccPid","n/a");
     emit systemStatusChanged();
@@ -681,6 +688,8 @@ void clamdManager::restartClamonacc()
     parameters << QDir::homePath() + "/.clamav-gui/restartclamd.sh";
     if (sudoGUI == "") sudoGUI = setupFile->getSectionValue("Settings","SudoGUI");
     startClamdProcess->start(sudoGUI,parameters);
+    setupFile->setSectionValue("Clamd","Status","shutting down ...");
+    emit systemStatusChanged();
 }
 
 bool clamdManager::checkClamdRunning()
@@ -699,10 +708,12 @@ bool clamdManager::checkClamdRunning()
         QString pidString = stream.readLine();
         pidString = pidString.replace("\n","");
         setupFile->setSectionValue("Clamd","ClamdPid",pidString);
+        setupFile->setSectionValue("Clamd","Status","is running");
         pidFile.close();
         emit systemStatusChanged();
     } else {
         setupFile->setSectionValue("Clamd","ClamdPid","n/a");
+        setupFile->setSectionValue("Clamd","Status","not running");
         emit systemStatusChanged();
     }
 

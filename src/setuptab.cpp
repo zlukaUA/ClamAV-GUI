@@ -52,7 +52,7 @@ void setupTab::slot_updateSystemInfo()
         ui->clamonaccPID->setText(setupFile->getSectionValue("Clamd","ClamonaccPid"));
         if (setupFile->getSectionValue("Clamd","ClamonaccPid") == "n/a") {
             ui->clamonaccActivityLabel->setPixmap(QPixmap(":/icons/icons/gifs/activity.gif"));
-            ui->clamonaccStatus->setText("is down");
+            ui->clamonaccStatus->setText(setupFile->getSectionValue("Clamd","Status"));
             ui->clamonaccStatus->setStyleSheet("background-color:red;color:white");
         } else {
             ui->clamonaccActivityLabel->setMovie(new QMovie(":/icons/icons/gifs/activity.gif"));
@@ -65,8 +65,26 @@ void setupTab::slot_updateSystemInfo()
         ui->clamdPID->setText(setupFile->getSectionValue("Clamd","ClamdPid"));
         if (setupFile->getSectionValue("Clamd","ClamdPid") == "n/a") {
             ui->clamdActivityLabel->setPixmap(QPixmap(":/icons/icons/gifs/activity.gif"));
-            ui->clamdStatus->setText("is down");
-            ui->clamdStatus->setStyleSheet("background-color:red;color:white");
+            QString message = setupFile->getSectionValue("Clamd","Status");
+            if ((message == "starting up ...") || (message == "shutting down ...")){
+                ui->clamdStatus->setStyleSheet("background-color:yellow;color:black");
+                ui->clamdStatus->setText(message);
+                ui->clamonaccStatus->setStyleSheet("background-color:yellow;color:black");
+                ui->clamonaccStatus->setText(message);
+            }
+            if  (message == "is running") {
+                ui->clamdStatus->setStyleSheet("background-color:green;color:yellow");
+                ui->clamdStatus->setText(message);
+                ui->clamonaccStatus->setStyleSheet("background-color:green;color:yellow");
+                ui->clamonaccStatus->setText(message);
+            }
+            if  ((message == "shut down") || (message == "not running")) {
+                ui->clamdStatus->setStyleSheet("background-color:red;color:yellow");
+                ui->clamdStatus->setText("is down");
+                ui->clamonaccStatus->setStyleSheet("background-color:red;color:yellow");
+                ui->clamonaccStatus->setText("is down");
+            }
+//            ui->clamdStatus->setStyleSheet("background-color:red;color:yellow");
         } else {
             ui->clamdActivityLabel->setMovie(new QMovie(":/icons/icons/gifs/activity.gif"));
             ui->clamdActivityLabel->movie()->start();
