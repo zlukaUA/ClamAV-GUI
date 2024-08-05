@@ -210,6 +210,7 @@ void QRoundProgressBar::paintEvent(QPaintEvent* /*event*/)
 void QRoundProgressBar::drawBackground(QPainter &p, const QRectF &baseRect)
 {
     p.fillRect(baseRect, palette().window());
+    p.fillRect(baseRect,QColor("#c0c0c0"));
 }
 
 void QRoundProgressBar::drawBase(QPainter &p, const QRectF &baseRect)
@@ -334,14 +335,17 @@ void QRoundProgressBar::drawInnerBackground(QPainter &p, const QRectF &innerRect
 
 void QRoundProgressBar::drawText(QPainter &p, const QRectF &innerRect, double innerRadius, double value)
 {
-    if (m_format.isEmpty()) m_format = "%p";
+    if (m_format.isEmpty()) {
+        m_format = "%p";
+        m_updateFlags = UF_PERCENT;
+    }
 //        return;
 
     // !!! to revise
     QFont f(font());
     f.setPixelSize(10);
     QFontMetricsF fm(f);
-    double maxWidth = fm.width(valueToText(m_max));
+    double maxWidth = fm.maxWidth();
     double delta = innerRadius / maxWidth;
     double fontSize = f.pixelSize() * delta * 0.75;
     f.setPixelSize(fontSize);
@@ -357,17 +361,17 @@ QString QRoundProgressBar::valueToText(double value) const
 {
     QString textToDraw(m_format);
 
-//    if (m_updateFlags & UF_VALUE)
-//        textToDraw.replace("%v", QString::number(value, 'f', m_decimals));
+    if (m_updateFlags & UF_VALUE)
+        textToDraw.replace("%v", QString::number(value, 'f', m_decimals));
 
-//    if (m_updateFlags & UF_PERCENT)
-//    {
+    if (m_updateFlags & UF_PERCENT)
+    {
         double procent = (value - m_min) / (m_max - m_min) * 100.0;
-        textToDraw.replace("%p", QString::number(procent, 'f', m_decimals));
-//    }
+        textToDraw.replace("%p", QString::number(procent, 'f', m_decimals) + "%");
+    }
 
-//    if (m_updateFlags & UF_MAX)
-//        textToDraw.replace("%m", QString::number(m_max - m_min + 1, 'f', m_decimals));
+    if (m_updateFlags & UF_MAX)
+        textToDraw.replace("%m", QString::number(m_max - m_min + 1, 'f', m_decimals));
 
     return textToDraw;
 }

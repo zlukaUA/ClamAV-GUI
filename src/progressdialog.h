@@ -22,7 +22,7 @@
 #define PROGRESSDIALOG_H
 
 #include <QWidget>
-#include <QMovie>
+#include <QDebug>
 #include "qroundprogressbar.h"
 
 namespace Ui {

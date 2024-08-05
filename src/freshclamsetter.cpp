@@ -530,6 +530,7 @@ QString freshclamsetter::extractPureNumber(QString value) {
     QString validator = "0.123456789";
     bool isValid = true;
     int index = 0;
+    value = value.trimmed();
     QString character;
     while ((index < value.length()) && (isValid == true)) {
         character = value.mid(index,1);
