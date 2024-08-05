@@ -94,9 +94,6 @@ TRANSLATIONS += translations/clamav-gui-de_DE.ts \
     translations/clamav-gui-uk_UA.ts
 
 INSTALLS += target \
-    clamdicon \
-    freshclamicon \
-    onaccessicon \
     icon16 \
     icon22 \
     icon32 \
