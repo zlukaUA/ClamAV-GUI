@@ -4,9 +4,14 @@
 progressDialog::progressDialog(QWidget *parent) : QWidget(parent), ui(new Ui::progressDialog)
 {
     ui->setupUi(this);
-    movie = new QMovie(":/icons/icons/gifs/spinning_segments_large.gif");
-    ui->movieLabel->setMovie(movie);
-    movie->start();
+    progressBar = new QRoundProgressBar(this);
+    progressBar->setGeometry((this->width() - 80) / 2,20,100,100);
+    progressBar->setMaximum(100);
+    progressBar->setMinimum(0);
+    progressBar->setValue(100);
+    progressBar->setBarStyle(QRoundProgressBar::StyleDonut);
+    progressBar->setFormat("");
+    progressBar->show();
 }
 
 progressDialog::~progressDialog()
@@ -18,4 +23,12 @@ void progressDialog::setText(QString text){
 QString output = text.replace("\n","");
 
     ui->progressText->setText(output);
+}
+
+void progressDialog::setProgressBarMaxValue(double value) {
+    progressBar->setMaximum(value);
+}
+
+void progressDialog::setProgressBarValue(double value) {
+    progressBar->setValue(value);
 }

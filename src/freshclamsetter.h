@@ -75,6 +75,7 @@ private:
     void setUpdaterInfo();
     void checkDaemonRunning();
     void initFreshclamSettings();
+    QString extractPureNumber(QString value);
 
 private slots:
     void slot_updateNowButtonClicked();

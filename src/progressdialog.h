@@ -23,6 +23,7 @@
 
 #include <QWidget>
 #include <QMovie>
+#include "qroundprogressbar.h"
 
 namespace Ui {
 class progressDialog;
@@ -37,9 +38,14 @@ public:
     ~progressDialog();
     QMovie  * movie;
     void setText(QString);
+    QRoundProgressBar * progressBar;
 
 private:
     Ui::progressDialog *ui;
+
+public:
+    void setProgressBarMaxValue(double value);
+    void setProgressBarValue(double);
 };
 
 #endif // PROGRESSDIALOG_H

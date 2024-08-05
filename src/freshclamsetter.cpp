@@ -34,7 +34,6 @@ QDir tempDir;
 
     ps_process = new QProcess;
     connect(ps_process,SIGNAL(finished(int)),this,SLOT(slot_ps_processFinished(int)));
-    connect(ps_process,SIGNAL(readyReadStandardError()),this,SLOT(slot_ps_processHasOutput()));
 
     freshclamStartupCounter = 5;
     startDelayTimer = new QTimer(this);
@@ -526,17 +525,49 @@ void freshclamsetter::setUpdaterInfo(){
     ui->updateInfoText->setHtml(htmlCode);
 }
 
+QString freshclamsetter::extractPureNumber(QString value) {
+    QString rc = "";
+    QString validator = "0.123456789";
+    bool isValid = true;
+    int index = 0;
+    QString character;
+    while ((index < value.length()) && (isValid == true)) {
+        character = value.mid(index,1);
+        if (validator.indexOf(character) != -1) rc += character; else isValid = false;
+        index++;
+    }
+
+    return rc;
+}
+
 void freshclamsetter::slot_updaterHasOutput(){
     static QString oldLine;
     QString output = updater->readAll();
     int start = output.lastIndexOf("]") + 1;
     int end = output.lastIndexOf("[");
     QString line = output.mid(start,end-start-1);
-
-    if ((line != oldLine) && (line.indexOf("MiB") != -1)){
-        busyLabel->setText(line);
+    if (line != "") {
+        QStringList values = line.split("/");
+        if (values.size() == 2) {
+            QString maxValueString = values.at(1);
+            QString valueString = values.at(0);
+            maxValueString = extractPureNumber(maxValueString);
+            valueString = extractPureNumber(valueString);
+            double valueMax = maxValueString.toDouble();
+            double value = valueString.toDouble();
+            busyLabel->setProgressBarMaxValue(valueMax);
+            busyLabel->setProgressBarValue(value);
+        }
     }
-    oldLine = line;
+    line="";
+    if ((output.indexOf("Testing database:") > -1) && (oldLine != "Testing Database")) line = "Testing Database";
+    if ((output.indexOf("bytecode database available for download") != -1) && (oldLine != "Downloading bytecode.cvd")) line = "Downloading bytecode.cvd";
+    if ((output.indexOf("main database available for download") != -1) && (oldLine != "Downloading main.cvd")) line = "Downloading main.cvd";
+    if ((output.indexOf("daily database available for download") != -1) && (oldLine != "Downloading daily.cvd")) line = "Downloading daily.cvd";
+    if (line != "") {
+        busyLabel->setText(line);
+        oldLine = line;
+    }
 }
 
 void freshclamsetter::slot_startDeamonProcessFinished(int exitCode,QProcess::ExitStatus exitStatus)
