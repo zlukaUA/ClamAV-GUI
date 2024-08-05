@@ -1113,13 +1113,13 @@ li.checked::marker { content: &quot;\2612&quot;; }
     </message>
     <message>
         <location filename="../src/clamav_gui.cpp" line="117"/>
-        <source>setup</source>
-        <translation>налаштування</translation>
+        <source>Setup</source>
+        <translation>Налаштування</translation>
     </message>
     <message>
         <location filename="../src/clamav_gui.cpp" line="119"/>
-        <source>Credits &amp;&amp; Copyright</source>
-        <translation>Кредити та авторське право</translation>
+        <source>About</source>
+        <translation>Про</translation>
     </message>
     <message>
         <location filename="../src/clamav_gui.cpp" line="184"/>
@@ -1419,8 +1419,8 @@ for changes made to take effect.</source>
     </message>
     <message>
         <location filename="../src/clamdmanager.cpp" line="296"/>
-        <location filename="../src/clamdmanager.cpp" line="365"/>
-        <location filename="../src/clamdmanager.cpp" line="572"/>
+        <location filename="../src/clamdmanager.cpp" line="369"/>
+        <location filename="../src/clamdmanager.cpp" line="580"/>
         <source>WARNING</source>
         <translation>ПОПЕРЕДЖЕННЯ</translation>
     </message>
@@ -1430,55 +1430,55 @@ for changes made to take effect.</source>
         <translation>  Запускаю захват. Будь ласка, зачекайте!</translation>
     </message>
     <message>
-        <location filename="../src/clamdmanager.cpp" line="347"/>
+        <location filename="../src/clamdmanager.cpp" line="351"/>
         <source>  Stopping Clamd. Please wait!</source>
         <translation>  Зупинити Кламда. Зачекайте, будь ласка!</translation>
     </message>
     <message>
-        <location filename="../src/clamdmanager.cpp" line="365"/>
+        <location filename="../src/clamdmanager.cpp" line="369"/>
         <source>Clamd and Clamonacc can not be launched. First you have to add at least one folder for monitoring!</source>
         <translation>Clamd і Clamonacc не можуть бути запущені. Спочатку потрібно додати хоча б одну папку для моніторингу!</translation>
     </message>
     <message>
-        <location filename="../src/clamdmanager.cpp" line="378"/>
-        <location filename="../src/clamdmanager.cpp" line="422"/>
-        <location filename="../src/clamdmanager.cpp" line="504"/>
+        <location filename="../src/clamdmanager.cpp" line="382"/>
+        <location filename="../src/clamdmanager.cpp" line="428"/>
+        <location filename="../src/clamdmanager.cpp" line="511"/>
         <source>  Clamd not running - Start Clamd</source>
         <translation>  Clamd не працює - Запустити Clamd</translation>
     </message>
     <message>
-        <location filename="../src/clamdmanager.cpp" line="399"/>
-        <location filename="../src/clamdmanager.cpp" line="430"/>
+        <location filename="../src/clamdmanager.cpp" line="405"/>
+        <location filename="../src/clamdmanager.cpp" line="437"/>
         <source>  Clamd running - Stop Clamd</source>
         <translation>  Clamd працює - зупинити Clamd</translation>
     </message>
     <message>
-        <location filename="../src/clamdmanager.cpp" line="564"/>
+        <location filename="../src/clamdmanager.cpp" line="572"/>
         <source>Directory to monitor</source>
         <translation>Каталог для моніторингу</translation>
     </message>
     <message>
-        <location filename="../src/clamdmanager.cpp" line="572"/>
+        <location filename="../src/clamdmanager.cpp" line="580"/>
         <source>Path already under monitoring</source>
         <translation>Шлях вже під моніторингом</translation>
     </message>
     <message>
-        <location filename="../src/clamdmanager.cpp" line="581"/>
+        <location filename="../src/clamdmanager.cpp" line="589"/>
         <source>Remove Folder from monitoring</source>
         <translation>Видалити папку з моніторингу</translation>
     </message>
     <message>
-        <location filename="../src/clamdmanager.cpp" line="581"/>
+        <location filename="../src/clamdmanager.cpp" line="589"/>
         <source>Path: </source>
         <translation>Шлях: </translation>
     </message>
     <message>
-        <location filename="../src/clamdmanager.cpp" line="581"/>
+        <location filename="../src/clamdmanager.cpp" line="589"/>
         <source>Do you want to remove the folder from the monitoring list?</source>
         <translation>Ви хочете видалити папку зі списку моніторингу?</translation>
     </message>
     <message>
-        <location filename="../src/clamdmanager.cpp" line="616"/>
+        <location filename="../src/clamdmanager.cpp" line="624"/>
         <source>  Clamd restarting. Please wait!</source>
         <translation>  Перезапуск кластера. Будь ласка, зачекайте!</translation>
     </message>
@@ -1500,9 +1500,9 @@ for changes made to take effect.</source>
     </message>
     <message>
         <location filename="../ui/freshclamsetter.ui" line="114"/>
-        <location filename="../src/freshclamsetter.cpp" line="236"/>
-        <location filename="../src/freshclamsetter.cpp" line="325"/>
-        <location filename="../src/freshclamsetter.cpp" line="556"/>
+        <location filename="../src/freshclamsetter.cpp" line="235"/>
+        <location filename="../src/freshclamsetter.cpp" line="324"/>
+        <location filename="../src/freshclamsetter.cpp" line="555"/>
         <source>Deamon not running - start deamon</source>
         <translation>Deamon не працює - запустіть deamon</translation>
     </message>
@@ -1823,106 +1823,106 @@ manual update as root</source>
         <translation>OnOutdatedExecute</translation>
     </message>
     <message>
-        <location filename="../src/freshclamsetter.cpp" line="95"/>
+        <location filename="../src/freshclamsetter.cpp" line="94"/>
         <source>Update process startet .....</source>
         <translation>Процес оновлення розпочато .....</translation>
     </message>
     <message>
-        <location filename="../src/freshclamsetter.cpp" line="219"/>
-        <location filename="../src/freshclamsetter.cpp" line="319"/>
-        <location filename="../src/freshclamsetter.cpp" line="546"/>
+        <location filename="../src/freshclamsetter.cpp" line="218"/>
+        <location filename="../src/freshclamsetter.cpp" line="318"/>
+        <location filename="../src/freshclamsetter.cpp" line="545"/>
         <source>Deamon running - stop deamon</source>
         <translation>Deamon працює - зупинити deamon</translation>
     </message>
     <message>
-        <location filename="../src/freshclamsetter.cpp" line="307"/>
+        <location filename="../src/freshclamsetter.cpp" line="306"/>
         <source>INFO</source>
         <translation>ІНФОРМАЦІЯ</translation>
     </message>
     <message>
-        <location filename="../src/freshclamsetter.cpp" line="307"/>
+        <location filename="../src/freshclamsetter.cpp" line="306"/>
         <source>Update-Process finished</source>
         <translation>Процес оновлення завершено</translation>
     </message>
     <message>
-        <location filename="../src/freshclamsetter.cpp" line="310"/>
+        <location filename="../src/freshclamsetter.cpp" line="309"/>
         <source>WARNING</source>
         <translation>ПОПЕРЕДЖЕННЯ</translation>
     </message>
     <message>
-        <location filename="../src/freshclamsetter.cpp" line="310"/>
+        <location filename="../src/freshclamsetter.cpp" line="309"/>
         <source>Update-Process failed!
 Read log-messages for possible reason.</source>
         <translation>Процес оновлення завершився невдало!
 Прочитайте лог-повідомлення, щоб дізнатися про можливу причину.</translation>
     </message>
     <message>
-        <location filename="../src/freshclamsetter.cpp" line="511"/>
+        <location filename="../src/freshclamsetter.cpp" line="510"/>
         <source>Database origin : &lt;/td&gt;&lt;td&gt;</source>
         <translation>Походження бази даних :&lt;/td&gt;&lt;td&gt;</translation>
     </message>
     <message>
-        <location filename="../src/freshclamsetter.cpp" line="514"/>
+        <location filename="../src/freshclamsetter.cpp" line="513"/>
         <source>Last Update : &lt;/td&gt;&lt;td&gt;</source>
         <translation>Останнє оновлення : &lt;/td&gt;&lt;td&gt;</translation>
     </message>
     <message>
-        <location filename="../src/freshclamsetter.cpp" line="517"/>
+        <location filename="../src/freshclamsetter.cpp" line="516"/>
         <source>Main File : &lt;/td&gt;&lt;td&gt;</source>
         <translation>Основний файл : &lt;/td&gt;&lt;td&gt;</translation>
     </message>
     <message>
-        <location filename="../src/freshclamsetter.cpp" line="520"/>
+        <location filename="../src/freshclamsetter.cpp" line="519"/>
         <source>Daily File : &lt;/td&gt;&lt;td&gt;</source>
         <translation>Щоденний файл : &lt;/td&gt;&lt;td&gt;</translation>
     </message>
     <message>
-        <location filename="../src/freshclamsetter.cpp" line="523"/>
+        <location filename="../src/freshclamsetter.cpp" line="522"/>
         <source>ByteCode File : &lt;/td&gt;&lt;td&gt;</source>
         <translation>Файл байтового коду : &lt;/td&gt;&lt;td&gt;</translation>
     </message>
     <message>
-        <location filename="../src/freshclamsetter.cpp" line="744"/>
+        <location filename="../src/freshclamsetter.cpp" line="743"/>
         <source>Select Folder for the PID-File</source>
         <translation>Виберіть папку для PID-файлу</translation>
     </message>
     <message>
-        <location filename="../src/freshclamsetter.cpp" line="762"/>
+        <location filename="../src/freshclamsetter.cpp" line="761"/>
         <source>Virus definitions missing!</source>
         <translation>Визначення вірусів відсутні!</translation>
     </message>
     <message>
-        <location filename="../src/freshclamsetter.cpp" line="762"/>
+        <location filename="../src/freshclamsetter.cpp" line="761"/>
         <source>No virus definitions found in the database folder. Should the virus definitions be downloaded?</source>
         <translation>У теці бази даних не знайдено визначень вірусів. Чи потрібно завантажувати визначення вірусів?</translation>
     </message>
     <message>
-        <location filename="../src/freshclamsetter.cpp" line="819"/>
+        <location filename="../src/freshclamsetter.cpp" line="818"/>
         <source>On Update Execute</source>
         <translation>При виконанні оновлення</translation>
     </message>
     <message>
-        <location filename="../src/freshclamsetter.cpp" line="819"/>
+        <location filename="../src/freshclamsetter.cpp" line="818"/>
         <source>Select a programm that will be executed when the database is updated.</source>
         <translation>Виберіть програму, яка буде виконуватися при оновленні бази даних.</translation>
     </message>
     <message>
-        <location filename="../src/freshclamsetter.cpp" line="826"/>
+        <location filename="../src/freshclamsetter.cpp" line="825"/>
         <source>On Error Execute</source>
         <translation>При виконанні помилки</translation>
     </message>
     <message>
-        <location filename="../src/freshclamsetter.cpp" line="826"/>
+        <location filename="../src/freshclamsetter.cpp" line="825"/>
         <source>Select a programm that will be executed when an error occured.</source>
         <translation>Виберіть програму, яка буде виконана при виникненні помилки.</translation>
     </message>
     <message>
-        <location filename="../src/freshclamsetter.cpp" line="833"/>
+        <location filename="../src/freshclamsetter.cpp" line="832"/>
         <source>On Outdated Execute</source>
         <translation>Про застаріле виконання</translation>
     </message>
     <message>
-        <location filename="../src/freshclamsetter.cpp" line="833"/>
+        <location filename="../src/freshclamsetter.cpp" line="832"/>
         <source>Select a programm that will be executed when the database is outdated.</source>
         <translation>Виберіть програму, яка буде виконуватися, коли база даних застаріє.</translation>
     </message>
@@ -3056,22 +3056,6 @@ li.checked::marker { content: &quot;\2612&quot;; }
         <translation>Включити/виключити</translation>
     </message>
     <message>
-        <source>ERROR</source>
-        <translation type="vanished">ПОМИЛКА</translation>
-    </message>
-    <message>
-        <source>&lt;font style=&apos;font-weight:bold;color:red&apos;&gt;Option:&lt;/font&gt; &lt;b&gt;</source>
-        <translation type="vanished">&lt;font style=&apos;font-weight:bold;color:red&apos;&gt;Option:&lt;/font&gt; &lt;b&gt;</translation>
-    </message>
-    <message>
-        <source>Option already selected with &lt;b&gt;&quot;no&quot;&lt;/b&gt; value.&lt;br&gt;Selecting both options at the same time makes no sense!</source>
-        <translation type="vanished">Опцію вже вибрано зі значенням &lt;b&gt;&quot;no&quot;&lt;/b&gt;.&lt;br&gt;Вибирати обидві опції одночасно не має сенсу!</translation>
-    </message>
-    <message>
-        <source>Option already selected with &lt;b&gt;&quot;yes&quot;&lt;/b&gt; value.&lt;br&gt;Selecting both options at the same time makes no sense!</source>
-        <translation type="vanished">Опцію вже вибрано зі значенням &lt;b&gt;&quot;yes&quot;&lt;/b&gt;.&lt;br&gt;Вибирати обидві опції одночасно не має сенсу!</translation>
-    </message>
-    <message>
         <location filename="../src/optionsdialog.cpp" line="221"/>
         <location filename="../src/optionsdialog.cpp" line="240"/>
         <location filename="../src/optionsdialog.cpp" line="247"/>
@@ -3914,406 +3898,209 @@ Continue from the Start of the Log?</source>
         <translation>Форма</translation>
     </message>
     <message>
-        <source>Enable verbose logging.</source>
-        <translation type="vanished">Увімкнути розгорнуте ведення журналу.</translation>
-    </message>
-    <message>
-        <location filename="../ui/setuptab.ui" line="1133"/>
+        <location filename="../ui/setuptab.ui" line="1094"/>
         <source>Window State on Startup</source>
         <translation>Стан вікна під час запуску</translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="1141"/>
+        <location filename="../ui/setuptab.ui" line="1102"/>
         <source>Show Window maximized</source>
         <translation>Показати вікно розгорнутим</translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="1146"/>
+        <location filename="../ui/setuptab.ui" line="1107"/>
         <source>Show Tray Icon only</source>
         <translation>Показати лише піктограму лотка</translation>
     </message>
     <message>
-        <source>This option allows you to save the process identifier of the daemon to a file specified in the argument.</source>
-        <translation type="vanished">Ця опція дозволяє зберегти ідентифікатор процесу демона у файл, вказаний в аргументі.</translation>
-    </message>
-    <message>
-        <source>PID-File:</source>
-        <translation type="vanished">PID-файл:</translation>
-    </message>
-    <message>
-        <source>Log time with each message.</source>
-        <translation type="vanished">Записуйте час з кожним повідомленням.</translation>
-    </message>
-    <message>
-        <location filename="../ui/setuptab.ui" line="144"/>
-        <location filename="../ui/setuptab.ui" line="426"/>
-        <location filename="../ui/setuptab.ui" line="661"/>
+        <location filename="../ui/setuptab.ui" line="195"/>
+        <location filename="../ui/setuptab.ui" line="330"/>
+        <location filename="../ui/setuptab.ui" line="640"/>
         <source>PID: </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="86"/>
-        <location filename="../ui/setuptab.ui" line="175"/>
-        <location filename="../ui/setuptab.ui" line="259"/>
-        <location filename="../ui/setuptab.ui" line="379"/>
-        <location filename="../ui/setuptab.ui" line="401"/>
-        <location filename="../ui/setuptab.ui" line="479"/>
-        <location filename="../ui/setuptab.ui" line="566"/>
-        <location filename="../ui/setuptab.ui" line="588"/>
-        <location filename="../ui/setuptab.ui" line="686"/>
-        <location filename="../ui/setuptab.ui" line="764"/>
-        <location filename="../ui/setuptab.ui" line="881"/>
-        <location filename="../ui/setuptab.ui" line="909"/>
-        <location filename="../ui/setuptab.ui" line="937"/>
-        <location filename="../ui/setuptab.ui" line="1052"/>
+        <location filename="../ui/setuptab.ui" line="142"/>
+        <location filename="../ui/setuptab.ui" line="170"/>
+        <location filename="../ui/setuptab.ui" line="226"/>
+        <location filename="../ui/setuptab.ui" line="305"/>
+        <location filename="../ui/setuptab.ui" line="383"/>
+        <location filename="../ui/setuptab.ui" line="430"/>
+        <location filename="../ui/setuptab.ui" line="512"/>
+        <location filename="../ui/setuptab.ui" line="615"/>
+        <location filename="../ui/setuptab.ui" line="685"/>
+        <location filename="../ui/setuptab.ui" line="725"/>
+        <location filename="../ui/setuptab.ui" line="842"/>
+        <location filename="../ui/setuptab.ui" line="870"/>
+        <location filename="../ui/setuptab.ui" line="898"/>
+        <location filename="../ui/setuptab.ui" line="1013"/>
         <source>n/a</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="228"/>
-        <location filename="../ui/setuptab.ui" line="334"/>
-        <location filename="../ui/setuptab.ui" line="541"/>
+        <location filename="../ui/setuptab.ui" line="111"/>
+        <location filename="../ui/setuptab.ui" line="475"/>
+        <location filename="../ui/setuptab.ui" line="565"/>
         <source>Status: </source>
         <translation>Статус : </translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="109"/>
+        <location filename="../ui/setuptab.ui" line="261"/>
         <source>  Clamonacc</source>
         <translation>  Clamonacc</translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="347"/>
+        <location filename="../ui/setuptab.ui" line="440"/>
         <source>  Freshclam</source>
         <translation>  Freshclam</translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="626"/>
+        <location filename="../ui/setuptab.ui" line="653"/>
         <source>  Clamd</source>
         <translation>  Clamd</translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="795"/>
+        <location filename="../ui/setuptab.ui" line="756"/>
         <source>Database</source>
         <translation>База даних</translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="822"/>
+        <location filename="../ui/setuptab.ui" line="783"/>
         <source>Bytecode File: </source>
         <translation>Байтовий файл: </translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="850"/>
+        <location filename="../ui/setuptab.ui" line="811"/>
         <source>Daily File: </source>
         <translation>Щоденна добірка: </translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="962"/>
+        <location filename="../ui/setuptab.ui" line="923"/>
         <source>Main File: </source>
         <translation>Головний файл: </translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="1021"/>
+        <location filename="../ui/setuptab.ui" line="982"/>
         <source>Last updated: </source>
         <translation>Останнє оновлення: </translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="1096"/>
+        <location filename="../ui/setuptab.ui" line="1057"/>
         <source>ClamAV System Status</source>
         <translation>ClamAV System Status</translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="1220"/>
+        <location filename="../ui/setuptab.ui" line="1181"/>
         <source>[da_DK] Denmark</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="1229"/>
+        <location filename="../ui/setuptab.ui" line="1190"/>
         <source>[de_DE] Germany</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="1238"/>
+        <location filename="../ui/setuptab.ui" line="1199"/>
         <source>[en_GB] Great Britain</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="1247"/>
+        <location filename="../ui/setuptab.ui" line="1208"/>
         <source>[en_IE] Ireland</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="1256"/>
+        <location filename="../ui/setuptab.ui" line="1217"/>
         <source>[en_US] United States</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="1265"/>
+        <location filename="../ui/setuptab.ui" line="1226"/>
         <source>[en_AU] Australia</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="1274"/>
+        <location filename="../ui/setuptab.ui" line="1235"/>
         <source>[en_NZ] New Zealand</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="1283"/>
+        <location filename="../ui/setuptab.ui" line="1244"/>
         <source>[es_ES] Spain</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="1292"/>
+        <location filename="../ui/setuptab.ui" line="1253"/>
         <source>[fr_FR] France</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="1301"/>
+        <location filename="../ui/setuptab.ui" line="1262"/>
         <source>[it_IT] Italy</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="1310"/>
+        <location filename="../ui/setuptab.ui" line="1271"/>
         <source>[pt_AO] Angola</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="1319"/>
+        <location filename="../ui/setuptab.ui" line="1280"/>
         <source>[pt_BR] Brasil</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="1328"/>
+        <location filename="../ui/setuptab.ui" line="1289"/>
         <source>[pt_CV] Cabo Verde</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="1337"/>
+        <location filename="../ui/setuptab.ui" line="1298"/>
         <source>[pt_MZ] Mozambique</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="1346"/>
+        <location filename="../ui/setuptab.ui" line="1307"/>
         <source>[pt_MO] Macau</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="1355"/>
+        <location filename="../ui/setuptab.ui" line="1316"/>
         <source>[pt_PT] Portugal</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="1364"/>
+        <location filename="../ui/setuptab.ui" line="1325"/>
         <source>[pt_ST] São Tomé</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/setuptab.ui" line="1373"/>
+        <location filename="../ui/setuptab.ui" line="1334"/>
         <source>[pt_TL] Timor Leste</source>
         <translation></translation>
     </message>
     <message>
-        <source>not found</source>
-        <translation type="vanished">не знайдено</translation>
-    </message>
-    <message>
-        <source>All</source>
-        <translation type="vanished">Усе.</translation>
-    </message>
-    <message>
-        <source>main</source>
-        <translation type="vanished">головний</translation>
-    </message>
-    <message>
-        <source>daily</source>
-        <translation type="vanished">щодня</translation>
-    </message>
-    <message>
-        <source>bytecode</source>
-        <translation type="vanished">байт-код</translation>
-    </message>
-    <message>
-        <source>Clamd &amp; Scan on Access</source>
-        <translation type="vanished">Затискання та сканування в Access</translation>
-    </message>
-    <message>
-        <source>clamd not running - start clamd</source>
-        <translation type="vanished">clamd не працює - запустити clamd</translation>
-    </message>
-    <message>
-        <source>Folder under monitoring</source>
-        <translation type="vanished">Папка під моніторингом</translation>
-    </message>
-    <message>
-        <source>times per days</source>
-        <translation type="vanished">разів на день</translation>
-    </message>
-    <message>
-        <source>DatabaseMirror specifies to which mirror(s) freshclam should connect.
-You should have at least one entries: database.clamav.net. 
-Now that CloudFlare is being used as our Content Delivery Network (CDN),  this  one  domain
-name works world-wide to direct freshclam to the closest geographic endpoint.
-Default: database.clamav.net
-</source>
-        <translation type="vanished">DatabaseMirror вказує, до якого(их) дзеркала(ів) має підключатися freshclam.
-Ви повинні мати принаймні один запис: database.clamav.net. 
-Тепер, коли CloudFlare використовується як наша мережа доставки контенту (CDN), це єдине доменне ім&apos;я
-працює по всьому світу, спрямовуючи freshclam до найближчої географічної кінцевої точки.
-За замовчуванням: database.clamav.net</translation>
-    </message>
-    <message>
-        <source>Enable logging to Syslog. May be used in combination with UpdateLogFile.</source>
-        <translation type="vanished">Увімкнути ведення журналу в Syslog. Може використовуватися у поєднанні з UpdateLogFile.</translation>
-    </message>
-    <message>
-        <source>Number of database checks per day.</source>
-        <translation type="vanished">Кількість перевірок бази даних на день.</translation>
-    </message>
-    <message>
-        <source>Check for Updates</source>
-        <translation type="vanished">Перевірте наявність оновлень</translation>
-    </message>
-    <message>
-        <source>Rotate log file. Requires LogFileMaxSize option set prior to this option.</source>
-        <translation type="vanished">Повернути файл журналу. Потребує встановлення параметра LogFileMaxSize перед цим параметром.</translation>
-    </message>
-    <message>
-        <source>Path to a directory containing database files.</source>
-        <translation type="vanished">Шлях до каталогу з файлами бази даних.</translation>
-    </message>
-    <message>
-        <location filename="../ui/setuptab.ui" line="1187"/>
+        <location filename="../ui/setuptab.ui" line="1148"/>
         <source>Language</source>
         <translation>Мова</translation>
     </message>
     <message>
-        <source>brazilian</source>
-        <translation type="vanished">бразильський</translation>
-    </message>
-    <message>
-        <source>danish</source>
-        <translation type="vanished">датський</translation>
-    </message>
-    <message>
-        <source>english</source>
-        <translation type="vanished">англійська</translation>
-    </message>
-    <message>
-        <source>french</source>
-        <translation type="vanished">французька</translation>
-    </message>
-    <message>
-        <source>german</source>
-        <translation type="vanished">німецька</translation>
-    </message>
-    <message>
-        <source>spanish</source>
-        <translation type="vanished">іспанська</translation>
-    </message>
-    <message>
-        <source>portuguese</source>
-        <translation type="vanished">Португальська</translation>
-    </message>
-    <message>
-        <source>italian</source>
-        <translation type="vanished">італійська</translation>
-    </message>
-    <message>
-        <source>Which database to update
-Default: all</source>
-        <translation type="vanished">Яку базу даних оновлювати
-За замовчуванням: усі</translation>
-    </message>
-    <message>
-        <source>Update Database</source>
-        <translation type="vanished">Оновлення бази даних</translation>
-    </message>
-    <message>
-        <source>Freshclam Settings</source>
-        <translation type="vanished">Налаштування Freshclam</translation>
-    </message>
-    <message>
-        <source>Specify the type of syslog messages - please refer to &apos;man syslog&apos; for facility names.
-              Default: LOG_LOCAL6</source>
-        <translation type="vanished">Укажіть тип повідомлень системного журналу - будь ласка, зверніться до &apos;man syslog&apos; для назв засобів.
- За замовчуванням: LOG_LOCAL6</translation>
-    </message>
-    <message>
-        <source>autodecteced location of the freshclam binary</source>
-        <translation type="vanished">автоматично визначене розташування двійкового файлу freshclam</translation>
-    </message>
-    <message>
-        <source>freshclam (Info)</source>
-        <translation type="vanished">freshclam (інформація)</translation>
-    </message>
-    <message>
-        <source>When started by root, drop privileges to a specified user. The user will be determined by the application and must match the owner of the database directory</source>
-        <translation type="vanished">Якщо запущено адміністратором, скинути привілеї для вказаного користувача. Користувач визначатиметься програмою та має відповідати власнику каталогу бази даних</translation>
-    </message>
-    <message>
-        <source>FreshClam Daemon</source>
-        <translation type="vanished">Демон FreshClam</translation>
-    </message>
-    <message>
-        <source>Start daemon automatically
-at program start</source>
-        <translation type="vanished">Автоматично запускати демон
-на початку програми</translation>
-    </message>
-    <message>
-        <source>Execute Daemon and
-manual update as root</source>
-        <translation type="vanished">Запустіть Daemon і
-оновити вручну від імені root</translation>
-    </message>
-    <message>
-        <source>WARNING</source>
-        <translation type="vanished">ПОПЕРЕДЖЕННЯ</translation>
-    </message>
-    <message>
-        <location filename="../src/setuptab.cpp" line="108"/>
+        <location filename="../src/setuptab.cpp" line="126"/>
         <source>Warning</source>
         <translation>ПОПЕРЕДЖЕННЯ</translation>
     </message>
     <message>
-        <location filename="../src/setuptab.cpp" line="108"/>
+        <location filename="../src/setuptab.cpp" line="126"/>
         <source>You have to restart the application for changes to take effect!</source>
         <translation>Вам необхідно перезапустити програму, щоб зміни набули чинності!</translation>
     </message>
     <message>
-        <source>Select Folder for the PID-File</source>
-        <translation type="vanished">Виберіть папку для PID-файлу</translation>
-    </message>
-    <message>
-        <source>Virus definitions missing!</source>
-        <translation type="vanished">Визначення вірусів відсутні!</translation>
-    </message>
-    <message>
-        <source>No virus definitions found in the database folder. Should the virus definitions be downloaded?</source>
-        <translation type="vanished">У теці бази даних не знайдено визначень вірусів. Чи потрібно завантажувати визначення вірусів?</translation>
-    </message>
-    <message>
-        <source>Directory to monitor</source>
-        <translation type="vanished">Каталог для моніторингу</translation>
-    </message>
-    <message>
-        <source>Path already under monitoring</source>
-        <translation type="vanished">Шлях вже під моніторингом</translation>
-    </message>
-    <message>
-        <source>Remove Folder from monitoring</source>
-        <translation type="vanished">Видалити папку з моніторингу</translation>
-    </message>
-    <message>
-        <location filename="../ui/setuptab.ui" line="200"/>
-        <location filename="../ui/setuptab.ui" line="454"/>
-        <location filename="../ui/setuptab.ui" line="613"/>
-        <location filename="../ui/setuptab.ui" line="993"/>
+        <location filename="../ui/setuptab.ui" line="83"/>
+        <location filename="../ui/setuptab.ui" line="358"/>
+        <location filename="../ui/setuptab.ui" line="537"/>
+        <location filename="../ui/setuptab.ui" line="954"/>
         <source>Path: </source>
         <translation>Шлях: </translation>
-    </message>
-    <message>
-        <source>Do you want to remove the folder from the monitoring list?</source>
-        <translation type="vanished">Ви хочете видалити папку зі списку моніторингу?</translation>
     </message>
 </context>
 </TS>
