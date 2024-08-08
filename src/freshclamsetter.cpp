@@ -358,49 +358,49 @@ int pos;
         value = content.mid(pos + 33,content.indexOf("\n",pos + 33) - (pos + 33));
         setupFile->setSectionValue("Updater","LastUpdate",value);
     }
-    pos = content.lastIndexOf("main.cvd updated");
+    pos = content.lastIndexOf("main.cvd updated (");
     if (pos != -1){
         value = content.mid(pos + 17,content.indexOf("\n",pos + 17) - (pos + 17));
         value.replace("(","");
         value.replace(")","");
         setupFile->setSectionValue("Updater","MainVersion",value);
     }
-    pos = content.lastIndexOf("main.cvd is up to date");
+    pos = content.lastIndexOf("main.cvd database is up-to-date (");
     if (pos != -1){
-        value = content.mid(pos + 23,content.indexOf("\n",pos + 23) - (pos + 23));
+        value = content.mid(pos + 32,content.indexOf("\n",pos + 32) - (pos + 32));
         value.replace("(","");
         value.replace(")","");
         setupFile->setSectionValue("Updater","MainVersion",value);
     }
-    pos = content.lastIndexOf("daily.cvd updated");
+    pos = content.lastIndexOf("daily.cvd updated (");
     if (pos != -1){
         value = content.mid(pos + 18,content.indexOf("\n",pos + 18) - (pos + 18));
         value.replace("(","");
         value.replace(")","");
         setupFile->setSectionValue("Updater","DailyVersion",value);
     }
-    pos = content.lastIndexOf("daily.cld updated");
+    pos = content.lastIndexOf("daily.cld updated (");
     if (pos != -1){
         value = content.mid(pos + 18,content.indexOf("\n",pos + 18) - (pos + 18));
         value.replace("(","");
         value.replace(")","");
         setupFile->setSectionValue("Updater","DailyVersion",value);
     }
-    pos = content.lastIndexOf("daily.cld is up to date");
+    pos = content.lastIndexOf("daily.cld database is up-to-date (");
     if (pos != -1){
-        value = content.mid(pos + 24,content.indexOf("\n",pos + 24) - (pos + 24));
+        value = content.mid(pos + 33,content.indexOf("\n",pos + 33) - (pos + 33));
         value.replace("(","");
         value.replace(")","");
         setupFile->setSectionValue("Updater","DailyVersion",value);
     }
-    pos = content.lastIndexOf("bytecode.cvd is up to date");
+    pos = content.lastIndexOf("bytecode.cvd database is up-to-date (");
     if (pos != -1){
-        value = content.mid(pos + 27,content.indexOf("\n",pos + 27) - (pos + 27));
+        value = content.mid(pos + 36,content.indexOf("\n",pos + 36) - (pos + 36));
         value.replace("(","");
         value.replace(")","");
         setupFile->setSectionValue("Updater","BytecodeVersion",value);
     }
-    pos = content.lastIndexOf("bytecode.cvd updated");
+    pos = content.lastIndexOf("bytecode.cvd updated (");
     if (pos != -1){
         value = content.mid(pos + 21,content.indexOf("\n",pos + 21) - (pos + 21));
         value.replace("(","");

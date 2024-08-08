@@ -96,7 +96,7 @@ void optionsDialog::slot_getClamscanProcessFinished()
                 comment = line.mid(commentStart);
                 comment = comment.trimmed();
                 while (comment.indexOf("  ") != -1) comment = comment.replace("  "," ");
-                if (comment.at(0) == "-") {
+                if (comment.left(1) == "-") {
                     comment = comment.mid(comment.indexOf(" ") + 1);
                 }
                 comment = tr(comment.toLocal8Bit());

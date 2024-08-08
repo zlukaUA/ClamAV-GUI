@@ -451,6 +451,33 @@ QStringList selectedOptions = setupFile->getKeywords("SelectedOptions");
         item->setToolTip(tooltipText);
         ui->selectedOptionsList->addItem(item);
     }
+    setBackgroundColorOptionsList();
+}
+
+void ProfileWizardDialog::setBackgroundColorOptionsList()
+{
+    QListWidgetItem * item;
+    QString itemText;
+
+    for (int x = 0; x < ui->availableOptionsList->count(); x++) {
+        item = ui->availableOptionsList->item(x);
+        item->setHidden(false);
+        itemText = item->text();
+        if (itemText.indexOf("=yes") != -1) {
+            itemText = itemText.replace("=yes","=no");
+            QList<QListWidgetItem *> items = ui->selectedOptionsList->findItems(itemText, Qt::MatchExactly);
+            if (items.size() > 0) {
+                item->setHidden(true);
+            }
+        }
+        if (itemText.indexOf("=no") != -1) {
+            itemText = itemText.replace("=no","=yes");
+            QList<QListWidgetItem *> items = ui->selectedOptionsList->findItems(itemText, Qt::MatchExactly);
+            if (items.size() > 0) {
+                item->setHidden(true);
+            }
+        }
+    }
 }
 
 void ProfileWizardDialog::slot_nextButtonClicked(){
@@ -498,19 +525,45 @@ QFile checkFile(QDir::homePath() + "/.clamav-gui/profiles/" + ui->profileNameLin
 
 void ProfileWizardDialog::slot_addButtonClicked(){
 QListWidgetItem * item;
+bool error = false;
 
     if (ui->availableOptionsList->currentItem() != 0) {
         item = ui->availableOptionsList->takeItem(ui->availableOptionsList->currentRow());
-        ui->selectedOptionsList->addItem(item);
+        QString itemText = item->text();
+        if (itemText.indexOf("=") != -1) {
+            if (itemText.indexOf("=yes") != -1) {
+                itemText = itemText.replace("=yes","=no");
+                QList<QListWidgetItem*> items = ui->selectedOptionsList->findItems(itemText,Qt::MatchExactly);
+                if (items.size() > 0) {
+                    itemText = itemText.replace("=no","=yes");
+                    error = true;
+                    ui->availableOptionsList->addItem(item);
+                }
+            } else {
+                itemText = itemText.replace("=no","=yes");
+                QList<QListWidgetItem*> items = ui->selectedOptionsList->findItems(itemText,Qt::MatchExactly);
+                if (items.size() > 0) {
+                    itemText = itemText.replace("=yes","=no");
+                    error = true;
+                    ui->availableOptionsList->addItem(item);
+                }
+            }
+        }
+        if (error == false) {
+            item->setHidden(false);
+            ui->selectedOptionsList->addItem(item);
+            setBackgroundColorOptionsList();
+        }
     }
 }
 
 void ProfileWizardDialog::slot_removeButtonClicked(){
-QListWidgetItem * item;
+    QListWidgetItem * item;
 
     if (ui->selectedOptionsList->currentItem() != 0) {
         item = ui->selectedOptionsList->takeItem(ui->selectedOptionsList->currentRow());
         ui->availableOptionsList->addItem(item);
+        setBackgroundColorOptionsList();
     }
 }
 

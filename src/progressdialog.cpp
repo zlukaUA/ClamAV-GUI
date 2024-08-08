@@ -8,6 +8,7 @@ progressDialog::progressDialog(QWidget *parent) : QWidget(parent), ui(new Ui::pr
     progressBar->setGeometry((this->width() - 80) / 2,20,100,100);
     progressBar->setMaximum(100);
     progressBar->setMinimum(0);
+    progressBar->setValue(0);
     progressBar->setValue(100);
     progressBar->setBarStyle(QRoundProgressBar::StyleDonut);
     progressBar->setFormat("");

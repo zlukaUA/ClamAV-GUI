@@ -120,12 +120,12 @@ int pos,end;
     if (status == QProcess::CrashExit) {
         ui->currentFileLabel->setText(tr("Scan Process aborted ....."));
         ui->currentFileLabel->setStyleSheet("background:red");
-        sendStatusReport(1,tr("Scan-Job: ") + scanJob,tr("Scan Process aborted ....."));
+        emit sendStatusReport(1,tr("Scan-Job: ") + scanJob,tr("Scan Process aborted ....."));
     } else {
         if (exitCode == 0) {
             ui->currentFileLabel->setText(tr("Scan-Process finished ...... no Virus found!"));
             ui->currentFileLabel->setStyleSheet("background:green");
-            sendStatusReport(0,"Scan-Job: " + scanJob,tr("Scan-Process finished ...... no Virus found!"));
+            emit sendStatusReport(0,"Scan-Job: " + scanJob,tr("Scan-Process finished ...... no Virus found!"));
             closeWindowTimer->start(1000);
             countDown = new QRoundProgressBar(this);
             countDown->setGeometry((this->width() - 80) / 2,(this->height() - 80) / 2,80,80);
@@ -139,11 +139,11 @@ int pos,end;
             if (exitCode == 1) {
                 ui->currentFileLabel->setText(tr("Scan-Process finished ...... a Virus was found!"));
                 ui->currentFileLabel->setStyleSheet("background:red");
-                sendStatusReport(2,"Scan-Job: " + scanJob,tr("Scan Process finished ..... a Virus was found!"));
+                emit sendStatusReport(2,"Scan-Job: " + scanJob,tr("Scan Process finished ..... a Virus was found!"));
             } else {
                 ui->currentFileLabel->setText(tr("Scan-Process finished ...... an Error occurred!"));
                 ui->currentFileLabel->setStyleSheet("background:red");
-                sendStatusReport(1,"Scan-Job: " + scanJob,tr("Scan Process finished ..... an Error occurred!"));
+                emit sendStatusReport(1,"Scan-Job: " + scanJob,tr("Scan Process finished ..... an Error occurred!"));
             }
     }
     ui->closeButton->setEnabled(true);
@@ -195,6 +195,7 @@ void scheduleScanObject::slot_closeWindowTimerTimeout(){
         this->accept();
     } else {
         countDown->setValue(closeWindowCounter);
+
         closeWindowTimer->start(100);
     }
 }

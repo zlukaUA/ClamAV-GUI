@@ -114,9 +114,9 @@ if (tempDir.exists(QDir::homePath() + "/.local/share/kservices5/ServiceMenus/sca
     clamdTab = new clamdManager(this);
     ui->tabWidget->addTab(clamdTab,QIcon(":/icons/icons/onaccess.png"),tr("Clamd"));
     setUpTab = new setupTab(this);
-    ui->tabWidget->addTab(setUpTab,QIcon(":/icons/icons/setup.png"),tr("setup"));
+    ui->tabWidget->addTab(setUpTab,QIcon(":/icons/icons/setup.png"),tr("Setup"));
     infoTab = new infoDialog(this);
-    ui->tabWidget->addTab(infoTab,QIcon(":/icons/icons/information.png"),tr("Credits && Copyright"));
+    ui->tabWidget->addTab(infoTab,QIcon(":/icons/icons/information.png"),tr("About"));
     ui->tabWidget->setTabShape(QTabWidget::Triangular);
     connect(freshclamTab,SIGNAL(setBallonMessage(int,QString,QString)),this,SLOT(slot_setTrayIconBalloonMessage(int,QString,QString)));
     connect(clamdTab,SIGNAL(setBallonMessage(int,QString,QString)),this,SLOT(slot_setTrayIconBalloonMessage(int,QString,QString)));

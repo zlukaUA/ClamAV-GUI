@@ -9,6 +9,7 @@
 #include <QProcess>
 #include <QDialog>
 #include <QDebug>
+#include <QList>
 #include <QDir>
 #include <QFile>
 #include "cfilesystemmodel.h"
@@ -41,6 +42,7 @@ private:
     QString                  username;
     QStringList              devices;
     void readSettings();
+    void setBackgroundColorOptionsList();
 
 private slots:
     void slot_previousButtonClicked();
