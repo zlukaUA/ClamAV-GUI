@@ -1488,9 +1488,9 @@ neu gestartet werden, damit die vorgenommenen Änderungen wirksam werden.</trans
     </message>
     <message>
         <location filename="../ui/freshclamsetter.ui" line="114"/>
-        <location filename="../src/freshclamsetter.cpp" line="235"/>
-        <location filename="../src/freshclamsetter.cpp" line="324"/>
-        <location filename="../src/freshclamsetter.cpp" line="555"/>
+        <location filename="../src/freshclamsetter.cpp" line="236"/>
+        <location filename="../src/freshclamsetter.cpp" line="325"/>
+        <location filename="../src/freshclamsetter.cpp" line="556"/>
         <source>Deamon not running - start deamon</source>
         <translation>Deamon läuft nicht  - Deamon starten</translation>
     </message>
@@ -1812,106 +1812,106 @@ des manuellen Updates als root</translation>
         <translation>OnOutdatedExecute</translation>
     </message>
     <message>
-        <location filename="../src/freshclamsetter.cpp" line="94"/>
+        <location filename="../src/freshclamsetter.cpp" line="95"/>
         <source>Update process startet .....</source>
         <translation>Update Prozess gestartet .....</translation>
     </message>
     <message>
-        <location filename="../src/freshclamsetter.cpp" line="218"/>
-        <location filename="../src/freshclamsetter.cpp" line="318"/>
-        <location filename="../src/freshclamsetter.cpp" line="545"/>
+        <location filename="../src/freshclamsetter.cpp" line="219"/>
+        <location filename="../src/freshclamsetter.cpp" line="319"/>
+        <location filename="../src/freshclamsetter.cpp" line="546"/>
         <source>Deamon running - stop deamon</source>
         <translation>Deamon läuft - Deamon anhalten</translation>
     </message>
     <message>
-        <location filename="../src/freshclamsetter.cpp" line="306"/>
+        <location filename="../src/freshclamsetter.cpp" line="307"/>
         <source>INFO</source>
         <translation>INFO</translation>
     </message>
     <message>
-        <location filename="../src/freshclamsetter.cpp" line="306"/>
+        <location filename="../src/freshclamsetter.cpp" line="307"/>
         <source>Update-Process finished</source>
         <translation>Update-Vorgang beendet</translation>
     </message>
     <message>
-        <location filename="../src/freshclamsetter.cpp" line="309"/>
+        <location filename="../src/freshclamsetter.cpp" line="310"/>
         <source>WARNING</source>
         <translation>WARNUNG</translation>
     </message>
     <message>
-        <location filename="../src/freshclamsetter.cpp" line="309"/>
+        <location filename="../src/freshclamsetter.cpp" line="310"/>
         <source>Update-Process failed!
 Read log-messages for possible reason.</source>
         <translation>Update-Vorgang fehlgeschlagen!
 Lesen Sie die Log-Meldungen für mögliche Ursachen.</translation>
     </message>
     <message>
-        <location filename="../src/freshclamsetter.cpp" line="510"/>
+        <location filename="../src/freshclamsetter.cpp" line="511"/>
         <source>Database origin : &lt;/td&gt;&lt;td&gt;</source>
         <translation>Datenbank Herkunft : &lt;/td&gt;&lt;td&gt;</translation>
     </message>
     <message>
-        <location filename="../src/freshclamsetter.cpp" line="513"/>
+        <location filename="../src/freshclamsetter.cpp" line="514"/>
         <source>Last Update : &lt;/td&gt;&lt;td&gt;</source>
         <translation>Letztes Update : &lt;/td&gt;&lt;td&gt;</translation>
     </message>
     <message>
-        <location filename="../src/freshclamsetter.cpp" line="516"/>
+        <location filename="../src/freshclamsetter.cpp" line="517"/>
         <source>Main File : &lt;/td&gt;&lt;td&gt;</source>
         <translation>Main Datei : &lt;/td&gt;&lt;td&gt;</translation>
     </message>
     <message>
-        <location filename="../src/freshclamsetter.cpp" line="519"/>
+        <location filename="../src/freshclamsetter.cpp" line="520"/>
         <source>Daily File : &lt;/td&gt;&lt;td&gt;</source>
         <translation>Daily Datei : &lt;/td&gt;&lt;td&gt;</translation>
     </message>
     <message>
-        <location filename="../src/freshclamsetter.cpp" line="522"/>
+        <location filename="../src/freshclamsetter.cpp" line="523"/>
         <source>ByteCode File : &lt;/td&gt;&lt;td&gt;</source>
         <translation>ByteCode Datei : &lt;/td&gt;&lt;td&gt;</translation>
     </message>
     <message>
-        <location filename="../src/freshclamsetter.cpp" line="743"/>
+        <location filename="../src/freshclamsetter.cpp" line="744"/>
         <source>Select Folder for the PID-File</source>
         <translation>Ordner für PID-Datei wählen</translation>
     </message>
     <message>
-        <location filename="../src/freshclamsetter.cpp" line="761"/>
+        <location filename="../src/freshclamsetter.cpp" line="762"/>
         <source>Virus definitions missing!</source>
         <translation>Virus Definitionen fehlen!</translation>
     </message>
     <message>
-        <location filename="../src/freshclamsetter.cpp" line="761"/>
+        <location filename="../src/freshclamsetter.cpp" line="762"/>
         <source>No virus definitions found in the database folder. Should the virus definitions be downloaded?</source>
         <translation>Keine Virus Definitionen im Datenbank Ordner gefunden. Sollen die Virus Definitionen heruntergeladen werden?</translation>
     </message>
     <message>
-        <location filename="../src/freshclamsetter.cpp" line="818"/>
+        <location filename="../src/freshclamsetter.cpp" line="819"/>
         <source>On Update Execute</source>
         <translation>Bei Update ausführen</translation>
     </message>
     <message>
-        <location filename="../src/freshclamsetter.cpp" line="818"/>
+        <location filename="../src/freshclamsetter.cpp" line="819"/>
         <source>Select a programm that will be executed when the database is updated.</source>
         <translation>Wählen Sie ein Programm aus, das ausgeführt wird wenn die Datenbank aktualisiert wird.</translation>
     </message>
     <message>
-        <location filename="../src/freshclamsetter.cpp" line="825"/>
+        <location filename="../src/freshclamsetter.cpp" line="826"/>
         <source>On Error Execute</source>
         <translation>Bei Fehler ausführen</translation>
     </message>
     <message>
-        <location filename="../src/freshclamsetter.cpp" line="825"/>
+        <location filename="../src/freshclamsetter.cpp" line="826"/>
         <source>Select a programm that will be executed when an error occured.</source>
         <translation>Wählen Sie ein Programm aus, dass bei einem Fehler ausgeführt wird.</translation>
     </message>
     <message>
-        <location filename="../src/freshclamsetter.cpp" line="832"/>
+        <location filename="../src/freshclamsetter.cpp" line="833"/>
         <source>On Outdated Execute</source>
         <translation>Bei Abgelaufen ausführen</translation>
     </message>
     <message>
-        <location filename="../src/freshclamsetter.cpp" line="832"/>
+        <location filename="../src/freshclamsetter.cpp" line="833"/>
         <source>Select a programm that will be executed when the database is outdated.</source>
         <translation>Wählen Sie ein Programm aus, dass ausgeführt wird, wenn die Datenbank abgelaufen ist.</translation>
     </message>
@@ -3583,7 +3583,7 @@ Vom Anfang des Log beginnen?</translation>
     <message>
         <location filename="../ui/scanlimitstab.ui" line="759"/>
         <source>Maximum size of normalized HTML file to scan</source>
-        <translation>Maximale Grö0e für zu scannende normalisierte HTML Dateien</translation>
+        <translation>Maximale Größe für zu scannende normalisierte HTML Dateien</translation>
     </message>
     <message>
         <location filename="../ui/scanlimitstab.ui" line="67"/>
@@ -3598,7 +3598,7 @@ Vom Anfang des Log beginnen?</translation>
     <message>
         <location filename="../ui/scanlimitstab.ui" line="398"/>
         <source>Maximum size zip to type reanalyze</source>
-        <translation>Maximale Größe für ZIP nach Typ analyse</translation>
+        <translation>Maximale Größe für ZIP nach Typ reanalyse</translation>
     </message>
     <message>
         <location filename="../ui/scanlimitstab.ui" line="74"/>
